@@ -1,0 +1,248 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_proxy_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+<script >
+    $(document).ready(function () {
+        // var prc_type = $("#prc_type").val();
+
+        var myTable = $('#datatable01').DataTable({
+            order: [[ 2, "desc"]],
+            bProcessing : true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide : true, //是否启动服务器端数据导入
+            searching: true,
+            stateSave: false,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            // pageLength: 10,
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength : 10, //默认显示的记录数
+            bPaginate : true, //是否显示（应用）分页器
+            bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/adminSZba2qjbydxVhMJpuKfy/proxy_info?fx_type=list_proxy&nt='+ Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: "{{_('姓名')}}",
+                    data: 'uname',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: "{{_('银行账号')}}",
+                    data: 'iban',
+                    class: 'text-center align-middle',
+                },
+                {
+                    title: "{{_('返佣值')}}",
+                    data: 'grade_price',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return  '<span id="grade'+ row.uid + '">' +row.grade_price + '</span>$ <button class="btn btn-slategray btn-icon btn-icon-mini btn-round" onclick="edit_grade_price(' + row.uid +',\''+ row.uname +'\');"><i class="zmdi zmdi-edit"></i></button>';
+                    }
+                },
+                {
+                    title: "{{_('修改状态')}}",
+                    data: 'u_flag',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if(row.u_flag == 0) {
+                            return '<button class="btn btn-primary btn-icon btn-icon-mini btn-round" disabled><i class="zmdi zmdi-check"></i></button>';
+                        }else {
+                            return '<button class="btn btn-slategray btn-icon btn-icon-mini btn-round"  onclick="edit_u_flag(' + row.uid +');"><i class="zmdi zmdi-close"></i></button>';
+                        }
+                    }
+                },
+                {
+                    title: "{{_('工具')}}",
+                    data: 'uid',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return '<a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type=list_proxy_order_count&time_type=the_week&uid=' + row.uid + '" target=\'_blank\'>佣金列表</a> ' +
+                            '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type=list_settlement&time_type=the_week&uid=' + row.uid + '" target=\'_blank\'>结算列表</a> ';
+                    }
+                }
+            ],
+            language: { //自定义描述....
+                "sProcessing": "{{_('正在获取数据, 请稍后')}}...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "{{_('没有找到数据')}}",
+                "sInfo": "{{_('从')}} _START_ {{_('到')}} _END_ {{_('条记录')}} {{_('总记录数为')}} _TOTAL_ {{_('条')}}",
+                "sInfoEmpty": "{{_('记录数为0')}}",
+                "sInfoFiltered": "({{_('全部记录数')}} _MAX_ {{_('条')}})",
+                "sInfoPostFix": "",
+                "sSearch": "{{_('全局搜索')}}",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "{{_('第一页')}}",
+                    "sPrevious": "{{_('上一页')}}",
+                    "sNext": "{{_('下一页')}}",
+                    "sLast": "{{_('最后一页')}}"
+                },
+                "loadingRecords": "{{_('请稍候-正在加载')}}...",
+                "processing": "{{_('数据库当前很忙')}}",
+                "search": "{{_('关键字搜索')}} _INPUT_ {{_('应用于表格')}}"
+            },
+        });
+        // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+
+    });
+
+    //修改佣金
+    function edit_grade_price(uid, uname) {
+        swal.fire({
+            html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
+                "    <div class=\"card\">\n" +
+                "        <div class=\"header\">\n" +
+                "            <h2><strong>{{_('修改佣金')}}</strong> {{_('绑定')}} (<span id=\"accout_id\"></span> )</h2>\n" +
+                "        </div>\n" +
+                "        <div class=\"body\">\n" +
+                "            <form class=\"form\" action=\"\" method=\"post\" name=\"proxy_form\">\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-12 col-md-12\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('佣金')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\" id='price_html'>\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </form>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            confirmButtonText:"{{_('修改')}}",
+            cancelButtonText:"{{_('取消')}}",
+            allowEscapeKey:true,
+            allowOutsideClick: true,
+            onOpen: function() {
+                document.getElementById("accout_id").innerHTML = uname;
+                document.getElementById("price_html").innerHTML = escape2Html("{{page_main['price_html']}}");
+            },
+            preConfirm: function() {
+                return new Promise(function (resolve, reject) {
+                    edit_grade_price_form(uid);
+                });
+            }
+        }).then(function (re) {
+            // alert(re.reponse_status);
+            // swal.showLoading();
+        })
+    }
+    function escape2Html(str) {
+      var temp = document.createElement("div");
+      temp.innerHTML = str;
+      var output = temp.innerText || temp.textContent;
+      temp = null;
+      return output;
+    }
+    //修改佣金
+    function edit_grade_price_form(uid) {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/adminSZba2qjbydxVhMJpuKfy/proxy_info?fx_type=edit_grade_price&uid='+ uid+'&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    swal.fire("{{_('修改成功')}}");
+                    window.location.reload();
+                    // resolve();
+                }else if (re.reponse_status < 0){
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // login_time_out();
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+    //更改修改状态
+    function edit_u_flag(acco) {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/adminSZba2qjbydxVhMJpuKfy/proxy_info?fx_type=edit_u_flag&uid=' + acco + '&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    swal.fire(acco + "{{_('修改成功')}}");
+                    var button = $("#button" + acco.toString());
+                    button.removeClass("btn-slategray");
+                    button.addClass("btn-primary");
+                    document.getElementById("button" + acco.toString()).disabled = true;
+                    // resolve();
+                }else if (re.reponse_status < 0){
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // login_time_out();
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+</script>
+{% end %}

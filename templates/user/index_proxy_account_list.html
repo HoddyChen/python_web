@@ -1,0 +1,268 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_proxy_account_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+<script >
+    $(document).ready(function () {
+        // var prc_type = $("#prc_type").val();
+
+        var myTable = $('#datatable01').DataTable({
+            order: [[ 2, "desc"]],
+            bProcessing : true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide : true, //是否启动服务器端数据导入
+            searching: true,
+            stateSave: false,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            // pageLength: 10,
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength : 10, //默认显示的记录数
+            bPaginate : true, //是否显示（应用）分页器
+            bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/user/proxy_info?fx_type=list_proxy_account&nt='+ Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: "{{_('交易账号')}}",
+                    data: 'acco',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: "{{_('类型')}}",
+                    data: 'soft_id',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return 'MT' + row.soft_id.toString();
+                    }
+                },
+                {
+                    title: "{{_('绑定状态')}}",
+                    data: 'verify',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if(row.verify > 0) {
+                            return '<button class="btn btn-primary btn-icon btn-icon-mini btn-round" disabled><i class="zmdi zmdi-check"></i></button>';
+                        }else {
+                            return '<button class="btn btn-slategray btn-icon btn-icon-mini btn-round" disabled><i class="zmdi zmdi-close"></i></button>';
+                        }
+                    }
+                },
+                {
+                    title: "{{_('返佣状态')}}",
+                    data: 'verify',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if(row.verify >= 2) {
+                            var e = '<button id="button'+ row.acco +'" class="btn btn-primary btn-icon btn-icon-mini btn-round" disabled><i id="i'+ row.acco +'" class="zmdi zmdi-rotate-left"></i></button>';
+                        }else {
+                            var e = '<button id="button'+ row.acco +'" class="btn btn-slategray btn-icon btn-icon-mini btn-round" onclick="edit_verify(' + row.acco +');"><i id="i'+ row.acco +'" class="zmdi zmdi-rotate-left"></i></button>';
+                        }
+                        return e;
+                    }
+                }
+            ],
+            language: { //自定义描述....
+                "sProcessing": "{{_('正在获取数据, 请稍后')}}...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "{{_('没有找到数据')}}",
+                "sInfo": "{{_('从')}} _START_ {{_('到')}} _END_ {{_('条记录')}} {{_('总记录数为')}} _TOTAL_ {{_('条')}}",
+                "sInfoEmpty": "{{_('记录数为0')}}",
+                "sInfoFiltered": "({{_('全部记录数')}} _MAX_ {{_('条')}})",
+                "sInfoPostFix": "",
+                "sSearch": "{{_('全局搜索')}}",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "{{_('第一页')}}",
+                    "sPrevious": "{{_('上一页')}}",
+                    "sNext": "{{_('下一页')}}",
+                    "sLast": "{{_('最后一页')}}"
+                },
+                "loadingRecords": "{{_('请稍候-正在加载')}}...",
+                "processing": "{{_('数据库当前很忙')}}",
+                "search": "{{_('关键字搜索')}} _INPUT_ {{_('应用于表格')}}"
+            },
+        });
+        // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+
+    });
+
+    //新增账号
+    function add_proxy_account() {
+        swal.fire({
+            html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
+                "    <div class=\"card\">\n" +
+                "        <div class=\"header\">\n" +
+                "            <h2><strong>{{_('新增账户')}}</strong> {{_('绑定')}}</h2>\n" +
+                "        </div>\n" +
+                "        <div class=\"body\">\n" +
+                "            <form class=\"form\" action=\"\" method=\"post\" name=\"proxy_form\">\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-12 col-md-12\">\n" +
+                "                            <div class=\"form-group form-float\" style='text-align:left;'>\n" +
+                "                                1、{{_('验证账号使用权限->首先要在新账号的MT4或MT5上加载成功一次EA')}}<BR>\n" +
+                "                                <a href='https://www.fxcns.com/home/index-DownEa-pid-51-vion-mt4.html' target='_blank'>[ {{_('外汇跟单系统')}} ]</a> <BR>\n" +
+                "                                <a href='https://www.fxcns.com/home/index-blog-id-6.html' target='_blank'>{{_('不懂的如何安装？可以参考这里的安装步骤')}}</a><BR>\n" +
+                "                                <BR>2、{{_('提交绑定')}}({{_('按右边图示位置，输入您自己的账号信息')}})</a></BR>\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        \n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('账户号码')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\">\n" +
+                "                                <input name=\"account\" type=\"text\" id=\"account\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('输入瑞讯的MT4或MT5的账号')}}\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <BR><img src=\"{{ static_url('assets/images/name1.png')}}\">\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                             <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('姓名或编码')}}</div>\n" +
+                "                                 <div class=\"p-2 bd-highlight\"></div>\n" +
+                "                             </div>\n" +
+                "                            <input name=\"a_code\" type=\"text\" id=\"a_code\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('账号验证码')}}。\">\n" +
+                "                        </div>\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <BR><img src=\"{{ static_url('assets/images/name2.png')}}\">\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </form>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            confirmButtonText:"{{_('新增绑定')}}",
+            cancelButtonText:"{{_('取消')}}",
+            allowEscapeKey:true,
+            allowOutsideClick: true,
+            preConfirm: function() {
+                return new Promise(function (resolve, reject) {
+                    add_proxy_account_form();
+                });
+            }
+        }).then(function (re) {
+            // alert(re.reponse_status);
+            // swal.showLoading();
+        })
+    }
+
+    //新增账户
+    function add_proxy_account_form() {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/user/proxy_info?fx_type=add_proxy_account&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    swal.fire("{{_('新增成功')}}");
+                    window.location.reload();
+                    // resolve();
+                }else if (re.reponse_status < 0){
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // login_time_out();
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+    //更改佣金状态
+    function edit_verify(acco) {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/user/proxy_info?fx_type=edit_verify&account=' + acco + '&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    swal.fire(acco + "{{_('账号返佣激活成功')}}");
+                    var button = $("#button" + acco.toString());
+                    button.removeClass("btn-slategray");
+                    button.addClass("btn-primary");
+                    document.getElementById("button" + acco.toString()).disabled = true;
+                    // resolve();
+                }else if (re.reponse_status < 0){
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // login_time_out();
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+</script>
+{% end %}

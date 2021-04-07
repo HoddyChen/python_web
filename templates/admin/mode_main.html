@@ -1,0 +1,174 @@
+<div class="container-fluid" style="padding-top:30px;">
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_("综合")}}</strong> {{_("报告")}}</h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_1">0</span></h4>
+                                <span class="text-muted">{{_('结余')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_2">0</span></h4>
+                                <span class="text-muted">{{_('净值')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_3">0</span></h4>
+                                <span class="text-muted">{{_('持仓利润')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_4">0</span></h4>
+                                <span class="text-muted">{{_('持仓手数')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_5">0</span></h4>
+                                <span class="text-muted">{{_('持仓单量')}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_("利润")}}</strong> {{_("报告")}}</h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row text-center">
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_1">0</span></h4>
+                            <span class="text-muted"> {{_("Today's Profit")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_2">0</span></h4>
+                            <span class="text-muted">{{_("This Week's Profit")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_3">0</span></h4>
+                            <span class="text-muted">{{_("This Month's Profit")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_4">0</span></h4>
+                            <span class="text-muted">{{_("This Year's Profit")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_5">0</span></h4>
+                            <span class="text-muted">{{_("All Profit")}}</span>
+                        </div>
+                    </div>
+                    <div id="area_chart" class="graph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-8 col-md-12">
+            <div class="row clearfix">
+                <div class="col-lg-7 col-md-6">
+                    <div class="card tasks_report">
+                        <div class="header">
+                            <h2><strong>{{_("策略持仓")}}</strong> {{_("监控")}}</h2>
+                        </div>
+                        <div class="body row align-items-center" style="height: 482px;">
+                            <div id="pie_chart2" class="flot-chart"></div>
+                            <!--<canvas id="chart-area" height="150"></canvas>-->
+                            <!--<canvas id="pie_chart2" height="100"></canvas>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="card top-report" onclick="window.location.href='/admin/copy?fx_type=list_position';return false;">
+                        <div class="header">
+                            <h2><strong>{{_("现有持仓/预期持仓")}}</strong> {{_("监控")}}</h2>
+                        </div>
+                        <div id="bar_chart_11" class="body text-center" style="height: 198px;">
+                            <canvas id="bar_chart_10" height="150"></canvas>
+                            <!--<input id="knob_1" type="text" class="knob dial4" value="88" data-width="150" data-height="150" data-thickness="0.1" data-fgColor="#3982f6" readonly>-->
+                            <!--<canvas id="bar_chart_10" height="150"></canvas>-->
+                        </div>
+                    </div>
+                    <div class="card top-report" onclick="window.location.href='/admin/copy?fx_type=list_loging';return false;">
+                        <div class="header">
+                            <h2><strong>{{_("账户在线状态")}}</strong> {{_("监控")}}</h2>
+                        </div>
+                        <div id="bar_chart_21" class="body text-center" style="height: 198px;">
+                            <canvas id="bar_chart_20" height="150"></canvas>
+                            <!--<div id="m_bar_chart"></div>-->
+                            <!--<input id="knob_2" type="text" class="knob dial4" value="88" data-width="150" data-height="150" data-thickness="0.1" data-fgColor="#65a0eb" readonly>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="card weather2" onclick="window.location.href='/admin/copy?fx_type=list_net_ratio';return false;">
+                <div class="header">
+                    <h2><strong>{{_('已用预付款')}} : </strong> {{_('可用预付款')}}</h2>
+                </div>
+                <div id="Warninglabel_3" class="city-selected body">
+
+                    <div class="body">
+                        <!--<div id="pie_chart" class="flot-chart"></div>-->
+                        <canvas id="pie_chart" height="138"></canvas>
+                    </div>
+
+                </div>
+                <div class="body">
+                <table class="table table-striped m-b-0">
+                    <tbody>
+                    <tr>
+                        <td class="text-truncate"><i class="zmdi zmdi-account"></i> <span id="progress_account_1"></span></td>
+                        <td style="width: 61%;vertical-align: middle;">
+                            <div class="progress">
+                                <div id="progress_1" class="progress-bar text-body" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-truncate"><i class="zmdi zmdi-account"></i> <span id="progress_account_2"></span></td>
+                        <td style="width: 61%;vertical-align: middle;">
+                            <div class="progress" style="color: #ff9900">
+                                <div id="progress_2" class="progress-bar text-body" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-truncate"><i class="zmdi zmdi-account"></i> <span id="progress_account_3"></span></td>
+                        <td style="width: 61%;vertical-align: middle;">
+                            <div class="progress">
+                                <div id="progress_3" class="progress-bar text-body" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-truncate"><i class="zmdi zmdi-account"></i> <span id="progress_account_4"></span></td>
+                        <td style="width: 61%;vertical-align: middle;">
+                            <div class="progress">
+                                <div id="progress_4" class="progress-bar text-body" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

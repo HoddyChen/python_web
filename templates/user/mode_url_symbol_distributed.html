@@ -1,0 +1,19 @@
+<div class="container-fluid" style="padding-top:30px;">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12">
+            <div class="card tasks_report">
+                <div class="header">
+                    <h2><strong>{{_("交易")}}</strong> {{_("品种分布")}}</h2>
+                </div>
+                <div class="body row align-items-center">
+                    <div id="pie_chart2" class="flot-chart" style="width: 100%"></div>
+                    <!--<canvas id="chart-area" height="150"></canvas>-->
+                    <!--<canvas id="pie_chart2" height="100"></canvas>-->
+                </div>
+            </div>
+            <input id="prc_type" name="prc_type" type="hidden" value="{{page_main['prc_type']}}">
+            <input id="urlkey" name="urlkey" type="hidden" value="{{page_main['urlkey']}}">
+            <input id="uaid" name="uaid" type="hidden" value="{{page_main['uaid']}}">
+        </div>
+    </div>
+</div>

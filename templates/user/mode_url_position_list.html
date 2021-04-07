@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-lg col-md-3 col-sm-12 text-center">
+                        <h5><span id="position_profit" class="waves-effect"></span></h5>
+                        <small>{{_('利润')}}</small>
+                        </div>
+                        <div class="col-lg col-md-4 col-sm-12 text-center">
+                        <h5><span id="position_balance" class="waves-effect"></span></h5>
+                        <small>{{_('余额')}}</small>
+                        </div>
+                        <div class="col-lg col-md-4 col-sm-12 text-center">
+                        <h5><span id="position_quity" class="waves-effect"></span></h5>
+                        <small>{{_('净值')}}</small>
+                        </div>
+                        <div class="col-lg col-md-4 col-sm-12 text-center">
+                            <h5><span id="position_margin" class="waves-effect"></span></h5>
+                            <small>{{_('已用预付款')}}</small>
+                        </div>
+                        <div class="col-lg col-md-3 col-sm-12 text-center">
+                            <h5><span id="position_margin2" class="waves-effect"></span></h5>
+                            <small>{{_('可用预付款')}}</small>
+                        </div>
+                        <div class="col-lg col-md-3 col-sm-12 text-center">
+                            <h5><span id="position_ratio" class="waves-effect"></span></h5>
+                            <small>{{_('预付款比例')}} %</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_(page_main['title_type'])}}</strong>  </h2>
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&uaid={{page_main.get('uaid')}}">{{_('全部')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_day&uaid={{page_main.get('uaid')}}">{{_('今日')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_day&uaid={{page_main.get('uaid')}}">{{_('近一日')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_week&uaid={{page_main.get('uaid')}}">{{_('本周')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_week&uaid={{page_main.get('uaid')}}">{{_('近一周')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_month&uaid={{page_main.get('uaid')}}">{{_('本月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=last_month&uaid={{page_main.get('uaid')}}">{{_('上个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_month&uaid={{page_main.get('uaid')}}">{{_('近一个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_month3&uaid={{page_main.get('uaid')}}">{{_('近三个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_month6&uaid={{page_main.get('uaid')}}">{{_('近六个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_year&uaid={{page_main.get('uaid')}}">{{_('今年')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=last_year&uaid={{page_main.get('uaid')}}">{{_('去年')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_year&uaid={{page_main.get('uaid')}}">{{_('近一年')}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <table id="datatable01" class="table table-bordered table-striped table-hover dataTable" width="100%">
+                        <!--js-exportable-->
+                        <thead>
+                            <tr>
+                                {%for j in range(page_main['th_num'])%}
+                                <th></th>
+                                {%end for%}
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="prc_type" name="prc_type" type="hidden" value="{{page_main['prc_type']}}">
+    <input id="time_type" name="type" type="hidden" value="{{page_main['time_type']}}">
+    <input id="urlkey" name="urlkey" type="hidden" value="{{page_main['urlkey']}}">
+    <input id="uaid" name="uaid" type="hidden" value="{{page_main['uaid']}}">
+    <!-- #END# Exportable Table -->
+</div>

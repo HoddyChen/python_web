@@ -1,0 +1,74 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+{% include mode_css2.html%}
+{% end %}
+
+{% block middle %}
+<section class="content">
+    {% include mode_bread.html%}
+    {% include mode_posts_edit.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<script src="{{ static_url('assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js')}}"></script> <!-- Bootstrap Colorpicker Js -->
+<script src="{{ static_url('assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}"></script> <!-- Input Mask Plugin Js -->
+<script src="{{ static_url('assets/plugins/multi-select/js/jquery.multi-select.js')}}"></script> <!-- Multi Select Plugin Js -->
+<script src="{{ static_url('assets/plugins/jquery-spinner/js/jquery.spinner.js')}}"></script> <!-- Jquery Spinner Plugin Js -->
+<script src="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script> <!-- Bootstrap Tags Input Plugin Js -->
+<!--<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script> &lt;!&ndash; noUISlider Plugin Js &ndash;&gt;-->
+
+<!--<script src="{{ static_url('assets/js/pages/forms/advanced-form-elements.js')}}"></script>-->
+
+<script src="{{ static_url('assets/plugins/ckeditor/ckeditor.js')}}"></script> <!-- Ckeditor -->
+<script src="{{ static_url('assets/js/pages/forms/editors.js')}}"></script>
+
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script src="{{ static_url('assets/js/pages/ui/dialogs.js')}}"></script>
+<script>
+            // return e.preventDefault() // stops modal from being shown
+        function getCookie(name) {
+            var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+            return r ? r[1] : undefined;
+        }
+
+        function CKupdate() {
+               for (instance in CKEDITOR.instances)
+                   CKEDITOR.instances[instance].updateElement();
+           }
+
+        function my_submit(){
+            // args._xsrf = getCookie("_xsrf");
+            // document.getElementById("status_v").value = status_v;
+            // $("#status_v").attr("value",status_v);
+            var fx_type = $("#fx_type").val();
+            CKupdate();
+            $.ajax({
+                type: 'POST',
+                url: '/adminSZba2qjbydxVhMJpuKfy/posts?fx_type='+fx_type,
+                data: $("form").serialize(),
+                dataType: "JSON",
+                success:  function(re) {
+                    if (re.ok_status == 5) {
+                        swal(re.echo_title, re.echo, "success");
+                    }else if (re.ok_status < 5 && re.ok_status > 0) {
+                        swal({
+                            title: re.echo_title,
+                            text: re.echo,
+                            type: "error",
+                            html: true,
+                        })
+                    }else if (re.ok_status <= 0){
+                        swal(re.echo_title, "发生非法操作，请重新登陆再试", "error");
+                        window.location.href="/adminSZba2qjbydxVhMJpuKfy/";
+                    }else{
+                        swal(re.ok_status, "未知错误，请稍候再试", "error");
+                    }
+                }
+            });
+        }
+</script>
+{% end %}

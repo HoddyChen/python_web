@@ -1,0 +1,181 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix justify-content-center">
+        <div class="col-lg-9" style="margin-top: 30px;">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_(page_main['title_type'])}}</strong>  </h2>
+                </div>
+                <div class="body">
+                    <form id="buy_form" action="/admin/accounts?fx_type=buy_form" method="post">
+                        <input type="hidden" id="cnh" name="cnh" value="">
+                        <input type="hidden" id="fx_id" name="fx_id" value="{{page_main['fx_id']}}">
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-3 col-md-3">
+                                    <div class="radio m-r-20 text-center">
+                                        <div class="row clearfix social-widget" id="div_1" onclick="chickRadio(1);">
+                                            <div class="col-12">
+                                                <div class="card info-box-2 hover-zoom-effect facebook-widget" style="margin-bottom:10px;">
+                                                    <div class="icon"><i class="zmdi zmdi-n-1-square"></i></div>
+                                                    <div class="content">
+                                                        <h6><del>{{_('原价')}}: $ {{round(float(page_main['data']['info1'])*1.5,2)}}</del></h6>
+                                                        <h5>$ {{page_main['data']['info1']}}</h5>
+                                                        <small>{{_('低至')}} $ {{round(float(page_main['data']['info1'])/30,2)}} / {{_('天')}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="price10" value="{{round(float(page_main['data']['info1'])*1.5,2)}}">
+                                        <input type="hidden" id="price11" value="{{page_main['data']['info1']}}">
+                                        <input type="radio" name="daytype" id="radio1" class="with-gap" value="1" onclick="chickRadio(1);">
+                                        <label for="radio1" onclick="chickRadio(1);"> {{_('30天')}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <div class="radio m-r-20 text-center">
+                                        <div class="row clearfix social-widget"  id="div_2" onclick="chickRadio(2);">
+                                            <div class="col-12">
+                                                <div class="card info-box-2 hover-zoom-effect facebook-widget" style="margin-bottom:10px;">
+                                                    <div class="icon"><i class="zmdi zmdi-n-2-square"></i></div>
+                                                    <div class="content">
+                                                        <h6><del>{{_('原价')}}: $ {{round(float(page_main['data']['info1'])*1.5*3,2)}}</del></h6>
+                                                        <h5>$ {{round(float(page_main['data']['info2'])*3,2)}}</h5>
+                                                        <small>{{_('低至')}} $ {{page_main['data']['info2']}} / {{_('30天')}} , $ {{round(float(page_main['data']['info2'])/30,2)}} / {{_('天')}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="price20" value="{{round(float(page_main['data']['info1'])*1.5*3,2)}}">
+                                        <input type="hidden" id="price21" value="{{round(float(page_main['data']['info2'])*3,2)}}">
+                                        <input type="radio" name="daytype" id="radio2" class="with-gap" value="2"  onclick="chickRadio(2);">
+                                        <label for="radio2"  onclick="chickRadio(2);">{{_('90天')}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3">
+                                    <div class="radio m-r-20 text-center">
+                                        <div class="row clearfix social-widget" id="div_3" onclick="chickRadio(3);">
+                                            <div class="col-12">
+                                                <div class="card info-box-2 hover-zoom-effect facebook-widget" style="margin-bottom:10px;">
+                                                    <div class="icon"><i class="zmdi zmdi-n-3-square"></i></div>
+                                                    <div class="content">
+                                                        <h6><del>{{_('原价')}}: $ {{round(float(page_main['data']['info1'])*1.5*12,2)}}</del></h6>
+                                                        <h5>$ {{round(float(page_main['data']['info3'])*12,2)}}</h5>
+                                                        <small>{{_('低至')}} $ {{page_main['data']['info3']}} / {{_('30天')}}, $ {{round(float(page_main['data']['info3'])/30,2)}} / {{_('天')}}</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="price30" value="{{round(float(page_main['data']['info1'])*1.5*12,2)}}">
+                                        <input type="hidden" id="price31" value="{{round(float(page_main['data']['info3'])*12,2)}}">
+                                        <input type="radio" name="daytype" id="radio3" class="with-gap" value="3" checked="" onclick="chickRadio(3);">
+                                        <label for="radio3" onclick="chickRadio(3);">{{_('365天')}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-5 col-md-5">
+                                    <div class="d-flex bd-highlight">
+                                        <div class="mr-auto p-2 bd-highlight align-items-center">
+                                            <i class="zmdi zmdi-account"></i>
+                                            <span style="font-size:17px;">
+                                                {{_('策略账户')}} : {{page_main['current_account']}}
+                                                {% if page_main['current_ma_name'] != "null" %}
+                                                    ( {{page_main['current_ma_name']}} )
+                                                {% end if%}
+                                            </span>
+                                        </div>
+                                        <input type="hidden" class="form-control fx_color1" value="{{page_main['current_account'] if page_main['current_ma_name']== 'null' else page_main['current_ma_name']}}" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-5 col-md-5">
+                                    <div class="d-flex bd-highlight">
+                                        <div class="mr-auto p-2 bd-highlight align-items-center">
+                                            <i class="zmdi zmdi-shopping-cart-plus"></i>
+                                            <span style="font-size:17px;">{{_('购买方案')}} :
+                                                <span class="badge badge-success">{{page_main['data']['piname']}}
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-5 col-md-5">
+                                     <div class="radio m-r-20">
+                                         <input id="radio4" type="radio" name="datetype" class="with-gap" value="0">
+                                         <label for="radio4" title="{{_('新增账户数并即时生效')}}"><span style="font-size:17px;">{{_('新增')}}</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                         <input id="radio5" type="radio" name="datetype" class="with-gap" value="1" >
+                                         <label for="radio5" title="{{_('账户数叠加到现有到期时间之后生效')}}"><span style="font-size:17px;">{{_('续费')}}</span></label>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-5 col-md-5">
+                                     <div class="d-flex bd-highlight">
+                                        <div class="mr-auto p-2 bd-highlight"><i class="zmdi zmdi-accounts"></i>
+                                            <span style="font-size:17px;">{{_('跟单账户数量')}}</span>
+                                        </div>
+                                     </div>
+                                    <input onchange="calculated_value();" id="fx_num" type="number" class="col-6 form-control fx_color1" name="fx_num" value="1" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-5 col-md-5">
+                                     <div class="d-flex bd-highlight">
+                                         <div class="mr-auto p-2 bd-highlight">
+                                             <h5><del>{{_('原价')}}：$ <span id="echo_info"></span></del></h5>
+                                             <h5 class="fx_color1">{{_('仅需')}}：$ <span id="echo_info2"></span></h5>
+                                             <input type="hidden" id="original_price_usd" name="original_price_usd" value="">
+                                             <input type="hidden" id="original_price_cnh" name="original_price_cnh" value="">
+                                             <input type="hidden" id="deal_price_usd" name="deal_price_usd" value="">
+                                             <input type="hidden" id="deal_price_cnh" name="deal_price_cnh" value="">
+                                         </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-5 col-md-5">
+                                     <div class="d-flex bd-highlight">
+                                        <div class="mr-auto p-2 bd-highlight"><i class="zmdi zmdi-card"></i>
+                                            <span style="font-size:17px;">{{_('支付')}}</span></div>
+                                         <input id="fx_id2" name="fx_id2" type="hidden" value="">
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row clearfix justify-content-center">
+                                <div class="col-lg-2 col-md-2">
+                                    <button type="button" id="button1" class="btn" style="padding: 5px;background-color: #9e9e9e00;border: 1px solid #9E9E9E;" onclick="form_submit(1);"> <img src="{{ static_url('img/alipay.png')}}"></button>
+                                </div>
+                                <div class="col-lg-2 col-md-2">
+                                    <button type="button" id="button2" class="btn" style="padding: 5px;background-color: #9e9e9e00;border: 1px solid #9E9E9E;" onclick="form_submit(2);"> <img src="{{ static_url('img/weixin.png')}}"></button>
+                                </div>
+                                <div class="col-lg-2 col-md-2">
+                                    <button type="button" id="button3" class="btn" style="padding: 5px;background-color: #9e9e9e00;border: 1px solid #9E9E9E;" onclick="form_submit(3);"> <img src="{{ static_url('img/paypal.png')}}"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Exportable Table -->
+</div>

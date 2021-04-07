@@ -1,0 +1,83 @@
+<!-- CKEditor -->
+<div class="container-fluid">
+    <form id="form_validation" method="POST" action="">
+        <div class="row clearfix justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="header">
+                        <h2> <strong>{{_('修改对外展示状态')}}</strong> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <!--<button class="btn btn-raised btn-primary btn-round waves-effect" type="button">{{_('保存更新')}}</button>-->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    <input type="text" class="form-control" placeholder="{{_('账号')}}" name="account" required value="{{'' if page_main.get('account') == None else page_main.get('account')}}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    <select class="form-control show-tick" name="pu_status">
+                                    {% if page_main.get('pu_status') == None %}
+                                        <option value="0" selected>-- {{_('选择对外展示状态')}} --</option>
+                                    {% end if %}
+                                    {% if page_main.get('pu_status') == 1 %}
+                                        <option value="1" selected>-- {{_('对外展示: 生效')}} --</option>
+                                    {% else %}
+                                        <option value="1">-- {{_('对外展示: 生效')}} --</option>
+                                    {% end if %}
+                                    {% if page_main.get('pu_status') == 0 %}
+                                        <option value="0" selected>-- {{_('对外展示: 不显示')}} --</option>
+                                    {% else %}
+                                        <option value="0">-- {{_('对外展示: 不显示')}} --</option>
+                                    {% end if %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    <input type="text" class="form-control" placeholder="{{_('查看密码')}}" name="urlpass" required value="{{'' if page_main.get('url_pass') == None else page_main.get('url_pass')}}">
+                                    <input name="fx_id" value="{{page_main.get('fx_id')}}" type="hidden">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    {% raw xsrf_form_html() %}
+                                    <button id="button_enter" class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit()">{{_('保存更新')}}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <BR>
+                                <div class="form-group form-float">
+                                    对外展示网址 <a href="javascript:chick_copy_url('url_val');" class="fx_color1" title="{{_('点击复制')}}URL"><i class="zmdi zmdi-copy"></i></a><BR><small><span id="url_val_span">{{"" if page_main.get('url_key') == None else "http://www.6copy.com/h?k=" + page_main.get('url_key')}}</span></small>
+                                        <input id="url_val" value="{{'' if page_main.get('url_key') == None else 'http://www.6copy.com/h?k=' + page_main.get('url_key')}}" type="hidden">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="form-group form-float">
+                                    复制以上网址给需要的朋友，可以观看账户变动，其中持仓记录将延迟120分钟显示。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- #END# CKEditor -->

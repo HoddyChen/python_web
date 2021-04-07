@@ -1,0 +1,27 @@
+{% if my_form.errors %}
+<div class="row alert alert-danger justify-content-between" role="alert" id="login_tags">
+     <span id="login_tags1">
+             {% for field_errors in my_form.errors %}
+                {% for errors in my_form[field_errors].errors %}
+                    ✗ {{ errors }}<BR>
+                {% end for %}
+             {% end for %}
+     </span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+            <i class="zmdi zmdi-close"></i>
+            </span>
+        </button>
+</div>
+{% elif page_main.get('alert_text') != None %}
+<div class="row alert alert-info justify-content-between" role="alert" id="login_tags">
+     <span id="login_tags1">
+         ✓ {{ page_main['alert_text'] }}
+     </span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">
+            <i class="zmdi zmdi-close"></i>
+            </span>
+        </button>
+</div>
+{% end if %}

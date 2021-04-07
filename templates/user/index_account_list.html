@@ -1,0 +1,635 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+
+<!--<link rel="stylesheet" href="{{ static_url('assets/plugins/nouislider/nouislider.min.css')}}">-->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_account_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+<script >
+    $(document).ready(function(){
+        loadData(9);
+        Strategy_count();
+    });
+
+    function loadData() {
+        var fx_flag = $("#fx_flag").val();
+        //Range Example
+        var myTable = $('#datatable01').DataTable({
+            order: [[2, "desc"]],
+            bProcessing: true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide: true, //是否启动服务器端数据导入
+            searching: true,
+            stateSave: false,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            // pageLength: 10,
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength: 10, //默认显示的记录数
+            bPaginate: true, //是否显示（应用）分页器
+            bInfo: true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/user/copy?fx_type=list_account&fx_flag=' + fx_flag + '&nt=' + Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: "{{_('跟单账户')}}",
+                    data: 'account',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: "{{_('姓名')}}",
+                    data: 'allname',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: "{{_('授权状态')}}",
+                    data: 'follow_flag',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.follow_flag == 1) {
+                            var e = '<button id="button'+ row.account +'" class="btn btn-primary btn-icon btn-icon-mini btn-round" onclick="edit_authorization(' + row.account + ',' + row.uaid + ',0);"> <i id="i'+ row.account + '" class="zmdi zmdi-cloud-done"></i></button>';
+                        } else {
+                            var e = '<button id="button'+ row.account +'" class="btn btn-slategray btn-icon btn-icon-mini btn-round" onclick="edit_authorization(' + row.account + ',' + row.uaid + ',1);"><i id="i'+ row.account +'" class="zmdi zmdi-cloud-off"></i></button>';
+                        }
+                        return e;
+                    }
+                },
+                {
+                    title: "{{_('跟单参数')}}",
+                    data: 'uaid',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return "<button class=\"btn btn-primary btn-icon btn-icon-mini btn-round\" data-type=\"ajax-loader\" onclick=\"edit_parameter(" + row.account + "," + row.uaid + ");\"><i class=\"zmdi zmdi-settings\"></i></button>";
+                    }
+                },
+                {
+                    title: "{{_('对外展示')}}",
+                    data: 'uaid',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return "<a href=\"/user/info?fx_type=edit_url_pass&fx_id=" + row.uaid + "\"><button class=\"btn btn-primary btn-icon btn-icon-mini btn-round\" data-type=\"ajax-loader\"><i class=\"zmdi zmdi-format-list-bulleted\"></i></button></a>";
+                    }
+                },
+                {
+                    title: "{{_('删除')}}",
+                    data: 'follow_flag',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.follow_flag == 0) {
+                            return "<button class=\"btn btn-primary btn-icon btn-icon-mini btn-round\" data-type=\"ajax-loader\" onclick=\"delete_follow(" + row.account + "," + row.uaid + "," + row.follow_flag + ");\"><i class=\"zmdi zmdi-delete\"></i></button>";
+                        }else {
+                            return "<button class=\"btn btn-slategray btn-icon btn-icon-mini btn-round\" data-type=\"ajax-loader\" title='取消授权后，才可以删除'><i class=\"zmdi zmdi-delete\"></i></button>";
+                        }
+
+                    }
+                }
+
+            ],
+            fnCreatedRow: function (nRow, aData, iDataIndex) {
+                $(nRow).attr('id', 'my' + aData.account); // or whatever you choose to set as the id
+            },
+            language: { //自定义描述....
+                "sProcessing": "{{_('正在获取数据, 请稍后')}}...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "{{_('没有找到数据')}}",
+                "sInfo": "{{_('从')}} _START_ {{_('到')}} _END_ {{_('条记录')}} {{_('总记录数为')}} _TOTAL_ {{_('条')}}",
+                "sInfoEmpty": "{{_('记录数为0')}}",
+                "sInfoFiltered": "({{_('全部记录数')}} _MAX_ {{_('条')}})",
+                "sInfoPostFix": "",
+                "sSearch": "{{_('全局搜索')}}",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "{{_('第一页')}}",
+                    "sPrevious": "{{_('上一页')}}",
+                    "sNext": "{{_('下一页')}}",
+                    "sLast": "{{_('最后一页')}}"
+                },
+                "loadingRecords": "{{_('请稍候-正在加载')}}...",
+                "processing": "{{_('数据库当前很忙')}}",
+                "search": "{{_('关键字搜索')}} _INPUT_ {{_('应用于表格')}}"
+            },
+        });
+        // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+
+    }
+
+    function Strategy_count() {
+    // 跟单用户统计
+        $.ajax({
+            type: 'get',
+            url: '/user/strategy?fx_type=master_max_num',
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    document.getElementById("list_master_count_ok").innerHTML = re.master_count_ok.toString();
+                    document.getElementById("list_master_max_num").innerHTML = re.master_max_num.toString();
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+                else {
+                    $("#StrategyList").text("{{_('暂无策略账号')}}");
+                    $("#StrategyList").addClass("text-center");
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","{{_('跟单用户统计获取异常，稍后重试')}}","bottom","center",null,null);//错误警示
+            }
+        });
+    }
+
+    function edit_authorization(account, fx_id, flag) {
+        var flag_str = "";
+        if(flag == 1){
+            flag_str = "{{_('授权')}}";
+        }else {
+            flag_str = "{{_('取消授权')}}";
+        }
+
+        swal.fire({
+            title: "{{_('请确认')}}？",
+            text: flag_str + " " + account,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            preConfirm: function() {
+                return new Promise(function(resolve, reject) {
+                    // alert("123");
+                    $.ajax({
+                        type: 'post',
+                        url: '/user/strategy?fx_type=edit_authorization&fx_id=' + fx_id,
+                        data: {},
+                        cache: false,
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if (re.reponse_status == 5) {
+                                var button = $("#button" + account.toString());
+                                var i = $("#i" + account.toString());
+                                if(re.echo == 1){
+                                    swal.fire("{{_('授权成功')}}");
+                                    button.removeClass("btn-slategray");
+                                    button.addClass("btn-primary");
+                                    i.removeClass("zmdi-cloud-off");
+                                    i.addClass("zmdi-cloud-done");
+                                    button.unbind('click').removeAttr('onclick').click(function(){
+                                        edit_authorization(account.toString(), fx_id.toString() ,0);
+                                    });
+                                }else {
+                                    swal.fire("{{_('授权取消成功')}}");
+                                    button.removeClass("btn-primary");
+                                    button.addClass("btn-slategray");
+                                    i.removeClass("zmdi-cloud-done");
+                                    i.addClass("zmdi-cloud-off");
+                                    button.unbind('click').removeAttr('onclick').click(function(){
+                                        edit_authorization(account.toString(), fx_id.toString() ,1);
+                                    });
+                                }
+                            }else if (re.reponse_status == -1){
+                                login_time_out();
+                            }else if (re.reponse_status == -6){
+                                swal.fire("{{_('可用授权不足,请购买更多的可用授权，授权失败')}}！");
+                            }else{
+                                swal.fire(re.echo);
+                            }
+                        },
+                        error:function(re) {
+                            // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                            swal.fire("{{_('未知错误,授权失败,稍后请重试')}}！");
+                        }
+                    });
+                    resolve();
+                });
+            },
+            allowOutsideClick: false
+        }).then(function (re) {
+            // alert(re.reponse_status);
+        })
+    }
+
+    //修改参数
+    function edit_parameter(account, fx_id) {
+        swal.fire({
+            html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
+                "    <div class=\"card\">\n" +
+                "        <div class=\"header\">\n" +
+                "            <h2><strong>{{_('跟单参数')}}</strong> {{_('设置')}}(<span id=\"accout_id\"></span> )</h2>\n" +
+                "        </div>\n" +
+                "        <div class=\"body\">\n" +
+                "            <form class=\"form\" action=\"\" method=\"post\" name=\"parameter_form\">\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('最大延时')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"><small>5 - 99999 (S)</small></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group form-float\">\n" +
+                "                                <input name=\"maxtime\" type=\"text\" id=\"maxtime\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('在策略方开单成功后，多少秒内，允许跟单账户进行同步开单，超时则不再开单')}}。\" required>\n" +
+                "                                <!--<div class=\"help-info text-right\"><small>Min. Value: 10, Max. Value: 200</small></div>-->\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('允许滑点')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"><small>1 - 300 </small></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\">\n" +
+                "                                <input name=\"maxloss\" type=\"text\" id=\"maxloss\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('允许买卖订单的最大价格滑点。超过限制则不成交订单')}}。\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('最大单量')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"><small>1 - <span id=\"max_num\"></span></small></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\">\n" +
+                "                                <input name=\"maxnum\" type=\"text\" id=\"maxnum\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('账户上最大的持仓数量，超过则不再跟单。(等于0，则不开任何单)')}}\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex checkbox\" style=\"padding: 40px 0px 0px;\">\n" +
+                "                                <input id=\"reflex\" type=\"checkbox\" name='reflex' class='fx_color1' value='1'>\n" +
+                "                                <label for=\"reflex\">{{_('反向跟单')}}</label>&nbsp;&nbsp;\n" +
+                "                                <input id=\"tpsl_flag\" type=\"checkbox\" name='tpsl_flag' class='fx_color1' value='1'>\n" +
+                "                                <label for=\"tpsl_flag\">{{_('止损止盈')}}</label>\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix warning_border_gold\">\n" +
+                "                       <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('固定手数开单')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"><small>0.01-<span id='fx_max'></span> </small></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\">\n" +
+                "                                <input name=\"fixed\" type=\"text\" id=\"fixed\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('单个订单手数，按指定的固定值来开单,固定手数与倍数只能二选一')}}\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('倍数开单')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"><small>0.001-500 </small></div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\">\n" +
+                "                                <input name=\"percent\" type=\"text\" id=\"percent\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('相对于策略订单手数的倍数')}}\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                             <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('最小手数')}}</div>\n" +
+                "                                 <div class=\"p-2 bd-highlight\"><small><span id='fx_minlot'></span> {{_('高优先级')}} </small></div>\n" +
+                "                             </div>\n" +
+                "                            <input name=\"rate_min\" type=\"text\" id=\"rate_min\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('控制着所有正要开仓的订单，每个订单的手数不管上面的设置如何，计算结果手数，如果小于这个最小手数，则系统按这个最小手数的值来开单')}}。\">\n" +
+                "                        </div>\n" +
+                "                        <div class=\"col-lg-6 col-md-6\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('最大手数')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\"><small><span id='fx_maxlot'></span> {{_('高优先级')}} </small> </div>\n" +
+                "                            </div>\n" +
+                "                            <input name=\"rate_max\" type=\"text\" id=\"rate_max\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('控制着所有正要开仓的订单，每个订单的手数不管上面的设置如何，计算结果手数，如果大于这个最大手数，则系统按这个最大手数的值来开单')}}\">\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div id=\"nouislider_range_example\"></div>\n" +
+                "                <div class=\"d-flex bd-highlight\" style=\"padding: 21px 0px 0px;\">\n" +
+                "                    <div class=\"mr-auto p-2 bd-highlight\">{{_('风控线')}}</div>\n" +
+                "                    <div class=\"p-2 bd-highlight\"><small>{{_('低于填写的金额,则邮件报警')}} </small></div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <input name=\"rate\" type=\"text\" id=\"Wind_control_line\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('填写风控金额，预警分为两个阶段')}}，\n" +
+                "A、{{_('净值进入于风控金额之上百分十区间时，预警一次')}},\n" +
+                "{{_('例：填写9000，则在低于10000时，第一次预警')}}；\n" +
+                "B、{{_('净值低于风控金额时，预警一次')}}；\n" +
+                "C、{{_('上述条件满足，则每日会预警一次，直到条件不满足')}}。\n\">\n" +
+                "                </div>\n" +
+                "            </form>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            confirmButtonText:"{{_('修改')}}",
+            cancelButtonText:"{{_('取消')}}",
+            allowEscapeKey:true,
+            allowOutsideClick: true,
+            onOpen: function() {
+                document.getElementById("accout_id").innerHTML = account;
+                get_parameter(fx_id);
+            },
+            preConfirm: function() {
+                return new Promise(function (resolve, reject) {
+                    edit_parameter_form(fx_id);
+                });
+            }
+        }).then(function (re) {
+            // alert(re.reponse_status);
+            // swal.showLoading();
+        })
+    }
+
+    function get_parameter(fx_id) {
+        $.ajax({
+            type: 'get',
+            url: '/user/strategy?fx_type=get_parameter&fx_id=' + fx_id,
+            data: {},
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    if (re.maxtime == null){
+                        re.maxtime = 10;
+                        showNotification("bg-blue","{{_('未设置跟单参数，已经导入默认值')}}！","bottom","center",null,null);
+                    }
+                    $("#maxtime").val(re.maxtime);
+                    if (re.maxloss == null){
+                        re.maxloss = 30;
+                    }
+                    $("#maxloss").val(re.maxloss);
+                    if (re.maxnum == null){
+                        re.maxnum = 5;
+                    }
+                    $("#maxnum").val(re.maxnum);
+                    if (re.info10 == 0 || re.info10 == "0"){
+                        re.info10 = 5;
+                    }
+                    $("#max_num").text(re.info10);
+                    // $("#reflex").val(re.reflex);//反向
+                    if(re.info12 == 1 || re.info12 == "1"){
+                        if(re.reflex == 1){
+                            $("#reflex").attr("checked","checked");
+                        }else {
+                            $("#reflex").removeAttr("checked");
+                        }
+                    }else {
+                        $("#reflex").removeAttr("checked");
+                        document.getElementById("reflex").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                    }
+                    if(re.info11 == 1 || re.info11 == "1") {
+                        if (re.tpsl_flag == 1) {
+                            $("#tpsl_flag").attr("checked", "checked");
+                        } else {
+                            $("#tpsl_flag").removeAttr("checked");
+                        }
+                    }else {
+                        $("#tpsl_flag").removeAttr("checked");
+                        document.getElementById("tpsl_flag").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                    }
+
+                    if (re.fixed == null && re.percent == null){
+                       re.fixed = 0;
+                       re.percent = 0;
+                    }
+                    $("#fixed").val(re.fixed);
+                    $("#percent").val(re.percent);
+                    if (re.minlot == 0){
+                        re.minlot = 0.01;
+                    }
+                    if (re.maxlot == 0){
+                        re.maxlot = 10;
+                    }
+                    if (re.rate_min == null){
+                        re.rate_min = re.minlot;
+                    }
+                    $("#rate_min").val(re.rate_min);
+                    if (re.rate_max == null){
+                        re.rate_max = re.maxlot;
+                    }
+                    $("#rate_max").val(re.rate_max);
+                    if (re.rate == null){
+                        re.rate = 0;
+                    }
+                    $("#Wind_control_line").val(re.rate);
+
+                    $("#fx_max").text(re.maxlot.toString());
+                    $("#fx_minlot").text(re.minlot.toString() + "~");
+                    $("#fx_maxlot").text("~" + re.maxlot.toString());
+                    if(re.pnum > 0 && (re.fixed > 0 || re.percent > 0)){
+                        $("#fixed").attr("readOnly","true");
+                        $("#percent").attr("readOnly","true");
+                        $("#rate_min").attr("readOnly","true");
+                        $("#rate_max").attr("readOnly","true");
+                        document.getElementById("reflex").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                    }
+                    if(re.allowed_sign == 0){
+                        swal.disableButtons();
+                        $("#maxtime").attr("readOnly","true");
+                        $("#maxloss").attr("readOnly","true");
+                        $("#maxnum").attr("readOnly","true");
+                        $("#max_num").attr("readOnly","true");
+                        $("#reflex").attr("readOnly","true");
+                        $("#fixed").attr("readOnly","true");
+                        $("#percent").attr("readOnly","true");
+                        $("#rate_min").attr("readOnly","true");
+                        $("#rate_max").attr("readOnly","true");
+                        $("#Wind_control_line").attr("readOnly","true");
+                        document.getElementById("reflex").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                        document.getElementById("tpsl_flag").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                        // showNotification("bg-blue","跟单用户未授权修改权限，处于只读状态。","bottom","center",null,null);//错误警示
+                        // setTimeout(function() {
+                        //     showNotification("bg-blue","通过点击弹窗区域后，按键盘“ESC”键可退出弹窗！","bottom","center",null,null);
+                        // },1000);
+                    }else {
+                        loadNoUISlider(re.rate_min, re.rate_max, re.minlot, re.maxlot);
+                        input_click();
+                    }
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                } else if (re.reponse_status == 0) {
+                    showNotification("bg-red","{{_('跟单参数,获得数据异常,请重试')}}","bottom","center",null,null);//错误警示
+                    swal.close();
+                } else {
+                    showNotification("bg-red",re.echo,"center",null,null);//错误警示
+                    swal.close();
+                }
+            },
+            error: function (re) {
+                showNotification("bg-red","{{_('跟单参数,获得数据异常,请重试')}}","bottom","center",null,null);//错误警示
+                swal.close();
+            }
+        });
+    }
+
+    //修改参数
+    function edit_parameter_form(fx_id) {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/user/parameter?fx_type=edit&fx_id=' + fx_id,
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    swal.fire("{{_('修改成功')}}");
+                    // resolve();
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,授权失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+    function loadNoUISlider(start_v1, start_v2 , mix_num, max_num) {
+            var rangeSlider = document.getElementById('nouislider_range_example');
+        noUiSlider.create(rangeSlider, {
+            start: [start_v1, start_v2],
+            connect: true,
+            range: {
+                'min': mix_num,
+                'max': max_num
+            }
+        });
+        getNoUISliderValue(rangeSlider, false);
+    }
+
+    function getNoUISliderValue(slider, percentage) {
+        slider.noUiSlider.on('update', function () {
+            var val = slider.noUiSlider.get();
+            var str_v = "";
+            if (percentage) {
+                val = parseInt(val);
+                val = val + "%";
+            }else {
+                str_v = val.toString().split(",");
+                // str_v = "最小手数: " + str_v[0] + " 最大手数: " + str_v[1];
+                $("#rate_min").val(str_v[0]);
+
+                $("#rate_max").val(str_v[1]);
+                return;
+            }
+            $(slider).parent().find('span.js-nouislider-value').text(str_v);
+        });
+    }
+
+    function input_click() {
+        $("#percent").on("click", function () {
+            $("#fixed").val(0);
+        })
+        $("#fixed").on("click", function () {
+            $("#percent").val(0);
+        })
+    }
+
+    // 删除策略
+    function delete_follow(account, fx_id, flag) {
+        if(flag == 1){
+            swal.fire("{{_('取消授权后,才能删除')}}！");
+        }
+        var flag_str = "";
+        flag_str = "{{_('请确认')}}？";
+        if(fx_id == 0){
+            title_str = "{{_('跟单账户无效')}}";
+        }else {
+            title_str = "{{_('删除跟单账户')}}";
+        }
+        swal.fire({
+            title: title_str,
+            text: flag_str ,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            preConfirm: function() {
+                return new Promise(function(resolve, reject) {
+                    // alert("123");
+                    $.ajax({
+                        type: 'post',
+                        url: '/user/strategy?fx_type=delete_follow_flag&fx_id=' + fx_id,
+                        data: {},
+                        cache: false,
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if (re.reponse_status == 5) {
+                                swal.fire("{{_('删除跟单账户')}}" + account.toString() + "{{_('操作成功')}}");
+                                setTimeout(function() {
+                                    window.location.reload();
+                                    scrollTo(0,0);
+                                },1000);
+                            }else if (re.reponse_status == -1){
+                                login_time_out();
+                            }else{
+                                swal.fire(re.echo);
+                            }
+                        },
+                        error:function(re) {
+                            // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                            swal.fire("{{_('未知错误,授权失败,稍后请重试')}}！");
+                        }
+                    });
+                    resolve();
+                });
+            },
+            allowOutsideClick: false
+        }).then(function (re) {
+            // alert(re.reponse_status);
+        })
+    }
+</script>
+{% end %}

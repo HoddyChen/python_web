@@ -1,0 +1,53 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+{% include mode_css2.html%}
+{% end %}
+
+{% block middle %}
+<section class="content">
+    {% include mode_bread.html%}
+    {% include mode_edit_pass.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!--{% include mode_js3.html%}-->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script src="{{ static_url('assets/js/pages/ui/dialogs.js')}}"></script>
+<script>
+            // return e.preventDefault() // stops modal from being shown
+        function getCookie(name) {
+            var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+            return r ? r[1] : undefined;
+        }
+        function my_submit(){
+            // args._xsrf = getCookie("_xsrf");
+            $.ajax({
+                type: 'POST',
+                url: '/conadmin/admin_edit?type=edit_pass',
+                data: $("form").serialize(),
+                dataType: "JSON",
+                success:  function(re) {
+                    if (re.ok_status == 5) {
+                        swal("修改密码", "密码修改成功", "success");
+                    }else if (re.ok_status < 5) {
+                        swal({
+                            title: "修改密码",
+                            text: re.echo,
+                            type: "error",
+                            html: true
+                        })
+                    }else if (re.ok_status <= 0){
+                        swal("修改密码", "发生非法操作，请重新登陆再试", "error");
+                        window.location.href="/conadmin/logout"
+                    }else{
+                        swal("修改密码", "未知错误，请稍候再试", "error");
+                    }
+                }
+            });
+        }
+</script>
+{% end %}

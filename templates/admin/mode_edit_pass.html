@@ -1,0 +1,52 @@
+<!-- CKEditor -->
+<div class="container-fluid">
+    <form id="form_validation" method="POST" action="/conadmin/admin_edit?type=edit_pass">
+        <div class="row clearfix justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="header">
+                        <h2> <strong>{{_('密码')}}{{_('修改')}}</strong> <small></small> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <!--<button class="btn btn-raised btn-primary btn-round waves-effect" type="button">{{_('保存更新')}}</button>-->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    <input type="password" class="form-control" placeholder="{{_('旧密码')}}" name="old_password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    <input type="password" class="form-control" placeholder="{{_('新密码')}}" name="password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    <input type="password" class="form-control" placeholder="{{_('确认')}}{{_('密码')}}" name="password2" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="form-group form-float">
+                                    {% raw xsrf_form_html() %}
+                                    <button class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit()">{{_('保存更新')}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- #END# CKEditor -->

@@ -1,0 +1,29 @@
+<aside id="leftsidebar" class="sidebar">
+    <ul class="nav nav-tabs">
+        <li><a class="navbar-brand" href="index"><img src="{{ static_url('img/logo32.png')}}" alt="fxcns"></a></li>
+        <li class="nav-item" style="text-align: center;margin-top: 6px;font-size: 21px;">{{_('返佣管理系统')}}</li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane stretchRight active" id="dashboard">
+            <div class="menu">
+                <ul class="list">
+                    <!--<li class="header">{{_('主控面板')}}</li>-->
+                    <li class="active open"><a href="/swissquote/proxy?fx_type=open"><i class="zmdi zmdi-home"></i><span> {{_('瑞讯银行瑞士账户申请')}}</span></a></li>
+                    <li> <a href="/swissquote/proxy_info?fx_type=edit_proxy"><i class="zmdi zmdi-globe-alt"></i><span>{{_('返佣资料修改')}}</span> </a>
+                    </li>
+                    <li> <a href="/swissquote/proxy_info?fx_type=list_proxy_account"><i class="zmdi zmdi-group-work"></i><span>{{_('账号管理')}}</span> </a>
+                    </li>
+                    <li> <a href="/swissquote/proxy?fx_type=list_proxy_order_count"><i class="zmdi zmdi-chart"></i><span>{{_('佣金统计')}}</span> </a>
+                    </li>
+                    <li> <a href="/swissquote/proxy?fx_type=list_settlement"><i class="zmdi zmdi-money-box"></i><span>{{_('结算列表')}}</span> </a>
+                    </li>
+                    <li> <a href="https://www.fxcns.com/home/index-blog_list-prc_type-1.html" target="_blank"><i class="zmdi zmdi-help-outline"></i><span>{{_('帮助与常见问题')}}</span> </a>
+                    </li>
+                    <li><a target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=68660728&site=qq&menu=yes"><img border="0" src="https://wpa.qq.com/pa?p=2:68660728:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></li>
+                    <li><a href="javascript:{{'set_lang(\''+ page_main.get('lang') + '\')'}};"><i class ="zmdi zmdi-view-subtitles"></i><span>{{_('English')}}</span></a></li>
+                    <li>&nbsp;&nbsp;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

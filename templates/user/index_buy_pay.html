@@ -1,0 +1,40 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_buy_pay.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+
+
+<script>
+    window.onload =send_pay();
+    function send_pay() {
+    // 提示
+        $.ajax({
+            type: 'post',
+            url: '/user/accounts?fx_type=send_pay',
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+            }
+        });
+    }
+</script>
+{% end %}

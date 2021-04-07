@@ -1,0 +1,1034 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-01-27 13:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Hoddy <cs@fxcns.com>\n"
+"Language-Team: Hoddy <cs@fxcns.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp936\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: mode_login.html:12
+msgid "外汇跟单系统管理区"
+msgstr "Forex Copy Management System"
+
+msgid "邮箱"
+msgstr "Email"
+
+msgid "发送验证码"
+msgstr "Send The Code"
+
+msgid "验证码"
+msgstr "Verification Code"
+
+#: mode_login.html:32
+msgid "登录"
+msgstr "Login"
+
+msgid "Recaptcha人机验证失败！请稍后10分钟再试"
+msgstr "Recaptcha Man-machine verification failed! Please try again in 10 minutes"
+
+msgid "验证码发送中"
+msgstr "Verification code sending"
+
+msgid "验证码发送成功！请查收"
+msgstr "Verification code sent successfully! please check"
+
+msgid "验证码发送失败！请稍后再试"
+msgstr "Verification code sending failed! Please try again later"
+
+msgid "策略邮箱不存在！"
+msgstr "The policy mailbox does not exist!"
+
+msgid "发生非法操作，请重新登陆再试"
+msgstr "Illegal operation occurred, please log in again and try again"
+
+msgid "未知错误，请稍候再试"
+msgstr "Unknown error, please try again later"
+
+msgid "跟单账户"
+msgstr "Copy Account"
+
+msgid "跟单参数"
+msgstr "Copy Parameter"
+
+msgid "授权状态"
+msgstr "Authorization status"
+
+msgid "姓名"
+msgstr "Name"
+
+msgid "正在获取数据, 请稍后"
+msgstr "Fetching data, please wait"
+
+msgid "没有找到数据"
+msgstr "No data found"
+
+msgid "从"
+msgstr "From"
+
+msgid "到"
+msgstr "To"
+
+msgid "条记录"
+msgstr "Records"
+
+msgid "总记录数为"
+msgstr "Total number of records"
+
+msgid "条"
+msgstr "Records"
+
+msgid "记录数为0"
+msgstr "Number of records is 0"
+
+msgid "全部记录数"
+msgstr "Total records"
+
+msgid "全局搜索"
+msgstr "Global search"
+
+msgid "第一页"
+msgstr "First page"
+
+msgid "上一页"
+msgstr "Previous"
+
+msgid "下一页"
+msgstr "Next"
+
+msgid "最后一页"
+msgstr "Last page"
+
+msgid "请稍候-正在加载"
+msgstr "Please wait - loading"
+
+msgid "数据库当前很忙"
+msgstr "DataTables is currently busy"
+
+msgid "关键字搜索"
+msgstr "Apply filter"
+
+msgid "应用于表格"
+msgstr "to table"
+
+msgid "暂无策略账号"
+msgstr "No strategy account"
+
+msgid "跟单用户统计获取异常，稍后重试"
+msgstr "Follow the statistics of the single user, and try again later"
+
+msgid "订单ID"
+msgstr "Order ID"
+
+msgid "商品或服务"
+msgstr "Goods or Services"
+
+msgid "账户数"
+msgstr "Number of accounts"
+
+msgid "金额"
+msgstr "Amount"
+
+msgid "订单时间"
+msgstr "Order time"
+
+msgid "生效开始"
+msgstr "Effective"
+
+msgid "结束时间"
+msgstr "End Time"
+
+msgid "状态"
+msgstr "Status"
+
+msgid "已支付"
+msgstr "Paid"
+
+msgid "我要支付"
+msgstr "I want to pay"
+
+msgid "错误"
+msgstr "Error"
+
+msgid "保存成功"
+msgstr "Saved successfully"
+
+msgid "提交信息"
+msgstr "Submit Information"
+
+msgid "未知错误"
+msgstr "unknown mistake"
+
+msgid "请稍候再试"
+msgstr "Please try again later"
+
+msgid "人民币当前价格获取异常，稍后刷新"
+msgstr "RMB current price gets abnormal, refresh later"
+
+msgid "请选择购买方案是新增或续费的方式？"
+msgstr "Please select the purchase plan to add or renew?"
+
+msgid "在线状态"
+msgstr "Online status"
+
+msgid "密码修改成功"
+msgstr "Password reset OK"
+
+msgid "修改资料"
+msgstr "Modify information"
+
+msgid "修改密码"
+msgstr "change Password"
+
+msgid "结余"
+msgstr "Balance"
+
+msgid "信用额"
+msgstr "Credit"
+
+msgid "净值"
+msgstr "Equity"
+
+msgid "已用预付款"
+msgstr "Margin"
+
+msgid "已用预付款/净值"
+msgstr "Margin/Equity"
+
+msgid "持仓利润"
+msgstr "Position profit"
+
+msgid "持仓利润/(结余+信用)"
+msgstr "P Profit / (balance + credit)"
+
+msgid "单量"
+msgstr "Single"
+
+msgid "手数"
+msgstr "Lots"
+
+msgid "利润"
+msgstr "Profit"
+
+msgid "库存费"
+msgstr "Swap"
+
+msgid "手续费"
+msgstr "Commission"
+
+msgid "净利润"
+msgstr "Net Profit"
+
+msgid "信用"
+msgstr "Credit"
+
+msgid "可用预付款"
+msgstr "FreeMargin"
+
+msgid "持仓(手)"
+msgstr "Position (lot)"
+
+msgid "持仓/策略(笔)"
+msgstr "Position / Strategy (Single)"
+
+msgid "操作"
+msgstr "operating"
+
+msgid "一键补全所有账号的订单"
+msgstr "One-click completion of orders for all accounts"
+
+msgid "请确认"
+msgstr "please confirm"
+
+msgid "全部账户一键补仓"
+msgstr "One-click margin call for all accounts"
+
+msgid "一键补仓"
+msgstr "One-click margin call"
+
+msgid "命令已执行"
+msgstr "Command executed"
+
+msgid "未知错误,授权失败,稍后请重试"
+msgstr "Unknown error, authorization failed, please try again later"
+
+msgid "暂无内容"
+msgstr "no content yet"
+
+msgid "获取异常，稍后重试"
+msgstr "Get exception, try again later"
+
+msgid "标题"
+msgstr "Title"
+
+msgid "已授权"
+msgstr "Authorized"
+
+msgid "最大可用授权"
+msgstr "Maximum available authorization"
+
+msgid "到期时间"
+msgstr "Expire date"
+
+msgid "全部"
+msgstr "All"
+
+msgid "未授权"
+msgstr "unauthorized"
+
+msgid "未支付"
+msgstr "unpaid"
+
+msgid "提建议"
+msgstr "Suggestions"
+
+msgid "建议的具体内容"
+msgstr "Specific content of the proposal"
+
+msgid "建议被采纳或发现BUG等，都将获赠相应礼品"
+msgstr "Suggestions are accepted or bugs are discovered, and they will receive corresponding gifts"
+
+msgid "欢迎您对我们的服务或产品提出宝贵的建议！"
+msgstr "Welcome your valuable suggestions for our services or products!"
+
+msgid "原价"
+msgstr "Original price"
+
+msgid "低至"
+msgstr "As low as"
+
+msgid "天"
+msgstr "Day"
+
+msgid "策略账户"
+msgstr "Strategy Account"
+
+msgid "购买方案"
+msgstr "Purchase plan"
+
+msgid "新增"
+msgstr "Add"
+
+msgid "续费"
+msgstr "Renew"
+
+msgid "新增账户数并即时生效"
+msgstr "Add new accounts and take effect immediately"
+
+msgid "账户数叠加到现有到期时间之后生效"
+msgstr "The number of accounts is added to the existing expiration time and becomes effective"
+
+msgid "跟单账户数量"
+msgstr "Follewer Number"
+
+msgid "仅需"
+msgstr "Just need"
+
+msgid "支付"
+msgstr "Pay"
+
+msgid "策略资料"
+msgstr "Strategy information"
+
+msgid "修改"
+msgstr "Modify"
+
+msgid "策略别名"
+msgstr "Strategy Alias"
+
+msgid "保存更新"
+msgstr "Save"
+
+msgid "旧密码"
+msgstr "Old Password"
+
+msgid "新密码"
+msgstr "New Password"
+
+msgid "确认"
+msgstr "Confirm"
+
+msgid "密码"
+msgstr "Password"
+
+msgid "策略头像"
+msgstr "Strategy Avatar"
+
+msgid "旧策略LOGO"
+msgstr "Old Strategy LOGO"
+
+msgid "新策略LOGO"
+msgstr "New StrategyLOGO"
+
+msgid "将文件放在此处或单击以上传"
+msgstr "Drop files here or click to upload"
+
+msgid "支持图片类型"
+msgstr "Support picture type"
+
+msgid "风控"
+msgstr "RiskM"
+
+msgid "策略"
+msgstr "Strategy"
+
+msgid "未命名"
+msgstr "unnamed"
+
+msgid "首页"
+msgstr "Home"
+
+msgid "监控"
+msgstr "Monitoring"
+
+msgid "持仓监控"
+msgstr "Position monitoring"
+
+msgid "账户管理"
+msgstr "Account management"
+
+msgid "账户资金"
+msgstr "Account funds"
+
+msgid "风控仪表盘"
+msgstr "Risk control panel"
+
+msgid "统计"
+msgstr "statistics"
+
+msgid "订单统计"
+msgstr "Order statistics"
+
+msgid "财务"
+msgstr "Finance"
+
+msgid "特别管理区"
+msgstr "Special Management"
+
+msgid "我要续费"
+msgstr "I want to renew"
+
+msgid "购买记录"
+msgstr "Purchase History"
+
+msgid "帮助与建议"
+msgstr "Help and advice"
+
+msgid "帮助与常见问题"
+msgstr "Help and FAQ"
+
+msgid "我要提问题或建议"
+msgstr "I ask suggestion"
+
+msgid "我的问题或建议"
+msgstr "My suggestion"
+
+msgid "总账户"
+msgstr "Total account"
+
+msgid "可用授权"
+msgstr "Available authorizations"
+
+msgid "加载中"
+msgstr "Loading"
+
+msgid "综合"
+msgstr "Comprehensive"
+
+msgid "报告"
+msgstr "Report"
+
+msgid "持仓单量"
+msgstr "PositionsNum"
+
+msgid "今日"
+msgstr "Today's"
+
+msgid "本周"
+msgstr "This Week's"
+
+msgid "本月"
+msgstr "This Month's"
+
+msgid "今年"
+msgstr "This Year's"
+
+msgid "现有持仓/预期持仓"
+msgstr "Existing / Expected Position"
+
+msgid "账户在线状态"
+msgstr "Account online status"
+
+msgid "近一日"
+msgstr "Nearly a day"
+
+msgid "近一周"
+msgstr "Nearly a week"
+
+msgid "上个月"
+msgstr "Last month"
+
+msgid "近一个月"
+msgstr "Nearly a month"
+
+msgid "近三个月"
+msgstr "Nearly three months"
+
+msgid "近六个月"
+msgstr "Nearly six months"
+
+msgid "去年"
+msgstr "Last year"
+
+msgid "近一年"
+msgstr "Nearly a year"
+
+msgid "天起"
+msgstr "Day start"
+
+msgid "起"
+msgstr "From"
+
+msgid "毫秒级同步"
+msgstr "Millisecond synchronization"
+
+msgid "设置超时不开单"
+msgstr "Set timeout without billing"
+
+msgid "设置允许滑点"
+msgstr "Set allowable slippage"
+
+msgid "设置固定手数开仓"
+msgstr "Set a fixed lot to open a position"
+
+msgid "设置倍数开仓"
+msgstr "Set multiples to open positions"
+
+msgid "设置开仓的最大最小范围"
+msgstr "Set the maximum and minimum ranges for opening positions"
+
+msgid "反向开仓"
+msgstr "Open position in reverse"
+
+msgid "风控金额及邮件报警"
+msgstr "Risk control amount and email alarm"
+
+msgid "个(上限)单个跟单账号持仓订单"
+msgstr "Orders held simultaneously"
+
+msgid "web监控后台"
+msgstr "web monitoring background"
+
+msgid "手机监控后台"
+msgstr "Mobile monitoring background"
+
+msgid "跨平台统计"
+msgstr "Cross platform statistics"
+
+msgid "账户"
+msgstr "Account"
+
+msgid "我要购买"
+msgstr "I want to buy"
+
+msgid "个(上限)同时持仓订单"
+msgstr "(Upper limit) simultaneous positions"
+
+msgid "在上方输入内容后，按回车键即可发送内容！"
+msgstr "After entering the content above, press Enter to send the content!"
+
+msgid "在此与我们互动，我们会尽快回复您！"
+msgstr "Interact with us here and we will get back to you as soon as possible!"
+
+msgid "点击复制"
+msgstr "Click to copy"
+
+msgid "修改策略别名"
+msgstr "Modify policy alias"
+
+msgid "选择策略"
+msgstr "Selection strategy"
+
+msgid "策略邮箱未注册"
+msgstr "Policy mailbox is not registered"
+
+msgid "登陆成功"
+msgstr "Landed successfully"
+
+msgid "无数据"
+msgstr "no data"
+
+msgid "搜索内容只能是全数字的账户"
+msgstr "Search content can only be a digital account"
+
+msgid "保存失败！"
+msgstr "Save failed!"
+
+msgid "发生意外错误！"
+msgstr "An unexpected error occurred!"
+
+msgid "上传的文件类型，仅限"
+msgstr "File type uploaded, only"
+
+msgid "数据库保存失败！"
+msgstr "Database save failed!"
+
+msgid "其他错误！"
+msgstr "Other errors!"
+
+msgid "上传的文件类型"
+msgstr "Uploaded file types"
+
+msgid "其他错误4"
+msgstr "Other errors 4"
+
+msgid "跟单账户资料发生意外错误！"
+msgstr "An unexpected error occurred in the document account information!"
+
+msgid "客服"
+msgstr "Customer service"
+
+msgid "主策略账号登陆验证码"
+msgstr "Main policy account login verification code"
+
+msgid "请不要将验证码转发或给其他人查看"
+msgstr "Please do not forward the verification code or show it to others"
+
+msgid "来自[验证码发送系统]"
+msgstr "From [Verification Code Sending System]"
+
+msgid "通用设置"
+msgstr "General Settings"
+
+msgid "皮肤"
+msgstr "Skins"
+
+msgid "左菜单"
+msgstr "Left Menu"
+
+msgid "亮色"
+msgstr "Light"
+
+msgid "暗色"
+msgstr "Dark"
+
+msgid "A方案"
+msgstr "A plan"
+
+msgid "B方案"
+msgstr "B plan"
+
+msgid "C方案"
+msgstr "C plan"
+
+msgid "建议的主题"
+msgstr "Suggested topics"
+
+msgid "提交时间"
+msgstr "Submission time"
+
+msgid "等待回复"
+msgstr "Waiting for reply"
+
+msgid "已回复"
+msgstr "Replied"
+
+msgid "退出成功"
+msgstr "exit successfully"
+
+msgid "个账户"
+msgstr "Accounts"
+
+msgid "人民币"
+msgstr "RMB"
+
+msgid "支付成功后，2小时内同步到所有服务器并生效。如有付款问题请联系"
+msgstr "After successful payment, sync to all servers within 2 hours and take effect. Please contact if payment problem."
+
+msgid "提交新提案"
+msgstr "Add Proposal"
+
+msgid "提案列表"
+msgstr "List Proposal"
+
+msgid "提案内容"
+msgstr "List Proposal Info"
+
+
+msgid "授权"
+msgstr "Authorize"
+
+
+msgid "取消授权"
+msgstr "Cancel authorization"
+
+msgid "授权成功"
+msgstr "Authorization succeeded"
+
+msgid "取消授权"
+msgstr "Cancel authorization"
+
+msgid "授权取消成功"
+msgstr "Authorization cancelled successfully"
+
+msgid "可用授权不足,请购买更多的可用授权，授权失败"
+msgstr "Insufficient authorizations available, please purchase more available authorizations, authorization failed"
+
+msgid "设置"
+msgstr "Settings"
+
+msgid "最大延时"
+msgstr "Maximum delay"
+
+msgid "在策略方开单成功后，多少秒内，允许跟单账户进行同步开单，超时则不再开单"
+msgstr "How many seconds after the strategy party successfully opens the bill, the synchronous billing account is allowed to be opened, and the timeout will not be billed again"
+
+msgid "允许滑点"
+msgstr "Allow slippage"
+
+msgid "允许买卖订单的最大价格滑点。超过限制则不成交订单"
+msgstr "The maximum price slippage allowed for buy and sell orders. If the limit is exceeded, the order will not be filled"
+
+msgid "最大单量"
+msgstr "Maximum of orders"
+
+msgid "账户上最大的持仓数量，超过则不再跟单。(等于0，则不开任何单)"
+msgstr "The maximum number of positions on the account. (Equal to 0, no order will be opened)"
+
+msgid "反向跟单"
+msgstr "Reverse copy"
+
+msgid "固定手数开单"
+msgstr "Fixed lot billing"
+
+msgid "单个订单手数，按指定的固定值来开单,固定手数与倍数只能二选一"
+msgstr "Single order lot, open the order according to the specified fixed value, fixed lot and multiple can only choose one"
+
+msgid "倍数开单"
+msgstr "Multiple billing"
+
+msgid "相对于策略订单手数的倍数"
+msgstr "Multiples relative to strategic order lot"
+
+msgid "最小手数"
+msgstr "Minimum lot"
+
+msgid "高优先级"
+msgstr "high priority"
+
+msgid "控制着所有正要开仓的订单，每个订单的手数不管上面的设置如何，计算结果手数，如果小于这个最小手数，则系统按这个最小手数的值来开单"
+msgstr "Controls all orders that are being opened. The number of lots in each order is calculated regardless of the above settings. The calculated number of lots. If it is less than the minimum lot, the system will open the order according to the minimum lot"
+
+msgid "最大手数"
+msgstr "Maximum lot"
+
+msgid "控制着所有正要开仓的订单，每个订单的手数不管上面的设置如何，计算结果手数，如果大于这个最大手数，则系统按这个最大手数的值来开单"
+msgstr "Controls all orders that are being opened. The number of lots in each order is calculated regardless of the above settings. The calculated number of lots. If it is greater than the maximum number of lots, the system will open the order according to the value of the maximum number of lots."
+
+msgid "风控线"
+msgstr "Risk control line"
+
+msgid "低于填写的金额,则邮件报警"
+msgstr "Email below alarm amount"
+
+msgid "填写风控金额，预警分为两个阶段"
+msgstr "Fill in the risk control amount, the warning is divided into two stages"
+
+msgid "净值进入于风控金额之上百分十区间时，预警一次"
+msgstr "When the net value enters the ten percent range above the risk control amount, a warning is issued once"
+
+msgid "例：填写9000，则在低于10000时，第一次预警"
+msgstr "Example: fill in 9000, then the first warning when it is lower than 10000"
+
+msgid "净值低于风控金额时，预警一次"
+msgstr "When the net value is lower than the risk control amount, a warning is issued once"
+
+msgid "上述条件满足，则每日会预警一次，直到条件不满足"
+msgstr "If the above conditions are met, a warning will be issued once a day until the conditions are not met."
+
+msgid "取消"
+msgstr "Cancel"
+
+msgid "未设置跟单参数，已经导入默认值"
+msgstr "No copying parameters are set, default values have been imported"
+
+msgid "跟单参数,获得数据异常,请重试"
+msgstr "Follow the parameters, get abnormal data, please try again"
+
+msgid "修改成功"
+msgstr "Successfully modified"
+
+msgid "过期"
+msgstr "Expired"
+
+msgid "English"
+msgstr "中文"
+
+msgid "通过Recaptcha人机验证！请登陆"
+msgstr "Verification by Recaptcha! Please login"
+
+msgid "Recaptcha人机验证中,请稍等..."
+msgstr "Recaptcha verification, please wait ..."
+
+msgid "修改订单备注"
+msgstr "Modify order comment"
+
+msgid "订单备注"
+msgstr "order comment"
+
+msgid "跟单账号的订单备注"
+msgstr "Remarks for orders with a copy account"
+
+msgid "为订单备注中可修改的部分"
+msgstr "Is an editable part of the order comment"
+
+msgid "这些字符"
+msgstr "These characters"
+
+msgid "仅支持"
+msgstr "Only supported"
+
+msgid "佣金列表"
+msgstr "Commission List"
+
+msgid "佣金统计"
+msgstr "Commission Statistics"
+
+msgid "结算列表"
+msgstr "Billing List"
+
+msgid "瑞讯银行瑞士账户申请"
+msgstr "Swissquote Account Application"
+
+msgid "新增返佣资料"
+msgstr "Add rebate information"
+
+msgid "修改返佣资料"
+msgstr "Edit rebate information"
+
+msgid "返佣激活成功"
+msgstr "Successful commission rebate"
+
+msgid "返佣激活出错"
+msgstr "Rebate activation error"
+
+msgid "返佣激活失败！请在账户完成首笔交易并平仓后再试"
+msgstr "Rebate activation failed! Please try again after completing the first transaction and closing the account"
+
+msgid "新增成功"
+msgstr "added successfully"
+
+msgid "新增失败"
+msgstr "Add failed"
+
+msgid "新增失败,账户已经绑定过"
+msgstr "Failed to add, the account has been bound"
+
+msgid "新增失败，账户验证失败，请检查填写信息的正确性"
+msgstr "Failed to add, account verification failed, please check the correctness of the information filled in"
+
+msgid "返佣激活成功"
+msgstr "Account rebate activation was successful"
+
+msgid "新增绑定"
+msgstr "New binding"
+
+msgid "姓名或编码"
+msgstr "Name or Code"
+
+msgid "账号"
+msgstr "Account Number"
+
+msgid "新增账户"
+msgstr "New Account"
+
+msgid "绑定"
+msgstr "Binding"
+
+msgid "账号验证码"
+msgstr "Account verification code"
+
+msgid "交易账号"
+msgstr "Trading account"
+
+msgid "类型"
+msgstr "Types of"
+
+msgid "绑定状态"
+msgstr "Binding state"
+
+msgid "返佣状态"
+msgstr "Rebate status"
+
+msgid "返佣值"
+msgstr "Commission"
+
+msgid "佣金统计,获得数据异常,稍后重试"
+msgstr "Commission statistics, get data abnormal, try again later"
+
+msgid "订单号"
+msgstr "Order number"
+
+msgid "结算统计,获得数据异常,稍后重试"
+msgstr "Settlement statistics, get data abnormal, try again later"
+
+msgid "备注"
+msgstr "Remarks"
+
+msgid "信用"
+msgstr "Credit"
+
+msgid "时间"
+msgstr "Time"
+
+msgid "瑞讯银行Swissquote瑞士总部开户专用地址"
+msgstr "Swissquote head office dedicated account opening address"
+
+msgid "点击此按钮，直接进入开户"
+msgstr "Click this button to directly open an account"
+
+msgid "瑞讯1990年从事财务软件应用程序开始，2000年在瑞士上市，同年获得银行牌照。正式成为瑞讯银行Swissquote Bank。 瑞讯银行2019年财报，其客户资产总计322亿瑞士法郎，同比增长35.3%，净收入2.3亿瑞士法郎。因为很少在国内做宣传，风控也很严格，早期开户时都要做公证资料，然后，纸质资料邮寄到瑞士。所以，国内除了机构和有实力的团队会使用。个人很少使用。"
+msgstr "Swissquote started working on financial software applications in 1990 and went public in Switzerland in 2000, obtaining a banking license in the same year. Officially become Swissquote Bank. Swissquote Bank's 2019 financial report, its client assets totaled 32.2 billion Swiss francs, a year-on-year increase of 35.3%, and net income of 230 million Swiss francs. Because it is rarely publicized in the country, and the risk control is also very strict, notarized materials are required when opening an account in the early stage, and then, the paper materials are sent to Switzerland. Therefore, in addition to domestic institutions and powerful teams will use. It is rarely used by individuals."
+
+msgid "通过本站的链接，可直达瑞讯银行瑞士总部开户，有护照的伙伴可以直接进行在线视频认证。无护照的伙伴不能进行视频认证，需要联系大叔，告诉您如何操作。"
+msgstr "Through the link of this site, you can directly open an account with Swissquote Bank Switzerland headquarters, and partners with passports can directly perform online video authentication. Partners without a passport cannot perform video authentication. You need to contact your uncle to tell you how to do it."
+
+msgid "注意：其他网站、包括瑞讯官网在内直接开户都会分配到香港开户，也有部分伙伴不相信，结果一会就会接到香港客服电话，那时后悔已经来不及了。"
+msgstr "Note: Opening accounts directly on other websites, including the official website of Swissquote, will be assigned to open an account in Hong Kong, and some partners do not believe it."
+
+msgid "瑞讯银行"
+msgstr "Swissquote Bank"
+
+msgid "账号管理"
+msgstr "Account management"
+
+msgid "输入查看密码"
+msgstr "Enter view password"
+
+msgid "进入"
+msgstr "go in"
+
+msgid "欢迎您查看外汇账户资料"
+msgstr "You are welcome to view foreign exchange account information"
+
+msgid "取消授权"
+msgstr "Authorization cancellation"
+
+msgid "外汇账户"
+msgstr "Forex Account"
+
+msgid "历史记录"
+msgstr "History record"
+
+msgid "持仓记录"
+msgstr "Position record"
+
+msgid "品种分布"
+msgstr "Variety distribution"
+
+msgid "资金曲线"
+msgstr "Capital curve"
+
+msgid "盈利能力"
+msgstr "Profitability"
+
+msgid "密码错误或不允许查看"
+msgstr "Wrong password or not allowed to view"
+
+msgid "交易"
+msgstr "transaction"
+
+msgid "预付款比例"
+msgstr "Prepayment ratio"
+
+msgid "交易订单"
+msgstr "Trading order"
+
+msgid "服务器"
+msgstr "Server"
+
+msgid "平台"
+msgstr "Platformer"
+
+msgid "对外展示"
+msgstr "External display"
+
+msgid "修改对外展示"
+msgstr "Modify external display status"
+
+msgid "账户类型"
+msgstr "Account type"
+
+msgid "外汇"
+msgstr "Forex display"
+
+msgid "注册或登陆"
+msgstr "Register or Log in"
+
+msgid "邮箱注册失败"
+msgstr "Email registration failed"
+
+msgid "返佣管理系统登陆验证码"
+msgstr "Swissquote background login verification code"
+
+msgid "返佣邮箱不存在！"
+msgstr "The rebate mailbox does not exist"
+
+msgid "登陆失败"
+msgstr "Login failed"
+
+msgid "返佣管理系统"
+msgstr "Rebate Management System"
+
+msgid "瑞讯银行(Swissquote Bank)瑞士总部顶级代理"
+msgstr "Swissquote Bank (Swissquote Bank) Switzerland Headquarters Top Agent"
+
+msgid "如何注册策略账户"
+msgstr "How to register a strategy account"
+
+msgid "初始返佣为每标准手3美元"
+msgstr "The initial rebate is 3 USD per standard lot"
+
+msgid "活动：前1000名每一标准手返6美元"
+msgstr "Activity: USD 6 per standard lot for the top 1,000"
+
+msgid "联系QQ客服确认修改"
+msgstr "Contact QQ customer service to confirm the modification"
+
+msgid "交易量增大或账户大于2个以上可咨询客服增加每手返佣"
+msgstr "If the transaction volume increases or there are more than 2 accounts, you can consult customer service to increase the rebate per lot"
+
+msgid "未结算佣金超过50美元"
+msgstr "Unsettled commissions over $50"
+
+msgid "每周结算/下周一(遇假日顺延)佣金打入此账号"
+msgstr "Weekly settlement / next Monday (postponed on holidays) commissions will be credited to this account"
+
+msgid "佣金升级请联系客服"
+msgstr "Please contact customer service for commission upgrade"
+
+msgid "编辑策略列表"
+msgstr "Edit strategy list"
+
+msgid "删除策略"
+msgstr "Delete strategy"
+
+msgid "操作成功"
+msgstr "Successful operation"
+
+msgid "操作失败"
+msgstr "operation failed"
+
+msgid "(21位字母+数字组合)"
+msgstr "(21 letters + numbers combination)"
+
+msgid "(请填写英文字母)"
+msgstr "(Please fill in the English letters)"

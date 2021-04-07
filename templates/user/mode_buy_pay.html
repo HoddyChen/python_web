@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix justify-content-center">
+        <div class="col-lg-9" style="margin-top: 30px;">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_(page_main['title_type'])}}</strong>  </h2>
+                </div>
+                <div class="body">
+                    <form>
+                    <input type="hidden" id="fx_num" name="fx_num" value="{{page_main['fx_num']}}">
+                    <input type="hidden" id="cnh" name="cnh" value="{{page_main['pay_cnh_num']}}">
+                    <input type="hidden" id="fx_no" name="fx_no" value="{{echo_dist['OrderNo']}}">
+                    <input type="hidden" id="fx_id2" name="fx_id2" value="{{page_main['PaymentTypes']}}">
+                    <input type="hidden" id="fx_id" name="fx_id" value="{{page_main['day_num']}}"></form>
+                    <div class="form-group">
+                        <div class="row clearfix justify-content-center">
+                            <div class="col-lg-5 col-md-5">
+                                 <div class="alert alert-info">
+                                     <p><i class="zmdi zmdi-format-list-numbered"></i> {{_('订单ID')}}：{{echo_dist['OrderNo']}}</p>
+                                     <div style="text-align: center;">
+                                         {{page_main['fx_num']}}{{_('个账户')}},{{page_main['day_num']}}{{_('天')}}<BR>
+                                             {{_('仅需')}}{{_('支付')}}<BR>
+                                         {%if page_main['PaymentTypes'] == 1 or page_main['PaymentTypes'] == 2%}
+                                         <span style="font-size: 33px;">￥ {{page_main['pay_cnh_num']}}
+                                         </span>
+                                         {% else %}
+                                         <span style="font-size: 33px;">$ {{page_main['pay_usd_num']}}
+                                         </span>
+                                         {% end if %}
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row clearfix justify-content-center">
+                            {%if page_main['PaymentTypes'] == 1%}
+                            <div class="col-lg-5 col-md-5" style="text-align: center;">
+                                <img src="{{ static_url('img/zfb_pay.jpg')}}" style="padding: 5px;background-color: #9e9e9e00;border: 1px solid #9E9E9E;">
+                            </div>
+                            {%elif page_main['PaymentTypes'] == 2%}
+                            <div class="col-lg-5 col-md-5" style="text-align: center;">
+                                <img src="{{ static_url('img/wx_pay.jpg')}}" style="padding: 5px;background-color: #9e9e9e00;border: 1px solid #9E9E9E;">
+                            </div>
+                            {%end if %}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row clearfix justify-content-center">
+                            {{_('支付成功后，2小时内同步到所有服务器并生效。如有付款问题请联系')}}
+                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=68660728&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:68660728:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Exportable Table -->
+</div>

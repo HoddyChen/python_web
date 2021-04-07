@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>{{_(page_main.get('title_website'))}}</title>
+    {% block css %}
+    {% end %}
+    <style>
+        .theme-purple section.content.red:before{
+			background-color:#ffffff;
+		}
+    </style>
+</head>
+<body class="theme-purple">
+<!-- Page Loader -->
+{% include mode_loader.html%}
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+{% include mode_url_nav.html%}
+
+<!-- Left Sidebar -->
+{% include mode_url_left_sidebar.html%}
+
+<!-- Main Content -->
+    {% block middle %}
+    {% end %}
+
+<!-- Jquery Core Js -->
+    {% block js %}
+
+    {% end %}
+<script >
+    function sign_url_out(){
+        $.ajax({
+            type: 'POST',
+            url: '/h?fx_type=exit_out&k=' + urlkey + '&nt=' + Date.parse(new Date()),
+            data: {},
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    showNotification("bg-blue","成功退出","bottom","center",null,null);//正常提示
+                    window.location.reload();
+                    scrollTo(0,0);
+                }else {
+                    showNotification("bg-red","退出异常，稍后重试","bottom","center",null,null);//错误警示
+                }
+            },
+            error:function(re) {
+                    showNotification("bg-red","退出异常，稍后重试","bottom","center",null,null);//错误警示
+                }
+        });
+    }
+    </script>
+</body>
+</html>

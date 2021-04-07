@@ -1,0 +1,35 @@
+<!-- Modal -->
+<div class="page-header">
+    <div class="page-header-image"></div>
+    <div class="container col-md-3">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+                <form class="form" action="index" method="get" name="strategy_select">
+                    <div class="header">
+                        <h5>{{_('选择策略')}}</h5>
+                        <BR>
+                    </div>
+                    <div class="row justify-content-center">
+                    <div class="col-7 col-md-7" style="width: 173px;">
+                        <select class="form-control show-tick" name="form_uaid">
+                            {% for i in page_main['s_data']%}
+                            <option value="{{i['uaid']}}">{{ i['account'] if i['ma_name']== None else i['ma_name']}}</option>
+                            {%end for%}
+                        </select>
+                        <input name="fx_type" type="hidden" value="strategy_select">
+                           </div>
+                    <div class="col-3 col-md-3">
+                        {% raw xsrf_form_html() %}
+                        <button type="submit" class="btn btn-primary btn-icon  btn-icon-mini btn-round">
+                            <i class="zmdi zmdi-caret-right" style="font-size: 38px;padding: 0px 18px;"></i>
+                        </button>
+                        <!--<button  id="button_enter" class="btn btn-primary btn-round btn-lg btn-block" style="width: 50px;">{{_('进入')}}</button>-->
+                    </div>
+                        </div>
+                    <div class="footer text-center">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

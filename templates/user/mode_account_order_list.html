@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-lg col-md-4 col-sm-12 text-center">
+                        <h5><span id="list_master_count_ok" class="waves-effect"></span></h5>
+                        <small>{{_('已授权')}}</small>
+                        </div>
+                        <div class="col-lg col-md-4 col-sm-12 text-center">
+                            <h5><span id="list_master_max_num" class="waves-effect"></span></h5>
+                            <small>{{_('最大可用授权')}}</small>
+                        </div>
+                        <div class="col-lg col-md-4 col-sm-12 text-center">
+                            <h5><span class="waves-effect">{{page_main['endtime']}}</span></h5>
+                            <small>{{_('到期时间')}}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_(page_main['title_type'])}}</strong>  </h2>
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/user/accounts?fx_type=list_account_order">{{_('全部')}}</a></li>
+                                <li><a href="/user/accounts?fx_type=list_account_order&fx_id=1">{{_('已支付')}}</a></li>
+                                <li><a href="/user/accounts?fx_type=list_account_order&fx_id=0">{{_('未支付')}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <table id="datatable01" class="table table-bordered table-striped table-hover dataTable" width="100%">
+                        <!--js-exportable-->
+                        <thead>
+                            <tr>
+                                {%for j in range(page_main['th_num'])%}
+                                <th></th>
+                                {%end for%}
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="prc_type" name="type" type="hidden" value="{{page_main['prc_type']}}">
+    <input id="fx_id" name="type" type="hidden" value="{{page_main['fx_id']}}">
+    <!-- #END# Exportable Table -->
+</div>

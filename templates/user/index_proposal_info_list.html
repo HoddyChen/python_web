@@ -1,0 +1,165 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<!--<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">-->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/css/chatapp.css')}}">
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_proposal_info_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<!--<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>-->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+
+<!--<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>-->
+<!--<script src="{{ static_url('assets/js/pages/charts/sparkline.js')}}"></script>-->
+<script >
+    $(document).ready(function(){
+        document.getElementsByClassName("slimScrollDiv")[3].style.height = "390px";
+        document.getElementsByClassName("chat-widget")[0].style.height = "390px";
+        proposal_info_list();
+        // $(".chat_div input").bind('keyup change', function(e) {
+        //     if (e.keyCode == 13) {
+        //         alert("000");
+        //         // add_proposal();
+        //     }
+        // });
+        // document.onkeydown(){
+        //     var e = document.activeElement;
+        //     if(e.tagName == "INPUT" && e.type =="text")
+        //     {
+        //         if(window.event.keyCode == 13)
+        //         {
+        //             add_proposal();
+        //         }
+        //     }
+        // }
+        setTimeout(function() {
+            proposal_info_list()
+        },10*60*1000);
+    });
+    function add_proposal(e) {
+        // document.getElementById("button_enter_send").disabled = true;
+        if (e.keyCode == 13) {
+            $.ajax({
+                type: 'POST',
+                url: '/user/proposal?fx_type=add_proposal&nt=' + Date.parse(new Date()),
+                data: $("form").serialize(),
+                cache: false,
+                dataType: "JSON",
+                success: function (re) {
+                    if (re.reponse_status == 5) {
+                        var echo_str = "";
+                        // document.getElementById("title_text").innerHTML = re.data[0].cs_name;
+                        for (i = 0; i < re.data.length; i++) {
+                            echo_str = echo_str + "<li class=\"";
+                            if (re.data[i].uid.toString() == re.id) {
+                                echo_str = echo_str + "right\">\n";
+                                echo_str = echo_str + "<div class=\"chat-info\"> ";
+                                echo_str = echo_str + "<span class=\"datetime\">" + re.data[i].utime + "</span>\n" +
+                                    "                                    <span class=\"message\">" + re.data[i].cs_text + "</span>";
+                            }
+                            else {
+                                echo_str = echo_str + "left float-left\">\n";
+                                echo_str = echo_str + "<div class=\"chat-info\"> ";
+                                echo_str = echo_str + re.data[i].uname;
+                                echo_str = echo_str + "<span class=\"datetime\">" + re.data[i].utime + "</span>\n" +
+                                    "                                    <span class=\"message\">" + re.data[i].cs_text + "</span>";
+                            }
+
+                            echo_str = echo_str + "</div>\n" +
+                                "                            </li>";
+                        }
+                        var div_chat = document.getElementById("chat_text");
+                        div_chat.innerHTML = echo_str;
+                        //  流动到底部
+                        div_chat.scrollTop = div_chat.scrollHeight;
+                    } else if (re.reponse_status < 5) {
+                        swal({
+                            title: "{{_('提交信息')}}",
+                            text: re.echo,
+                            type: "error",
+                            html: true
+                        });
+                    } else {
+                        swal("{{_('提交信息')}}", "{{_('未知错误，请稍候再试')}}", "error");
+                    }
+                }
+            });
+        }
+    }
+    function proposal_info_list() {
+        // 我的问题详细对话
+        var fx_id = $("#fx_id").val();
+        $.ajax({
+            type: 'POST',
+            url: '/user/proposal?fx_type=list_proposal_info&fx_id=' + fx_id + '&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    var echo_str = "";
+                    document.getElementById("title_text").innerHTML = re.data[0].cs_name;
+                    for(i = 0; i < re.data.length; i++)
+                    {
+                        echo_str = echo_str + "<li class=\"";
+                        if(re.data[i].uid.toString() == re.id){
+                            echo_str = echo_str + "right\">\n";
+                            echo_str = echo_str + "<div class=\"chat-info\"> ";
+                            echo_str = echo_str + "<span class=\"datetime\">"+ re.data[i].utime +"</span>\n" +
+                                "                                    <span class=\"message\">"+ re.data[i].cs_text +"</span>";
+                        }
+                        else {
+                            echo_str = echo_str + "left float-left\">\n";
+                            echo_str = echo_str + "<div class=\"chat-info\"> ";
+                            echo_str = echo_str + re.data[i].uname;
+                            echo_str = echo_str + "<span class=\"datetime\">"+ re.data[i].utime +"</span>\n" +
+                                "                                    <span class=\"message\">"+ re.data[i].cs_text +"</span>";
+                        }
+
+                        echo_str = echo_str + "</div>\n" +
+                            "                            </li>";
+                    }
+                    document.getElementById("chat_text").innerHTML = echo_str;
+                    //设置到底部
+                    (function($) {
+                        $("#chat_text").slimScroll({
+                            start: 'bottom',
+                            height: '390px'
+                        });
+                    })(jQuery);
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+                else {
+                    $("#chat_text").text("{{_('暂无内容')}}");
+                    $("#chat_text").addClass("text-center");
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","{{_('获取异常，稍后重试')}}","bottom","center",null,null);//错误警示
+                login_time_out();
+            }
+        });
+    }
+
+</script>
+{% end %}
+

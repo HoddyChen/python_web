@@ -1,0 +1,112 @@
+﻿{% extends "template_url_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+{% end %}
+
+{% block middle %}
+
+<section class="content home">
+    {% include mode_url_report.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+
+<script src="{{ static_url('assets/plugins/chartjs/Chart.bundle.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/chartjs/polar_area_chart.js')}}"></script>
+<script src="{{ static_url('assets/bundles/flotchartsscripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/js/js_chart.js')}}"></script> <!--  -->
+<script >
+// 品种分布
+    var urlkey = $("#urlkey").val();
+    var uaid = $("#uaid").val();
+    $.ajax({
+        type: 'post',
+        url: '/h?fx_type=report&k=' + urlkey + '&uaid=' + uaid + '&nt=' + Date.parse(new Date()),
+        data: {},
+        cache: false,
+        dataType: "JSON",
+        success: function (re) {
+            if (re.reponse_status == 5) {
+                // pieChart_check("#pie_chart2", re.data[0], re.data[1]);
+                var list_key = Object.keys(re.data[0]);
+                var funds = 0;
+                document.getElementById("h1_1").innerHTML = number_format(re.data[0].balance, 2, ".", ",", "floor");
+                document.getElementById("h1_2").innerHTML = number_format(re.data[0].quity, 2, ".", ",", "floor");
+                document.getElementById("h1_3").innerHTML = number_format(re.data[0].t_profit, 2, ".", ",", "floor");
+                document.getElementById("h1_4").innerHTML = number_format(re.data[0].t_in_profit, 2, ".", ",", "floor");
+                document.getElementById("h1_5").innerHTML = number_format(re.data[0].t_out_profit, 2, ".", ",", "floor");
+                document.getElementById("h2_1").innerHTML = number_format(re.data[0].t_count0+re.data[0].t_count1, 0, ".", ",", "floor");
+                document.getElementById("h2_2").innerHTML = number_format(re.data[0].t_num0+re.data[0].t_num1, 2, ".", ",", "floor");
+                document.getElementById("h2_3").innerHTML = number_format(re.data[0].t_maxprofit, 2, ".", ",", "floor");
+                document.getElementById("h2_4").innerHTML = number_format(re.data[0].t_minprofit, 2, ".", ",", "floor");
+                document.getElementById("h2_5").innerHTML = number_format(re.data[0].sharpe_ratio_3, 2, ".", ",", "floor");
+                document.getElementById("h2_6").innerHTML = number_format(re.data[0].t_avgprofit0/(-re.data[0].t_avgprofit1), 2, ".", ",", "floor");
+                document.getElementById("h3_0").innerHTML = number_format(re.data[0].t_profit_1, 2, ".", ",", "floor");
+                document.getElementById("h3_00").innerHTML = number_format(re.data[0].t_profit_2, 2, ".", ",", "floor");
+                document.getElementById("h3_1").innerHTML = number_format(re.data[0].t_count0, 0, ".", ",", "floor");
+                document.getElementById("h3_2").innerHTML = number_format(re.data[0].t_num0, 2, ".", ",", "floor");
+                document.getElementById("h3_3").innerHTML = number_format(re.data[0].t_count0/re.data[0].t_count*100, 2, ".", ",", "floor");
+                document.getElementById("h3_4").innerHTML = number_format(re.data[0].t_count1, 0, ".", ",", "floor");
+                document.getElementById("h3_5").innerHTML = number_format(re.data[0].t_num1, 2, ".", ",", "floor");
+                document.getElementById("h3_6").innerHTML = number_format(re.data[0].t_count1/re.data[0].t_count*100, 2, ".", ",", "floor");
+
+                document.getElementById("h5_0").innerHTML = number_format(re.data[0].t0_profit, 2, ".", ",", "floor");
+                document.getElementById("h5_1").innerHTML = number_format(re.data[0].t0_count, 0, ".", ",", "floor");
+                document.getElementById("h5_2").innerHTML = number_format(re.data[0].t0_num, 2, ".", ",", "floor");
+                document.getElementById("h5_3").innerHTML = number_format(re.data[0].t0_count/re.data[0].t_count*100, 2, ".", ",", "floor");
+                document.getElementById("h5_4").innerHTML = number_format(re.data[0].t0_profit_1, 2, ".", ",", "floor");
+                document.getElementById("h5_5").innerHTML = number_format(re.data[0].t0_count0, 0, ".", ",", "floor");
+                document.getElementById("h5_6").innerHTML = number_format(re.data[0].t0_num0, 2, ".", ",", "floor");
+                document.getElementById("h5_7").innerHTML = number_format(re.data[0].t0_count0/re.data[0].t0_count*100, 2, ".", ",", "floor");
+                document.getElementById("h5_8").innerHTML = number_format(re.data[0].t0_profit_2, 2, ".", ",", "floor");
+                document.getElementById("h5_9").innerHTML = number_format(re.data[0].t0_count1, 0, ".", ",", "floor");
+                document.getElementById("h5_10").innerHTML = number_format(re.data[0].t0_num1, 2, ".", ",", "floor");
+                document.getElementById("h5_11").innerHTML = number_format(re.data[0].t0_count1/re.data[0].t0_count*100, 2, ".", ",", "floor");
+                document.getElementById("h5_12").innerHTML = number_format(re.data[0].t0_avgprofit0, 2, ".", ",", "floor");
+                document.getElementById("h5_13").innerHTML = number_format(re.data[0].t0_avgprofit1, 2, ".", ",", "floor");
+                document.getElementById("h5_14").innerHTML = number_format(re.data[0].t0_maxprofit, 2, ".", ",", "floor");
+                document.getElementById("h5_15").innerHTML = number_format(re.data[0].t0_minprofit, 2, ".", ",", "floor");
+                document.getElementById("h5_16").innerHTML = number_format(re.data[0].t0_maxfloat, 2, ".", ",", "floor");
+                document.getElementById("h5_17").innerHTML = number_format(re.data[0].t0_minfloat, 2, ".", ",", "floor");
+
+                document.getElementById("h6_0").innerHTML = number_format(re.data[0].t1_profit, 2, ".", ",", "floor");
+                document.getElementById("h6_1").innerHTML = number_format(re.data[0].t1_count, 0, ".", ",", "floor");
+                document.getElementById("h6_2").innerHTML = number_format(re.data[0].t1_num, 2, ".", ",", "floor");
+                document.getElementById("h6_3").innerHTML = number_format(re.data[0].t1_count/re.data[0].t_count*100, 2, ".", ",", "floor");
+                document.getElementById("h6_4").innerHTML = number_format(re.data[0].t1_profit_1, 2, ".", ",", "floor");
+                document.getElementById("h6_5").innerHTML = number_format(re.data[0].t1_count0, 0, ".", ",", "floor");
+                document.getElementById("h6_6").innerHTML = number_format(re.data[0].t1_num0, 2, ".", ",", "floor");
+                document.getElementById("h6_7").innerHTML = number_format(re.data[0].t1_count0/re.data[0].t1_count*100, 2, ".", ",", "floor");
+                document.getElementById("h6_8").innerHTML = number_format(re.data[0].t1_profit_2, 2, ".", ",", "floor");
+                document.getElementById("h6_9").innerHTML = number_format(re.data[0].t1_count1, 0, ".", ",", "floor");
+                document.getElementById("h6_10").innerHTML = number_format(re.data[0].t1_num1, 2, ".", ",", "floor");
+                document.getElementById("h6_11").innerHTML = number_format(re.data[0].t1_count1/re.data[0].t1_count*100, 2, ".", ",", "floor");
+                document.getElementById("h6_12").innerHTML = number_format(re.data[0].t1_avgprofit0, 2, ".", ",", "floor");
+                document.getElementById("h6_13").innerHTML = number_format(re.data[0].t1_avgprofit1, 2, ".", ",", "floor");
+                document.getElementById("h6_14").innerHTML = number_format(re.data[0].t1_maxprofit, 2, ".", ",", "floor");
+                document.getElementById("h6_15").innerHTML = number_format(re.data[0].t1_minprofit, 2, ".", ",", "floor");
+                document.getElementById("h6_16").innerHTML = number_format(re.data[0].t1_maxfloat, 2, ".", ",", "floor");
+                document.getElementById("h6_17").innerHTML = number_format(re.data[0].t1_minfloat, 2, ".", ",", "floor");
+
+                // for(var da in re.data.reverse()) {
+                //     funds = funds + re.data[da].allprofit;
+                //     re.data[da].allprofit = number_format(funds,2);
+                // }
+                // getMorrisLineChart("pie_chart2", re.data, "g_date", ["allprofit"], ['金额']);
+            } else if (re.reponse_status == -1) {
+                login_time_out();
+            } else {
+                $("#pie_chart2").text("暂无数据");
+                $("#pie_chart2").addClass("text-center");
+            }
+        },
+        error: function (re) {
+            showNotification("bg-red", "获得数据异常,稍后重试", "bottom", "center", null, null);//错误警示
+        }
+    });
+
+</script>
+{% end %}

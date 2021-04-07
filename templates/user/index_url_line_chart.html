@@ -1,0 +1,54 @@
+﻿{% extends "template_url_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+{% end %}
+
+{% block middle %}
+
+<section class="content home">
+    {% include mode_url_line_chart.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+
+<script src="{{ static_url('assets/plugins/chartjs/Chart.bundle.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/chartjs/polar_area_chart.js')}}"></script>
+<script src="{{ static_url('assets/bundles/flotchartsscripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/js/js_chart.js')}}"></script> <!--  -->
+<script >
+// 品种分布
+    var urlkey = $("#urlkey").val();
+    var uaid = $("#uaid").val();
+    $.ajax({
+        type: 'post',
+        url: '/h?fx_type=funds_count&k=' + urlkey + '&uaid=' + uaid + '&nt=' + Date.parse(new Date()),
+        data: {},
+        cache: false,
+        dataType: "JSON",
+        success: function (re) {
+            if (re.reponse_status == 5) {
+                // pieChart_check("#pie_chart2", re.data[0], re.data[1]);
+                var list_key = Object.keys(re.data[0]);
+                var funds = 0;
+                for(var da in re.data.reverse()) {
+                    funds = funds + re.data[da].allprofit;
+                    re.data[da].allprofit = number_format(funds,2);
+                }
+                getMorrisLineChart("pie_chart2", re.data, "g_date", ["allprofit"], ['金额']);
+            } else if (re.reponse_status == -1) {
+                login_time_out();
+            } else {
+                $("#pie_chart2").text("暂无数据");
+                $("#pie_chart2").addClass("text-center");
+            }
+        },
+        error: function (re) {
+            showNotification("bg-red", "获得数据异常,稍后重试", "bottom", "center", null, null);//错误警示
+        }
+    });
+
+</script>
+{% end %}

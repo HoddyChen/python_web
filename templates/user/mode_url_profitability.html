@@ -1,0 +1,29 @@
+<div class="container-fluid" style="padding-top:30px;">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12">
+            <div class="card tasks_report">
+                <div class="header">
+                    <h2><strong>{{_("交易")}}</strong> {{_("资金曲线")}}</h2>
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=week&uaid={{page_main.get('uaid')}}">{{_('按周统计')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=month&uaid={{page_main.get('uaid')}}">{{_('按月统计')}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body row align-items-center">
+                    <div id="pie_chart2" style="width: 100%;height: 600px;"></div>
+                    <!--<canvas id="bar_chart_10" height="300"></canvas>-->
+                    <!--<canvas id="chart-area" height="150"></canvas>-->
+                    <!--<canvas id="pie_chart2" height="100"></canvas>-->
+                </div>
+            </div>
+            <input id="prc_type" name="prc_type" type="hidden" value="{{page_main['prc_type']}}">
+            <input id="urlkey" name="urlkey" type="hidden" value="{{page_main['urlkey']}}">
+            <input id="time_type" name="time_type" type="hidden" value="{{page_main['time_type']}}">
+            <input id="uaid" name="uaid" type="hidden" value="{{page_main['uaid']}}">
+        </div>
+    </div>
+</div>

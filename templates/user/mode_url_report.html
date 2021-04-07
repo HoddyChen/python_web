@@ -1,0 +1,234 @@
+<div class="container-fluid" style="padding-top:30px;">
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_("报告")}}</strong> {{_("历史（不包括今天）")}}</h2>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span style="font-size: 0.5em;">$</span> <span id="h1_4">0</span></h4>
+                            <span class="text-muted">{{_('入金')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span style="font-size: 0.5em;">$</span> <span id="h1_5">0</span></h4>
+                            <span class="text-muted">{{_('出金')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span style="font-size: 0.5em;">$</span> <span id="h1_1">0</span></h4>
+                            <span class="text-muted">{{_('结余')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span style="font-size: 0.5em;">$</span> <span id="h1_2">0</span></h4>
+                            <span class="text-muted">{{_('净值')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span style="font-size: 0.5em;">$</span> <span id="h1_3">0</span></h4>
+                            <span class="text-muted">{{_('利润')}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row text-center">
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h2_5">0</span></h4>
+                            <span class="text-muted">{{_("夏普比率")}}(3%)</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h2_6">0</span></h4>
+                            <span class="text-muted">{{_("盈亏比")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h2_1">0</span> <span style="font-size: 0.5em;">{{_("单")}}</span></h4>
+                            <span class="text-muted"> {{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h2_2">0</span> <span style="font-size: 0.5em;">{{_("手")}}</span></h4>
+                            <span class="text-muted">{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h2_3">0</span></h4>
+                            <span class="text-muted">{{_("最大")}}{{_("盈利")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h2_4">0</span></h4>
+                            <span class="text-muted">{{_("最大")}}{{_("亏损")}}</span>
+                        </div>
+                    </div>
+<!--                    <div id="area_chart" class="graph"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row text-center">
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h3_0">0</span></h4>
+                            <span class="text-muted"> {{_("盈利")}}{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h3_1">0</span> <span style="font-size: 0.5em;">{{_("单")}}</span></h4>
+                            <span class="text-muted"> {{_("盈利")}}{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h3_2">0</span> <span style="font-size: 0.5em;">{{_("手")}}</span></h4>
+                            <span class="text-muted">{{_("盈利")}}{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h3_3">0</span> <span style="font-size: 0.5em;">%</span></h4>
+                            <span class="text-muted">{{_("盈利")}}{{_("交易")}}{{_("占比")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h3_00">0</span></h4>
+                            <span class="text-muted">{{_("亏损")}}{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h3_4">0</span> <span style="font-size: 0.5em;">{{_("单")}}</span></h4>
+                            <span class="text-muted">{{_("亏损")}}{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h3_5">0</span> <span style="font-size: 0.5em;">{{_("手")}}</span></h4>
+                            <span class="text-muted">{{_("亏损")}}{{_("交易")}}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h3_6">0</span> <span style="font-size: 0.5em;">%</span></h4>
+                            <span class="text-muted">{{_("亏损")}}{{_("交易")}}{{_("占比")}}</span>
+                        </div>
+                    </div>
+                    <div id="area_chart" class="graph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-lg-6 col-md-12">
+            <div class="card weather2">
+                <div class="city-selected body">
+<!--                    style="background: #d9534f;"-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="city"><span></span> Buy {{_('交易')}}{{_('统计')}}</div>
+                        </div>
+<!--                        <div id="Warninglabel_1" class="city-selected body">-->
+<!--                            <div class="body">-->
+<!--                                &lt;!&ndash;<div id="pie_chart" class="flot-chart"></div>&ndash;&gt;-->
+<!--                                <canvas id="pie_chart1" height="138"></canvas>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <table class="table table-striped m-b-0">
+                    <tbody>
+                    <tr>
+                        <td>{{_('交易')}}</td>
+                        <td class="font-medium">$ <span id="h5_0">0</span> / <span id="h5_1">0</span> {{_('单')}} / <span id="h5_2">0</span> {{_('手')}} / <span id="h5_3">0</span> %</td>
+                    </tr>
+                    <tr>
+                        <td>{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h5_4">0</span> / <span id="h5_5">0</span> {{_('单')}} / <span id="h5_6">0</span> {{_('手')}} / <span id="h5_7">0</span> %</td>
+                    </tr>
+                    <tr>
+                        <td>{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h5_8">0</span> / <span id="h5_9">0</span> {{_('单')}} / <span id="h5_10">0</span> {{_('手')}} / <span id="h5_11">0</span> %</td>
+                    </tr>
+                    <tr>
+                        <td>{{_('平均')}}{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h5_12">0</span> </td>
+                    </tr>
+                    <tr>
+                        <td>{{_('平均')}}{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h5_13">0</span> </td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h5_14">0</span> </td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h5_15">0</span> </td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('浮动')}}{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h5_16">0</span> </td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('浮动')}}{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h5_17">0</span> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+            <div class="card weather2">
+                <div class="city-selected body">
+<!--                    style="background: #2ca8ff;"-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="city"><span></span> Sell {{_('交易')}}{{_('统计')}}</div>
+                        </div>
+<!--                        <div id="Warninglabel_2" class="city-selected body">-->
+<!--                            <div class="body">-->
+<!--                                &lt;!&ndash;<div id="pie_chart" class="flot-chart"></div>&ndash;&gt;-->
+<!--                                <canvas id="pie_chart2" height="138"></canvas>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                </div>
+                <table class="table table-striped m-b-0">
+                    <tbody>
+                    <tr>
+                        <td>{{_('交易')}}</td>
+                        <td class="font-medium">$ <span id="h6_0">0</span> / <span id="h6_1">0</span> {{_('单')}} / <span id="h6_2">0</span> {{_('手')}} / <span id="h6_3">0</span> %</td>
+                    </tr>
+                    <tr>
+                        <td>{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h6_4">0</span> / <span id="h6_5">0</span> {{_('单')}} / <span id="h6_6">0</span> {{_('手')}} / <span id="h6_7">0</span> %</td>
+                    </tr>
+                    <tr>
+                        <td>{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h6_8">0</span> / <span id="h6_9">0</span> {{_('单')}} / <span id="h6_10">0</span> {{_('手')}} / <span id="h6_11">0</span> %</td>
+                    </tr>
+                    <tr>
+                        <td>{{_('平均')}}{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h6_12">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>{{_('平均')}}{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h6_13">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h6_14">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h6_15">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('浮动')}}{{_('盈利')}}</td>
+                        <td class="font-medium">$ <span id="h6_16">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>{{_('最大')}}{{_('浮动')}}{{_('亏损')}}</td>
+                        <td class="font-medium">$ <span id="h6_17">0</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <input id="prc_type" name="prc_type" type="hidden" value="{{page_main['prc_type']}}">
+        <input id="urlkey" name="urlkey" type="hidden" value="{{page_main['urlkey']}}">
+        <input id="uaid" name="uaid" type="hidden" value="{{page_main.get('uaid')}}">
+    </div>
+</div>

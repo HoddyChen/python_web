@@ -1,0 +1,71 @@
+<aside id="rightsidebar" class="right-sidebar">
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane slideRight active" id="setting">
+            <div class="slim_scroll">
+                <div class="card">
+                    <h6>{{_('General Settings')}}</h6>
+                    <ul class="setting-list list-unstyled">
+                        <li  style="color: #546e7a;">
+                            <div class="checkbox" style="display: block;padding: 10px 10px 5px;">
+                                <span><i class="zmdi zmdi-lock"></i>
+                                    <span style="padding: 0px 10px 0px;">{{_('KEY')}} &nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:chick_copy();" class="fx_color1" title="{{_('点击复制')}}KEY"><i class="zmdi zmdi-copy"></i></a> <BR>
+                                        <small></small></span>
+                                        <input id="key_val" value="" type="hidden">
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox" style="display: block;padding: 10px 10px 5px;">
+                                <a title="{{_('修改昵称')}}" href="/adminSZba2qjbydxVhMJpuKfy/info?fx_type=edit_info" style="color: #546e7a;">
+                                    <span><i class="zmdi zmdi-tab"></i>
+                                        <span style="padding: 0px 10px 0px;">{{_('修改昵称')}}</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox" style="display: block;padding: 10px 10px 5px;">
+                                <a title="{{_('修改头像')}}" href="/adminSZba2qjbydxVhMJpuKfy/info?fx_type=edit_logo" style="color: #546e7a;">
+                                    <span><i class="zmdi zmdi-face"></i>
+                                        <span style="padding: 0px 10px 0px;">{{_('修改头像')}}</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h6>{{_("Skins")}}</h6>
+                    <ul class="choose-skin list-unstyled">
+                        <li id="id_purple" data-theme="purple" class="active">
+                            <div class="purple"></div>
+                        </li>
+                        <li id="id_blue" data-theme="blue">
+                            <div class="blue"></div>
+                        </li>
+                        <li id="id_cyan" data-theme="cyan">
+                            <div class="cyan"></div>
+                        </li>
+                        <li id="id_green" data-theme="green">
+                            <div class="green"></div>
+                        </li>
+                        <li id="id_orange" data-theme="orange">
+                            <div class="orange"></div>
+                        </li>
+                        <li id="id_blush" data-theme="blush">
+                            <div class="blush"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card theme-light-dark">
+                    <h6>{{_("Left Menu")}}</h6>
+                    <button class="t-light btn btn-default btn-simple btn-round btn-block">{{_("Light")}}</button>
+                    <button class="t-dark btn btn-default btn-round btn-block">{{_("Dark")}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

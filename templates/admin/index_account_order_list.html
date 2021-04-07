@@ -1,0 +1,229 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+<!--<link rel="stylesheet" href="{{ static_url('assets/plugins/nouislider/nouislider.min.css')}}">-->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_account_order_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+<script >
+    $(document).ready(function(){
+        loadData(9);
+        // Strategy_count();
+    });
+
+    function loadData() {
+        var fx_id = $("#fx_id").val();
+        //Range Example
+        var myTable = $('#datatable01').DataTable({
+            order: [[2, "desc"]],
+            bProcessing: true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide: true, //是否启动服务器端数据导入
+            searching: true,
+            stateSave: false,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            // pageLength: 10,
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength: 10, //默认显示的记录数
+            bPaginate: true, //是否显示（应用）分页器
+            bInfo: true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/adminSZba2qjbydxVhMJpuKfy/pay_order?fx_type=get_account_order&fx_id=' + fx_id + '&nt=' + Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: '订单ID',
+                    data: 'order_no',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: 'mt4账户',
+                    data: 'account',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '邮箱',
+                    data: 'email',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '商品或服务',
+                    data: 'piname',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '账户数',
+                    data: 'onum',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '天数',
+                    data: 'date_num',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '金额($)',
+                    data: 'amount',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '金额(￥)',
+                    data: 'amount_cny',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '订单时间',
+                    data: 'otime',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '生效开始',
+                    data: 'strattime',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '结束时间',
+                    data: 'endtime',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '状态',
+                    data: 'otype',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.otype == 1) {
+                            //'已支付';
+                            var e = "<button class=\"btn btn-primary btn-icon btn-icon-mini btn-round\" data-type=\"ajax-loader\" onclick=\"set_pay(" + row.oid + ",0);\"><i class=\"zmdi zmdi-check-circle\"></i></button>";
+                        } else {
+                            //'未支付';
+                            var e = '<button class="btn btn-slategray btn-icon btn-icon-mini btn-round" onclick="set_pay(' + row.oid + ',1);"><i class="zmdi zmdi-minus-circle-outline"></i></button>';
+                        }
+                        return e;
+                    }
+                }
+                //   formatter:function(value,row,index){
+                // var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.news_id + '\')">编辑</a> ';
+                // var d = '<a href="#" mce_href="#" onclick="del(\''+ row.inews_id +'\')">删除</a> ';
+                //     return e+d;
+            ],
+            language: { //自定义描述....
+                "sProcessing": "正在获取数据, 请稍后...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "没有找到数据",
+                "sInfo": "从 _START_ 到 _END_ 条记录 总记录数为 _TOTAL_ 条",
+                "sInfoEmpty": "记录数为0",
+                "sInfoFiltered": "(全部记录数 _MAX_ 条)",
+                "sInfoPostFix": "",
+                "sSearch": "全局搜索",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "第一页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "最后一页"
+                },
+                "loadingRecords": "Please wait - loading...",
+                "processing": "DataTables is currently busy",
+                "search": "Apply filter _INPUT_ to table"
+            },
+
+        });
+           // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+
+    }
+
+    function set_pay(fx_id, fx_id2) {
+    // 确认支付
+        $.ajax({
+            type: 'post',
+            url: '/adminSZba2qjbydxVhMJpuKfy/pay_order?fx_type=set_pay&fx_id=' + fx_id + '&fx_id2=' + fx_id2,
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    swal.fire("{{_('命令已执行')}}," + re.echo);
+                    setTimeout(function() {
+                        window.location.reload();
+                        scrollTo(0,0);
+                    },1000);
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+                else {
+                    swal.fire(re.echo);
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","支付状态更新异常，稍后重试","bottom","center",null,null);//错误警示
+            }
+        });
+    }
+
+    function Strategy_count() {
+    // 跟单用户统计
+        $.ajax({
+            type: 'get',
+            url: '/admin/strategy?fx_type=master_max_num',
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    document.getElementById("list_master_count_ok").innerHTML = re.master_count_ok.toString();
+                    document.getElementById("list_master_max_num").innerHTML = re.master_max_num.toString();
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+                else {
+                    $("#StrategyList").text("暂无策略账号");
+                    $("#StrategyList").addClass("text-center");
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","跟单用户统计获取异常，稍后重试","bottom","center",null,null);//错误警示
+            }
+        });
+        // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+
+    }
+
+
+</script>
+
+{% end %}
+

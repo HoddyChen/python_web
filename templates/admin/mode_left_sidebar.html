@@ -1,0 +1,101 @@
+<aside id="leftsidebar" class="sidebar">
+    <ul class="nav nav-tabs">
+        <li><a class="navbar-brand" href="index"><img src="{{ static_url('img/logo32.png')}}" alt="fxcns"></a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-view-dashboard m-r-5"></i>{{_('风控')}}</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user" onclick="Strategy_tag()"><i class="zmdi zmdi-accounts-alt m-r-5"></i>{{_('策略')}}</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane stretchRight active" id="dashboard">
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <div class="user-info">
+                            <div class="image"><a href="/adminSZba2qjbydxVhMJpuKfy/info?fx_type=edit_logo"><img src="{{static_url('faceimg/profile_av.jpg' if session['ManagerFaceurl'] == 'null' or session['ManagerFaceurl'] =='' else 'faceimg/' + session['ManagerFaceurl'])}}" alt="User"></a></div>
+                            <div class="detail">
+                                <h4>{{session['ManagerUname']}}</h4>
+                                <small>{{_('级别')}} : </small>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="header">{{_('主控面板')}}</li>-->
+                    <li class="active open"> <a href="index"><i class="zmdi zmdi-home"></i><span>{{_('首页')}}</span></a>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-globe-alt"></i><span>{{_('策略')}}</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/copy?fx_type=list_loging">{{_('策略列表')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/copy?fx_type=list_position">{{_('持仓监控')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/copy?fx_type=list_account">{{_('账户管理')}}</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-group-work"></i><span>{{_('博客')}}</span> </a>
+                        <ul class="ml-menu">
+                            <li> <a href="/adminSZba2qjbydxVhMJpuKfy/posts?fx_type=list_posts">{{_('文章列表')}}</a></li>
+                            <li> <a href="/adminSZba2qjbydxVhMJpuKfy/posts?fx_type=add_post">{{_('新增文章')}}</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-chart"></i><span>{{_('统计')}}</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/copy?fx_type=list_order_count&time_type=the_week">{{_('订单统计')}}</a></li>
+                            <!--<li><a href="#">{{_('交易手数')}}</a></li>-->
+                            <!--<li><a href="#">{{_('资金统计')}}</a></li>-->
+                        </ul>
+                    </li>
+                    <li class="header">{{_('特别管理区')}}</li>
+                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-delicious"></i><span>{{_('财务')}}</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/pay_order?fx_type=list_account_order">{{_('购买记录')}}</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-balance"></i><span>{{_('瑞讯银行返佣区')}}</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type=open">{{_('瑞讯瑞士开户')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy_info?fx_type=list_proxy">{{_('代理列表')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type=list_proxy_order_count_all&time_type=the_week">{{_('佣金统计及发放')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy_account_verify">{{_('代理账户批量激活')}}</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-help-outline"></i><span>{{_('帮助与建议')}}</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/help?fx_type=list_help">{{_('帮助与常见问题')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/proposal?fx_type=add_proposal">{{_('我要提问题或建议')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/proposal?fx_type=list_proposal">{{_('我的问题或建议')}}</a></li>
+                            <li>&nbsp;&nbsp;</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-pane stretchLeft" id="user">
+            <div class="menu">
+                <ul class="list">
+                    <li>
+                        <div class="user-info m-b-20 p-b-15">
+                            <div class="image"><a href="profile.html"><img src="{{ static_url('assets/images/profile_av.jpg')}}" alt="User"></a></div>
+                            <div class="detail">
+                                <h4>{{session['web_uname']}}</h4>
+                            </div>
+                            <!--<p class="text-muted">795 Folsom Ave, Suite 600 San Francisco, CADGE 94107</p>-->
+                            <div class="row">
+                                <div class="col-4">
+                                    <h5 class="m-b-5" id="master_count_all">0</h5>
+                                    <small>{{_('总账户')}}</small>
+                                </div>
+                                <div class="col-4">
+                                    <h5 class="m-b-5" id="master_count_ok">0</h5>
+                                    <small>{{_('已授权')}}</small>
+                                </div>
+                                <div class="col-4">
+                                    <h5 class="m-b-5" id="master_max_num">0</h5>
+                                    <small>{{_('可用授权')}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span id="StrategyList"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

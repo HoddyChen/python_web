@@ -1,0 +1,124 @@
+<!-- Modal -->
+<div class="page-header">
+    <div class="page-header-image"></div>
+    <div class="container col-md-3">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+                <form class="form" action="" method="post" name="register">
+                    <div class="header" style="padding-bottom: 50px;">
+                        <div class="logo-container">
+                            <img src="{{ static_url('img/new_logo.png')}}" alt="">
+                        </div>
+                        <h5>{{_(page_main.get('title_website'))}}</h5>
+                    </div>
+
+                    <div class="input-group input-lg">
+                        <input name="fx_pass" type="password" class="form-control" placeholder="{{_('输入查看密码')}}">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-lock-open"></i>
+                        </span>
+                    </div>
+
+                    <div class="input-group input-lg text-center">
+                        {% raw xsrf_form_html() %}
+                        <button type="button" id="button_enter" class="btn btn-primary btn-round btn-lg btn-block " onClick="url_submit_login()"><span id="login_tags3">{{_('进入')}}</span></button>
+                    </div>
+                    <div class="footer text-center">
+                        <input name="k" value="{{'' if page_main.get('urlkey') == None else page_main.get('urlkey')}}" type="hidden">
+                        {{'' if page_main.get('echo') == None else "Warn："+page_main.get('echo')}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://recaptcha.net/recaptcha/api.js?render=6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7"></script>
+
+<script>
+    var countdown = 120;
+    function my_login(){
+        $.getScript('https://recaptcha.net/recaptcha/api.js?render=6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7',function(){
+            document.getElementById("button_enter").disabled = true;
+            showNotification("bg-blue","{{_('Recaptcha人机验证中,请稍等...')}}","bottom","center",null,null);//正常提示
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7', {action: 'register'}).then(function(token) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/recaptcha',
+                        data: { token: token },
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if(re.success==true) {
+                                if (re.score > 0.5) {
+                                    document.getElementById("button_enter").disabled = false;
+                                    // $("#login_tags2").text("{{_('发送验证码')}}");
+                                    showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示
+                                }else{
+                                    showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
+                                }
+                            }else{
+                                showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    }
+
+    function url_submit_login(){
+        // args._xsrf = getCookie("_xsrf");
+        // $('#button_enter_send').modal('hide')+"&backurl="+window.location.href
+        // var url = window.location.href;
+        var url =document.referrer;
+        var login_str = $("#login_tags3").text();
+        document.getElementById("button_enter").disabled = true;
+        $.ajax({
+            type: 'POST',
+            url: '/h?fx_type=login&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function(re) {
+                if (re.reponse_status == 5) {
+                    swal("{{_('欢迎您查看外汇账户资料')}}", re.echo, "success");
+                    window.location.href=url;
+                    // window.location.reload();
+                    // scrollTo(0,0);
+                }else if (re.reponse_status < 5) {
+                    showNotification("bg-red",re.echo,"bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags3", "button_enter", login_str);
+                }else if (re.reponse_status < 0){
+                    showNotification("bg-red","{{_('发生非法操作，请重新登陆再试')}}","bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags3", "button_enter", login_str);
+                }else{
+                    showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags3", "button_enter", login_str);
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
+                setTimeShow("#login_tags3", "button_enter", login_str);
+            }
+        });
+    }
+
+    function setTimeShow(id_name, button_name, login_str){
+        if (countdown <= 0){
+            countdown = 120;
+            $(id_name).text(login_str);
+            document.getElementById(button_name).disabled = false;
+            // return;
+        }else {
+            countdown --;
+            $(id_name).text(login_str + " ( " + countdown.toString() + " )");
+            setTimeout(function() {
+                setTimeShow(id_name, button_name, login_str)
+            },1000);
+        }
+    }
+    window.onload = my_login;
+    // $(document).ready(function(){
+    //     my_login();
+    // });
+</script>

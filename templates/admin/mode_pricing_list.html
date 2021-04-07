@@ -1,0 +1,85 @@
+<div class="container-fluid">
+    <div class="row clearfix" style="padding-top: 30px;">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card sprice2">
+                <div class="body data text-center">
+                    <h2> <span style="font-size:21px;">$</span> {{page_main['data'][0]['info3']}} <span style="font-size:14px;">{{_('起')}}</span></h2>
+                    <small>30{{_('天起')}}</small>
+                    <ul class="list-unstyled m-t-10">
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("毫秒级同步")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置延超不开单")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i>{{_("设置允许滑点")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置固定手数开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置倍数开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置开仓的最大最小范围")}}</li>
+                        <li><i class="zmdi zmdi-close" style="font-size:17px;"></i> {{_("反向开仓")}}</li>
+                        <li><i class="zmdi zmdi-close" style="font-size:17px;"></i> {{_("风控金额及邮件报警")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> 5{{_("个以内同时持仓订单")}}</li>
+                        <li><i class="zmdi zmdi-close" style="font-size:17px;"></i> {{_("同步止盈止损")}}</li>
+                        <li><i class="zmdi zmdi-close" style="font-size:17px;"></i> {{_("web监控后台")}}</li>
+                        <li><i class="zmdi zmdi-close" style="font-size:17px;"></i> {{_("手机监控后台")}}</li>
+                        <li><i class="zmdi zmdi-close" style="font-size:17px;"></i> {{_("跨平台统计")}}</li>
+                    </ul>
+                    <button class="btn btn-primary btn-round" onclick="urlgo({{page_main['data'][0]['piid']}});">{{_("我要购买")}}</button>
+                </div>
+                <div class="name l-amber" style="padding-top: 751px;">
+                    <h5><i class="zmdi zmdi-label-alt m-r-10"></i> <span>{{_("A账户")}}</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card sprice2">
+                <div class="body data text-center">
+                    <h2> <span style="font-size:21px;">$</span> {{page_main['data'][1]['info3']}} <span style="font-size:14px;">起</span></h2>
+                    <small>30天起</small>
+                    <ul class="list-unstyled m-t-10">
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("毫秒级同步")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置超时不开单")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置允许滑点")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置固定手数开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置倍数开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置开仓的最大最小范围")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("反向开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("风控金额及邮件报警")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> 50{{_("个以内同时持仓订单")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("同步止盈止损")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("web监控后台")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("手机监控后台")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("跨平台统计")}}</li>
+                    </ul>
+                    <button class="btn btn-primary btn-round" onclick="urlgo({{page_main['data'][1]['piid']}});">{{_("我要购买")}}</button>
+                </div>
+                <div class="name l-parpl" style="padding-top: 751px;">
+                    <h5><i class="zmdi zmdi-label-alt m-r-10"></i> <span>{{_("B账户")}}</span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card sprice2">
+                <div class="body data text-center">
+                    <h2> <span style="font-size:21px;">$</span> {{page_main['data'][2]['info3']}} <span style="font-size:14px;">起</span></h2>
+                    <small>30天起</small>
+                    <ul class="list-unstyled m-t-10">
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("毫秒级同步")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置超时不开单")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置允许滑点")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置固定手数开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置倍数开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("设置开仓的最大最小范围")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("反向开仓")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("风控金额及邮件报警")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("2000个(上限)同时持仓订单")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("同步止盈止损")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("web监控后台")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("手机监控后台")}}</li>
+                        <li><i class="zmdi zmdi-check" style="font-size:17px;"></i> {{_("跨平台统计")}}</li>
+                    </ul>
+                    <button class="btn btn-primary btn-round" onclick="urlgo({{page_main['data'][2]['piid']}});">{{_("我要购买")}}</button>
+                </div>
+                <div class="name l-pink" style="padding-top: 751px;">
+                    <h5><i class="zmdi zmdi-label-alt m-r-10"></i> <span>{{_("C账户")}}</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

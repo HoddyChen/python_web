@@ -1,0 +1,103 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_buy2.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+
+
+<script>
+    var chick_flag = true;
+    $(document).ready(function(){
+        get_CNY();
+        setTimeout(function() {
+            if(chick_flag == true){
+                chickRadio(3);
+            }
+        },3000);
+
+    });
+    function chickRadio(radio_id) {
+        for(var i=1;i<4;i++){
+            // alert("#radio" + radio_id.toString());
+            $("#radio" + i.toString()).removeAttr("checked");
+        }
+        $("#radio" + radio_id.toString()).attr("checked","true");
+        calculated_value();
+        // alert(num * price0);
+        chick_flag = false;
+    }
+
+    function calculated_value() {
+        var daytype = $("input[name='daytype']:checked").val();
+        var cnh = $("#cnh").val();
+        var price0 = $("#price"+ daytype + "0").val();
+        var price = $("#price" + daytype + "1").val();
+        var price0_cn = number_format(price0 * cnh,2);
+        var price_cn = number_format(price * cnh,2);
+        var num = $("#fx_num").val();
+        document.getElementById("echo_info").innerHTML = number_format(num * price0,2).toString() + " (￥ " + number_format(num * price0_cn,2).toString() + ")";
+        document.getElementById("echo_info2").innerHTML = number_format(num * price,2).toString() + " (￥ " + number_format(num * price_cn,2).toString() + ")";
+        $("#original_price_usd").val(number_format(num * price0,2));
+        $("#original_price_cnh").val(number_format(num * price0_cn,2));
+        $("#deal_price_usd").val(number_format(num * price,2));
+        $("#deal_price_cnh").val(number_format(num * price_cn,2));
+        // alert(num * price0);
+        chick_flag = false;
+    }
+    function get_CNY() {
+    // 获得人民币价格
+        $.ajax({
+            type: 'post',
+            url: '/user/accounts?fx_type=get_cny',
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    $("#cnh").val(re.data.close.toString());
+                    chickRadio(3);
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+                else {
+                    showNotification("bg-red",re.echo,"bottom","center",null,null);//错误警示
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","{{_('人民币当前价格获取异常，稍后刷新')}}","bottom","center",null,null);//错误警示
+            }
+        });
+    }
+
+    function form_submit(fx_id2) {
+        var datetype = $("input[name='datetype']:checked").val();
+        if(datetype == null ){
+            showNotification("bg-red","{{_('请选择购买方案是新增或续费的方式？')}}","bottom","center",null,null);//错误警示
+        }else {
+            $("#fx_id2").val(fx_id2.toString());
+            document.getElementById("button1").disabled = true;
+            document.getElementById("button2").disabled = true;
+            setTimeout(function () {
+                document.getElementById('buy_form').submit();
+            }, 500);
+        }
+    }
+</script>
+{% end %}

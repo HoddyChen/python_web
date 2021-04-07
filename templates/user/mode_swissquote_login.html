@@ -1,0 +1,174 @@
+<!-- Modal -->
+<div class="page-header">
+    <div class="page-header-image"></div>
+    <div class="container col-md-3">
+        <div class="col-md-12 content-center">
+            <div class="card-plain">
+                <form class="form" action="" method="post" name="register">
+                    <div class="header" style="padding-bottom: 50px;">
+                        <div class="logo-container">
+                            <img src="{{ static_url('img/new_logo.png')}}" alt="">
+                        </div>
+                        <h5>{{_('返佣管理系统')}}</h5>
+                    </div>
+                    <div class="input-group input-lg">
+                        <input name="umail" type="text" class="form-control" placeholder="{{_('邮箱')}}">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-email"></i>
+                        </span>
+                    </div>
+                    <div class="input-group input-lg text-center">
+                        <button type="button" id="button_enter_send" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_sendemail()"><span id="login_tags2">{{_('发送验证码')}}</span></button>
+                    </div>
+                    <div class="input-group input-lg">
+                        <input name="pword" type="text" class="form-control" placeholder="{{_('验证码')}}">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-lock-open"></i>
+                        </span>
+                    </div>
+
+                    <div class="input-group input-lg text-center">
+                        {% raw xsrf_form_html() %}
+                        <button type="button" id="button_enter" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_login()"><span id="login_tags3">{{_('注册或登陆')}}</span></button>
+                    </div>
+                    <div class="footer text-center">
+                        <h7>{{_('瑞讯银行(Swissquote Bank)瑞士总部顶级代理')}}</h7>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://recaptcha.net/recaptcha/api.js?render=6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7"></script>
+
+<script>
+    var countdown = 120;
+    function my_login(){
+        $.getScript('https://recaptcha.net/recaptcha/api.js?render=6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7',function(){
+            document.getElementById("button_enter_send").disabled = true;
+            document.getElementById("button_enter").disabled = true;
+            $("#login_tags2").text("{{_('Recaptcha人机验证中,请稍等...')}}");
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7', {action: 'register'}).then(function(token) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/recaptcha',
+                        data: { token: token },
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if(re.success==true) {
+                                if (re.score > 0.5) {
+                                    document.getElementById("button_enter_send").disabled = false;
+                                    $("#login_tags2").text("{{_('发送验证码')}}");
+                                    showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示
+                                }else{
+                                    showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
+                                }
+                            }else{
+                                showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    }
+
+    function my_submit_sendemail(){
+        // args._xsrf = getCookie("_xsrf");
+        document.getElementById("button_enter_send").disabled = true;
+        var login_str = $("#login_tags2").text();
+        showNotification("bg-blue","{{_('验证码发送中')}}.....","bottom","center",null,null);//正常提示
+        setTimeShow("#login_tags2", "button_enter_send", login_str);
+        $.ajax({
+            type: 'POST',
+            url: '/swissquote?fx_type=sendmail&nt=' + Date.parse(new Date()),
+            cache: false,
+            data: $("form").serialize(),
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    showNotification("bg-blue","{{_('验证码发送成功！请查收')}}......","bottom","center",null,null);//正常提示
+                    document.getElementById("button_enter").disabled = false;
+                }else if (re.reponse_status == 2) {
+                    showNotification("bg-red","✗ {{_('验证码发送失败！请稍后再试')}}......","bottom","center",null,null);//错误警示
+                    // $("#login_tags2").text(login_str);
+                    setTimeShow("#login_tags2", "button_enter_send", login_str);
+                }else if (re.reponse_status == 4){
+                    showNotification("bg-red","✗ {{_('返佣邮箱不存在！')}}","bottom","center",null,null);//错误警示
+                    // $("#login_tags2").text(login_str);
+                    setTimeShow("#login_tags2", "button_enter_send", login_str);
+                }else{
+                    // swal("{{_('登陆')}}", re.echo, "error");
+                    showNotification("bg-red",re.echo,"bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags2", "button_enter_send", login_str);
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","✗ {{_('验证码发送失败！请稍后再试')}}......","bottom","center",null,null);//错误警示
+                // $("#login_tags2").text(login_str);
+                setTimeShow("#login_tags2", "button_enter_send", login_str);
+            }
+        });
+    }
+
+    function my_submit_login(){
+        // args._xsrf = getCookie("_xsrf");
+        // $('#button_enter_send').modal('hide')+"&backurl="+window.location.href
+        // var url = window.location.href;
+        var url =document.referrer;
+        var login_str = $("#login_tags3").text();
+        document.getElementById("button_enter").disabled = true;
+        $.ajax({
+            type: 'POST',
+            url: '/swissquote?fx_type=login&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function(re) {
+                if (re.reponse_status == 5) {
+                    swal("{{_('登录')}}", re.echo, "success");
+                    if (url.indexOf("6copy.com")>=0) {
+                        window.location.href=url;
+                    } else {
+                        window.location.href="/swissquote";
+                    }
+                    // window.location.reload();
+                    // scrollTo(0,0);
+                }else if (re.reponse_status < 5) {
+                    showNotification("bg-red",re.echo,"bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags3", "button_enter", login_str);
+                }else if (re.reponse_status < 0){
+                    showNotification("bg-red","{{_('发生非法操作，请重新登陆再试')}}","bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags3", "button_enter", login_str);
+                }else{
+                    showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
+                    setTimeShow("#login_tags3", "button_enter", login_str);
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
+                setTimeShow("#login_tags3", "button_enter", login_str);
+            }
+        });
+    }
+
+    function setTimeShow(id_name, button_name, login_str){
+        if (countdown <= 0){
+            countdown = 120;
+            $(id_name).text(login_str);
+            document.getElementById(button_name).disabled = false;
+            // return;
+        }else {
+            countdown --;
+            $(id_name).text(login_str + " ( " + countdown.toString() + " )");
+            setTimeout(function() {
+                setTimeShow(id_name, button_name, login_str)
+            },1000);
+        }
+    }
+    window.onload = my_login;
+    // $(document).ready(function(){
+    //     my_login();
+    // });
+</script>

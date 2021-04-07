@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title> {{_(page_main['title_website'])}} </title>
+<!-- Favicon-->
+<link rel="icon" href="{{ static_url('img/favicon.ico')}}" type="image/x-icon">
+<!-- Favicon-->
+    {% include mode_css.html%}
+    {% include mode_css2.html%}
+
+
+</head>
+<body class="theme-purple authentication sidebar-collapse" style="background-color:#6960b3;">
+    {% include mode_url_login.html%}
+
+<script src="{{ static_url('assets/js/jquery-3.4.1.min.js')}}"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script src="{{ static_url('assets/plugins/bootstrap-notify/bootstrap-notify.js')}}"></script> <!-- Bootstrap Notify Plugin Js -->
+<script src="{{ static_url('assets/js/pages/ui/notifications.js')}}"></script> <!-- Custom Js -->
+</body>
+</html>

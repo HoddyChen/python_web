@@ -1,0 +1,186 @@
+﻿<script src="../../static/assets/plugins/sweetalert/sweetalert2.all.js"></script>{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">-->
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">-->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_master_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<!--<script src="https://cdn.bootcss.com/limonte-sweetalert2/8.11.8/sweetalert2.all.js"></script>-->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.all.js')}}"></script>
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+
+<script >
+    $(document).ready(function () {
+        // var prc_type = $("#prc_type").val();
+        var myTable = $('#datatable01').DataTable({
+            order: [[ 2, "desc"]],
+            bProcessing : true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide : true, //是否启动服务器端数据导入
+            searching: true,
+            stateSave: false,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            // pageLength: 10,
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength : 10, //默认显示的记录数
+            bPaginate : true, //是否显示（应用）分页器
+            bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/user/strategy?fx_type=list_master&nt='+ Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: "{{_('策略账号')}}",
+                    data: 'account',
+                    class: 'text-center'
+                },
+                {
+                    title: "{{_('策略别名')}}",
+                    data: 'ma_name',
+                    class: 'text-center',
+                    render: function (data, type, row) {
+                        if (row.ma_name == null) {
+                                return "";
+                            }
+                        else{
+                            return row.ma_name;
+                        }
+                    }
+                },
+                {
+                    title: "{{_('策略KEY')}}",
+                    data: 'key_ma',
+                    class: 'text-center'
+                },
+                {
+                    title: "{{_('操作')}}",
+                    data: 'uaid',
+                    // class: 'd-flex justify-content-between',
+                    class: 'text-center',
+                    render: function (data, type, row) {
+                        var str_echo = "";
+                        str_echo = '<a href="javascript:click_delete(' + row.uaid.toString() + ',' + row.account.toString() + ');" title="删除"><i class="zmdi zmdi-delete fx_color1"></i></a>';
+                        return str_echo;
+                    }
+                }
+            //   formatter:function(value,row,index){
+            // var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.news_id + '\')">编辑</a> ';
+            // var d = '<a href="#" mce_href="#" onclick="del(\''+ row.inews_id +'\')">删除</a> ';
+            //     return e+d;
+            ],
+            language: { //自定义描述....
+                "sProcessing": "{{_('正在获取数据, 请稍后')}}...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "{{_('没有找到数据')}}",
+                "sInfo": "{{_('从')}} _START_ {{_('到')}} _END_ {{_('条记录')}} {{_('总记录数为')}} _TOTAL_ {{_('条')}}",
+                "sInfoEmpty": "{{_('记录数为0')}}",
+                "sInfoFiltered": "({{_('全部记录数')}} _MAX_ {{_('条')}})",
+                "sInfoPostFix": "",
+                "sSearch": "{{_('全局搜索')}}",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "{{_('第一页')}}",
+                    "sPrevious": "{{_('上一页')}}",
+                    "sNext": "{{_('下一页')}}",
+                    "sLast": "{{_('最后一页')}}"
+                },
+                "loadingRecords": "{{_('请稍候-正在加载')}}...",
+                "processing": "{{_('数据库当前很忙')}}",
+                "search": "{{_('关键字搜索')}} _INPUT_ {{_('应用于表格')}}"
+            },
+            // dom: 'Bfrtip',
+            // buttons: [{
+            //     // extend: 'collection',
+            //     text: "{{_('策略垃圾箱')}}",
+            //     action: function ( e, dt, node, config ) {
+            //         click_margin(0);
+            //     }
+            // }]
+            // buttons:['一键补全所有账号的订单'],
+        });
+        // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+        // myTable.buttons().container().appendTo(click_margin(0));
+    });
+
+    // 删除策略
+    function click_delete(fx_id, account) {
+        var flag_str = "";
+        flag_str = "{{_('请确认')}}？";
+        if(fx_id == 0){
+            title_str = "{{_('策略无效')}}";
+        }else {
+            title_str = "{{_('删除策略将不再有效')}}";
+        }
+        swal.fire({
+            title: title_str,
+            text: flag_str ,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            preConfirm: function() {
+                return new Promise(function(resolve, reject) {
+                    // alert("123");
+                    $.ajax({
+                        type: 'post',
+                        url: '/user/strategy?fx_type=click_delete&fx_id=' + fx_id,
+                        data: {},
+                        cache: false,
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if (re.reponse_status == 5) {
+                                swal.fire("{{_('删除策略')}}" + account.toString() + "{{_('操作成功')}}");
+                                setTimeout(function() {
+                                    window.location.reload();
+                                    scrollTo(0,0);
+                                },1000);
+                            }else if (re.reponse_status == -1){
+                                login_time_out();
+                            }else{
+                                swal.fire(re.echo);
+                            }
+                        },
+                        error:function(re) {
+                            // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                            swal.fire("{{_('未知错误,授权失败,稍后请重试')}}！");
+                        }
+                    });
+                    resolve();
+                });
+            },
+            allowOutsideClick: false
+        }).then(function (re) {
+            // alert(re.reponse_status);
+        })
+    }
+</script>
+{% end %}

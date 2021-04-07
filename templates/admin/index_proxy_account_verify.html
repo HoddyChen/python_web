@@ -1,0 +1,81 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_proxy_account_verify.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+<script >
+    $(document).ready(function () {
+        // var prc_type = $("#prc_type").val();
+        edit_proxy_account_verify();
+
+    });
+
+    function escape2Html(str) {
+      var temp = document.createElement("div");
+      temp.innerHTML = str;
+      var output = temp.innerText || temp.textContent;
+      temp = null;
+      return output;
+    }
+    //修改佣金状态
+    function edit_proxy_account_verify() {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/adminSZba2qjbydxVhMJpuKfy/proxy_account_verify?fx_type=edit_verify&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    var echo_html = document.getElementById("echo_tags").innerHTML;
+                    document.getElementById("echo_tags").innerHTML = echo_html + re.echo;
+                    // resolve();
+                    setTimeout(function() {
+                        edit_proxy_account_verify();
+                    },5000);
+                }else if (re.reponse_status == 10){
+                    var echo_html = document.getElementById("echo_tags").innerHTML;
+                    document.getElementById("echo_tags").innerHTML = echo_html + re.echo;
+                    swal.fire(re.echo);
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+
+</script>
+{% end %}

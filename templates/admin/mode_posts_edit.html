@@ -1,0 +1,177 @@
+<!-- CKEditor -->
+<div class="container-fluid">
+    <form id="form_validation" method="POST">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2> <strong>{{_('编辑器')}}-{{_(page_main.get('title_full'))}}</strong> <small></small> </h2>
+                        <ul class="header-dropdown">
+                            <li class="remove">
+                                <a href="/adminSZba2qjbydxVhMJpuKfy/img?fx_type=add_img" target="_blank">上传文件</a>
+                            </li>
+                            <li class="remove">
+                                {{_('新建时间')}}:{{page_echo.get('post_date')}}&nbsp;&nbsp;
+                            </li>
+                            <li class="remove">
+                                {{_('更新时间')}}:{{page_echo.get('post_modified')}}&nbsp;&nbsp;
+                            </li>
+                            <li class="remove">
+                                <select class="form-control show-tick" name="posts_type_id">
+                                    {% if page_echo.get('posts_type_id') == None %}
+                                        <option value="" selected>-- {{_('选择')}}{{_('分类')}} --</option>
+                                    {% end %}
+                                    {% for post_type in type_dist%}
+                                        {% if page_echo.get('posts_type_id') == post_type['posts_type_id']%}
+                                        <option value="{{post_type['posts_type_id']}}" selected>{{_(post_type['posts_type_name_cn'])}}</option>
+                                        {% else %}
+                                        <option value="{{post_type['posts_type_id']}}">{{_(post_type['posts_type_name_cn'])}}</option>
+                                        {% end if%}
+                                    {% end for%}
+                                </select>
+                            </li>
+                            <li class="remove">
+                                <select class="form-control show-tick" name="post_status">
+                                    {% if page_echo.get('post_status') == 5 %}
+                                        <option value="5" selected>-- {{_('发布')}} --</option>
+                                    {% else%}
+                                        <option value="5">-- {{_('发布')}} --</option>
+                                    {%end if%}
+                                    {% if page_echo.get('post_status') == 1 %}
+                                        <option value="1" selected>-- {{_('不显示')}} --</option>
+                                    {% else%}
+                                        <option value="1">-- {{_('不显示')}} --</option>
+                                    {%end if%}
+                                    {% if page_echo.get('post_status') == 0 %}
+                                        <option value="0" selected>-- {{_('删除')}} --</option>
+                                    {% else%}
+                                        <option value="0">-- {{_('删除')}} --</option>
+                                    {%end if%}
+                                </select>
+                            </li>
+                            <li class="remove">
+                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit()">
+                                    {% if int(page_main['id']) > 0 %}
+                                        {{_('保存更新')}}
+                                    {% else %}
+                                        {{_('新增博文')}}
+                                    {% end if %}
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+                        <div class="form-group form-float">
+                            <input type="text" class="form-control" placeholder="{{_('标题')}}" name="post_title" value="{{page_echo.get('post_title')}}" required>
+                        </div>
+                    </div>
+                    <div class="body" style="width: 672px;">
+                        <textarea id="ckeditor" name="post_content" required>
+                            {{page_echo.get('post_content')}}
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="form-group form-float">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h2><strong>{{_('概述/引言')}}[SEO]</strong><small> </small> </h2>
+                                     </div>
+                                    <div class="body">
+                                        <textarea style="height: 70px;" name="post_excerpt" cols="30" rows="5" placeholder="{{_('概述内容160字以内')}}" class="form-control no-resize" required>
+                                            {{page_echo.get('post_excerpt')}}
+                                        </textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                   <div class="form-group form-float">
+                            <!-- Tags Input -->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h2><strong>{{_('标签')}}[SEO]</strong><small> </small> </h2>
+                                        <ul class="header-dropdown">
+                                            <li class="remove">
+                                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="button">{{_('AI自动生成标签')}}</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="body">
+                                        <div class="form-group demo-tagsinput-area">
+                                            <div class="form-line">
+                                                <input type="text" name="tags" class="form-control" data-role="tagsinput"
+                                                       value="{{page_echo.get('pt_name_cn')}}" placeholder="{{_('输入后回车！')}}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- #END# Tags Input -->
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="row form-group form-float">
+                        <div class="col-lg-6">
+                            <div class="body">
+                                <!--<div class="checkbox">-->
+                                    <!--{% if page_echo.get("comment_flag")==1 %}-->
+                                        <!--<input id="comment_flag" type="checkbox" name="comment_flag" value="1" checked>-->
+                                    <!--{%else%}-->
+                                        <!--<input id="comment_flag" type="checkbox" name="comment_flag" value="1">-->
+                                    <!--{%end%}-->
+                                    <!--<label for="comment_flag">-->
+                                            <!--{{_('允许评论')}}-->
+                                    <!--</label>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="header">
+                                        <ul class="header-dropdown">
+                                            <li class="remove">
+                                            {{_('新建时间')}}:{{page_echo.get('post_date')}}&nbsp;&nbsp;
+                                            </li>
+                                            <li class="remove">
+                                            {{_('更新时间')}}:{{page_echo.get('post_modified')}}&nbsp;&nbsp;
+                                            </li>
+                                            <li class="remove">
+                                               {% raw xsrf_form_html() %}
+                                                <input name="id" type="hidden" value="{{page_main['id']}}">
+                                                <input id="fx_type" name="fx_type" type="hidden" value="{{page_main['fx_type']}}">
+                                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit()">
+                                                    {% if int(page_main['id']) > 0 %}
+                                                    {{_('保存更新')}}
+                                                    {% else %}
+                                                    {{_('新增博文')}}
+                                                    {% end if %}
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- #END# CKEditor -->

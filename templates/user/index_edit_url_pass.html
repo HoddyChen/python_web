@@ -1,0 +1,61 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+{% include mode_css2.html%}
+{% end %}
+
+{% block middle %}
+<section class="content">
+    {% include mode_edit_url_pass.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!--{% include mode_js3.html%}-->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script src="{{ static_url('assets/js/pages/ui/dialogs.js')}}"></script>
+<script>
+            // return e.preventDefault() // stops modal from being shown
+        function getCookie(name) {
+            var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+            return r ? r[1] : undefined;
+        }
+        function my_submit(){
+            // args._xsrf = getCookie("_xsrf");
+            document.getElementById("button_enter").disabled = true;
+            $.ajax({
+                type: 'POST',
+                url: '/user/info?fx_type=edit_url_pass',
+                data: $("form").serialize(),
+                dataType: "JSON",
+                success:  function(re) {
+                    if (re.reponse_status == 5) {
+                        swal("{{_('修改')}}", "{{_('对外展示状态，修改成功')}}", "success");
+                        document.getElementById("url_val_span").innerHTML = re.urlkey;
+                        // $("#url_val").text();
+                        $("#url_val").val(re.urlkey);
+                    }else if (re.reponse_status < 5) {
+                        swal({
+                            title: "{{_('修改对外展示')}}",
+                            text: re.echo,
+                            type: "error",
+                            html: true
+                        })
+                        document.getElementById("button_enter").disabled = false;
+                    }else{
+                        swal("{{_('修改对外展示')}}", "{{_('未知错误，请稍候再试')}}", "error");
+                        document.getElementById("button_enter").disabled = false;
+                    }
+                }
+            });
+        }
+    //复制按钮
+    function chick_copy_url(val_name) {
+        //使用函数
+        var val = $("#" + val_name).val();
+        Clipboard.copy(val);
+    }
+</script>
+{% end %}

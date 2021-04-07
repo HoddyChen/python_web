@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-lg-12" style="margin-top: 30px;">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_(page_main['title_type'])}}</strong>  </h2>
+                    {%
+                    if page_main.get('fx_flag_text1')!=None
+                    %}
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/admin/copy?fx_type={{page_main['prc_type']}}">{{_('全部')}}</a></li>
+                                <li><a href="/admin/copy?fx_type={{page_main['prc_type']}}&fx_flag=1">{{_(page_main['fx_flag_text1'])}}</a></li>
+                                <li><a href="/admin/copy?fx_type={{page_main['prc_type']}}&fx_flag=0">{{_(page_main['fx_flag_text0'])}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {% end if %}
+                </div>
+                <div class="body">
+                    <table id="datatable01" class="table table-bordered table-striped table-hover dataTable">
+                        <!--js-exportable-->
+                        <thead>
+                            <tr>
+                                {%for j in range(page_main['th_num'])%}
+                                <th></th>
+                                {%end for%}
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<input id="prc_type" name="type" type="hidden" value="{{page_main['prc_type']}}">-->
+    <input id="fx_flag" name="type" type="hidden" value="{{page_main['fx_flag']}}">
+    <!-- #END# Exportable Table -->
+</div>

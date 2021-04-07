@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{_("综合")}}</strong> {{_("报告")}}</h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_1">0</span></h4>
+                                <span class="text-muted">{{_('结算次数')}}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                                <h4 class="number m-t-0 m-b-5"><span id="h2_2">0</span></h4>
+                                <span class="text-muted">{{_('结算金额')}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-lg-12" style="margin-top: 30px;">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{page_main.get('account')}} - {{_(page_main.get('time_str'))}} {{_(page_main['title_type'])}}</strong>  </h2>
+
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}">{{_('全部')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=the_day">{{_('今日')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=recent_day">{{_('近一日')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=the_week">{{_('本周')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=recent_week">{{_('近一周')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=last_week">{{_('上周')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=the_month">{{_('本月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=last_month">{{_('上个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=recent_month">{{_('近一个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=recent_month3">{{_('近三个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=recent_month6">{{_('近六个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=the_year">{{_('今年')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=last_year">{{_('去年')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type={{page_main['prc_type']}}&uid={{page_main['uid']}}&time_type=recent_year">{{_('近一年')}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <table id="datatable01" class="table table-bordered table-striped table-hover dataTable">
+                        <!--js-exportable-->
+                        <thead>
+                            <tr>
+                                {%for j in range(page_main['th_num'])%}
+                                <th></th>
+                                {%end for%}
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="body">
+                    * 每周结算一次，佣金汇入您返佣资料中的瑞讯银行账号。
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="time_type" name="type" type="hidden" value="{{page_main['time_type']}}">
+    <!-- #END# Exportable Table -->
+</div>

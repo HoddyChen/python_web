@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix justify-content-center">
+        <div class="col-lg-9" style="margin-top: 30px;">
+            <div class="card chat-app">
+                <div class="chat" style="margin-left:0px;">
+                    <div class="header">
+                        <h2><strong id="title_text"></strong></h2>
+                    </div>
+                    <div class="chat-widget" style="height: 390px;">
+                        <ul id="chat_text" class="chat-scroll-list clearfix" style="padding: 5px 5px 0px 5px;">
+                        </ul>
+                    </div>
+                    <form>
+                        <div class="chat-message clearfix">
+                            <div class="input-group p-t-15">
+                                <input type="text" name="fx_text" class="form-control"
+                                       placeholder="Enter text here..." onkeydown="add_proposal(event);">
+                                <span class="input-group-addon">
+                                    <i class="zmdi zmdi-mail-send"></i>
+                                </span>
+                            </div>
+                            <div class="input-group p-t-15">
+                                <input type="text" name="fx_text2" style="display:none;">
+                                <input id="fx_id" name="fx_id" type="hidden" value="{{page_main['fx_id']}}">
+                                <ul>
+                                    <li><p class="text-muted">{{_("在上方输入内容后，按回车键即可发送内容！")}}</p></li>
+                                    <li><p class="text-muted">{{_("在此与我们互动，我们会尽快回复您！")}}</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container-fluid">-->
+<!--&lt;!&ndash; Exportable Table &ndash;&gt;-->
+<!--<div class="row clearfix">-->
+<!--<div class="col-lg-12">-->
+<!--<div class="card">-->
+<!--<div class="header">-->
+<!--<h2><strong>{{_("我的问题或建议")}}</strong>  </h2>-->
+<!--</div>-->
+<!--<div class="body">-->
+<!--<table id="datatable01" class="table table-bordered table-striped table-hover dataTable">-->
+<!--&lt;!&ndash;js-exportable&ndash;&gt;-->
+<!--<thead>-->
+<!--<tr>-->
+<!--{%for j in range(3)%}-->
+<!--<th></th>-->
+<!--{%end for%}-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; #END# Exportable Table &ndash;&gt;-->
+<!--</div>-->

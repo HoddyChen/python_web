@@ -1,0 +1,51 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+
+<!--<link rel="stylesheet" href="{{ static_url('assets/plugins/nouislider/nouislider.min.css')}}">-->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_edit_info.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!--{% include mode_js3.html%}-->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script>
+    function my_submit(){
+        // args._xsrf = getCookie("_xsrf");
+        document.getElementById("button_enter_send").disabled = true;
+        $.ajax({
+            type: 'POST',
+            url: '/user/info?fx_type=edit_info',
+            data: $("form").serialize(),
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    swal("保存成功", "密码修改成功", "success");
+                    document.getElementById("button_enter_send").disabled = false;
+                }else if (re.reponse_status < 5) {
+                    swal({
+                        title: "修改资料",
+                        text: re.echo,
+                        type: "error",
+                        html: true
+                    });
+                    document.getElementById("button_enter_send").disabled = false;
+                }else{
+                    swal("修改资料", "未知错误，请稍候再试", "error");
+                    document.getElementById("button_enter_send").disabled = false;
+                }
+            }
+        });
+    }
+</script>
+{% end %}

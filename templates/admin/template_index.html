@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>{{_(page_main.get('title_full'))}}-{{_(page_main.get('title_main'))}}-{{_(page_main.get('title_website'))}}</title>
+    {% block css %}
+    {% end %}
+    <style>
+        .theme-purple section.content.red:before{
+			background-color:#ffffff;
+		}
+    </style>
+</head>
+<body class="theme-purple">
+<!-- Page Loader -->
+{% include mode_loader.html%}
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+{% include mode_nav.html%}
+
+<!-- Left Sidebar -->
+{% include mode_left_sidebar.html%}
+
+<!-- Right Sidebar -->
+{% include mode_right_sidebar.html%}
+
+
+<!-- Main Content -->
+    {% block middle %}
+    {% end %}
+
+<!-- Jquery Core Js -->
+    {% block js %}
+    {% end %}
+
+</body>
+</html>

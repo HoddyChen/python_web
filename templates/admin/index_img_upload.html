@@ -1,0 +1,26 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/dropzone/dropzone.css')}}">
+<!--<link rel="stylesheet" href="{{ static_url('assets/plugins/nouislider/nouislider.min.css')}}">-->
+<style>
+    .logo_img{width:80px;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;border-radius:50%;vertical-align:bottom!important;border:3px solid #fff;box-shadow:0 5px 25px 0 rgba(0,0,0,.2)}
+</style>
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_img_upload.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!--{% include mode_js3.html%}-->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script src="{{ static_url('assets/plugins/dropzone/dropzone.js')}}"></script>
+{% end %}
