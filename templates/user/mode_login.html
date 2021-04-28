@@ -57,7 +57,7 @@
                         dataType: "JSON",
                         success:  function(re) {
                             if(re.success==true) {
-                                if (re.score > 0.5) {
+                                if (re.score > 0.6) {
                                     document.getElementById("button_enter_send").disabled = false;
                                     $("#login_tags2").text("{{_('发送验证码')}}");
                                     showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示
@@ -77,7 +77,8 @@
     function my_submit_sendemail(){
         // args._xsrf = getCookie("_xsrf");
         document.getElementById("button_enter_send").disabled = true;
-        var login_str = $("#login_tags2").text();
+        {#var login_str = $("#login_tags2").text();#}
+        var login_str = "{{_('发送验证码')}}";
         showNotification("bg-blue","{{_('验证码发送中')}}.....","bottom","center",null,null);//正常提示
         setTimeShow("#login_tags2", "button_enter_send", login_str);
         $.ajax({

@@ -6,13 +6,14 @@ from tornado import ioloop, gen, iostream
 # import pymysql
 # from tornado import gen
 import re
-# par4 = ".*?浩.*"
-# vol4 = re.compile(par4).findall("外")
-# print(vol4)
+# par4 = "?!(.*de)$"
+par4 = "^((?!\.de).)*$"
+vol4 = re.compile(par4).findall("9900@gmail.de")
+print(vol4)
 # print(time.time())
 # time.sleep(1)
 #
-# exit()
+exit()
 from handlers.myredis.redis_class import RedisClass
 # print(data)
 # import os
