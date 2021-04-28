@@ -24,7 +24,8 @@ class SendmailHandler(tornado.web.RequestHandler):
         md5_from = self.get_argument('f5')
         umail = self.get_argument('f11', "")
         par = r'^[\.a-zA-Z0-9_\-]{1,30}@[a-zA-Z0-9_\-]+\.([a-zA-Z0-9_\-]{1,5})$'
-        if re.match(par, umail):
+        par2 = r'.*\.(com|cn|net|org|gov|edu|top)$'
+        if re.match(par, umail) and re.match(par2, umail):
             #邮箱验证成功
             R = RedisClass()
             uaid = yield R.chick_MD5_uaid(AccountNumber, md5_from, ukid)

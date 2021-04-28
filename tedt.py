@@ -8,7 +8,8 @@ from tornado import ioloop, gen, iostream
 import re
 # par4 = "?!(.*de)$"
 par4 = ".*\.(com|cn|net|org|gov|edu|top)$"
-vol4 = re.compile(par4).findall("9900@gmailcn")
+# vol4 = re.compile(par4).findall("9900@gmailcn")
+vol4 = re.match(par4, "9900@gmail.cn")
 print(vol4)
 # print(time.time())
 # time.sleep(1)
