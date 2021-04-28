@@ -159,11 +159,12 @@
             countdown = 120;
             $(id_name).text(login_str);
             document.getElementById(button_name).disabled = false;
-            // return;
+            clearTimeout(t);
+            return;
         }else {
             countdown --;
             $(id_name).text(login_str + " ( " + countdown.toString() + " )");
-            setTimeout(function() {
+            t = setTimeout(function() {
                 setTimeShow(id_name, button_name, login_str)
             },1000);
         }

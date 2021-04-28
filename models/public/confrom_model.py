@@ -38,7 +38,8 @@ class SendEmailForm(Form):
         validators.InputRequired(message=(u'邮箱输入不正确，请重新输入')),
         validators.Length(min=5, max=32, message=(u'邮箱字符应为5-32个字符，请重新输入')),
         validators.Email(message=(u'邮箱格式不正确，请重新输入')),
-        validators.Regexp('^((?!\.de).)*$', message=(u'非法数据')),
+        # validators.Regexp('^((?!\.de).)*$', message=(u'非法数据')),
+        validators.Regexp('.*\.(com|cn|net|org|gov|edu|top)$', message=(u'非法数据')),
     ])
 
 class LoginForm(Form):
