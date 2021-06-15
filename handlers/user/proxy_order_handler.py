@@ -61,10 +61,13 @@ class ProxyOrderHandler(tornado.web.RequestHandler):
                             edit_flag = 1
                         if proxy_from_orderid[i] != str(Order_data['proxy_from_orderid']):
                             edit_flag = 1
+
                         # print(OrderComment[i])
                         # print(Order_data['comment'])
                         if OrderComment[i] != str(Order_data['comment']):
                             edit_flag = 1
+                        if Order_data['proxy_profit'] > 0 or str(Order_data['proxy_profit']) != "0.00":
+                            edit_flag = 2
                         if edit_flag == 1:
                             # 修改订单，元组列表
                             tupleList2 = (int(OpenT[i]), int(proxy_from_orderid[i]), OrderComment[i], int(account[i]),

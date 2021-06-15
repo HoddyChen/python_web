@@ -79,10 +79,11 @@ class ProxyOrderModel():
     # 修改佣金状态，接受返佣
     @gen.coroutine
     def editPAVerify(self, uid, account, PROXY_PRICE):
+        the_stime, the_etime = yield self.getStime('the_week')
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 try:
-                    yield cursor.callproc('edit_proxy_verify', (uid, PROXY_PRICE, account, "@out_mflag"))
+                    yield cursor.callproc('edit_proxy_verify', (uid, PROXY_PRICE, account,the_stime, "@out_mflag"))
                     yield cursor.execute("select @out_mflag;")
                     # for result in cursor.stored_results():
                     #     print(result.fetchall())
