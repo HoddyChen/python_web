@@ -83,7 +83,7 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 try:
-                    yield cursor.callproc('edit_proxy_verify', (uid, PROXY_PRICE, account,the_stime, "@out_mflag"))
+                    yield cursor.callproc('edit_proxy_verify', (uid, PROXY_PRICE, account, the_stime, "@out_mflag"))
                     yield cursor.execute("select @out_mflag;")
                     # for result in cursor.stored_results():
                     #     print(result.fetchall())
