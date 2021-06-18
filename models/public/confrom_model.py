@@ -387,12 +387,12 @@ class ProxyInfoForm(Form):
     ])
     uname = StringField('uname', [
         validators.optional(),
-        validators.Regexp('[a-zA-Z\s]+$', message=(u'只能包括英文字母')),
-        validators.Length(min=0, max=20, message=(u'类型应为20个字符以内'))
+        validators.Regexp('[a-zA-Z ]+$', message=(u'只能包括英文字母')),
+        validators.Length(min=0, max=25, message=(u'类型应为25个字符以内'))
     ])
     iban = StringField('iban', [
         validators.optional(),
-        validators.Regexp('[a-zA-Z\d]+$', message=(u'非法数据')),
+        validators.Regexp('[a-zA-Z0-9]+$', message=(u'非法数据')),
         validators.Length(min=0, max=50, message=(u'类型应为50个字符以内'))
     ])
     uid = IntegerField('uid', [

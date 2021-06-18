@@ -206,7 +206,7 @@ class ProxyOrderModel():
                         yield cursor.execute(sql % (web_uid, 3))
                     else:
                         sql = "INSERT INTO proxy_users(uid,uname,iban,grade_id) VALUES(%s,%s,%s,%s)"
-                        yield cursor.execute(sql % (web_uid, uname, iban, 3))
+                        yield cursor.execute(sql, (web_uid, uname, iban, 3))
                     yield conn.commit()
                     return True
                 except Exception as err:
