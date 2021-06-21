@@ -34,13 +34,13 @@ class SendmailHandler(tornado.web.RequestHandler):
                 sendH = SendmailModel()
                 # mail_key = str(random.randint(100000, 999999))
                 mail_key = "".join(random.sample('123567890', 6))
-                mail_text = """主策略账号登陆验证码：
+                mail_text = """验证码：
                 
                 """
                 mail_text = mail_text + mail_key
                 mail_text = mail_text + """
                 
-                请不要将验证码转发或给其他人查看！！！！！
+                主策略账号注册或登陆使用，请不要将验证码转发或给其他人查看！！！！！
                 -----来自[跟单交易多账户管理系统]"""
                 tomail = []
                 tomail.append(umail)
