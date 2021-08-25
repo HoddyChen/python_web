@@ -10,7 +10,8 @@ logger = logging.getLogger('Main')
 class SendmailModel():
     from_mail = "cs@fxcns.com"#'cs@fxcns.com'
     from_title = "跟单交易多账户管理系统邮件"
-    mail_password = 'gtW2zyF5WhAgxMPi'
+    mail_password = '>mYwYP@K2::g)g;.X^Fr'
+    # mail_password = 'gtW2zyF5WhAgxMPi'
 
     @gen.coroutine
     def email_err_send(self):

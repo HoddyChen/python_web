@@ -57,7 +57,7 @@
                         dataType: "JSON",
                         success:  function(re) {
                             if(re.success==true) {
-                                if (re.score > 0.6) {
+                                if (re.score >= 0.1) {
                                     document.getElementById("button_enter_send").disabled = false;
                                     $("#login_tags2").text("{{_('发送验证码')}}");
                                     showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示

@@ -1,6 +1,6 @@
 #coding=utf-8
 from wtforms_tornado import Form
-from wtforms import StringField, validators, PasswordField, IntegerField, HiddenField, BooleanField, FloatField, FileField
+from wtforms import StringField, validators, PasswordField, IntegerField, HiddenField, BooleanField, FloatField
 
 class ErrorForm(Form):
     # 错误代码

@@ -1,5 +1,7 @@
 # coding = utf-8
 #coding=utf-8
+import re
+
 import tornado
 import config
 from tornado import gen
@@ -17,8 +19,14 @@ class AdminHandler(SessionHandler, BaseHandler):
     def get(self):
         # print(self.request.host)
         # tornado.locale.set_default_locale("en_US")
+
+        User_Agent = self.request.headers.get('User-Agent')
+        if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (re.findall("14_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []):
+                # print("非法入侵，将追究法律责任！")
+            return
         page_main = {}
         page_main['title_website'] = config.WEBSITE_NAME + "管理区"
+        # page_main['User_Agent'] = User_Agent
         if self.session['ManagerUid'] == None:
             yield self.render("admin/login.html", page_main=page_main)
             return
@@ -48,6 +56,11 @@ class AdminHandler(SessionHandler, BaseHandler):
 
         else:
             #登陆
+            User_Agent = self.request.headers.get('User-Agent')
+            if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (
+                    re.findall("14_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []):
+                # print("非法入侵，将追究法律责任！")
+                return
             F = LoginForm(self.request.arguments)
             if F.validate():#and F.cla.data == "SendError"
                 M = ManagerModel()
