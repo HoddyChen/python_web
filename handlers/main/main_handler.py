@@ -20,4 +20,8 @@ class IndexHandler(BaseHandler):
 class ErrorHandler(BaseHandler):
     @gen.coroutine
     def get(self):
+        yield self.render("user/error.html")\
+
+    @gen.coroutine
+    def post(self):
         yield self.render("user/error.html")

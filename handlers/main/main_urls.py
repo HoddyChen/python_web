@@ -1,6 +1,6 @@
 #coding=utf-8
 # from handlers.main.main_handler import IndexHandler
-# from handlers.main.main_handler import ErrorHandler
+from handlers.main.main_handler import ErrorHandler
 from handlers.user.user_urls import user_urls
 # from handlers.huac.huac_urls import huac_urls
 from handlers.user_admin.admin_urls import user_admin_urls
@@ -11,7 +11,7 @@ from handlers.user_admin.admin_handler import AdminHandler
 handlers = [
     # (r'/', IndexHandler),
     (r'/', AdminHandler),
-    # (r'/error', ErrorHandler),
+    (r'/.*', ErrorHandler),
 ]
 
 handlers += user_urls
