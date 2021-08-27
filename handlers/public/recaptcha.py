@@ -9,7 +9,8 @@ class Recaptcha_Handler(tornado.web.RequestHandler):
     @gen.coroutine
     def post(self):
         url = 'https://recaptcha.net/recaptcha/api/siteverify'
-        key = "6Le_FL8UAAAAAOnkBVOwiIqO6Dm09lCjXSnrQ6Qr"
+        # key = "6Le_FL8UAAAAAOnkBVOwiIqO6Dm09lCjXSnrQ6Qr"
+        key = "6LeU8KMUAAAAALDrNrgYEhYmmOzw2EbgzAs3dlLk"
         # 验证码
         token = self.get_argument('token', 0)
         # 用户输入

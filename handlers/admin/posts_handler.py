@@ -100,6 +100,7 @@ class PostsHandler(SessionHandler, BaseHandler):
 
             elif fx_type == "edit_post" or fx_type =="add_post":
                 F = AdminPostEditForm(self.request.arguments)
+                # yy = F.validate()
                 if F.validate():
                     # if F.comment_flag.data == "on":
                     #     comment_flag = 1

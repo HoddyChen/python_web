@@ -32,16 +32,15 @@
         </div>
     </div>
 </div>
-<script src="https://recaptcha.net/recaptcha/api.js?render=6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7"></script>
 
 <script>
     var countdown = 120;
     function my_login(){
-        $.getScript('https://recaptcha.net/recaptcha/api.js?render=6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7',function(){
+        $.getScript('https://recaptcha.net/recaptcha/api.js?render=6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A',function(){
             document.getElementById("button_enter").disabled = true;
             showNotification("bg-blue","{{_('Recaptcha人机验证中,请稍等...')}}","bottom","center",null,null);//正常提示
             grecaptcha.ready(function() {
-                grecaptcha.execute('6Le_FL8UAAAAAGF1wrylQToWJZqTTX9kaQktNUh7', {action: 'register'}).then(function(token) {
+                grecaptcha.execute('6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A', {action: 'register'}).then(function(token) {
                     $.ajax({
                         type: 'POST',
                         url: '/recaptcha',
@@ -49,7 +48,7 @@
                         dataType: "JSON",
                         success:  function(re) {
                             if(re.success==true) {
-                                if (re.score >= 0.1) {
+                                if (re.score >= 0.8) {
                                     document.getElementById("button_enter").disabled = false;
                                     // $("#login_tags2").text("{{_('发送验证码')}}");
                                     showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示

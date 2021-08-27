@@ -1,6 +1,6 @@
 #coding=utf-8
 from wtforms_tornado import Form
-from wtforms import StringField, validators, PasswordField, IntegerField, HiddenField, BooleanField, FloatField
+from wtforms import StringField, validators, PasswordField, IntegerField, BooleanField, FloatField
 
 class ErrorForm(Form):
     # 错误代码
@@ -451,7 +451,7 @@ class AdminPostEditForm(Form):
         validators.InputRequired(message=(u'标题不符合规范，请重新输入')),
         validators.Length(min=5, max=60, message=(u'旧密码应为5-60个字符，请重新输入'))
     ])
-    id = HiddenField('id', [
+    id = IntegerField('id', [
         validators.NumberRange(message=(u'文章ID不正确'))
     ])
     posts_type_id = IntegerField('posts_type_id', [
@@ -461,14 +461,14 @@ class AdminPostEditForm(Form):
         validators.NumberRange(0, 6, message=(u'操作类型不正确'))
     ])
     post_content = StringField('post_content', [
-        validators.InputRequired(message=(u'内容不符合规范，请重新输入')),
+        validators.InputRequired(message=(u'内容不符合规范，请重新输入'))
     ])
     post_excerpt = StringField('post_excerpt', [
         validators.InputRequired(message=(u'引言不符合规范，请重新输入')),
         validators.Length(min=5, max=160, message=(u'引言应为5-160个字符，请重新输入'))
     ])
     tags = StringField('tags', [
-        validators.InputRequired(message=(u'标签不符合规范，请重新输入')),
+        validators.InputRequired(message=(u'标签不符合规范，请重新输入'))
     ])
     # comment_flag = BooleanField('comment_flag', default=0)
 
@@ -481,7 +481,7 @@ class AdminClassRoomEditForm(Form):
     posts_url = StringField('posts_url', [
         validators.InputRequired(message=(u'缩略图，请重新输入')),
     ])
-    id = HiddenField('id', [
+    id = IntegerField('id', [
         validators.NumberRange(message=(u'文章ID不正确'))
     ])
     post_type_id = IntegerField('post_type_id', [
