@@ -9,7 +9,15 @@ import re
 
 class BaseHandler(tornado.web.RequestHandler):
     def initialize(self):
-        pass
+        self.clear_header('Server')
+        # 防止点击劫持：X-Frame-Options 标头
+        self.set_header("X-Frame-Options", "SAMEORIGIN")
+        # 自动转义检测，开启浏览器的删除检测到的恶意代码
+        self.set_header('X-XSS-Protection', '1; mode=block')
+        # 类型检测
+        self.set_header('X-Content-Type-Options', 'nosniff')
+        # 强制https访问
+        self.set_header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains')
 
     def get_lang(self):
         lang_str = self.get_secure_cookie("lang_str")
@@ -70,7 +78,6 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def write_error(self, status_code, **kwargs):
         error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
-
         if settings['debug']:
             # from web.py
             # in debug mode, try to send a traceback
@@ -92,6 +99,21 @@ class BaseHandler(tornado.web.RequestHandler):
             self.render('user/error.html')
 
         return
+
+    # def clear(self) -> None:
+    #     """Resets all headers and content for this response."""
+    #     self._headers = httputil.HTTPHeaders(
+    #         {
+    #             "Content-Type": "text/html; charset=UTF-8",
+    #             "Date": httputil.format_timestamp(time.time()),
+    #         }
+    #     )
+    #     self.set_default_headers()
+    #     self._write_buffer = []  # type: List[bytes]
+    #     self._status_code = 200
+    #     self._reason = httputil.responses[200]
+
+
 
     def getCookie(self, flag=0):
         cookie_dist = {}
