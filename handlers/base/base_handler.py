@@ -12,9 +12,9 @@ class BaseHandler(tornado.web.RequestHandler):
         self.clear_header('Server')
         # 防止点击劫持：X-Frame-Options 标头
         self.set_header("X-Frame-Options", "SAMEORIGIN")
-        # 自动转义检测，开启浏览器的删除检测到的恶意代码
+        # 自动转义检测，开启浏览器的删除检测到的恶意代码，防止SQL注入
         self.set_header('X-XSS-Protection', '1; mode=block')
-        # 类型检测
+        # 关闭类型检测
         self.set_header('X-Content-Type-Options', 'nosniff')
         # 强制https访问
         self.set_header('Strict-Transport-Security', 'max-age=31536000; includeSubdomains')

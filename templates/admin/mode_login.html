@@ -50,7 +50,7 @@
                             dataType: "JSON",
                             success:  function(re) {
                                 if(re.success==true) {
-                                    if (re.score >= 0.8) {
+                                    if (re.score >= 0.6) {
                                         document.getElementById("button_enter").disabled = false;
                                         // showNotification("bg-blue","✓ {{_('已经通过Recaptcha人机验证！请输入信息进入......')}}","top","center",null,null);//正常提示
                                     }else{
