@@ -1,0 +1,258 @@
+<div class="container-fluid" style="padding-top:30px;">
+    <div class="row clearfix">
+        <div class="col-md-12" style="left: 30px;top: -14px;">
+            <div class="row clearfix">
+                <div class="col-lg-11 col-md-12">
+                    <div class="body row align-items-center">
+                        {% for symbolname in page_main['SymbolNameDist'] %}
+                          <button id="btn_{{ symbolname['symbol_name'] }}" class="btn btn-primary btn-round" onclick="urlgo('{{ symbolname['symbol_name'] }}');">{{ symbolname['symbol_name'] }}</button>
+                        {% end for %}
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-12">
+                    <div class="body">
+                    <i id="i_line1" class="zmdi zmdi-hq"></i> <i id="i_line2" class="zmdi zmdi-swap"></i> <i id="i_line3" class="zmdi zmdi-desktop-mac"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="row clearfix">
+                <div class="col-lg-7 col-md-6">
+                    <div class="card tasks_report" onclick="funds_count();return false;">
+                        <div class="header">
+                            <h2><strong>{{ _("策略利润曲线") }}</strong> {{ _("监控") }}</h2>
+                        </div>
+                        <div class="body row align-items-center" style="height: 360px;">
+                            <div id="pie_chart2" class="flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6">
+                    <div class="card top-report" onclick="updata_strategy_symbol();return false;">
+                        <div class="header">
+                            <h2><strong>{{ _("持仓品种") }}</strong> {{ _("监控") }}</h2>
+                        </div>
+                        <div id="bar_chart_11" class="body text-center" style="height: 360px;">
+                            <div id="bar_chart_10" class="flot-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{ _("综合") }}</strong> {{ _("报告") }}</h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span id="h2_1">0</span></h4>
+                            <span class="text-muted">{{ _('结余') }}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+
+                            <h4 class="number m-t-0 m-b-5"><span id="h2_2">0</span></h4>
+                            <span class="text-muted">{{ _('净值') }}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span id="h2_3">0</span></h4>
+                            <span class="text-muted">{{ _('持仓利润') }}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span id="h2_4">0</span></h4>
+                            <span class="text-muted">{{ _('持仓手数') }}</span>
+                        </div>
+                        <div class="col-lg col-md-6 col-sm-12 text-center">
+                            <h4 class="number m-t-0 m-b-5"><span id="h2_5">0</span></h4>
+                            <span class="text-muted">{{ _('持仓单量') }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{ _("利润") }}</strong> {{ _("报告") }}</h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row text-center">
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_1">0</span></h4>
+                            <span class="text-muted"> {{ _("今日利润") }}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_2">0</span></h4>
+                            <span class="text-muted">{{ _("本周利润") }}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_3">0</span></h4>
+                            <span class="text-muted">{{ _("本月利润") }}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_4">0</span></h4>
+                            <span class="text-muted">{{ _("今年利润") }}</span>
+                        </div>
+                        <div class="col-md col-6">
+                            <h4 class="margin-0"><span id="h4_5">0</span></h4>
+                            <span class="text-muted">{{ _("全部利润") }}</span>
+                        </div>
+                    </div>
+                    <div id="area_chart" class="graph"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="card weather2" onclick="StrategySymbolList();return false;">
+                <div class="header">
+                    <h2><strong>{{ _('持仓品种') }} : </strong> {{ _('监控') }}</h2>
+                </div>
+                <div class="body" style="height: 730px;padding:5px;">
+                    <table id="datatable01" class="table table-bordered table-striped table-hover dataTable"
+                           width="100%">
+                        <!--js-exportable-->
+                        <thead>
+                        <tr>
+                            {% for j in range(page_main['th_num']) %}
+                            <th></th>
+                            {% end for %}
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="strategy_id" name="type" type="hidden" value="{{ page_main['strategy_id'] }}">
+    <input id="uaid" name="type" type="hidden" value="{{ page_main['uaid'] }}">
+    <input id="line_status" name="type" type="hidden" value="0">
+</div>
+<script>
+    // 货币对持仓数据
+    function StrategySymbolList() {
+        var strategy_id = $("#strategy_id").val();
+        var uaid = $("#uaid").val();
+        //Range Example
+        if ($.fn.DataTable.isDataTable('#datatable01')) {
+            $('#datatable01').dataTable().fnDestroy();
+        }
+        var myTable = $('#datatable01').DataTable({
+            order: [[2, "desc"]],
+            bProcessing: true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide: true, //是否启动服务器端数据导入
+            searching: false,
+            stateSave: false,
+            retrieve: true,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            {#pageLength: 5,#}
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength: 12, //默认显示的记录数
+            bPaginate: true, //是否显示（应用）分页器
+            bInfo: true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=position&strategy_id=' + strategy_id + '&uaid=' + uaid + '&nt=' + Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: "{{_('品种')}}",
+                    data: 'proname',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: "{{_('方向')}}",
+                    data: 't_type',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.t_type == 0) {
+                            var e = 'Buy';
+                        } else if (row.t_type == 1) {
+                            var e = 'Sell';
+                        } else {
+                            var e = "";
+                        }
+                        return e;
+                    }
+                },
+                {
+                    title: "{{_('手数')}}",
+                    data: 'num_all',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.t_type < 2) {
+                            return row.num_all;
+                        } else {
+                            return "";
+                        }
+                    }
+                },
+                {
+                    title: "{{_('单数')}}",
+                    data: 't_all',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: "{{_('利润')}}",
+                    data: 'profit_all',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return (row.profit_all - row.commission_all + row.swap_all);
+                    }
+                }
+            ],
+            fnCreatedRow: function (nRow, aData, iDataIndex) {
+                // $(nRow).attr('id', 'my' + aData.account); // or whatever you choose to set as the id
+            },
+            language: { //自定义描述....
+                "sProcessing": "{{_('正在获取数据, 请稍后')}}...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "{{_('没有找到数据')}}",
+                "sInfo": "{{_('')}} _START_ {{_('-')}} _END_ {{_('条')}} {{_('总数')}} _TOTAL_ {{_('条')}}",
+                "sInfoEmpty": "{{_('记录数为0')}}",
+                "sInfoFiltered": "({{_('全部记录数')}} _MAX_ {{_('条')}})",
+                "sInfoPostFix": "",
+                "sSearch": "{{_('全局搜索')}}",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "{{_('第一页')}}",
+                    "sPrevious": "{{_('上一页')}}",
+                    "sNext": "{{_('下一页')}}",
+                    "sLast": "{{_('最后一页')}}"
+                },
+                "loadingRecords": "{{_('请稍候-正在加载')}}...",
+                "processing": "{{_('数据库当前很忙')}}",
+                "search": "{{_('关键字搜索')}} _INPUT_ {{_('应用于表格')}}"
+            },
+        });
+        setTimeout(function () {
+            StrategySymbolList();
+            {#$("#datatable01").dataTable().fnDraw(false);#}
+        }, 1 * 60 * 1000);
+    }
+
+    function urlgo(url){
+        var strategy_id = $("#strategy_id").val();
+        window.open('/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=strategy_ma&strategy_id=' + strategy_id + '&symbol_name=' + url);
+    }
+
+</script>

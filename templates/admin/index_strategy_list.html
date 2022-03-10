@@ -1,0 +1,165 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+<!--<link rel="stylesheet" href="{{ static_url('assets/plugins/nouislider/nouislider.min.css')}}">-->
+{% end %}
+
+{% block middle %}
+<section class="content" style="height: calc(100vh - 60px);">
+    {% include mode_strategy_list.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+<!-- Jquery DataTable Plugin Js -->
+<script src="{{ static_url('assets/bundles/datatablescripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.js')}}"></script>
+
+<script src="{{ static_url('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
+<script >
+    $(document).ready(function(){
+        loadData(9);
+    });
+
+    function loadData() {
+        var fx_flag = $("#fx_flag").val();
+        //Range Example
+        var myTable = $('#datatable01').DataTable({
+            order: [[2, "desc"]],
+            bProcessing: true, //DataTables载入数据时，是否显示‘进度’提示
+            bServerSide: true, //是否启动服务器端数据导入
+            searching: true,
+            stateSave: false,
+            ordering: false,
+            paging: true,
+            // pagingType: 'full_numbers',
+            // sPaginationType: 'full_numbers',
+            autoWidth: true,
+            responsive: false,
+            // pageLength: 10,
+            destroy: false,
+            lengthChange: false,
+            iDisplayLength: 10, //默认显示的记录数
+            bPaginate: true, //是否显示（应用）分页器
+            bInfo: true, //是否显示页脚信息，DataTables插件左下角显示记录数
+            ajax: {
+                'url': '/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_strategy&nt=' + Date.parse(new Date()),
+                // 'dataSrc': handle_data_src,
+                'type': 'POST',
+                'async': false,
+                'data': {}
+            },
+            columns: [
+                {
+                    title: '策略ID',
+                    data: 'strategy_id',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        return '<a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=strategy_main&strategy_id=' + row.strategy_id + '&uaid=' + row.uaid + '">' + row.strategy_id + '</a> ';
+                    }
+                },
+                {
+                    title: '策略名称',
+                    data: 'strategy_name',
+                    class: 'text-center align-middle'
+                },
+                {
+                    title: '在线状态',
+                    data: 'time_out',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.time_out == 1) {
+                            var e = '<i class="zmdi zmdi-hq fx_color1"></i> <i class="zmdi zmdi-swap fx_color1"></i> <i class="zmdi zmdi-desktop-mac fx_color1"></i>';
+                        } else {
+                            var e = '<i class="zmdi zmdi-hq fx_color2"></i> <i class="zmdi zmdi-swap fx_color2"></i> <i class="zmdi zmdi-desktop-mac fx_color2"></i>';
+                        }
+                        return e;
+                    }
+                },
+                {
+                    title: '状态',
+                    data: 'pi_status',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if (row.pi_status == 1) {
+                            var e = '<i class="zmdi zmdi-cloud-done fx_color1"></i>';
+                        } else {
+                            var e = '<i class="zmdi zmdi-cloud-off fx_color2"></i>';
+                        }
+                        return e;
+                    }
+                }
+                //   formatter:function(value,row,index){
+                // var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.news_id + '\')">编辑</a> ';
+                // var d = '<a href="#" mce_href="#" onclick="del(\''+ row.inews_id +'\')">删除</a> ';
+                //     return e+d;
+            ],
+            language: { //自定义描述....
+                "sProcessing": "正在获取数据, 请稍后...",
+                // "sLengthMenu": "显示 _MEUN_ 条",
+                "sZeroRecords": "没有找到数据",
+                "sInfo": "从 _START_ 到 _END_ 条记录 总记录数为 _TOTAL_ 条",
+                "sInfoEmpty": "记录数为0",
+                "sInfoFiltered": "(全部记录数 _MAX_ 条)",
+                "sInfoPostFix": "",
+                "sSearch": "全局搜索",
+                "sUry": "",
+                "oPaginate": {
+                    "sFirst": "第一页",
+                    "sPrevious": "上一页",
+                    "sNext": "下一页",
+                    "sLast": "最后一页"
+                },
+                "loadingRecords": "Please wait - loading...",
+                "processing": "DataTables is currently busy",
+                "search": "Apply filter _INPUT_ to table"
+            },
+        });
+        // 延迟搜索
+        $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
+
+    }
+
+    function Strategy_count() {
+    // 跟单用户统计
+        $.ajax({
+            type: 'get',
+            url: '/admin/strategy?fx_type=master_max_num',
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    document.getElementById("list_master_count_ok").innerHTML = re.master_count_ok.toString();
+                    document.getElementById("list_master_max_num").innerHTML = re.master_max_num.toString();
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+                else {
+                    $("#StrategyList").text("暂无策略账号");
+                    $("#StrategyList").addClass("text-center");
+                }
+            },
+            error:function(re) {
+                showNotification("bg-red","跟单用户统计获取异常，稍后重试","bottom","center",null,null);//错误警示
+            }
+        });
+    }
+
+
+</script>
+
+{% end %}
+

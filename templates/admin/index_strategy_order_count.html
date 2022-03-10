@@ -8,7 +8,7 @@
 
 {% block middle %}
 <section class="content" style="height: calc(100vh - 60px);">
-    {% include mode_order_count_list.html%}
+    {% include mode_strategy_order_count.html%}
 </section>
 {% end %}
 
@@ -26,7 +26,7 @@
 
 <script >
     $(document).ready(function () {
-        // var prc_type = $("#prc_type").val();
+        var uaid = $("#uaid").val();
         var time_type = $("#time_type").val();
         if(time_type == null){
             time_type = "0";
@@ -50,7 +50,7 @@
             bPaginate : true, //是否显示（应用）分页器
             bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
             ajax: {
-                'url': '/user/copy?fx_type=list_order_count&time_type=' + time_type + '&nt='+ Date.parse(new Date()),
+                'url': '/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid='+ uaid +'&time_type=' + time_type + '&nt='+ Date.parse(new Date()),
                 // 'dataSrc': handle_data_src,
                 'type': 'POST',
                 'async': false,
@@ -58,17 +58,8 @@
             },
             columns: [
                 {
-                    title: "{{_('跟单账户')}}",
-                    data: 'account',
-                    class: 'text-center',
-                    render: function (data, type, row) {
-                        var e = '<a href="/h?uaid=' + row.uaid + '" target="_blank">' + row.account + '</a>';
-                        return e;
-                    }
-                },
-                {
-                    title: "{{_('姓名')}}",
-                    data: 'allname',
+                    title: "{{_('日期')}}",
+                    data: 'group_time',
                     class: 'text-center'
                 },
                 {

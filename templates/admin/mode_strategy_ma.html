@@ -1,0 +1,68 @@
+<div class="container-fluid" style="padding-top:30px;">
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12">
+            <div class="card tasks_report">
+                <div class="header">
+                    <h2><strong>{{page_main['symbol_name']}}</strong> {{_("风控曲线图及控制")}}</h2>
+                </div>
+                <div class="body row align-items-center">
+                    <div id="pie_chart2" style="width: 100%;height: 600px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12">
+            <form id="form_validation" method="POST" action="">
+            <div class="card tasks_report">
+                <div class="row justify-content-center" style="margin-top: 10px;">
+                    <div class="col-lg-2 col-md-12">
+                        <div class="form-group form-float">
+                            <select class="form-control show-tick" name="time_type" id="time_period_list">
+                                {% for time_period in page_main['time_period'] %}
+                                {% if time_period == page_main['period_v']['ma_v'] %}
+                                <option value="{{ time_period }}" selected>  {{ time_period }} </option>
+                                    {% else %}
+                                        <option value="{{ time_period }}"> {{ time_period }} </option>
+                                    {% end if %}
+                                {% end for %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <div class="form-group form-float" style="top: 5px;">
+                            <input id="form_id" type="password" class="form-control" placeholder="{{_('确认密码')}}" name="form_id" required value="">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <div class="form-group form-float">
+                            <input id="prc_type" name="prc_type" type="hidden" value="{{page_main['prc_type']}}">
+                            <input id="symbol_name" name="symbol_name" type="hidden" value="{{page_main['symbol_name']}}">
+                            <input id="strategy_id" name="strategy_id" type="hidden" value="{{page_main.get('strategy_id')}}">
+                            <button id="button_enter" class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit()">{{_('保存更新')}}</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12">
+                        <div class="form-group form-float"  style="top: 13px;">
+                            {% for key in page_main['color_v'].keys()%}
+                                <span style="color: {{ page_main['color_v'][key] }}">◼︎ {{ key }} </span>
+                            {% end for %}
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12">
+                        <div class="form-group form-float"  style="top: 2px;">
+                            <input id="fx_flag" name="fx_flag" type="hidden" value="{{ page_main['period_v']['open_flag'] }}">
+                            {% if page_main['period_v']['open_flag'] == 0 %}
+                                <button id="open_flag_submit" class="btn btn-slategray btn-icon btn-icon-mini btn-round" data-type="ajax-loader" onclick="edit_open_flag_submit();"><i id="i_open" class="zmdi zmdi-block"></i></button>
+                            {% else %}
+                                <button id="open_flag_submit" class="btn btn-primary btn-icon btn-icon-mini btn-round" data-type="ajax-loader" onclick="edit_open_flag_submit();"><i id="i_open" class="zmdi zmdi-check-circle"></i></button>
+                            {% end if %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

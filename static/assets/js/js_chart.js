@@ -266,7 +266,7 @@ function getMorrisLineChart(name, datas, xkey, ykeys, tags) {
         ykeys: ykeys,
         labels: tags,
         gridLineColor: '#eef0f2',
-        lineColors: ['#78b83e'],
+        lineColors: ['#034aff','#6C6C6C','#AE0000','#00AEAE','#D200D2','#8600FF','#00AEAE','#F00078'],
         lineWidth: 2,
         pointSize: 3,
         hideHover: 'auto',

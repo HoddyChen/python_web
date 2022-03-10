@@ -1,0 +1,22 @@
+﻿{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+<style>
+    .fx_color3 {
+        color: #fff
+    }
+</style>
+{% end %}
+
+{% block middle %}
+
+<section class="content home">
+    {% include mode_strategy_main.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+{% include mode_js_main.html%}
+{% end %}

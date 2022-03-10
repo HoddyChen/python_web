@@ -88,7 +88,7 @@
             dataType: "JSON",
             success:  function(re) {
                 if (re.reponse_status == 5) {
-                    showNotification("bg-blue","{{_('验证码发送成功！请查收')}}......","bottom","center",null,null);//正常提示
+                    showNotification("bg-blue","✓ {{_('验证码发送成功！请查收')}}......","bottom","center",null,null);//正常提示
                     document.getElementById("button_enter").disabled = false;
                 }else if (re.reponse_status == 2) {
                     showNotification("bg-red","✗ {{_('验证码发送失败！请稍后再试')}}......","bottom","center",null,null);//错误警示

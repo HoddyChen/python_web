@@ -1,0 +1,146 @@
+{% extends "template_index.html" %}
+
+{% block css %}
+{% include mode_css.html%}
+{% include mode_css2.html%}
+{% end %}
+
+{% block middle %}
+
+<section class="content home">
+    {% include mode_strategy_ma.html%}
+</section>
+{% end %}
+
+{% block js %}
+{% include mode_js.html%}
+
+<script src="{{ static_url('assets/plugins/chartjs/Chart.bundle.min.js')}}"></script>
+<script src="{{ static_url('assets/plugins/chartjs/polar_area_chart.js')}}"></script>
+<script src="{{ static_url('assets/bundles/flotchartsscripts.bundle.js')}}"></script>
+<script src="{{ static_url('assets/js/js_chart.js')}}"></script> <!--  -->
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+<script src="{{ static_url('assets/js/pages/ui/dialogs.js')}}"></script>
+<script >
+    strategy_ma();
+    function strategy_ma() {
+        // 资金曲线
+        var strategy_id = $("#strategy_id").val();
+        var symbol_name = $("#symbol_name").val();
+        $.ajax({
+            type: 'post',
+            url: '/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=strategy_ma&strategy_id=' + strategy_id + '&symbol_name=' + symbol_name + '&nt=' + Date.parse(new Date()),
+            data: {},
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    $("#pie_chart2 svg").remove();
+                    getMorrisLineChart("pie_chart2", re.data, "g_date", re.datas_columns, re.datas_columns);
+                } else if (re.reponse_status == -1) {
+                    login_time_out();
+                } else {
+                    $("#pie_chart2").text("暂无数据");
+                    $("#pie_chart2").addClass("text-center");
+                }
+            },
+            error: function (re) {
+                showNotification("bg-red", "资金曲线获得数据异常,稍后重试", "bottom", "center", null, null);//错误警示
+            }
+        });
+
+        setTimeout(function() {
+            strategy_ma();
+        },2.1*60*1000);
+    }
+
+    function my_submit(){
+        // args._xsrf = getCookie("_xsrf");
+        document.getElementById("button_enter").disabled = true;
+        $.ajax({
+            type: 'POST',
+            url: '/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=save_period&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    if (re.echo == true){
+                        showNotification("bg-blue","{{_('策略风控状态，修改成功')}}......","bottom","center",null,null);//正常提示
+                    {#document.getElementById("url_val_span").innerHTML = re.urlkey;#}
+                        var bb = document.getElementById('time_period_list').value;
+                        {#$("#form_id").text("");#}
+                        $("#form_id").val("");
+                        var aa = document.getElementById("time_period_list");
+                        for(var i = 0; i < aa.options.length; i++) {
+                            {#alert(aa.options[i].value);#}
+                            if(aa.options[i].value == bb) {
+                                aa.options[i].title = "✓ " + aa.options[i].value;
+                                aa.options[i].selected = true;
+                            }else{
+                                aa.options[i].title = aa.options[i].value;
+                                aa.options[i].selected = false;
+                                {#alert(aa.options[i].value);#}
+                            }
+                        }
+                        $("#time_period_list").selectpicker('refresh');
+                    } else {
+                        showNotification("bg-red","✗ {{_('修改失败！请稍后再试')}}......","bottom","center",null,null);//错误警示
+                    }
+                    document.getElementById("button_enter").disabled = false;
+                }else if (re.reponse_status < 5) {
+                    showNotification("bg-red","未知错误，请稍候再试","bottom","center",null,null);//错误警示
+                    document.getElementById("button_enter").disabled = false;
+                }else{
+                    showNotification("bg-red","未知错误，请稍候再试","bottom","center",null,null);//错误警示
+                    document.getElementById("button_enter").disabled = false;
+                }
+            }
+        });
+    }
+
+    function edit_open_flag_submit(){
+        // args._xsrf = getCookie("_xsrf");
+        document.getElementById("button_enter").disabled = true;
+        $.ajax({
+            type: 'POST',
+            url: '/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=save_open_flag&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    var button = $("#open_flag_submit");
+                    var i = $("#i_open");
+                    if (re.echo == 1){
+                        showNotification("bg-blue","{{_('策略货币(开)，修改成功')}}......","bottom","center",null,null);//正常提示
+
+                        button.removeClass("btn-slategray");
+                        button.addClass("btn-primary");
+                        i.removeClass("zmdi-block");
+                        i.addClass("zmdi-check-circle");
+                        $("#fx_flag").val(re.echo)
+
+                    } else if (re.echo == 0) {
+                        showNotification("bg-blue","{{_('策略货币(关)，修改成功')}}......","bottom","center",null,null);//正常提示
+                        var button = $("#open_flag_submit");
+                        button.removeClass("btn-primary");
+                        button.addClass("btn-slategray");
+                        i.removeClass("zmdi-check-circle");
+                        i.addClass("zmdi-block");
+                        $("#fx_flag").val(re.echo)
+                    }
+                    else{
+                        showNotification("bg-red","✗ {{_('修改失败！请稍后再试')}}......","bottom","center",null,null);//错误警示
+                    }
+                    document.getElementById("button_enter").disabled = false;
+                }else if (re.reponse_status < 5) {
+                    showNotification("bg-red","未知错误，请稍候再试","bottom","center",null,null);//错误警示
+                    document.getElementById("button_enter").disabled = false;
+                }else{
+                    showNotification("bg-red","未知错误，请稍候再试","bottom","center",null,null);//错误警示
+                    document.getElementById("button_enter").disabled = false;
+                }
+            }
+        });
+    }
+</script>
+{% end %}
