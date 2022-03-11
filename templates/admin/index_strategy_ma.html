@@ -22,7 +22,9 @@
 <script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
 <script src="{{ static_url('assets/js/pages/ui/dialogs.js')}}"></script>
 <script >
-    strategy_ma();
+    setTimeout(function() {
+            strategy_ma();
+        },3000);
     function strategy_ma() {
         // 资金曲线
         var strategy_id = $("#strategy_id").val();

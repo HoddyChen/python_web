@@ -8,6 +8,8 @@ import time
 import hashlib
 from handlers.myredis.redis_class import RedisClass
 from models.public.headers_model import Headers_Models
+import pandas as pd
+import json
 
 class StrategyModel():
     logger = logging.getLogger('Main')
@@ -59,7 +61,7 @@ class StrategyModel():
                 copy_dist = {}
                 if copyStrategy_list[i]['last_time'] != None or copyStrategy_list[i]['last_time'] != "null":
                     try:
-                        if time.mktime(copyStrategy_list[i]['last_time'].timetuple()) + 600 < now_time:
+                        if time.mktime(copyStrategy_list[i]['last_time'].timetuple()) + 1200 < now_time:
                             # 超时
                             copy_dist['time_out'] = 0
                         else:
@@ -302,14 +304,12 @@ class StrategyModel():
                 datas = cursor.fetchall()
                 # print(datas)
                 if len(datas) > 0:
-                    import pandas as pd
                     datas = pd.DataFrame(list(reversed(datas)))
                     for timeperiod_ in self.time_period:
                         datas['sg_ma' + str(timeperiod_)] = datas['straregy_cumsum'].rolling(timeperiod_).mean()
                     datas['g_date'] = datas['g_date'].apply(lambda x: str(x.strftime('%Y-%m-%d')))
                     datas_columns = list(datas.columns)
                     datas_columns.remove("g_date")
-                    import json
                     return json.loads(datas.to_json(orient='records')), datas_columns
                 else:
                     return [], []
