@@ -421,6 +421,7 @@ class StrategyModel():
                             select_sql = " DATE_FORMAT(FROM_UNIXTIME(etime), '%Y%m') as group_time "
                         else:
                             the_stime = 0
+                            select_sql = " DATE_FORMAT(FROM_UNIXTIME(etime), '%Y%m') as group_time "
                     sql = "FROM trader WHERE uaid = %s AND etime > 0 " % page_main['uaid']
 
                     if page_main['time_type'].find("last") >= 0:
