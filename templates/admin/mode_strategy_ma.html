@@ -40,14 +40,14 @@
                             <button id="button_enter" class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit()">{{_('保存更新')}}</button>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-12">
+                    <div class="col-lg-4 col-md-12">
                         <div class="form-group form-float"  style="top: 13px;">
                             {% for key in page_main['color_v'].keys()%}
                                 <span style="color: {{ page_main['color_v'][key] }}">◼︎ {{ key }} </span>
                             {% end for %}
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-12">
+                    <div class="col-lg-1 col-md-12">
                         <div class="form-group form-float"  style="top: 2px;">
                             <input id="fx_flag" name="fx_flag" type="hidden" value="{{ page_main['period_v']['open_flag'] }}">
                             {% if page_main['period_v']['open_flag'] == 0 %}

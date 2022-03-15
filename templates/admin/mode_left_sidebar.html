@@ -22,8 +22,9 @@
                     </li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-globe-alt"></i><span>{{_('自研策略')}}</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_strategy">{{_('策略列表')}}</a></li>
-                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main.get('uaid')}}&time_type=the_week">{{_('订单统计')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_strategy">{{_('选择策略')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=strategy_main&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main.get('uaid')}}&time_type=the_week" title="{{_('控制面板')}}">{{_('控制面板')}}</a></li>
+                            <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main.get('uaid')}}&time_type=the_week">{{_('订单统计')}}</a></li>
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-group-work"></i><span>{{_('博客')}}</span> </a>

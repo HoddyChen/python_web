@@ -10,17 +10,17 @@
                     <ul class="header-dropdown">
                         <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}">{{_('全部')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=the_week">{{_('本周')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=recent_week">{{_('近一周')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=the_month">{{_('本月')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=last_month">{{_('上个月')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=recent_month">{{_('近一个月')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=recent_month3">{{_('近三个月')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=recent_month6">{{_('近六个月')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=the_year">{{_('今年')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=last_year">{{_('去年')}}</a></li>
-                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&uaid={{page_main['uaid']}}&time_type=recent_year">{{_('近一年')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}">{{_('全部')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=the_week">{{_('本周')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=recent_week">{{_('近一周')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=the_month">{{_('本月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=last_month">{{_('上个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=recent_month">{{_('近一个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=recent_month3">{{_('近三个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=recent_month6">{{_('近六个月')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=the_year">{{_('今年')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=last_year">{{_('去年')}}</a></li>
+                                <li><a href="/adminSZba2qjbydxVhMJpuKfy/strategy?fx_type=list_order_count&strategy_id={{ page_main.get('strategy_id') }}&uaid={{page_main['uaid']}}&time_type=recent_year">{{_('近一年')}}</a></li>
                             </ul>
                         </li>
                     </ul>
