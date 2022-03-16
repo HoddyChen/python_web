@@ -307,7 +307,7 @@ class StrategyModel():
                     datas = pd.DataFrame(list(reversed(datas)))
                     for timeperiod_ in self.time_period:
                         datas['sg_ma' + str(timeperiod_)] = datas['straregy_cumsum'].rolling(timeperiod_).mean()
-                    datas['g_date'] = datas['g_date'].apply(lambda x: str(x.strftime('%Y-%m-%d')))
+                    datas['g_date'] = datas['g_date'].apply(lambda x: str(x.strftime('%Y-%m-%d %H')))
                     datas_columns = list(datas.columns)
                     datas_columns.remove("g_date")
                     return json.loads(datas.to_json(orient='records')), datas_columns
