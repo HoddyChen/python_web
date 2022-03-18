@@ -1,0 +1,523 @@
+2021-08-27 06:40:33,356 {Main} {INFO} [user_model,236,getOdata]getOdata:1,571d5c42bb755b1591fd3b430b58af52,-1561697191,0,0,68660728,2.87,a87a08a27209e82dca90c17046b5e1d2,59b364fcfbc32ca5533166ffa84ebb8c,1630017633,0,103.86.46.13:9008,9000, 
+2021-08-27 08:52:17,528 {Main} {INFO} [user_model,236,getOdata]getOdata:1,35868579d8250164568cdd1e721668dd,-1561697191,0,0,68660728,2.87,f4bf88c2c44bb05b85064b27807dbc1a,6052a845367f233fd64b5f654f60fed1,1630025537,0,103.86.46.13:9008,9000, 
+2021-08-27 08:52:29,597 {Main} {INFO} [user_model,236,getOdata]getOdata:1,36923118b3ce042855dab95f817141b8,-1561697191,0,0,68660728,2.87,b2c582dd3ae15e858b12e81f2aae8fba,c2b60d56d9201abd600a8683af6ae9fb,1630025549,0,103.86.46.13:9008,9000, 
+2021-08-27 08:58:52,828 {Main} {DEBUG} [sendmail_handler,29,post][{'uaid': 12372, 'key_ma': '4c50c754485a10e41e45d3426e8b5025', 'flag_ma': 1, 'uid': 12150, 'email': '1684624472@qq.com', 'emailflag': 1, 'account': '2100668736', 'uname': None, 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 12378, 'key_ma': '8c745acd5922a7c97d2a2895f83aec6b', 'flag_ma': 1, 'uid': 12150, 'email': '1684624472@qq.com', 'emailflag': 1, 'account': '858571', 'uname': None, 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 12380, 'key_ma': '11a906e66a535f2d02b6d2256847e89e', 'flag_ma': 1, 'uid': 12150, 'email': '1684624472@qq.com', 'emailflag': 1, 'account': '7011807', 'uname': None, 'ma_name': None, 'logo_url': None, 'fx_comment': None}] 
+2021-08-27 08:59:18,195 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 08:59:18,203 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '858571', 'position_ratio': 0.0}, {'account': '65312', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 08:59:18,206 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:03:30,578 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:04:59,762 {Main} {INFO} [user_model,236,getOdata]getOdata:1,36923118b3ce042855dab95f817141b8,-1561697191,0,0,68660728,2.87,e03f10283e5204b3844a2aebb3eb0eb7,8d3acc0efd31774dbe3ce987af369ddc,1630026299,0,103.86.46.13:9008,9000, 
+2021-08-27 09:05:36,599 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:07:20,558 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:07:43,549 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:09:18,595 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 09:09:49,567 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:09:49,570 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:11:21,561 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:11:56,571 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:12:27,616 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:12:54,475 {Main} {DEBUG} [copy_handler,172,chick_seach]true 
+2021-08-27 09:12:54,479 {Main} {DEBUG} [copy_handler,146,post]{'allnum': 2} 
+2021-08-27 09:12:54,480 {Main} {DEBUG} [copy_handler,163,post]{'data': [{'uaid': 12378, 'follow_flag': 1, 'followid': 12380, 'f_flag': 1, 'account': '858571', 'allname': 'Fenghua Yu (1st account)', 'last_time': datetime.datetime(2021, 8, 26, 21, 46, 48)}, {'uaid': 12376, 'follow_flag': 1, 'followid': 12380, 'f_flag': 1, 'account': '65312', 'allname': '_22799_29647', 'last_time': datetime.datetime(2021, 8, 26, 21, 46, 50)}], 'recordsTotal': 2, 'recordsFiltered': 2, 'fx_type': 'list_account'} 
+2021-08-27 09:12:54,693 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'master_max_num': 4, 'master_count_all': 2, 'master_count_ok': 2} 
+2021-08-27 09:13:13,158 {Main} {DEBUG} [accounts_model,24,getProductInfoList][{'pid': 51, 'info1': '7.9', 'info2': '5.3', 'info3': '3.99', 'piid': 63, 'piname': 'A方案'}, {'pid': 51, 'info1': '13.9', 'info2': '9.3', 'info3': '6.99', 'piid': 64, 'piname': 'B方案'}, {'pid': 51, 'info1': '19.9', 'info2': '13.3', 'info3': '9.99', 'piid': 65, 'piname': 'C方案'}] 
+2021-08-27 09:13:38,247 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:13:38,267 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:15:38,552 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:15:44,555 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:17:39,536 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:19:56,559 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:20:38,550 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 09:23:38,588 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 09:23:40,584 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:24:09,601 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:24:09,605 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '858571', 'position_ratio': 0.0}, {'account': '65312', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:26:16,599 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:27:39,590 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '858571', 'position_ratio': 0.0}, {'account': '65312', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:28:23,577 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:28:39,574 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 09:29:22,227 {Main} {INFO} [user_model,236,getOdata]getOdata:1,36923118b3ce042855dab95f817141b8,-1561697191,0,0,68660728,2.87,0dc1fd48d37f3c4c2702abb7c1152b80,1e52d5695cec4d653a46f132959830e7,1630027762,0,103.86.46.13:9008,9000, 
+2021-08-27 09:30:30,588 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:31:43,568 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:33:07,288 {Main} {INFO} [user_model,236,getOdata]getOdata:1,36923118b3ce042855dab95f817141b8,-1561697191,0,0,68660728,2.87,454caf22dec0d60866d972af2d0963a3,0609126f24f1568d101beca436c89534,1630027987,0,103.86.46.13:9008,9000, 
+2021-08-27 09:33:39,581 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 09:34:40,542 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '858571', 'position_ratio': 0.0}, {'account': '65312', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:37:44,555 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:38:10,552 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '858571', 'position_ratio': 0.0}, {'account': '65312', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:41:03,574 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:41:40,597 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 09:41:46,589 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:43:10,579 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:43:40,584 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 09:47:22,579 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:47:47,576 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:48:40,588 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 09:48:40,594 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 09:49:28,583 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:51:35,571 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:52:12,556 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 09:53:48,553 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 09:55:48,562 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:57:54,549 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 09:59:48,571 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:02:07,567 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:02:42,533 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 10:04:13,555 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:05:49,565 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:06:20,526 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:08:42,569 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 10:09:50,522 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:10:33,550 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:12:39,557 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:13:16,509 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:14:46,544 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:16:42,524 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 10:16:52,504 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:17:52,510 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:18:43,523 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 10:19:53,507 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:23:12,508 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:23:46,552 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:23:53,525 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:25:54,526 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:27:17,530 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:27:54,538 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:30:43,550 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 10:30:47,874 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:31:38,499 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:33:46,499 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 10:34:18,493 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:35:50,522 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:36:54,547 {Main} {INFO} [user_model,236,getOdata]getOdata:1,1aeee2d7919f222a6c0f33c357dd9c7c,-1561697191,0,0,68660728,2.87,d47d4b5bc0fb2a309f1b655122148ba8,37bf20fe1c1bf6b44299427164faf9a7,1630031814,0,103.86.46.13:9008,9000, 
+2021-08-27 10:37:43,748 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 10:37:56,479 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:38:47,507 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 10:40:03,495 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:41:20,512 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:41:58,530 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:44:16,538 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:44:50,536 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:45:59,531 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:46:22,505 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:48:29,499 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 10:51:50,518 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:52:01,497 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:54:01,488 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:55:21,824 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 10:56:02,509 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:58:03,473 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 10:58:45,501 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 11:00:03,492 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:02:03,548 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:02:23,525 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:03:50,535 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:05:46,525 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 11:05:53,506 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:08:04,514 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:09:23,509 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:09:36,513 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:10:04,506 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:11:42,526 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:12:04,529 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:12:54,478 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:13:52,482 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:15:55,476 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:18:06,475 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:19:47,491 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 11:20:07,459 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:22:15,482 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:23:25,498 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:24:21,491 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:26:07,515 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:26:48,496 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 11:28:07,505 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:28:53,483 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:30:25,469 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:32:08,485 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:32:48,463 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:33:53,490 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:34:09,484 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:37:01,480 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:38:11,471 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:38:54,468 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:42:12,485 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:43:20,464 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:43:55,467 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:44:26,476 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:45:27,468 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:47:33,445 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:47:57,450 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:49:39,440 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:51:27,448 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 11:52:14,873 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:53:56,427 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 11:54:49,461 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 11:55:58,416 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:58:04,453 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 11:58:15,438 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 11:58:56,440 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:00:16,418 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:02:17,511 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:04:17,471 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:04:24,473 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:05:30,477 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:08:37,475 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:09:01,483 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:10:43,478 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:12:18,454 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:12:50,454 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:13:58,472 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:14:18,488 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:16:02,471 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:16:19,431 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:17:04,481 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:18:58,489 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:19:11,468 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:19:33,437 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:20:20,438 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:21:18,479 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:23:03,441 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:24:21,483 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:26:21,455 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:26:33,481 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:28:59,441 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:29:44,431 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:29:52,435 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 12:30:22,426 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:32:23,413 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:33:34,430 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:36:23,474 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:36:53,439 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 12:38:10,442 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:39:01,747 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:40:17,439 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:43:53,461 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 12:44:02,428 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:44:27,437 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:46:27,439 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:47:36,696 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:48:42,449 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:50:28,448 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:50:49,434 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:51:06,446 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 12:52:55,431 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:54:03,424 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 12:54:30,405 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:55:02,429 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 12:56:30,419 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 12:58:07,412 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:00:32,410 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:02:33,429 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:04:05,420 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 13:04:34,403 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:04:54,447 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 13:05:08,437 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:06:34,416 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:08:35,402 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:10:36,380 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:11:55,390 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 13:12:36,414 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:14:02,410 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:14:06,392 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 13:16:08,383 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:16:38,377 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:18:15,375 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:20:39,388 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:22:39,439 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:24:08,409 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 13:24:34,406 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:24:40,403 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:26:11,390 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:28:40,394 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:28:47,396 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:29:41,409 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:30:54,392 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:32:41,397 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:32:56,369 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 13:34:42,376 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:36:43,383 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:39:10,369 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 13:39:19,371 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:39:56,816 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 13:41:26,383 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:42:44,397 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:43:43,391 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:44:10,648 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 13:45:39,411 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:46:56,375 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 13:47:46,399 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:48:45,399 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:50:45,973 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:50:46,733 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:51:59,354 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:52:46,385 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:54:11,382 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 13:54:47,371 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 13:56:12,381 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 13:57:46,337 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 13:59:12,718 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:00:57,726 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 14:04:39,351 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:06:50,353 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:08:52,392 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:09:13,359 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:11:48,356 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 14:13:06,343 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:14:13,369 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:15:33,721 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 14:16:53,362 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:18:54,360 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:19:13,334 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:19:27,475 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:21:58,405 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 14:22:55,408 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:24:14,374 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:24:55,409 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:25:46,365 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:27:52,361 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:28:56,369 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:29:59,353 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:32:51,366 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 14:32:57,360 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:34:12,359 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:34:16,337 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:34:57,338 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:36:22,665 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 14:38:59,314 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:39:16,362 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:40:59,362 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:42:38,347 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:43:01,333 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 14:43:22,386 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 14:45:00,343 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:47:01,332 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:49:00,336 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:49:18,341 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:50:01,345 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 14:53:12,320 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:53:54,306 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 14:54:19,336 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:55:18,339 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 14:57:01,310 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 14:57:03,302 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 14:59:19,332 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 14:59:32,293 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:01:38,351 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:04:01,347 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 15:04:20,597 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:05:50,354 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:07:05,883 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:07:56,595 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:09:21,340 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:11:02,324 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 15:11:27,308 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 15:14:16,340 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:14:22,327 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:16:22,330 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:17:07,291 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:19:07,311 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:19:23,315 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:20:35,328 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:21:58,331 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 15:24:23,316 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:25:03,340 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 15:25:09,317 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:26:56,329 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:29:10,313 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:29:23,322 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:31:09,324 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:31:11,306 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:33:11,317 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:34:24,836 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 15:35:12,286 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:35:22,291 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:39:05,299 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 15:39:14,280 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:39:35,277 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:41:13,336 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:43:14,296 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:43:49,301 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:45:14,325 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:45:55,294 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:46:05,301 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 15:47:14,312 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:48:02,283 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:49:15,284 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:50:09,778 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 15:53:05,564 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 0}} 
+2021-08-27 15:55:17,271 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:57:07,360 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 15:57:18,271 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 15:58:35,271 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:00:06,253 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 16:00:37,258 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:02:49,269 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:04:07,255 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:04:26,301 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:05:21,259 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:07:06,262 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 16:07:21,282 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:09:08,287 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:11:15,278 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:11:22,276 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:13:22,249 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:14:06,237 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 16:15:29,232 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:17:24,240 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:19:24,234 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:21:07,252 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 16:23:25,304 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:24:29,275 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:25:12,264 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:27:25,282 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:28:08,257 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 16:28:42,284 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:29:29,284 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:31:26,278 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:34:27,253 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:34:29,260 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:35:43,256 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:36:34,255 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:37:27,269 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:39:28,238 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:40:46,259 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:42:44,250 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:42:53,241 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:44:30,245 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:47:31,225 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:49:13,233 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:49:30,260 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:49:45,217 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:51:19,235 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:51:31,214 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 16:54:31,224 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:55:33,200 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:56:10,205 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 16:56:46,526 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 16:57:39,198 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 16:59:32,216 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 16:59:45,192 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:01:35,266 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:03:11,232 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 17:03:35,237 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:03:47,227 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 17:03:58,242 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:05:36,233 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:07:37,246 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:08:11,227 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:09:37,253 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:10:11,237 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 17:13:38,217 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:14:31,231 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:14:33,218 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:16:38,215 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:18:44,224 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:19:34,228 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:19:40,216 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:21:41,252 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:24:12,220 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 17:25:03,263 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:25:43,252 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:27:44,216 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:28:20,240 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 17:29:16,220 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:31:13,257 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 17:33:30,230 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:34:35,209 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:35:21,204 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 17:35:37,214 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:37:43,253 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:38:52,222 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 17:39:36,204 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:39:50,170 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:42:23,219 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 17:43:49,221 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:44:37,239 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:45:53,241 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 17:46:10,208 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:48:17,198 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:49:38,206 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 17:50:23,194 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:51:51,203 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:52:30,229 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:54:37,192 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:55:52,193 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 17:58:50,184 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 17:59:16,200 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 17:59:54,503 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:01:54,192 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:03:03,213 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:03:55,191 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:04:38,420 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 18:06:56,173 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:07:55,177 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:09:24,155 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:09:56,143 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:11:56,160 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:13:16,209 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 18:13:58,178 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:15:43,138 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:15:57,132 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:19:40,180 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 18:19:57,146 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:19:57,169 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:20:59,151 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:21:58,201 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:22:03,205 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:24:10,103 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:26:16,232 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:28:23,198 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:29:59,192 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:30:29,536 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:31:30,187 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:34:01,173 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:34:41,189 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 18:35:00,193 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:36:01,176 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:38:31,192 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:40:02,178 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:41:19,172 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 18:42:02,165 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:43:08,143 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:44:03,175 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:44:42,192 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 18:46:04,150 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:48:20,152 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 18:49:03,157 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:50:06,686 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:51:33,175 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:52:34,428 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:54:07,159 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:55:20,166 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 18:56:04,147 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:57:52,634 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 18:58:08,122 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 18:59:35,126 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 18:59:59,132 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:00:08,126 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:02:06,156 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:03:05,140 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 19:04:10,160 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:08:25,145 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:09:21,146 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 2, 'actual': 2}} 
+2021-08-27 19:10:06,155 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 19:10:11,129 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:12:12,379 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:14:44,161 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:16:13,145 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:16:51,099 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:17:07,106 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 19:18:57,109 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:20:15,104 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:20:37,149 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': [{'account': '65312', 'position_ratio': 0.0}, {'account': '858571', 'position_ratio': 0.0}], 'm_echo': {'ma_margin': 0.0, 'quity': 400.92}} 
+2021-08-27 19:22:15,148 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2021-08-27 19:23:10,165 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'symbol_list': None, 'num_list': None} 
+2021-08-27 19:24:46,145 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': -1.9700000000000002, 'out_year': -1.9700000000000002, 'out_balance': 4573.02, 'out_credit': 0.0, 'out_quity': 4573.02, 'out_profit': 0.0, 'out_all': -1.9700000000000002, 'out_position_order_num': 0}} 
+2021-08-27 19:38:27,327 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2021-08-27 19:38:27,330 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2021-08-27 20:53:08,982 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2021-08-27 20:53:08,986 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2021-08-27 21:11:06,802 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2021-08-27 21:11:06,806 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2021-08-27 21:31:41,838 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2021-08-27 21:31:41,841 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 

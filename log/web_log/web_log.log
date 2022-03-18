@@ -1,0 +1,287 @@
+2022-03-11 00:04:09,029 {Main} {INFO} [user_model,236,getOdata]getOdata:1,b4de053ac3963df5167956b824cc221d,-1561697191,0,0,68660728,2.97,e40e445e664c1ff38aa56558a6d8ce82,5b41fc96fdf3040a4197fd9ec505b164,1646928249,0,103.86.46.13:9008,9000, 
+2022-03-11 00:11:29,465 {Main} {DEBUG} [sendmail_handler,29,post][{'uaid': 3666, 'key_ma': '990ad1b91acb61c7278b18eed7ad2406', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102247404', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3670, 'key_ma': '3a07184bd4b83aec9f27428c1e4d9fd5', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102249469', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3056, 'key_ma': '869dd820b7d642fded2fcb82e079b791', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '197682', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3806, 'key_ma': '2b5f8ad2da52f0cdd6f37762717067b9', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218591488', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3940, 'key_ma': '3901b44653e08dc8968a5fa6b2bbbe98', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102269291', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3961, 'key_ma': 'a062420739657af297a9fa5a1ee604d5', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102270602', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3966, 'key_ma': '5a0f17013856909b52a28d5adfc05d0e', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '777026', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3967, 'key_ma': '20aeea719b83ff435534e9bb0fa2e56a', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2100030993', 'uname': 'Fxcns', 'ma_name': '测试用0993', 'logo_url': '7f620095b82a9be8572c397627b3dd5b.png', 'fx_comment': None}, {'uaid': 4057, 'key_ma': '2cf3c3a1e71ecab83f91ad7eb00ccc7d', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2100032183', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': ''}, {'uaid': 4080, 'key_ma': '20bad6572c5278fe8f5954ea2da2f5fe', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218629635', 'uname': 'Fxcns', 'ma_name': 'MT4调测策略', 'logo_url': None, 'fx_comment': 'fxcns'}, {'uaid': 4148, 'key_ma': '99582620477f3abd2e530bf5d48366e5', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218631800', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4149, 'key_ma': 'c281bd63f479224abeecc68b500340ad', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '20905827637677', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4041, 'key_ma': 'a93ba642c47873db56989eaec8cb116a', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '611159', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4161, 'key_ma': '35de4e0487695d7134bef7dbcc0f922c', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '5100660', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4516, 'key_ma': '952542a95d75ae405d60420bbb4b8581', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6044856', 'uname': 'Fxcns', 'ma_name': 'MT5测试', 'logo_url': None, 'fx_comment': None}, {'uaid': 4501, 'key_ma': 'b2cd5beb37f428d9cacec6886bf9c16e', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6044770', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4564, 'key_ma': '54016d2d77d70bab80a252d339e1b713', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218675428', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4578, 'key_ma': '0677ae9ca23ea2e7f2d69e0b7a5be1e1', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218675579', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4696, 'key_ma': '0dbf28b76b92b273f4971769287bc6e0', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218677953', 'uname': 'Fxcns', 'ma_name': 'MT4策略调试', 'logo_url': None, 'fx_comment': None}, {'uaid': 4708, 'key_ma': '5c3b0c5b41ea311a8d58ef90b40833d9', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6047088', 'uname': 'Fxcns', 'ma_name': 'MT5调测策略', 'logo_url': None, 'fx_comment': None}, {'uaid': 4870, 'key_ma': 'e44a8cbd006baa01f9388bffe2e2dcea', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6051144', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-3out', 'logo_url': None, 'fx_comment': None}, {'uaid': 4926, 'key_ma': '8ac5d917b5b0f555e5c02c472dcad83f', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6051689', 'uname': 'Fxcns', 'ma_name': '  AI策略-11K-3out-9.07', 'logo_url': None, 'fx_comment': None}, {'uaid': 5022, 'key_ma': '012165251487f46057cecf86b759c34c', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '641751', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-3out9.07实盘', 'logo_url': None, 'fx_comment': None}, {'uaid': 5120, 'key_ma': 'e0aa78d6fc6fb8fa9e5f8e86c378a036', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6055075', 'uname': 'Fxcns', 'ma_name': '  AI策略-11K-3out9.09', 'logo_url': None, 'fx_comment': None}, {'uaid': 5268, 'key_ma': '050ac56c1b7f16ac8793f6459c4cf357', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6058412', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-9.07G_', 'logo_url': None, 'fx_comment': None}, {'uaid': 12034, 'key_ma': '8e09c317d952d12a93da6f9e2bec1623', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6059085', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-3out-9.10-H', 'logo_url': None, 'fx_comment': None}, {'uaid': 12626, 'key_ma': '8e1700c0ce9080f6665cc3c7de3fd740', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6080428', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 12642, 'key_ma': 'bf3edbe3def06c1301fb44569b65cbda', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6081528', 'uname': 'Fxcns', 'ma_name': 'BB202201', 'logo_url': None, 'fx_comment': None}, {'uaid': 12668, 'key_ma': '23f2d6c7d164757c74bb7852bd40c6d6', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6081962', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}] 
+2022-03-11 00:11:42,831 {Main} {DEBUG} [copy_handler,172,chick_seach]true 
+2022-03-11 00:11:42,836 {Main} {DEBUG} [copy_handler,146,post]{'allnum': 1} 
+2022-03-11 00:11:42,837 {Main} {DEBUG} [copy_handler,163,post]{'data': [{'t_count': 205, 't_num': 22.6, 't_profit': -2.14, 't_swap': -10.14, 't_comm': 0.0, 'uaid': 12658, 'account': '1218790874', 'allname': 'fxcns'}], 'recordsTotal': 1, 'recordsFiltered': 1, 'fx_type': 'list_order_count'} 
+2022-03-11 00:11:53,769 {Main} {DEBUG} [admin_handler,42,get]set:12668 
+2022-03-11 00:11:54,766 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'symbol_list': ['AUDUSD,buy', 'EURUSD,buy', 'NZDUSD,buy', 'USDCAD,sell', 'USDCHF,sell'], 'num_list': [0.15, 0.02, 0.15, 0.1, 0.1]} 
+2022-03-11 00:11:54,825 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'echo': None, 'm_echo': None} 
+2022-03-11 00:14:30,454 {Main} {DEBUG} [pay_order_handler,109,post]{'allnum': 550} 
+2022-03-11 00:43:03,612 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2022-03-11 00:43:03,615 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2022-03-11 00:43:27,601 {Main} {DEBUG} [admin_handler,69,post]ManagerArr:{'uid': 1, 'uname': 'hoddy355', 'faceurl': '', 'admin_id': 1} 
+2022-03-11 00:43:28,882 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:43:48,067 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:43:48,071 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 3} 
+2022-03-11 00:43:51,169 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:43:51,460 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:43:51,521 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:44:21,949 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 00:44:54,427 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:45:05,102 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 00:45:19,878 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 01:16:07,657 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 01:16:07,664 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 6} 
+2022-03-11 02:07:54,614 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 02:07:55,576 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:07:56,240 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:07:56,247 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 6} 
+2022-03-11 02:07:56,265 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:08:45,203 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 02:09:09,750 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:09:09,780 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:09:16,639 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:10:13,298 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:10:16,293 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:10:45,504 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 02:11:45,214 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:12:45,630 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:13:54,088 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:13:54,101 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 02:13:54,124 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:37:15,447 {Main} {DEBUG} [sendmail_handler,29,post][{'uaid': 3666, 'key_ma': '990ad1b91acb61c7278b18eed7ad2406', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102247404', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3670, 'key_ma': '3a07184bd4b83aec9f27428c1e4d9fd5', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102249469', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3056, 'key_ma': '869dd820b7d642fded2fcb82e079b791', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '197682', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3806, 'key_ma': '2b5f8ad2da52f0cdd6f37762717067b9', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218591488', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3940, 'key_ma': '3901b44653e08dc8968a5fa6b2bbbe98', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102269291', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3961, 'key_ma': 'a062420739657af297a9fa5a1ee604d5', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2102270602', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3966, 'key_ma': '5a0f17013856909b52a28d5adfc05d0e', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '777026', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 3967, 'key_ma': '20aeea719b83ff435534e9bb0fa2e56a', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2100030993', 'uname': 'Fxcns', 'ma_name': '测试用0993', 'logo_url': '7f620095b82a9be8572c397627b3dd5b.png', 'fx_comment': None}, {'uaid': 4057, 'key_ma': '2cf3c3a1e71ecab83f91ad7eb00ccc7d', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '2100032183', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': ''}, {'uaid': 4080, 'key_ma': '20bad6572c5278fe8f5954ea2da2f5fe', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218629635', 'uname': 'Fxcns', 'ma_name': 'MT4调测策略', 'logo_url': None, 'fx_comment': 'fxcns'}, {'uaid': 4148, 'key_ma': '99582620477f3abd2e530bf5d48366e5', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218631800', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4149, 'key_ma': 'c281bd63f479224abeecc68b500340ad', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '20905827637677', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4041, 'key_ma': 'a93ba642c47873db56989eaec8cb116a', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '611159', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4161, 'key_ma': '35de4e0487695d7134bef7dbcc0f922c', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '5100660', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4516, 'key_ma': '952542a95d75ae405d60420bbb4b8581', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6044856', 'uname': 'Fxcns', 'ma_name': 'MT5测试', 'logo_url': None, 'fx_comment': None}, {'uaid': 4501, 'key_ma': 'b2cd5beb37f428d9cacec6886bf9c16e', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6044770', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4564, 'key_ma': '54016d2d77d70bab80a252d339e1b713', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218675428', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4578, 'key_ma': '0677ae9ca23ea2e7f2d69e0b7a5be1e1', 'flag_ma': 0, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218675579', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 4696, 'key_ma': '0dbf28b76b92b273f4971769287bc6e0', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '1218677953', 'uname': 'Fxcns', 'ma_name': 'MT4策略调试', 'logo_url': None, 'fx_comment': None}, {'uaid': 4708, 'key_ma': '5c3b0c5b41ea311a8d58ef90b40833d9', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6047088', 'uname': 'Fxcns', 'ma_name': 'MT5调测策略', 'logo_url': None, 'fx_comment': None}, {'uaid': 4870, 'key_ma': 'e44a8cbd006baa01f9388bffe2e2dcea', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6051144', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-3out', 'logo_url': None, 'fx_comment': None}, {'uaid': 4926, 'key_ma': '8ac5d917b5b0f555e5c02c472dcad83f', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6051689', 'uname': 'Fxcns', 'ma_name': '  AI策略-11K-3out-9.07', 'logo_url': None, 'fx_comment': None}, {'uaid': 5022, 'key_ma': '012165251487f46057cecf86b759c34c', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '641751', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-3out9.07实盘', 'logo_url': None, 'fx_comment': None}, {'uaid': 5120, 'key_ma': 'e0aa78d6fc6fb8fa9e5f8e86c378a036', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6055075', 'uname': 'Fxcns', 'ma_name': '  AI策略-11K-3out9.09', 'logo_url': None, 'fx_comment': None}, {'uaid': 5268, 'key_ma': '050ac56c1b7f16ac8793f6459c4cf357', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6058412', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-9.07G_', 'logo_url': None, 'fx_comment': None}, {'uaid': 12034, 'key_ma': '8e09c317d952d12a93da6f9e2bec1623', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6059085', 'uname': 'Fxcns', 'ma_name': 'AI策略-11K-3out-9.10-H', 'logo_url': None, 'fx_comment': None}, {'uaid': 12626, 'key_ma': '8e1700c0ce9080f6665cc3c7de3fd740', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6080428', 'uname': 'Fxcns', 'ma_name': None, 'logo_url': None, 'fx_comment': None}, {'uaid': 12642, 'key_ma': 'bf3edbe3def06c1301fb44569b65cbda', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6081528', 'uname': 'Fxcns', 'ma_name': 'BB202201', 'logo_url': None, 'fx_comment': None}, {'uaid': 12668, 'key_ma': '23f2d6c7d164757c74bb7852bd40c6d6', 'flag_ma': 1, 'uid': 18, 'email': '99051131@qq.com', 'emailflag': 0, 'account': '6081962', 'uname': 'Fxcns', 'ma_name': 'BB202203', 'logo_url': None, 'fx_comment': None}] 
+2022-03-11 08:37:32,336 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'echo': {'out_position_num': 0, 'out_position_profit': 0, 'out_today': 0, 'out_week': 0, 'out_month': 0, 'out_year': 0, 'out_balance': 0, 'out_credit': 0, 'out_quity': 0, 'out_profit': 0, 'out_all': 0, 'out_position_order_num': 0}} 
+2022-03-11 08:37:32,352 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 0, 'actual': 0}} 
+2022-03-11 08:37:32,362 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'position_count_data': {'expected': 0, 'actual': 0}} 
+2022-03-11 08:37:32,376 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'echo': None, 'm_echo': None} 
+2022-03-11 08:37:45,504 {Main} {DEBUG} [admin_handler,42,get]set:12668 
+2022-03-11 08:37:46,087 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'loging_data': {'expected': 0, 'actual': 0}} 
+2022-03-11 08:37:46,110 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 0, 'echo': None, 'm_echo': None} 
+2022-03-11 08:37:50,917 {Main} {DEBUG} [master_model,276,getMaterInfo]MaterInfo{'mater_max_num': 105, 'endtime': datetime.datetime(2023, 3, 11, 0, 14, 26), 'position_maxnum': 2000, 'spsl': '1', 'reverse': '1'} 
+2022-03-11 08:37:51,904 {Main} {DEBUG} [strategy_handler,141,get]{'reponse_status': 5, 'master_max_num': 105, 'master_count_all': 1, 'master_count_ok': 0} 
+2022-03-11 08:40:54,395 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:40:54,640 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:40:54,654 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:41:09,882 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:41:10,011 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:41:10,015 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:41:10,129 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:41:10,135 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:41:39,636 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:42:11,093 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:42:11,098 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:42:14,110 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:42:29,073 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:42:43,134 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:43:12,740 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:43:12,745 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:43:14,223 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:43:44,713 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:44:10,148 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:44:13,100 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:44:13,104 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:44:15,317 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:44:31,577 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:45:14,190 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:45:14,194 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:46:02,327 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:46:15,377 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:46:15,382 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:46:17,305 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:46:30,246 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:46:58,088 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:47:44,810 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:47:58,376 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:47:59,249 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:48:01,142 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:48:02,563 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:48:02,709 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:48:02,854 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:48:03,075 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:49:51,699 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:51:58,275 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:52:45,852 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:52:46,544 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:52:47,870 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:52:48,086 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:52:48,452 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:52:49,291 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:52:51,086 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:52:53,583 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:53:35,440 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:53:39,166 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:09,302 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:10,300 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:10,734 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:54:11,733 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:14,572 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:15,006 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:15,656 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:54:17,789 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:26,210 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:34,137 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:41,850 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:54:45,665 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:54:48,865 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:09,459 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:13,300 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:13,745 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:55:14,691 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:16,016 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:55:19,101 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:19,790 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:24,774 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:25,652 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:29,851 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:33,740 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:55:58,756 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:56:01,831 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:14,439 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:16,467 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:16,829 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 08:56:18,358 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:24,473 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:29,857 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:56:30,659 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:36,507 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:56:47,562 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:10,624 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:10,986 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 3} 
+2022-03-11 08:57:18,453 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:21,349 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:21,567 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:21,775 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:21,993 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:57:22,395 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 08:57:23,544 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:57:53,732 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:58:21,642 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:58:24,050 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:58:25,057 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 08:58:26,082 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:58:26,979 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:58:27,893 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:58:31,562 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:58:37,367 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:58:43,450 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:59:10,933 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:59:12,406 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:59:25,293 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:59:27,088 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:59:27,495 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 08:59:41,974 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 08:59:42,742 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:59:44,258 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 08:59:56,399 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:00:12,305 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:00:28,397 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:00:28,771 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:00:57,532 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:01:36,503 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:01:39,950 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:01:40,527 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:01:40,744 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:01:40,960 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:01:41,106 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:01:41,324 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:03:04,243 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:05:11,485 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:07:18,619 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:09:56,327 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:11:09,252 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:11:10,703 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:11:10,908 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:11:11,988 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:12:56,351 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:15:02,452 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:16:36,748 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:16:40,329 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:16:40,579 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:16:41,084 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:16:41,303 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:16:41,521 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:16:42,723 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:16:53,212 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:17:21,388 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:17:26,482 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:17:29,963 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:17:58,452 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:17:59,841 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:00,026 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:00,779 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:18:01,576 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:04,497 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:04,713 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:05,294 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:18:07,829 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:29,065 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:33,954 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:18:38,100 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:45,293 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:18:58,185 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:03,678 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:04,551 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:04,999 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:19:06,368 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:19:09,263 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:27,529 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:38,414 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:39,911 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:19:40,775 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:20:13,875 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:15,849 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:38,042 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:52,158 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:52,490 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:20:53,655 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:20:54,348 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:56,890 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:57,035 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:58,623 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:20:58,841 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:21:00,749 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:23:07,559 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:25:14,708 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:27:21,643 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:27:29,261 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:27:30,201 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:27:30,612 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:29:28,669 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:29,191 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:33,180 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:33,397 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:33,614 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:34,191 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:30:34,408 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:34,626 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:34,845 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 9} 
+2022-03-11 09:30:38,887 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:39,218 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 3} 
+2022-03-11 09:30:44,249 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:46,887 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:47,030 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:47,247 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:47,464 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:30:47,760 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 6} 
+2022-03-11 09:30:48,915 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:31:03,819 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:31:19,658 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 09:32:02,838 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:32:03,970 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 09:32:04,332 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 09:33:10,867 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:13:03,138 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:15:09,411 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:17:04,136 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 10:17:07,100 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:17:07,258 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:17:07,415 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:17:07,573 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:17:07,732 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:17:08,505 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 10:17:34,907 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:18:14,163 {Main} {DEBUG} [strategy_redis_handler,45,post]{'reponse_status': 5, 'echo': 1} 
+2022-03-11 10:18:15,066 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:18:16,621 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:18:17,273 {Main} {DEBUG} [strategy_handler,165,post]{'allnum': 5} 
+2022-03-11 10:18:18,612 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:18:19,260 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:18:22,476 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:19:41,771 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:21:47,007 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:24:34,902 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:27:34,900 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:30:34,906 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:33:35,098 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:36:34,850 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
+2022-03-11 10:39:34,891 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
