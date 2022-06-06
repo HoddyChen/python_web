@@ -2,7 +2,7 @@
 
 WEBSITE_NAME = "外汇跟单系统管理区-浩外大叔官网"
 settings = dict(
-    debug=True,  # 设置debug启动方式
+    debug=False,  # 设置debug启动方式
     template_path="templates",  # 设置模板路径os.path.join(os.path.abspath('.'),
     static_path="static",  # 设置静态文件路径
     # ui_methods=uimethod, #配置html文件函数调用模块
@@ -50,7 +50,7 @@ ServerMd5Info = "WZ12KfOkMIbwXiRm84gGIUHGEPie4klyX"
 # 产品ID
 PID = 51
 # 返佣基数
-PROXY_PRICE = 8
+PROXY_PRICE = 10
 IMGURL = "/static/faceimg"
 # 错误间隔时间
 ERROR_TIME = 21
