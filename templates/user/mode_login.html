@@ -41,7 +41,7 @@
 </div>
 
 <script>
-    var countdown = 120;
+    var login_str_submit = "{{_('登录')}}";
     function my_login(){
         $.getScript('https://www.recaptcha.net/recaptcha/api.js?render=6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A',function(){
             document.getElementById("button_enter_send").disabled = true;
@@ -76,7 +76,7 @@
     function my_submit_sendemail(){
         // args._xsrf = getCookie("_xsrf");
         document.getElementById("button_enter_send").disabled = true;
-        {#var login_str = $("#login_tags2").text();#}
+        $("#login_tags3").text(login_str_submit);
         var login_str = "{{_('发送验证码')}}";
         showNotification("bg-blue","{{_('验证码发送中')}}.....","bottom","center",null,null);//正常提示
         setTimeShow("#login_tags2", "button_enter_send", login_str);
@@ -117,7 +117,7 @@
         // $('#button_enter_send').modal('hide')+"&backurl="+window.location.href
         // var url = window.location.href;
         var url =document.referrer;
-        var login_str = $("#login_tags3").text();
+        {#var login_str = $("#login_tags3").text();#}
         document.getElementById("button_enter").disabled = true;
         $.ajax({
             type: 'POST',
@@ -137,25 +137,25 @@
                     // scrollTo(0,0);
                 }else if (re.reponse_status < 5) {
                     showNotification("bg-red",re.echo,"bottom","center",null,null);//错误警示
-                    setTimeShow("#login_tags3", "button_enter", login_str);
+                    setTimeShow("#login_tags3", "button_enter", login_str_submit);
                 }else if (re.reponse_status < 0){
                     showNotification("bg-red","{{_('发生非法操作，请重新登陆再试')}}","bottom","center",null,null);//错误警示
-                    setTimeShow("#login_tags3", "button_enter", login_str);
+                    setTimeShow("#login_tags3", "button_enter", login_str_submit);
                 }else{
                     showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
-                    setTimeShow("#login_tags3", "button_enter", login_str);
+                    setTimeShow("#login_tags3", "button_enter", login_str_submit);
                 }
             },
             error:function(re) {
                 showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
-                setTimeShow("#login_tags3", "button_enter", login_str);
+                setTimeShow("#login_tags3", "button_enter", login_str_submit);
             }
         });
     }
 
-    function setTimeShow(id_name, button_name, login_str){
+    function setTimeShow(id_name, button_name, login_str, countdown=120){
         if (countdown <= 0){
-            countdown = 120;
+            {#countdown = 120;#}
             $(id_name).text(login_str);
             document.getElementById(button_name).disabled = false;
             clearTimeout(t);
@@ -164,7 +164,7 @@
             countdown --;
             $(id_name).text(login_str + " ( " + countdown.toString() + " )");
             t = setTimeout(function() {
-                setTimeShow(id_name, button_name, login_str)
+                setTimeShow(id_name, button_name, login_str, countdown)
             },1000);
         }
     }
