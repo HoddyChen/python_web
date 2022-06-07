@@ -37,13 +37,13 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                         page_main['uname'] = data[0]['uname']
                         page_main['iban'] = data[0]['iban']
                         page_main['flag'] = data[0]['flag']
-                        page_main['title_type'] = self.locale.translate("修改返佣资料")
+                        page_main['title_type'] = self.locale.translate("收款管理")
                     else:
                         yield P.add_proxy_info(self.session['web_uid'])
                         page_main['uname'] = ""
                         page_main['iban'] = ""
                         page_main['flag'] = 0
-                        page_main['title_type'] = self.locale.translate("新增返佣资料")
+                        page_main['title_type'] = self.locale.translate("新增收款资料")
                     yield self.render("user/index_edit_proxy_info.html", page_main=page_main, session=self.session)
                     return
                 elif F.fx_type.data == "list_proxy_account":
@@ -53,6 +53,15 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
                     page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
                     yield self.render("user/index_proxy_account_list.html", page_main=page_main, session=self.session)
+                    return
+                elif F.fx_type.data == "proxy_graup":
+                    # 列表
+                    page_main['title_type'] = self.locale.translate("当前返点")
+                    # page_main['th_num'] = 4
+                    # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
+                    # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
+                    page_main['group'] = yield P.getProxyGroup(self.session['web_uid'])
+                    yield self.render("user/index_proxy_group.html", page_main=page_main, session=self.session)
                     return
                 else:
                     page_main['title_type'] = self.locale.translate("瑞讯银行瑞士账户申请")

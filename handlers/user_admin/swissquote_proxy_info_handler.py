@@ -54,6 +54,14 @@ class SwissquoteProxyInfoHandler(SessionHandler, BaseHandler):
                     page_main['th_num'] = 4
                     yield self.render("user/swissquote_index_proxy_account_list.html", page_main=page_main, session=self.session)
                     return
+                elif F.fx_type.data == "proxy_graup":
+                    # 当前返点
+                    page_main['title_type'] = self.locale.translate("当前返点")
+                    # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
+                    # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
+                    page_main['group'] = yield P.getProxyGroup(self.session['swissquote_uid'])
+                    yield self.render("user/swissquote_index_proxy_group.html", page_main=page_main, session=self.session)
+                    return
                 else:
                     page_main['title_type'] = self.locale.translate("瑞讯银行瑞士账户申请")
                     # page_main['th_num'] = 2

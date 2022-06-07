@@ -203,10 +203,10 @@ class ProxyOrderModel():
                 try:#
                     if uname == "":
                         sql = "INSERT INTO proxy_users(uid,grade_id) VALUES(%s,%s)"
-                        yield cursor.execute(sql % (web_uid, 3))
+                        yield cursor.execute(sql % (web_uid, 2))
                     else:
                         sql = "INSERT INTO proxy_users(uid,uname,iban,grade_id) VALUES(%s,%s,%s,%s)"
-                        yield cursor.execute(sql, (web_uid, uname, iban, 3))
+                        yield cursor.execute(sql, (web_uid, uname, iban, 2))
                     yield conn.commit()
                     return True
                 except Exception as err:
@@ -556,6 +556,22 @@ class ProxyOrderModel():
                     return datas
                 else:
                     return []
+
+    # 得到代理的当前佣金
+    @gen.coroutine
+    def getProxyGroup(self, uid):
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                # print(page_main.get('time_type'))
+                sql = "SELECT proxy_grade.grade_price, proxy_users.uid, proxy_grade.flag, proxy_users.flag FROM proxy_users " \
+                      "INNER JOIN proxy_grade ON proxy_users.grade_id = proxy_grade.grade_id WHERE proxy_users.uid = " + str(uid)
+                # print(sql2)
+                yield cursor.execute(sql)
+                datas = cursor.fetchone()
+                if datas != None :
+                    return datas
+                else:
+                    return None
 
     # 得到代理的所有账户列表
     @gen.coroutine
