@@ -18,7 +18,7 @@
                         </span>
                     </div>
                     <div class="input-group input-lg text-center">
-                        <button type="button" id="button_enter_send" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_sendemail()"><span id="login_tags2">{{_('发送验证码')}}</span></button>
+                        <button type="button" id="button_enter_send" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_sendemail()" style="display: none"><span id="login_tags2">{{_('发送验证码')}}</span></button>
                     </div>
                     <div class="input-group input-lg">
                         <input name="pword" type="text" class="form-control" placeholder="{{_('验证码')}}">
@@ -29,7 +29,7 @@
 
                     <div class="input-group input-lg text-center">
                         {% raw xsrf_form_html() %}
-                        <button type="button" id="button_enter" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_login()"><span id="login_tags3">{{_('登录')}}</span></button>
+                        <button type="button" id="button_enter" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_login()" style="display: none"><span id="login_tags3">{{_('登录')}}</span></button>
                     </div>
                     <div class="footer text-center">
                         <a href="https://www.fxcns.com/home/index-blog-id-25.html" target="_blank">{{_('如何注册策略账户')}}?</a>
@@ -60,6 +60,7 @@
                                     document.getElementById("button_enter_send").disabled = false;
                                     $("#login_tags2").text("{{_('发送验证码')}}");
                                     showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示
+                                    document.getElementById("button_enter_send").style.display= "block";
                                 }else{
                                     showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
                                 }
@@ -90,6 +91,7 @@
                 if (re.reponse_status == 5) {
                     showNotification("bg-blue","✓ {{_('验证码发送成功！请查收')}}......","bottom","center",null,null);//正常提示
                     document.getElementById("button_enter").disabled = false;
+                    document.getElementById("button_enter").style.display= "block";
                 }else if (re.reponse_status == 2) {
                     showNotification("bg-red","✗ {{_('验证码发送失败！请稍后再试')}}......","bottom","center",null,null);//错误警示
                     // $("#login_tags2").text(login_str);
@@ -139,15 +141,15 @@
                     showNotification("bg-red",re.echo,"bottom","center",null,null);//错误警示
                     setTimeShow("#login_tags3", "button_enter", login_str_submit);
                 }else if (re.reponse_status < 0){
-                    showNotification("bg-red","{{_('发生非法操作，请重新登陆再试')}}","bottom","center",null,null);//错误警示
+                    showNotification("bg-red","{{_('发生非法操作，请重新登陆再试3')}}","bottom","center",null,null);//错误警示
                     setTimeShow("#login_tags3", "button_enter", login_str_submit);
                 }else{
-                    showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
+                    showNotification("bg-red","{{_('未知错误，请稍候再试2')}}","bottom","center",null,null);//错误警示
                     setTimeShow("#login_tags3", "button_enter", login_str_submit);
                 }
             },
             error:function(re) {
-                showNotification("bg-red","{{_('未知错误，请稍候再试')}}","bottom","center",null,null);//错误警示
+                showNotification("bg-red","{{_('未知错误，请稍候再试1')}}","bottom","center",null,null);//错误警示
                 setTimeShow("#login_tags3", "button_enter", login_str_submit);
             }
         });
@@ -169,7 +171,5 @@
         }
     }
     window.onload = my_login;
-    // $(document).ready(function(){
-    //     my_login();
-    // });
+
 </script>

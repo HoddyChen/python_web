@@ -51,7 +51,7 @@ class ProxyHandler(SessionHandler, BaseHandler):
                     # 代理佣金列表
                     page_main['time_str'] = self.timeType(page_main['time_type'])
                     page_main['title_type'] = self.locale.translate("返佣统计")
-                    page_main['th_num'] = 5
+                    page_main['th_num'] = 6
                     yield self.render("admin/index_proxy_order_count_list_all.html", page_main=page_main, session=self.session)
                     return
                 elif F.fx_type.data == "list_settlement":

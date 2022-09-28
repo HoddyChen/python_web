@@ -50,7 +50,7 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     # 列表
                     page_main['title_type'] = self.locale.translate("账户管理")
                     page_main['th_num'] = 4
-                    page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
+                    page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4或MT5账户后, 可通过右边的")
                     page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
                     yield self.render("user/index_proxy_account_list.html", page_main=page_main, session=self.session)
                     return
@@ -61,6 +61,9 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
                     # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
                     page_main['group'] = yield P.getProxyGroup(self.session['web_uid'])
+                    # 统计总结算金额，单量all_proxy_profit - all_amount
+                    page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'] = yield P.getProxySettlementAllCount(self.session['web_uid'])
+                    # print(page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'])
                     yield self.render("user/index_proxy_group.html", page_main=page_main, session=self.session)
                     return
                 else:
@@ -117,7 +120,7 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                         echo_dist['echo'] = self.locale.translate("返佣激活出错")
                     else:
                         echo_dist['reponse_status'] = -2
-                        echo_dist['echo'] = self.locale.translate("返佣激活失败！请在账户完成首笔交易并平仓后再试")
+                        echo_dist['echo'] = self.locale.translate("返佣激活失败！请在账户完成首笔交易并平仓后再试。如果您已经有首笔订单平仓，激活时仍出现此错误，请及时联系大叔QQ：68660728帮助解决！")
                 elif F.fx_type.data == "add_proxy_account":
                     # 新增账户
                     Ok_flag = yield P.addProxyAccount(self.session['web_uid'], F.account.data, F.a_code.data)

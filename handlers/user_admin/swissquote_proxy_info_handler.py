@@ -60,6 +60,8 @@ class SwissquoteProxyInfoHandler(SessionHandler, BaseHandler):
                     # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
                     # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
                     page_main['group'] = yield P.getProxyGroup(self.session['swissquote_uid'])
+                    # 统计总结算金额，单量all_proxy_profit - all_amount
+                    page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'] = yield P.getProxySettlementAllCount(self.session['swissquote_uid'])
                     yield self.render("user/swissquote_index_proxy_group.html", page_main=page_main, session=self.session)
                     return
                 else:

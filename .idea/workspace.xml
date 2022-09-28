@@ -4,12 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="当前返点页面色彩改变">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复登陆时倒计时的BUG">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/public/confrom_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/public/confrom_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index_proxy_order_count_list_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index_proxy_order_count_list_all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_proxy_group.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_proxy_group.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_left_sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,21 +65,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/user" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/user" />
@@ -179,7 +195,23 @@
       <workItem from="1649505860669" duration="168000" />
       <workItem from="1650281242813" duration="128000" />
       <workItem from="1654271598854" duration="625000" />
-      <workItem from="1654535719819" duration="10071000" />
+      <workItem from="1654535719819" duration="10280000" />
+      <workItem from="1655645631614" duration="579000" />
+      <workItem from="1655716287975" duration="512000" />
+      <workItem from="1656741187543" duration="13000" />
+      <workItem from="1656743760990" duration="49000" />
+      <workItem from="1656866887223" duration="842000" />
+      <workItem from="1657095998585" duration="3169000" />
+      <workItem from="1660374661404" duration="2630000" />
+      <workItem from="1660381782309" duration="2702000" />
+      <workItem from="1661477731929" duration="5984000" />
+      <workItem from="1661879497026" duration="1842000" />
+      <workItem from="1662118870356" duration="1327000" />
+      <workItem from="1662474623002" duration="2664000" />
+      <workItem from="1663243204572" duration="4106000" />
+      <workItem from="1663341061567" duration="683000" />
+      <workItem from="1663818254679" duration="8881000" />
+      <workItem from="1663998510670" duration="11055000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -342,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654582322145</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="修复登陆时倒计时的BUG">
+      <created>1654587151608</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1654587151608</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +421,8 @@
     <MESSAGE value="新增当前返点" />
     <MESSAGE value="新增当前返点页面及功能" />
     <MESSAGE value="当前返点页面色彩改变" />
-    <option name="LAST_COMMIT_MESSAGE" value="当前返点页面色彩改变" />
+    <MESSAGE value="修复登陆时倒计时的BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复登陆时倒计时的BUG" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -406,6 +446,11 @@
           <url>file://$PROJECT_DIR$/models/admin/strategy_model.py</url>
           <line>167</line>
           <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
@@ -431,7 +476,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1654586997795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1654538578886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1662476364104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1664006146183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -81,6 +81,14 @@
                     class: 'text-center',
                 },
                 {
+                    title: "{{_('未结算金额')}}",
+                    data: 'uid',
+                    class: 'text-center',
+                    render: function (data, type, row) {
+                        return '<span id="un_' + row.uid + '" + ></span> <input id="' + row.uid + '" name="type" type="hidden" value="' + row.uid + '">';
+                    }
+                },
+                {
                     title: "{{_('结算')}}",
                     data: 'uid',
                     class: 'text-center',
@@ -126,6 +134,7 @@
                     document.getElementById("h2_4").innerHTML = number_format(re.data[0].in_profit, 2, ".", ",", "floor");
                     document.getElementById("h2_5").innerHTML = number_format(re.data[0].all_profit, 2, ".", ",", "floor");
                     document.getElementById("h2_6").innerHTML = number_format(re.data[1].in_profit-re.data[0].all_profit, 2, ".", ",", "floor");
+                    displayName();
                 }else if (re.reponse_status == -1){
                     login_time_out();
                 }
@@ -143,6 +152,44 @@
             msg += name+": "+ obj[name]+"\r\n ";
         }
         alert(msg);
+    }
+    function displayName() {
+        var kk = document.getElementById('datatable01').getElementsByTagName("input");//$('#datatable01').
+        for (var i=0;i<kk.length;i++) {
+            {#alert(kk[i].id);#}
+            get_ettlement_count(kk[i].id);
+            {#alert($(name).attr('name'));#}
+            {#displayProp(name);#}
+            setTimeout(function() {
+
+            },1000);
+        }
+    }
+
+    function get_ettlement_count(uid){
+        //加载总佣金，总结算等信息
+        $.ajax({
+            type: 'post',
+            url: '/adminSZba2qjbydxVhMJpuKfy/proxy?fx_type=list_proxy_settlement_count&uid='+uid+'&nt='+ Date.parse(new Date()),
+            data: {},
+            cache: false,
+            dataType: "JSON",
+            success:  function(re) {
+                if (re.reponse_status == 5) {
+                    document.getElementById("un_" + uid).innerHTML = number_format(re.all_proxy_profit - re.all_amount, 2, ".", "", "floor").toString();
+                    if (re.all_proxy_profit - re.all_amount >= 50){
+                        {#$("un_" + uid).addClass("btn-slategray");#}
+                        document.getElementById("un_" + uid).style.color="red";
+                    }
+                }else if (re.reponse_status == -1){
+                    login_time_out();
+                }
+            },
+            error:function(re) {
+                    showNotification("bg-red","未结算统计,获得数据异常,稍后重试","bottom","center",null,null);//错误警示
+                }
+        });
+
     }
 </script>
 {% end %}

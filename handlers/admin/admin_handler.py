@@ -21,7 +21,9 @@ class AdminHandler(SessionHandler, BaseHandler):
         # tornado.locale.set_default_locale("en_US")
 
         User_Agent = self.request.headers.get('User-Agent')
-        if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (re.findall("14_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []):
+        # self.write(User_Agent)
+        # self.finish()
+        if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (re.findall("15_7", User_Agent) == [] or re.findall("Mac", User_Agent) == []):
                 # print("非法入侵，将追究法律责任！")
             return
         page_main = {}
