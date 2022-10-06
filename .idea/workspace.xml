@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复登陆时倒计时的BUG">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_web.iml" afterDir="false" />
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改返佣的几个页面">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/public/confrom_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/public/confrom_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index_proxy_order_count_list_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index_proxy_order_count_list_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/mode_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_proxy_group.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_proxy_group.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_left_sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +37,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_CRLF" value="false" />
-  </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="8d271d9d-6779-4b48-b51c-e287a2c548f1" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -211,7 +192,7 @@
       <workItem from="1663243204572" duration="4106000" />
       <workItem from="1663341061567" duration="683000" />
       <workItem from="1663818254679" duration="8881000" />
-      <workItem from="1663998510670" duration="11055000" />
+      <workItem from="1663998510670" duration="15439000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -381,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654587151608</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="修改返佣的几个页面">
+      <created>1664349143829</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1664349143829</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +410,8 @@
     <MESSAGE value="新增当前返点页面及功能" />
     <MESSAGE value="当前返点页面色彩改变" />
     <MESSAGE value="修复登陆时倒计时的BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复登陆时倒计时的BUG" />
+    <MESSAGE value="修改返佣的几个页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改返佣的几个页面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -449,8 +438,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
@@ -477,6 +471,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1662476364104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1664006146183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1665066123683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

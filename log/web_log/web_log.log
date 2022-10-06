@@ -1,49 +1,6 @@
-2022-09-24 13:48:58,960 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 13:48:59,102 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:02:38,116 {Main} {DEBUG} [admin_handler,71,post]ManagerArr:{'uid': 1, 'uname': 'hoddy355', 'faceurl': '', 'admin_id': 1} 
-2022-09-24 14:02:40,552 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
-2022-09-24 14:02:42,073 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
-2022-09-24 14:02:42,212 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
-2022-09-24 14:02:42,346 {Main} {DEBUG} [strategy_handler,192,chick_seach]true 
-2022-09-24 14:42:45,068 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:42:45,212 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:44:19,781 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:44:19,962 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:46:51,182 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:46:51,322 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:52:08,591 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:52:08,730 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:55:08,921 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:55:09,060 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:56:06,089 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:56:06,226 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 14:58:07,053 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 14:58:07,197 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:00:41,407 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:00:41,548 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:02:52,467 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:02:52,608 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:16:18,245 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:16:18,382 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:17:15,758 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:17:15,897 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:18:52,929 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:18:53,075 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:20:16,495 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:20:16,634 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:21:26,069 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:21:26,209 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:23:42,055 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:23:42,195 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:37:16,342 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:37:16,485 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:39:03,362 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:39:03,501 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:47:42,264 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:47:42,402 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:49:14,897 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:49:15,042 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:52:51,052 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:52:51,193 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
-2022-09-24 15:55:48,862 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
-2022-09-24 15:55:49,006 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2022-10-06 21:54:55,910 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2022-10-06 21:54:56,082 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2022-10-06 22:03:57,646 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2022-10-06 22:03:57,804 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 
+2022-10-06 22:22:09,474 {Main} {INFO} [mysqlopen,16,__init__]Connect MySql Ok 
+2022-10-06 22:22:09,676 {Main} {INFO} [mysqlopen,23,__del__]Close MySql 

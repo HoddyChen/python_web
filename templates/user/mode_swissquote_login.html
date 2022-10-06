@@ -118,7 +118,7 @@
         // args._xsrf = getCookie("_xsrf");
         // $('#button_enter_send').modal('hide')+"&backurl="+window.location.href
         // var url = window.location.href;
-        var url =document.referrer;
+        var url = document.referrer;
         document.getElementById("button_enter").disabled = true;
         $.ajax({
             type: 'POST',
@@ -132,7 +132,7 @@
                     if (url.indexOf("6copy.com")>=0) {
                         window.location.href=url;
                     } else {
-                        window.location.href="https://www.6copy.com/swissquote";
+                        window.location.href=url;//"https://www.6copy.com/swissquote";
                     }
                     // window.location.reload();
                     // scrollTo(0,0);

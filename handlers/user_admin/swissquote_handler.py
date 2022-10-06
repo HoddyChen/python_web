@@ -9,6 +9,7 @@ from handlers.myredis.redis_class import RedisClass
 from models.user.swissquote_model import SwissquoteModel
 import json
 import logging
+from models.public.headers_model import LogsModel
 
 logger = logging.getLogger('Main')
 class SwissquoteHandler(SessionHandler, BaseHandler):
@@ -100,9 +101,8 @@ class SwissquoteHandler(SessionHandler, BaseHandler):
                         self.session['swissquote_uid'] = m_data['uid']
                         echo_dist['echo'] = self.locale.translate("登陆成功")
                         echo_dist['reponse_status'] = 5
-
-                    from models.public.headers_model import LogsModel
-                    LogsModel.addMysqlLog("login", "loging", str(m_data['uid']), self.get_user_ip())
+                    if self.session['swissquote_uid'] != None:
+                        LogsModel.addMysqlLog("login", "loging", str(self.session['swissquote_uid']), self.get_user_ip())
                 else:
                     echo_dist['reponse_status'] = 0
                     echo_dist['echo'] = self.locale.translate("登录失败")
