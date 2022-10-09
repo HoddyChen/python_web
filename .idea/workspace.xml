@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改返佣的几个页面">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG">
+      <change afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_open.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/proxy_order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/proxy_order_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index_swissquote_open.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_swissquote_open.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_edit_proxy_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_edit_proxy_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "last_opened_file_path": "/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web",
+    "last_opened_file_path": "/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web/templates/user",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -192,7 +197,8 @@
       <workItem from="1663243204572" duration="4106000" />
       <workItem from="1663341061567" duration="683000" />
       <workItem from="1663818254679" duration="8881000" />
-      <workItem from="1663998510670" duration="15439000" />
+      <workItem from="1663998510670" duration="16700000" />
+      <workItem from="1665282945802" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -369,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664349143829</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG">
+      <created>1665067589313</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1665067589313</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +424,8 @@
     <MESSAGE value="当前返点页面色彩改变" />
     <MESSAGE value="修复登陆时倒计时的BUG" />
     <MESSAGE value="修改返佣的几个页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改返佣的几个页面" />
+    <MESSAGE value="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -446,6 +460,16 @@
           <line>42</line>
           <option name="timeStamp" value="86" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
           <line>36</line>
@@ -471,6 +495,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1662476364104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1665066123683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1665285788841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

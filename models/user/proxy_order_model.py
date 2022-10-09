@@ -661,6 +661,9 @@ class ProxyOrderModel():
                     # for result in cursor.stored_results():
                     #     print(result.fetchall())
                     row = cursor.fetchone()
+                    row['@out_proxy_profit'] = row['@out_proxy_profit'] if row['@out_proxy_profit'] else 0
+                    row['@out_profit'] = row['@out_profit'] if row['@out_profit'] else 0
+                    row['@out_amount'] = row['@out_amount'] if row['@out_amount'] else 0
                     return row['@out_proxy_profit'], row['@out_profit'], row['@out_amount']
                 except Exception as err:
                     logging.error("[ProxyOrderModel:getProxySettlementAllCount:update]: %s" % err)
