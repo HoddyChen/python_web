@@ -31,7 +31,9 @@
             success:  function(re) {
                 if (re.reponse_status == 5) {
                     swal("{{_('保存成功')}}", "{{_('修改成功')}}", "success");
-                    document.getElementById("button_enter_send").disabled = false;
+                    //document.getElementById("button_enter_send").disabled = false;
+                    document.getElementById("uname").disabled = true;
+                    document.getElementById("iban").disabled = true;
                 }else if (re.reponse_status < 5) {
                     swal({
                         title: "{{_('修改资料')}}",

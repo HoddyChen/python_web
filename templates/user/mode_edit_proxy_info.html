@@ -18,7 +18,7 @@
                             <div class="col-lg-6">
                                 <div class="mr-auto p-2 bd-highlight">{{_('瑞讯银行账户姓名')}}{{_('(请填写英文字母)')}}</div>
                                 <div class="form-group form-float">
-                                    <input type="text" class="form-control" placeholder="{{_('瑞讯银行账户姓名')}}" name="uname" required value="{{page_main['uname']}}">
+                                    <input id="uname" type="text" class="form-control" placeholder="{{_('瑞讯银行账户姓名')}}" name="uname" required value="{{page_main['uname']}}" {{ 'disabled' if page_main['flag'] > 0 else '' }}>
                                 </div>
                             </div>
                         </div>
@@ -26,9 +26,11 @@
                             <div class="col-lg-6">
                                 <div class="mr-auto p-2 bd-highlight">{{_('瑞讯银行IBAN')}}{{_('(21位字母+数字组合)')}}</div>
                                 <div class="form-group form-float">
-                                    <input type="text" class="form-control" placeholder="{{_('瑞讯银行IBAN')}}" name="iban" required value="{{page_main['iban']}}">
+                                    <input id="iban" type="text" class="form-control" placeholder="{{_('瑞讯银行IBAN')}}" name="iban" required value="{{page_main['iban']}}" {{ 'disabled' if page_main['flag'] > 0 else '' }}>
                                     <BR>
                                     <span style="color:red"><B> ! {{_('请填写收取佣金的瑞讯银行账号（必须***）')}}。</B></span>
+                                    <BR>
+                                    <span style="color:red"><B> ! {{_('资料修改后会自动锁定，如需再次修改请联系大叔QQ')}}。</B></span>
                                     <BR>
                                     <span style="color:red"><B> ! {{_('结算时间：每周未结算并打入此账号/下周第一个工作日(遇假日顺延)佣金会到账')}}。</B></span>
                                     <BR>
