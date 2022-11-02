@@ -116,6 +116,9 @@
                 "loadingRecords": "{{_('请稍候-正在加载')}}...",
                 "processing": "{{_('数据库当前很忙')}}",
                 "search": "{{_('关键字搜索')}} _INPUT_ {{_('应用于表格')}}"
+            },
+            "drawCallback": function( settings ) {
+                displayName();
             }
         });
         // 延迟搜索
@@ -134,7 +137,7 @@
                     document.getElementById("h2_4").innerHTML = number_format(re.data[0].in_profit, 2, ".", ",", "floor");
                     document.getElementById("h2_5").innerHTML = number_format(re.data[0].all_profit, 2, ".", ",", "floor");
                     document.getElementById("h2_6").innerHTML = number_format(re.data[1].in_profit-re.data[0].all_profit, 2, ".", ",", "floor");
-                    displayName();
+                    //displayName();
                 }else if (re.reponse_status == -1){
                     login_time_out();
                 }
