@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复返佣统计时，翻页不更新未结算金额的BUG">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace-Hoddy的MacBook Pro-2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace-Hoddy的MacBook Pro-3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace-Hoddy的MacBook Pro-4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace-Hoddy的MacBook Pro.xml" afterDir="false" />
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复登陆时倒计时的BUG">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.py" beforeDir="false" afterPath="$PROJECT_DIR$/11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/public/confrom_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/public/confrom_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_open.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_open.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +44,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="8d271d9d-6779-4b48-b51c-e287a2c548f1" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -58,31 +57,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL 更新&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;SQL 更新&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web/templates/user&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -94,7 +79,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start_servser">
+  <component name="RunManager" selected="Python.start_servser_http">
     <configuration name="start_servser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,8 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.start_servser" />
         <item itemvalue="Python.start_servser_http" />
+        <item itemvalue="Python.start_servser" />
       </list>
     </recent_temporary>
   </component>
@@ -211,24 +196,7 @@
       <workItem from="1661477731929" duration="5984000" />
       <workItem from="1661879497026" duration="1842000" />
       <workItem from="1662118870356" duration="1327000" />
-      <workItem from="1662474623002" duration="2664000" />
-      <workItem from="1663243204572" duration="4106000" />
-      <workItem from="1663341061567" duration="683000" />
-      <workItem from="1663818254679" duration="8881000" />
-      <workItem from="1663998510670" duration="16700000" />
-      <workItem from="1665282945802" duration="3732000" />
-      <workItem from="1665566638521" duration="207000" />
-      <workItem from="1665588823223" duration="2135000" />
-      <workItem from="1666232554518" duration="8393000" />
-      <workItem from="1667019558822" duration="1915000" />
-      <workItem from="1667371242108" duration="186000" />
-      <workItem from="1667371446479" duration="960000" />
-      <workItem from="1667372670871" duration="175000" />
-      <workItem from="1667372911533" duration="3458000" />
-      <workItem from="1668156710721" duration="50000" />
-      <workItem from="1674117036496" duration="12516000" />
-      <workItem from="1674229485973" duration="714000" />
-      <workItem from="1675521078546" duration="1706000" />
+      <workItem from="1662768768343" duration="550000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -398,56 +366,7 @@
       <option name="project" value="LOCAL" />
       <updated>1654587151608</updated>
     </task>
-    <task id="LOCAL-00025" summary="修改返佣的几个页面">
-      <created>1664349143829</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1664349143829</updated>
-    </task>
-    <task id="LOCAL-00026" summary="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG">
-      <created>1665067589313</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1665067589313</updated>
-    </task>
-    <task id="LOCAL-00027" summary="修复返佣中最新情况的显示BUG。删除左侧菜单中的问题提交。统一瑞讯开户的mode页">
-      <created>1665286270428</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1665286270428</updated>
-    </task>
-    <task id="LOCAL-00028" summary="修改返佣资料后，所有表单控件变为不可用。">
-      <created>1665590469495</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1665590469495</updated>
-    </task>
-    <task id="LOCAL-00029" summary="返佣机器人程序BUG修改，">
-      <created>1666864796487</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1666864796487</updated>
-    </task>
-    <task id="LOCAL-00030" summary="返佣的小数点精度修改为三位，">
-      <created>1667020467185</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1667020467185</updated>
-    </task>
-    <task id="LOCAL-00031" summary="修复返佣统计时，翻页不更新未结算金额的BUG">
-      <created>1667375016814</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1667375016814</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,19 +377,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="更新依赖包文件" />
+    <MESSAGE value="修复代理订单错误修改代理返佣金金额的BUG" />
+    <MESSAGE value="修复代理代理返佣金活动" />
+    <MESSAGE value="修复代理返佣资料修改的BUG，SQL改为逗号" />
+    <MESSAGE value="修复验证码的模板" />
     <MESSAGE value="修复模板的路径BUG" />
     <MESSAGE value="修复新增账号代理时提示" />
     <MESSAGE value="修复内部管理登陆的限制" />
@@ -489,14 +407,7 @@
     <MESSAGE value="新增当前返点页面及功能" />
     <MESSAGE value="当前返点页面色彩改变" />
     <MESSAGE value="修复登陆时倒计时的BUG" />
-    <MESSAGE value="修改返佣的几个页面" />
-    <MESSAGE value="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG" />
-    <MESSAGE value="修复返佣中最新情况的显示BUG。删除左侧菜单中的问题提交。统一瑞讯开户的mode页" />
-    <MESSAGE value="修改返佣资料后，所有表单控件变为不可用。" />
-    <MESSAGE value="返佣机器人程序BUG修改，" />
-    <MESSAGE value="返佣的小数点精度修改为三位，" />
-    <MESSAGE value="修复返佣统计时，翻页不更新未结算金额的BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复返佣统计时，翻页不更新未结算金额的BUG" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复登陆时倒计时的BUG" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -507,6 +418,11 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/base/base_handler.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/models/admin/strategy_model.py</url>
           <line>195</line>
           <option name="timeStamp" value="82" />
@@ -515,6 +431,11 @@
           <url>file://$PROJECT_DIR$/models/admin/strategy_model.py</url>
           <line>167</line>
           <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
@@ -540,7 +461,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1665566774129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1667374328969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1654586997795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1660388416538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

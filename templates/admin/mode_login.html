@@ -41,6 +41,7 @@
     function my_login(){
         $.getScript('https://www.recaptcha.net/recaptcha/api.js?render=6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A',function(){
             document.getElementById("button_enter").disabled = true;
+            showNotification("bg-blue","{{_('Recaptcha人机验证中,请稍等...')}}","bottom","center",null,null);//正常提示
             grecaptcha.ready(function() {
                     grecaptcha.execute('6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A', {action: 'register'}).then(function(token) {
                         $.ajax({
