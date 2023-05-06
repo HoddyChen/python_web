@@ -37,20 +37,20 @@ class SwissquoteProxyInfoHandler(SessionHandler, BaseHandler):
                         page_main['uname'] = data[0]['uname']
                         page_main['iban'] = data[0]['iban']
                         page_main['flag'] = data[0]['flag']
-                        page_main['title_type'] = self.locale.translate("修改返佣资料")
+                        page_main['title_type'] = self.locale.translate("修改返点资料")
                     else:
                         # yield P.add_proxy_info(self.session['swissquote_uid'])
                         page_main['uname'] = ""
                         page_main['iban'] = ""
                         page_main['flag'] = 0
-                        page_main['title_type'] = self.locale.translate("新增返佣资料")
+                        page_main['title_type'] = self.locale.translate("新增返点资料")
                     yield self.render("user/swissquote_index_edit_proxy_info.html", page_main=page_main, session=self.session)
                     return
                 elif F.fx_type.data == "list_proxy_account":
                     # 列表
                     page_main['title_type'] = self.locale.translate("账户管理")
                     page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
-                    page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
+                    page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返点状态")
                     page_main['th_num'] = 4
                     yield self.render("user/swissquote_index_proxy_account_list.html", page_main=page_main, session=self.session)
                     return
@@ -58,7 +58,7 @@ class SwissquoteProxyInfoHandler(SessionHandler, BaseHandler):
                     # 当前返点
                     page_main['title_type'] = self.locale.translate("当前返点")
                     # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
-                    # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返佣状态")
+                    # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返点状态")
                     page_main['group'] = yield P.getProxyGroup(self.session['swissquote_uid'])
                     # 统计总结算金额，单量all_proxy_profit - all_amount
                     page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'] = yield P.getProxySettlementAllCount(self.session['swissquote_uid'])
@@ -112,13 +112,13 @@ class SwissquoteProxyInfoHandler(SessionHandler, BaseHandler):
                     Ok_flag = yield P.editPAVerify(self.session['swissquote_uid'], F.account.data, config.PROXY_PRICE)
                     if Ok_flag == 5:
                         echo_dist['reponse_status'] = 5
-                        echo_dist['echo'] = self.locale.translate("返佣激活成功")
+                        echo_dist['echo'] = self.locale.translate("返点激活成功")
                     elif Ok_flag == -1:
                         echo_dist['reponse_status'] = -1
-                        echo_dist['echo'] = self.locale.translate("返佣激活出错")
+                        echo_dist['echo'] = self.locale.translate("返点激活出错")
                     else:
                         echo_dist['reponse_status'] = -2
-                        echo_dist['echo'] = self.locale.translate("返佣激活失败！请在账户完成首笔交易并平仓后再试")
+                        echo_dist['echo'] = self.locale.translate("返点激活失败！请在账户完成首笔交易并平仓后再试")
                 elif F.fx_type.data == "add_proxy_account":
                     # 新增账户
                     Ok_flag = yield P.addProxyAccount(self.session['swissquote_uid'], F.account.data, F.a_code.data)

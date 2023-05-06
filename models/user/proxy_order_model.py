@@ -23,7 +23,7 @@ class ProxyOrderModel():
 
     @gen.coroutine
     def CheckProxyOrder(self, account):
-        # 查代理账号的返佣是不是存在
+        # 查代理账号的返点是不是存在
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 sql = "SELECT account FROM proxy_order WHERE account=%s limit 0,1" % (account,)
@@ -37,7 +37,7 @@ class ProxyOrderModel():
 
     @gen.coroutine
     def editPAVerify2(self, account):
-        # 更改账号的返佣状态
+        # 更改账号的返点状态
         p_flag = yield self.CheckProxyOrder(account)
         if p_flag == True:
             verify_flag = 2
@@ -62,7 +62,7 @@ class ProxyOrderModel():
 
     @gen.coroutine
     def editPAVerify3(self):
-        # 初始化未激活的返佣状态
+        # 初始化未激活的返点状态
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 sql = "update proxy_account set verify=0 WHERE verify=1"
@@ -76,7 +76,7 @@ class ProxyOrderModel():
                     return 0
 
 
-    # 修改佣金状态，接受返佣
+    # 修改佣金状态，接受返点
     @gen.coroutine
     def editPAVerify(self, uid, account, PROXY_PRICE):
         the_stime, the_etime = yield self.getStime('the_week')

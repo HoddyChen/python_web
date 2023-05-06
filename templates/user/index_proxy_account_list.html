@@ -83,7 +83,7 @@
                     }
                 },
                 {
-                    title: "{{_('返佣状态')}}",
+                    title: "{{_('返点状态')}}",
                     data: 'verify',
                     class: 'text-center align-middle',
                     render: function (data, type, row) {
@@ -242,7 +242,7 @@
             dataType: "JSON",
             success: function (re) {
                 if (re.reponse_status == 5) {
-                    swal.fire(acco + "{{_('账号返佣激活成功')}}");
+                    swal.fire(acco + "{{_('账号返点激活成功')}}");
                     var button = $("#button" + acco.toString());
                     button.removeClass("btn-slategray");
                     button.addClass("btn-primary");

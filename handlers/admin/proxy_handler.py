@@ -50,7 +50,7 @@ class ProxyHandler(SessionHandler, BaseHandler):
                 elif F.fx_type.data == "list_proxy_order_count_all":
                     # 代理佣金列表
                     page_main['time_str'] = self.timeType(page_main['time_type'])
-                    page_main['title_type'] = self.locale.translate("返佣统计")
+                    page_main['title_type'] = self.locale.translate("返点统计")
                     page_main['th_num'] = 6
                     yield self.render("admin/index_proxy_order_count_list_all.html", page_main=page_main, session=self.session)
                     return
@@ -113,22 +113,22 @@ class ProxyHandler(SessionHandler, BaseHandler):
                     # 单个账户佣金列表
                     echo_dist['data'] = yield P.getProxyOrderList(page_papa['uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_count2":
-                    # 单个账户返佣总金额
+                    # 单个账户返点总金额
                     echo_dist['data'] = yield P.getProxyCount2(page_papa['uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_count":
-                    # 返佣总金额
+                    # 返点总金额
                     echo_dist['data'] = yield P.getProxyCount(page_papa['uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_count_all":
-                    # 所有代理返佣总金额
+                    # 所有代理返点总金额
                     echo_dist['data'] = yield P.getProxyCountAll(page_papa)
                 elif F.fx_type.data == "list_proxy_order_count":
-                    # 统计各账户的返佣金额
+                    # 统计各账户的返点金额
                     echo_dist['data'] = yield P.getProxyOrderCountList(page_papa['uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_order_count_all":
-                    # 统计各代理的返佣金额
+                    # 统计各代理的返点金额
                     echo_dist['data'] = yield P.getProxyOrderCountListAll(page_papa)
                 elif F.fx_type.data == "list_settlement":
-                    # 统计返佣结算金额列表
+                    # 统计返点结算金额列表
                     echo_dist['data'] = yield P.getProxySettlementList(page_papa['uid'], page_papa)
                 elif F.fx_type.data == "list_settlement_count":
                     # 统计结算金额
@@ -224,11 +224,11 @@ class ProxyHandler(SessionHandler, BaseHandler):
         uemail = yield M.getUmail(uid)
         from models.user.sendmail_model import SendmailModel
         S = SendmailModel()
-        mail_text = "亲，瑞讯银行返佣" + str(amount) + "$将在下一个工作日汇入您指定账号，请查收！"
+        mail_text = "亲，SWISSQUOTE返点" + str(amount) + "$已经汇出，将于下一个工作日成功入账到您指定账号，请查收！"
         mail_text = mail_text + self.locale.translate("来自[FXCNS邮件发送系统]")
         tomail = []
         tomail.append(uemail)
-        send_flag = yield S.email_send_proxy(tomail, mail_text, self.locale.translate("瑞讯银行返佣发放通知"), "FXCNS邮件发送系统")
+        send_flag = yield S.email_send_proxy(tomail, mail_text, self.locale.translate("SWISSQUOTE返点发放通知"), "FXCNS邮件发送系统")
         if send_flag == True:
             return True
         else:

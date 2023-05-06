@@ -32,7 +32,7 @@ TineMd5Info = 1561697191
 ServerMd5Info = "WZ12KfOkMIbwXiRm84gGIUHGEPie4klyX"
 # 产品ID
 PID = 51
-# 返佣基数
+# 返点基数
 PROXY_PRICE = 6
 IMGURL = "/static/faceimg"
 # 发送字符串结束

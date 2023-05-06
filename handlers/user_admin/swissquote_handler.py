@@ -25,7 +25,7 @@ class SwissquoteHandler(SessionHandler, BaseHandler):
         #     return
         page_main = {}
         page_main['lang'] = self.get_lang()
-        page_main['title_website'] = self.locale.translate("返佣管理系统")
+        page_main['title_website'] = self.locale.translate("返点管理系统")
         if self.session['swissquote_uid'] == None:
             yield self.render("user/swissquote_login.html", page_main=page_main)
             return
@@ -54,7 +54,7 @@ class SwissquoteHandler(SessionHandler, BaseHandler):
                 import random
                 sendH = SendmailModel()
                 mail_key = "".join(random.sample('123567890', 6))
-                mail_text = self.locale.translate("返佣管理系统登陆验证码")
+                mail_text = self.locale.translate("返点管理系统登陆验证码")
                 mail_text = mail_text + """：
     
                                 """
@@ -66,10 +66,10 @@ class SwissquoteHandler(SessionHandler, BaseHandler):
                 mail_text = mail_text + """！！！！！
     
                                 -----"""
-                mail_text = mail_text + self.locale.translate("来自[返佣管理系统]")
+                mail_text = mail_text + self.locale.translate("来自[返点管理系统]")
                 tomail = []
                 tomail.append(F.umail.data)
-                send_flag = yield sendH.email_send(tomail, mail_text, self.locale.translate("返佣管理系统登陆验证码"))
+                send_flag = yield sendH.email_send(tomail, mail_text, self.locale.translate("返点管理系统登陆验证码"))
                 if send_flag == True:
                     R = RedisClass()
                     R.RH.set(config.redis_session_uaid_set + str(F.umail.data), mail_key, ex=config.SessionsOutTime)

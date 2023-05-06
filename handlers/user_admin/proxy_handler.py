@@ -99,16 +99,16 @@ class ProxyHandler(SessionHandler, BaseHandler):
                     # 单个账户佣金列表
                     echo_dist['data'] = yield P.getProxyOrderList(self.session['web_uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_count2":
-                    # 单个账户返佣总金额
+                    # 单个账户返点总金额
                     echo_dist['data'] = yield P.getProxyCount2(self.session['web_uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_count":
-                    # 返佣总金额
+                    # 返点总金额
                     echo_dist['data'] = yield P.getProxyCount(self.session['web_uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_order_count":
-                    # 统计各账户的返佣金额
+                    # 统计各账户的返点金额
                     echo_dist['data'] = yield P.getProxyOrderCountList(self.session['web_uid'], page_papa)
                 elif F.fx_type.data == "list_settlement":
-                    # 统计返佣结算金额列表
+                    # 统计返点结算金额列表
                     echo_dist['data'] = yield P.getProxySettlementList(self.session['web_uid'], page_papa)
                 elif F.fx_type.data == "list_settlement_count":
                     # 统计结算金额

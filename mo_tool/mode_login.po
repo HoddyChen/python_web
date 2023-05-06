@@ -809,19 +809,19 @@ msgstr "Billing List"
 msgid "瑞讯银行瑞士账户申请"
 msgstr "Swissquote Account Application"
 
-msgid "新增返佣资料"
+msgid "新增返点资料"
 msgstr "Add rebate information"
 
-msgid "修改返佣资料"
+msgid "修改返点资料"
 msgstr "Edit rebate information"
 
-msgid "返佣激活成功"
+msgid "返点激活成功"
 msgstr "Successful commission rebate"
 
-msgid "返佣激活出错"
+msgid "返点激活出错"
 msgstr "Rebate activation error"
 
-msgid "返佣激活失败！请在账户完成首笔交易并平仓后再试"
+msgid "返点激活失败！请在账户完成首笔交易并平仓后再试"
 msgstr "Rebate activation failed! Please try again after completing the first transaction and closing the account"
 
 msgid "新增成功"
@@ -836,7 +836,7 @@ msgstr "Failed to add, the account has been bound"
 msgid "新增失败，账户验证失败，请检查填写信息的正确性"
 msgstr "Failed to add, account verification failed, please check the correctness of the information filled in"
 
-msgid "返佣激活成功"
+msgid "返点激活成功"
 msgstr "Account rebate activation was successful"
 
 msgid "新增绑定"
@@ -866,10 +866,10 @@ msgstr "Types of"
 msgid "绑定状态"
 msgstr "Binding state"
 
-msgid "返佣状态"
+msgid "返点状态"
 msgstr "Rebate status"
 
-msgid "返佣值"
+msgid "返点值"
 msgstr "Commission"
 
 msgid "佣金统计,获得数据异常,稍后重试"
@@ -977,16 +977,16 @@ msgstr "Register or Log in"
 msgid "邮箱注册失败"
 msgstr "Email registration failed"
 
-msgid "返佣管理系统登陆验证码"
+msgid "返点管理系统登陆验证码"
 msgstr "Swissquote background login verification code"
 
-msgid "返佣邮箱不存在！"
+msgid "返点邮箱不存在！"
 msgstr "The rebate mailbox does not exist"
 
 msgid "登陆失败"
 msgstr "Login failed"
 
-msgid "返佣管理系统"
+msgid "返点管理系统"
 msgstr "Rebate Management System"
 
 msgid "瑞讯银行(Swissquote Bank)瑞士总部顶级代理"
@@ -995,7 +995,7 @@ msgstr "Swissquote Bank (Swissquote Bank) Switzerland Headquarters Top Agent"
 msgid "如何注册策略账户"
 msgstr "How to register a strategy account"
 
-msgid "初始返佣为每标准手3美元"
+msgid "初始返点为每标准手3美元"
 msgstr "The initial rebate is 3 USD per standard lot"
 
 msgid "活动：前1000名每一标准手返6美元"
@@ -1004,7 +1004,7 @@ msgstr "Activity: USD 6 per standard lot for the top 1,000"
 msgid "联系QQ客服确认修改"
 msgstr "Contact QQ customer service to confirm the modification"
 
-msgid "交易量增大或账户大于2个以上可咨询客服增加每手返佣"
+msgid "交易量增大或账户大于2个以上可咨询客服增加每手返点"
 msgstr "If the transaction volume increases or there are more than 2 accounts, you can consult customer service to increase the rebate per lot"
 
 msgid "未结算佣金超过50美元"

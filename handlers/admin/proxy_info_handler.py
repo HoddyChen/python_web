@@ -37,18 +37,18 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                         page_main['uname'] = data[0]['uname']
                         page_main['iban'] = data[0]['iban']
                         page_main['flag'] = data[0]['flag']
-                        page_main['title_type'] = self.locale.translate("修改返佣资料")
+                        page_main['title_type'] = self.locale.translate("修改返点资料")
                     else:
                         yield P.add_proxy_info(self.session['web_uid'])
                         page_main['uname'] = ""
                         page_main['iban'] = ""
                         page_main['flag'] = 0
-                        page_main['title_type'] = self.locale.translate("新增返佣资料")
+                        page_main['title_type'] = self.locale.translate("新增返点资料")
                     yield self.render("user/index_edit_proxy_info.html", page_main=page_main, session=self.session)
                     return
                 elif F.fx_type.data == "list_proxy":
                     # 代理列表
-                    page_main['title_type'] = self.locale.translate("返佣管理")
+                    page_main['title_type'] = self.locale.translate("返点管理")
                     data = yield P.getProxyGradePrice()
                     page_main['price_html'] = yield self.format_html(data)
                     page_main['th_num'] = 5

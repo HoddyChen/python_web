@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 
 WEBSITE_NAME = "外汇跟单系统管理区-浩外大叔官网"
 settings = dict(
@@ -49,7 +49,7 @@ TineMd5Info = 1561697191
 ServerMd5Info = "WZ12KfOkMIbwXiRm84gGIUHGEPie4klyX"
 # 产品ID
 PID = 51
-# 返佣基数
+# 返点基数
 PROXY_PRICE = 10
 IMGURL = "/static/faceimg"
 # 错误间隔时间

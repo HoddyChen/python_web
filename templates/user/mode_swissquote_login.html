@@ -9,7 +9,7 @@
                         <div class="logo-container">
                             <img src="{{ static_url('img/new_logo.png')}}" alt="">
                         </div>
-                        <h5>{{_('返佣管理系统')}}</h5>
+                        <h5>{{_('返点管理系统')}}</h5>
                     </div>
                     <div class="input-group input-lg">
                         <input name="umail" type="text" class="form-control" placeholder="{{_('邮箱')}}">
@@ -98,7 +98,7 @@
                     // $("#login_tags2").text(login_str);
                     setTimeShow("#login_tags2", "button_enter_send", login_str);
                 }else if (re.reponse_status == 4){
-                    showNotification("bg-red","✗ {{_('返佣邮箱不存在！')}}","bottom","center",null,null);//错误警示
+                    showNotification("bg-red","✗ {{_('返点邮箱不存在！')}}","bottom","center",null,null);//错误警示
                     // $("#login_tags2").text(login_str);
                     setTimeShow("#login_tags2", "button_enter_send", login_str);
                 }else{
