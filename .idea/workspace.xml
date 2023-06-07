@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="增加瑞讯开户的点差与杠杆提示">
-      <change afterPath="$PROJECT_DIR$/static/assets/css/main_back20230406.css" afterDir="false" />
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="返佣改返点">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/11.py" beforeDir="false" afterPath="$PROJECT_DIR$/11.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/proxy_info_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index_proxy_order_count_list_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index_proxy_order_count_list_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_open.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_open.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +60,7 @@
     &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
     &quot;database.data.extractors.current.export.id&quot;: &quot;SQL 更新&quot;,
     &quot;database.data.extractors.current.id&quot;: &quot;SQL 更新&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web/static/assets/css&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -75,7 +68,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -266,7 +259,17 @@
       <workItem from="1682657676134" duration="2560000" />
       <workItem from="1682771153454" duration="1312000" />
       <workItem from="1682777457883" duration="794000" />
-      <workItem from="1683026794044" duration="1741000" />
+      <workItem from="1683026794044" duration="2379000" />
+      <workItem from="1683544895778" duration="1177000" />
+      <workItem from="1683590239729" duration="812000" />
+      <workItem from="1683988282365" duration="1694000" />
+      <workItem from="1684132295595" duration="2269000" />
+      <workItem from="1684284673821" duration="5074000" />
+      <workItem from="1685194290256" duration="13709000" />
+      <workItem from="1685276845200" duration="232000" />
+      <workItem from="1685288072920" duration="6810000" />
+      <workItem from="1685891242521" duration="637000" />
+      <workItem from="1685966720312" duration="5244000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -499,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677058451576</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="返佣改返点">
+      <created>1683365870784</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1683365870784</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复内部管理登陆的限制" />
     <MESSAGE value="设置为运行状态，增加错误链接的返回" />
     <MESSAGE value="升级包后，修改一些bug" />
     <MESSAGE value="新增http标头指定，防止攻击" />
@@ -548,7 +557,8 @@
     <MESSAGE value="修复返佣统计时，翻页不更新未结算金额的BUG" />
     <MESSAGE value="修复登陆的人机验证前的提示。" />
     <MESSAGE value="增加瑞讯开户的点差与杠杆提示" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加瑞讯开户的点差与杠杆提示" />
+    <MESSAGE value="返佣改返点" />
+    <option name="LAST_COMMIT_MESSAGE" value="返佣改返点" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -592,8 +602,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1665566774129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1667374328969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1677075998290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1665566774129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

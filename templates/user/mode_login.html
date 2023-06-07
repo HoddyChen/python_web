@@ -9,7 +9,7 @@
                         <div class="logo-container">
                             <img src="{{ static_url('img/new_logo.png')}}" alt="">
                         </div>
-                        <h5>{{_('外汇跟单系统管理区')}}</h5>
+                        <h5>{{_('跟单系统管理区')}}</h5>
                     </div>
                     <div class="input-group input-lg">
                         <input name="umail" type="text" class="form-control" placeholder="{{_('邮箱')}}">
@@ -119,7 +119,7 @@
         // args._xsrf = getCookie("_xsrf");
         // $('#button_enter_send').modal('hide')+"&backurl="+window.location.href
         // var url = window.location.href;
-        var url =document.referrer;
+        var url = document.referrer;
         {#var login_str = $("#login_tags3").text();#}
         document.getElementById("button_enter").disabled = true;
         $.ajax({

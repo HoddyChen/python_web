@@ -25,7 +25,7 @@ settings = dict(
 )
 #MQSQL数据库参数
 MYSQL_INFO = {
-    "host": "192.168.88.1",
+    "host": "64.31.63.220",
     "port": 33161,
     # "host": "192.168.68.22",# 深圳
     # "port": 3316,
@@ -35,7 +35,7 @@ MYSQL_INFO = {
 }
 #redis参数
 REDIS_INFO = {
-    "host": "192.168.88.20",
+    "host": "127.0.0.1",
     "port": 6379
     # "host": "192.168.68.46",# 深圳内网
     # "port": 6379
@@ -101,14 +101,14 @@ socket_server_dist = "socket_server_dist"
 server_list = [
     {
     'id': 0,
-    'url': '192.168.88.20',#localhost
+    'url': '64.31.63.217',#localhost
     'port': 9000
 },
-    {
-    'id': 1,
-    'url': '192.168.88.21',
-    'port': 9000
-}
+#     {
+#     'id': 1,
+#     'url': '192.168.88.21',
+#     'port': 9000
+# }
 #     {
 #     'id': 2,
 #     'url': '127.0.0.1',
