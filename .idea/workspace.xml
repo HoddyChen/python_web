@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="返佣改返点">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改配置文件">
+      <change afterPath="$PROJECT_DIR$/install.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +269,9 @@
       <workItem from="1685276845200" duration="232000" />
       <workItem from="1685288072920" duration="6810000" />
       <workItem from="1685891242521" duration="637000" />
-      <workItem from="1685966720312" duration="5244000" />
+      <workItem from="1685966720312" duration="9254000" />
+      <workItem from="1686321095264" duration="998000" />
+      <workItem from="1686529339277" duration="4836000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -509,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683365870784</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="修改配置文件">
+      <created>1686135759075</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1686135759075</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="设置为运行状态，增加错误链接的返回" />
     <MESSAGE value="升级包后，修改一些bug" />
     <MESSAGE value="新增http标头指定，防止攻击" />
     <MESSAGE value="修改JS版本，" />
@@ -558,7 +566,8 @@
     <MESSAGE value="修复登陆的人机验证前的提示。" />
     <MESSAGE value="增加瑞讯开户的点差与杠杆提示" />
     <MESSAGE value="返佣改返点" />
-    <option name="LAST_COMMIT_MESSAGE" value="返佣改返点" />
+    <MESSAGE value="修改配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改配置文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
