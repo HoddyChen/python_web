@@ -3,7 +3,8 @@ from handlers.myredis.redis_class import RedisClass
 
 R = RedisClass()
 try:
-    R.RH.set("server_ip", "103.86.46.13:9008")
+    # R.RH.set("server_ip", "64.31.63.252:9008")
+    print("server_ip:", R.RH.get("server_ip"))
     print("set ok.")
 except:
     print("set error.")

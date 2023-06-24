@@ -2,7 +2,7 @@
 
 WEBSITE_NAME = "外汇跟单系统管理区-浩外大叔官网"
 settings = dict(
-    debug=True,  # 设置debug启动方式
+    debug=False,  # 设置debug启动方式
     template_path="templates",  # 设置模板路径os.path.join(os.path.abspath('.'),
     static_path="static",  # 设置静态文件路径
     # ui_methods=uimethod, #配置html文件函数调用模块
@@ -35,14 +35,15 @@ MYSQL_INFO = {
 }
 #redis参数
 REDIS_INFO = {
-    "host": "127.0.0.1",
+    "host": "64.31.63.220",
     "port": 6379
-    # "host": "192.168.68.46",# 深圳内网
+    # "host": "127.0.0.1",# 内网
     # "port": 6379
     # "host": "103.39.220.138",# 深圳
     # "port": 9389
 }
-
+# 返回给EA的IP访问地址
+Server_IP = "64.31.63.252:9008"
 # 时间加密因子
 TineMd5Info = 1561697191
 # 时间加密因子
@@ -101,14 +102,14 @@ socket_server_dist = "socket_server_dist"
 server_list = [
     {
     'id': 0,
-    'url': '64.31.63.217',#localhost
+    'url': '64.31.63.6',#localhost
     'port': 9000
 },
-#     {
-#     'id': 1,
-#     'url': '192.168.88.21',
-#     'port': 9000
-# }
+    {
+    'id': 1,
+    'url': '137.74.87.229',
+    'port': 9000
+},
 #     {
 #     'id': 2,
 #     'url': '127.0.0.1',

@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # sockets = tornado.netutil.bind_sockets(9204)
     # task_id = tornado.process.fork_processes(2)
     # print(task_id)
-    StartType = "bind_sockets" #listen,bind,bind_sockets
+    StartType = "bind" #listen,bind,bind_sockets
     Htype = False# 多进程开关
     log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "log")
     # print(log_path)

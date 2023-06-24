@@ -9,6 +9,7 @@ from handlers.user.sendmail_handler import SendmailHandler
 from handlers.user.senderror_handler import SendOrderErrorHandler
 from handlers.user.seperate_handler import SeperateHandler
 from handlers.user.master_handler import MasterHandler
+from handlers.user.test_handler import TestHandler
 
 user_urls = [
     (r"/user", UserHandler),
@@ -21,4 +22,5 @@ user_urls = [
     (r"/vcmail", VcmailHandler),
     (r"/master", MasterHandler),
     (r"/seperate", SeperateHandler),
+    # (r"/test", TestHandler),
 ]

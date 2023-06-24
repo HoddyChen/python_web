@@ -10,7 +10,7 @@ logger = logging.getLogger('Main')
 class SendmailModel():
     from_mail = "cs@fxcns.com"#'cs@fxcns.com'
     from_title = "跟单交易多账户管理系统邮件"
-    mail_password = 'o&{_-G.9s=7zE\Z=BCv'
+    mail_password = 'o~yA@C@fi&JiUt&jZHVfMOQT2IHyJtuvvjnljOVK~$Zjha6z~lWwS~9g70bqVcgGFUk8j~wouSv`4rfXp@IKhdlTkL9kX&rx$za'
     # mail_password = 'gtW2zyF5WhAgxMPi'
 
     @gen.coroutine
@@ -34,7 +34,9 @@ class SendmailModel():
         message['Subject'] = mailtitle
 
         try:
-            smtpObj = smtplib.SMTP('smtp.office365.com', 587)
+            # smtpObj = smtplib.SMTP('smtp.office365.com', 587)
+            # 65.49.208.148:587
+            smtpObj = smtplib.SMTP('65.49.208.148', 587)
             # smtpObj.connect('smtp.office365.com', 587)  # 25 为 SMTP 端口号
             smtpObj.starttls()
             # smtpObj.set_debuglevel(1)# 调试时开启
@@ -59,7 +61,8 @@ class SendmailModel():
         message['Subject'] = mailtitle
 
         try:
-            smtpObj = smtplib.SMTP('smtp.office365.com', 587)
+            # smtpObj = smtplib.SMTP('smtp.office365.com', 587)
+            smtpObj = smtplib.SMTP('65.49.208.148', 587)
             # smtpObj.connect('smtp.office365.com', 587)  # 25 为 SMTP 端口号
             smtpObj.starttls()
             # smtpObj.set_debuglevel(1)# 调试时开启
