@@ -15,7 +15,7 @@ log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "log")
 logInit_socket_robot_client(log_path)
 logger = logging.getLogger('robot_clinet')
 
-client_id = 1;
+client_id = 0
 
 def main():
 

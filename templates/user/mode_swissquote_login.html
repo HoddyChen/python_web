@@ -18,7 +18,7 @@
                         </span>
                     </div>
                     <div class="input-group input-lg text-center">
-                        <button type="button" id="button_enter_send" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_sendemail()" style="display: none"><span id="login_tags2">{{_('发送验证码')}}</span></button>
+                        <button type="button" id="button_enter_send" class="btn btn-primary btn-round btn-lg btn-block " onClick="my_submit_sendemail()"><span id="login_tags2">{{_('发送验证码')}}</span></button>
                     </div>
                     <div class="input-group input-lg">
                         <input name="pword" type="text" class="form-control" placeholder="{{_('验证码')}}">
@@ -42,38 +42,6 @@
 
 <script>
     var login_str_submit = "{{_('注册或登陆')}}";
-    function my_login(){
-        document.getElementById("button_enter_send").disabled = true;
-        document.getElementById("button_enter").disabled = true;
-        //$("#login_tags2").text("{{_('Recaptcha人机验证中,请稍等...')}}");
-        showNotification("bg-blue","{{_('Recaptcha人机验证中,请稍等...')}}","bottom","center",null,null);//正常提示
-        $.getScript('https://recaptcha.net/recaptcha/api.js?render=6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A',function(){
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LeU8KMUAAAAAM1-_0E1cKMnlvoJCBpxEhUH0N7A', {action: 'register'}).then(function(token) {
-                    $.ajax({
-                        type: 'POST',
-                        url: '/recaptcha',
-                        data: { token: token },
-                        dataType: "JSON",
-                        success:  function(re) {
-                            if(re.success==true) {
-                                if (re.score >= 0.8) {
-                                    document.getElementById("button_enter_send").disabled = false;
-                                    $("#login_tags2").text("{{_('发送验证码')}}");
-                                    showNotification("bg-blue","✓ {{_('通过Recaptcha人机验证！请登陆')}}","bottom","center",null,null);//正常提示
-                                    document.getElementById("button_enter_send").style.display= "block";
-                                }else{
-                                    showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
-                                }
-                            }else{
-                                showNotification("bg-red","✗ {{_('Recaptcha人机验证失败！请稍后10分钟再试')}}","bottom","center",null,null);//错误警示
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    }
 
     function my_submit_sendemail(){
         // args._xsrf = getCookie("_xsrf");
@@ -156,20 +124,15 @@
         if (countdown <= 0){
             $(id_name).text(login_str);
             document.getElementById(button_name).disabled = false;
+            clearTimeout(t);
             return;
         }else {
             countdown --;
             $(id_name).text(login_str + " ( " + countdown.toString() + " )");
-            setTimeout(function() {
+            t = setTimeout(function() {
                 setTimeShow(id_name, button_name, login_str, countdown)
             },1000);
         }
     }
-    window.onload = my_login;
-    {#$(window).load(function(){#}
-    {#    my_login;#}
-    {#});#}
-    {#$(document).ready(function(){#}
-    {#    my_login();#}
-    {#});#}
+
 </script>

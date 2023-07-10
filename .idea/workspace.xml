@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改ea下载地址">
-      <change afterPath="$PROJECT_DIR$/start_servser_email.py" afterDir="false" />
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改启动，初始配置redis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user/user_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user/user_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/start_socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/log/start_socket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/sendmail_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/sendmail_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_servser_http.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_servser_http.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/web_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/proxy_order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/proxy_order_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_client_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_client_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_socket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,37 +56,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "database.data.extractors.current.export.id": "SQL 更新",
-    "database.data.extractors.current.id": "SQL 更新",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web/handlers/user",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL 更新&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;SQL 更新&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hoddy/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web/handlers/user&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/handlers/user" />
@@ -92,7 +96,7 @@
       <recent name="$PROJECT_DIR$/templates/admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start_servser_http">
+  <component name="RunManager" selected="Python.start_socket">
     <configuration name="11" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,28 +133,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/log_count.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="start_servser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python_web" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/start_servser.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -203,13 +185,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="start_socket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_web" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/log" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/log/start_socket.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.start_socket" />
         <item itemvalue="Python.start_servser_http" />
         <item itemvalue="Python.start_servser_email" />
         <item itemvalue="Python.log_count" />
         <item itemvalue="Python.11" />
-        <item itemvalue="Python.start_servser" />
       </list>
     </recent_temporary>
   </component>
@@ -331,7 +335,12 @@
       <workItem from="1687093647656" duration="600000" />
       <workItem from="1687191086537" duration="7105000" />
       <workItem from="1687330028844" duration="3156000" />
-      <workItem from="1687573449968" duration="17518000" />
+      <workItem from="1687573449968" duration="17568000" />
+      <workItem from="1687619665568" duration="8044000" />
+      <workItem from="1688111316964" duration="615000" />
+      <workItem from="1688459150832" duration="9590000" />
+      <workItem from="1688962196017" duration="706000" />
+      <workItem from="1688964108861" duration="3950000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -585,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686545502928</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="修改启动，初始配置redis">
+      <created>1687617034731</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1687617034731</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新增http标头指定，防止攻击" />
     <MESSAGE value="修改JS版本，" />
     <MESSAGE value="修改recaptcha,success=0.6" />
     <MESSAGE value="增加自研策略控制面板" />
@@ -634,7 +649,8 @@
     <MESSAGE value="返佣改返点" />
     <MESSAGE value="修改配置文件" />
     <MESSAGE value="修改ea下载地址" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改ea下载地址" />
+    <MESSAGE value="修改启动，初始配置redis" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改启动，初始配置redis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -681,6 +697,7 @@
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1667374328969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_socket.coverage" NAME="start_socket 覆盖结果" MODIFIED="1688660439339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
     <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1687608242347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

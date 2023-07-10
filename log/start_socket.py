@@ -27,7 +27,8 @@ def get_host_ip():
 
 if __name__ == '__main__':
     import socket
-    ip = get_host_ip()
+    # ip = get_host_ip()
+    ip = "64.31.63.6"
     iplist = ip.split(".")
     client_label = iplist[3]
     print(str(ip))

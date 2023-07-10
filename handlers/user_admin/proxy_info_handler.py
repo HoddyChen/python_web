@@ -61,6 +61,9 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
                     # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返点状态")
                     page_main['group'] = yield P.getProxyGroup(self.session['web_uid'])
+                    if page_main['group'] == None:
+                        yield P.add_proxy_info(self.session['web_uid'])
+                        page_main['group'] = yield P.getProxyGroup(self.session['web_uid'])
                     # 统计总结算金额，单量all_proxy_profit - all_amount
                     page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'] = yield P.getProxySettlementAllCount(self.session['web_uid'])
                     # print(page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'])

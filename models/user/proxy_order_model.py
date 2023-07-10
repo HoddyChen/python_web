@@ -203,10 +203,10 @@ class ProxyOrderModel():
                 try:#
                     if uname == "":
                         sql = "INSERT INTO proxy_users(uid,grade_id) VALUES(%s,%s)"
-                        yield cursor.execute(sql % (web_uid, 2))
+                        yield cursor.execute(sql % (web_uid, 1))
                     else:
-                        sql = "INSERT INTO proxy_users(uid,uname,iban,grade_id) VALUES(%s,%s,%s,%s)"
-                        yield cursor.execute(sql, (web_uid, uname, iban, 2))
+                        sql = "INSERT INTO proxy_users(uid,uname,iban,grade_id,flag) VALUES(%s,%s,%s,%s,%s)"
+                        yield cursor.execute(sql, (web_uid, uname, iban, 1, 1))
                     yield conn.commit()
                     return True
                 except Exception as err:

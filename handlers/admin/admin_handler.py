@@ -1,5 +1,4 @@
 # coding = utf-8
-#coding=utf-8
 import re
 
 import tornado
@@ -24,7 +23,8 @@ class AdminHandler(SessionHandler, BaseHandler):
         # self.write(User_Agent)
         # self.finish()
         if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (re.findall("15_7", User_Agent) == [] or re.findall("Mac", User_Agent) == []):
-                # print("非法入侵，将追究法律责任！")
+            # print("非法入侵，将追究法律责任！")
+            self.redirect("/index")
             return
         page_main = {}
         page_main['title_website'] = config.WEBSITE_NAME + "管理区"
@@ -63,6 +63,7 @@ class AdminHandler(SessionHandler, BaseHandler):
                     re.findall("14_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []):
                 # print("非法入侵，将追究法律责任！")
                 return
+                self.finish()
             F = LoginForm(self.request.arguments)
             if F.validate():#and F.cla.data == "SendError"
                 M = ManagerModel()
