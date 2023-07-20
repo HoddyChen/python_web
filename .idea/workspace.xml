@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改启动，初始配置redis">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改启动程序的IP。返点后台显示错误，">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/install.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/start_socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/log/start_socket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/proxy_order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/proxy_order_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_client_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_client_command.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_socket.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/mode_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/sendmail_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/sendmail_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yyyyy/start_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/yyyyy/start_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +332,12 @@
       <workItem from="1688111316964" duration="615000" />
       <workItem from="1688459150832" duration="9590000" />
       <workItem from="1688962196017" duration="706000" />
-      <workItem from="1688964108861" duration="3950000" />
+      <workItem from="1688964108861" duration="4000000" />
+      <workItem from="1689047775766" duration="123000" />
+      <workItem from="1689343084564" duration="646000" />
+      <workItem from="1689405210139" duration="1152000" />
+      <workItem from="1689661504917" duration="6182000" />
+      <workItem from="1689819466302" duration="5671000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -601,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687617034731</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="修改启动程序的IP。返点后台显示错误，">
+      <created>1688968292168</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1688968292168</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +629,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改JS版本，" />
     <MESSAGE value="修改recaptcha,success=0.6" />
     <MESSAGE value="增加自研策略控制面板" />
     <MESSAGE value="修复bug" />
@@ -650,7 +653,8 @@
     <MESSAGE value="修改配置文件" />
     <MESSAGE value="修改ea下载地址" />
     <MESSAGE value="修改启动，初始配置redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改启动，初始配置redis" />
+    <MESSAGE value="修改启动程序的IP。返点后台显示错误，" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改启动程序的IP。返点后台显示错误，" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

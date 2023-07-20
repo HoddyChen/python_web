@@ -401,6 +401,8 @@ class StrategyModel():
         datas2 = yield O.get_PositionOrder(uaid)
         M_num = len(datas2)
         for i in range(len(copyStrategy_list)-1):
+            if not copyStrategy_list[i]['order_lots']:
+                copyStrategy_list[i]['order_num'] = 0
             copyStrategy_list[i]['M_num'] = M_num
             if copyStrategy_list[i]['order_num'] == M_num:
                 copyStrategy_list[i]['num_flag'] = 1
@@ -425,14 +427,16 @@ class StrategyModel():
             with conn.cursor() as cursor:
                 # users['ptname']db.cursor(MySQLdb.cursors.DictCursor)
                 # print("search:",page_main.get('search'))
+                sql = "FROM follow LEFT JOIN trader ON follow.uaid = trader.uaid AND trader.etime <= 0 AND " \
+                      "trader.followid > 0 AND trader.t_type < 2 INNER JOIN users_account ON follow.uaid = users_account.uaid "
                 if page_main == None or page_main.get('search') == "0" or page_main.get('search') == "":
-                    sql = "FROM follow INNER JOIN users_account ON follow.uaid = users_account.uaid INNER JOIN " \
-                          "trader ON follow.uaid = trader.uaid WHERE "
+                    sql = sql + "WHERE "
                 else:
                     search = "%" + page_main.get('search') + "%"
-                    sql = "FROM follow INNER JOIN users_account ON follow.uaid = users_account.uaid INNER JOIN " \
-                          "trader ON follow.uaid = trader.uaid WHERE `account` like '%s' AND " % search
-                sql = sql + " follow.followid = %s AND follow.follow_flag = 1 AND follow.f_flag = 1 AND trader.etime <= 0 AND trader.followid > 0 AND trader.t_type < 2 GROUP BY follow.uaid " % followid
+                    # sql = "FROM follow INNER JOIN users_account ON follow.uaid = users_account.uaid INNER JOIN " \
+                    #       "trader ON follow.uaid = trader.uaid WHERE `account` like '%s' AND " % search
+                    sql = sql + "WHERE `account` like '%s' AND " % search
+                sql = sql + " follow.followid = %s AND follow.follow_flag = 1 AND follow.f_flag = 1 GROUP BY follow.uaid " % followid
                 sql2 = "SELECT follow.uaid " + sql
                 # print(sql2)
                 yield cursor.execute(sql2)

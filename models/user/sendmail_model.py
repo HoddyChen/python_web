@@ -34,9 +34,9 @@ class SendmailModel():
         message['Subject'] = mailtitle
 
         try:
-            # smtpObj = smtplib.SMTP('smtp.office365.com', 587)
+            smtpObj = smtplib.SMTP('smtp.office365.com', 587)
             # 65.49.208.148:587
-            smtpObj = smtplib.SMTP('65.49.208.148', 587)
+            # smtpObj = smtplib.SMTP('65.49.208.148', 587)
             # smtpObj.connect('smtp.office365.com', 587)  # 25 为 SMTP 端口号
             smtpObj.starttls()
             # smtpObj.set_debuglevel(1)# 调试时开启
@@ -61,8 +61,8 @@ class SendmailModel():
         message['Subject'] = mailtitle
 
         try:
-            # smtpObj = smtplib.SMTP('smtp.office365.com', 587)
-            smtpObj = smtplib.SMTP('65.49.208.148', 587)
+            smtpObj = smtplib.SMTP('smtp.office365.com', 587)
+            # smtpObj = smtplib.SMTP('65.49.208.148', 587)
             # smtpObj.connect('smtp.office365.com', 587)  # 25 为 SMTP 端口号
             smtpObj.starttls()
             # smtpObj.set_debuglevel(1)# 调试时开启
