@@ -59,11 +59,11 @@ class AdminHandler(SessionHandler, BaseHandler):
         else:
             #登陆
             User_Agent = self.request.headers.get('User-Agent')
-            if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (
-                    re.findall("14_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []):
-                # print("非法入侵，将追究法律责任！")
-                return
-                self.finish()
+            # if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (
+            #         re.findall("14_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []):
+            #     # print("非法入侵，将追究法律责任！")
+            #     return
+            #     self.finish()
             F = LoginForm(self.request.arguments)
             if F.validate():#and F.cla.data == "SendError"
                 M = ManagerModel()

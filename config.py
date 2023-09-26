@@ -93,7 +93,7 @@ redis_version_pid = "version_"
 redis_total_console_list = "total_console_list"
 
 #sessions时间S
-SessionsOutTime = 3600
+SessionsOutTime = 604800# 一周
 
 
 # 服务器列表

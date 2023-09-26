@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复字体链接，修复持仓监控中，没有订单前，不显示账号的问题">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改跟单系统的定价">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index_buy2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_buy2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_buy2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_buy2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +339,11 @@
       <workItem from="1690610728540" duration="621000" />
       <workItem from="1691132733137" duration="251000" />
       <workItem from="1692755269670" duration="1231000" />
-      <workItem from="1692868942331" duration="5321000" />
+      <workItem from="1692868942331" duration="5357000" />
+      <workItem from="1693038871042" duration="1545000" />
+      <workItem from="1694670747863" duration="617000" />
+      <workItem from="1694672546266" duration="1228000" />
+      <workItem from="1695713205927" duration="812000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -613,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689828408086</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="修改跟单系统的定价">
+      <created>1692888182363</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1692888182363</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="增加自研策略控制面板" />
     <MESSAGE value="修复bug" />
     <MESSAGE value="修复策略统计的链接bug" />
     <MESSAGE value="增加菜单栏id参数" />
@@ -662,7 +673,8 @@
     <MESSAGE value="修改启动，初始配置redis" />
     <MESSAGE value="修改启动程序的IP。返点后台显示错误，" />
     <MESSAGE value="修复字体链接，修复持仓监控中，没有订单前，不显示账号的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复字体链接，修复持仓监控中，没有订单前，不显示账号的问题" />
+    <MESSAGE value="修改跟单系统的定价" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改跟单系统的定价" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
