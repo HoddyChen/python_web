@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="更新验证瑞讯账户的EA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index_proxy_account_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -342,7 +343,7 @@
       <workItem from="1694670747863" duration="617000" />
       <workItem from="1694672546266" duration="1228000" />
       <workItem from="1695713205927" duration="1459000" />
-      <workItem from="1695962389450" duration="1814000" />
+      <workItem from="1695962389450" duration="1949000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -638,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695966180690</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="更新验证瑞讯账户的EA">
+      <created>1695966360043</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1695966360043</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
