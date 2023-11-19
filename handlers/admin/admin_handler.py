@@ -22,10 +22,10 @@ class AdminHandler(SessionHandler, BaseHandler):
         User_Agent = self.request.headers.get('User-Agent')
         # self.write(User_Agent)
         # self.finish()
-        if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (re.findall("15_7", User_Agent) == [] or re.findall("Mac", User_Agent) == []):
-            # print("非法入侵，将追究法律责任！")
-            self.redirect("/index")
-            return
+        # if (re.findall("10_15_7", User_Agent) == [] or re.findall("Mozilla/5.0", User_Agent) == []) and (re.findall("15_7", User_Agent) == [] or re.findall("Mac", User_Agent) == []):
+        #     # print("非法入侵，将追究法律责任！")
+        #     self.redirect("/index")
+        #     return
         page_main = {}
         page_main['title_website'] = config.WEBSITE_NAME + "管理区"
         # page_main['User_Agent'] = User_Agent
