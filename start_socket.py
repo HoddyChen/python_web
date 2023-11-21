@@ -28,8 +28,8 @@ def get_host_ip():
 if __name__ == '__main__':
     import socket
     # ip = get_host_ip()
-    # ip = "64.31.63.6"
-    ip = "137.74.87.229"
+    ip = "64.31.63.6"
+    # ip = "51.89.156.187"
     iplist = ip.split(".")
     client_label = iplist[3]
     port = 9000

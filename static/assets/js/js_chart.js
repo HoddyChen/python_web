@@ -267,7 +267,7 @@ function getMorrisLineChart(name, datas, xkey, ykeys, tags) {
         labels: tags,
         lineColors: ['#034aff','#6C6C6C','#AE0000','#00AEAE','#D200D2','#8600FF','#00AEAE','#F00078'],
         lineWidth: 3,
-        //pointStrokeColors:"#034aff",
+        pointStrokeColors:"#034aff",
         pointSize: 1,
         hideHover: 'auto',
         parseTime: false

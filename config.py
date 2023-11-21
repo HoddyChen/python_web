@@ -54,7 +54,7 @@ PID = 51
 PROXY_PRICE = 10
 IMGURL = "/static/faceimg"
 # 错误间隔时间
-ERROR_TIME = 21
+ERROR_TIME = 9
 SOCKET_PORT = 9000
 # 发送字符串结束
 StringEnd = "....."
@@ -107,7 +107,7 @@ server_list = [
 },
     {
     'id': 1,
-    'url': '137.74.87.229',
+    'url': '51.89.156.187',
     'port': 9000
 },
 #     {

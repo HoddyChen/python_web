@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="更新url账户信息的页面">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/install.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket_log.log.20200608_00.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_client_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_client_command.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_socket.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_socket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/assets/js/js_chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/js_chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_profitability.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_profitability.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_symbol_distributed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_symbol_distributed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/web_log.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +355,7 @@
       <workItem from="1696428483424" duration="3968000" />
       <workItem from="1697607513689" duration="342000" />
       <workItem from="1699246727974" duration="7628000" />
-      <workItem from="1700278259221" duration="5393000" />
+      <workItem from="1700278259221" duration="9136000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -674,7 +665,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="更新url账户信息的页面">
+      <option name="closed" value="true" />
+      <created>1700401485567</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1700401485567</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
