@@ -20,7 +20,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
         echo_dist = {}
         page_main = {}
         page_main['lang'] = self.get_lang()
-        page_main['title_website'] = self.locale.translate("外汇账户")
+        page_main['title_website'] = self.locale.translate("交易账户")
         cookie_dist = self.getCookie(1)
         F = HistoryForm(self.request.arguments)
         if F.validate():  # and F.cla.data == "SendError"
