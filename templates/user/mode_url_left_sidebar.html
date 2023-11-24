@@ -1,7 +1,7 @@
 <aside id="leftsidebar" class="sidebar">
     <ul class="nav nav-tabs">
         <li><a class="navbar-brand" href="index"><img src="{{ static_url('img/logo32.png')}}" alt="fxcns"></a></li>
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard">{{_('交易账户展示')}}</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard">{{_('账户展示')}}</a></li>
         <li class="nav-item"></li>
     </ul>
     <div class="tab-content">
@@ -14,7 +14,7 @@
                             <div class="detail">
                                 <h4>{{_("未命名" if page_main.get('ma_name') == "null" else page_main.get('ma_name'))}}</h4>
                                 <small>{{_('账户类型')}} : {{"模拟账户" if page_main['moni']==1 else "真实账户"}}</small><BR>
-                                <small>{{_('账户号码')}} : {{page_main['account']}}</small><BR>
+                                <small>{{_('账户号码')}} : **********</small><BR>
                                 <small>{{_('服务器')}} : {{page_main['accountserver']}}</small><BR>
                                 <small>{{_('平台')}} : {{page_main['ptname']}}</small>
                             </div>

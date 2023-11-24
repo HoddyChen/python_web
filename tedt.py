@@ -14,7 +14,7 @@ print(vol4)
 # print(time.time())
 # time.sleep(1)
 #
-exit()
+# exit()
 from handlers.myredis.redis_class import RedisClass
 # print(data)
 # import os
@@ -73,9 +73,9 @@ from handlers.myredis.redis_class import RedisClass
 # exit()
 #"ukid":"71a76f0e7a6a6e2e3fd48ab15b45fd33","f2":"861649","f5":"e94fe0343a3e495b740419d83343bd2d",
 R = RedisClass()
-yy = R.chick_MD5_uaid("861649", "e94fe0343a3e495b740419d83343bd2d", "71a76f0e7a6a6e2e3fd48ab15b45fd33")
-print(yy)
-exit()
+# yy = R.chick_MD5_uaid("861649", "e94fe0343a3e495b740419d83343bd2d", "71a76f0e7a6a6e2e3fd48ab15b45fd33")
+# print(yy)
+# exit()
 # R.RH.set("jj4264", 0)
 # print(R.RH.get("jj4264"))
 # exit()
@@ -103,8 +103,9 @@ exit()
 # print(R.RH.hexists(config.redis_master_uaid_Hash + "4264", "4361"))
 # a = time.time()
 # R.get_socket_sercerIP()
-# print(R.RH.get("server_ip"))
-R.RH.set("server_ip", "103.86.46.13:9008")
+print(R.RH.get("server_ip"))
+R.RH.hdel(config.redis_acount_md5_dic, "8a2dd70e70b7c98a363475d4c3f3fd3a")
+#R.RH.set("server_ip", "103.86.46.13:9008")
 # print(R.get_socket_sercerIP())
 # # config.redis_total_console_list
 # print(R.RH.llen("Console_list0"))

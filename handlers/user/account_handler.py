@@ -75,6 +75,7 @@ class AccountHandler(BaseHandler):
         # 验证
         #datas = ""
         y = UserModel()
+        data_echo = ""
         if users['md5_from'] == str_md5:
             users['get_class'] = get_class
             if get_class == "login":
@@ -83,6 +84,8 @@ class AccountHandler(BaseHandler):
               # 执行Task函数，内部还是返回future对象。Task函数上第一个参数是要执行的函数，第二个是参数
             elif get_class == "check":
                 data_echo = yield y.CheckAccount(users)
+            elif get_class == "checksb":
+                data_echo = yield y.CheckAccountSb(users)
             elif get_class == "exit":
                 data_echo = yield y.ExitAccount(users)
             # print(data_echo)

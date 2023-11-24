@@ -21,7 +21,7 @@ class UserModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # users['ptname']db.cursor(MySQLdb.cursors.DictCursor)
-                sql = "SELECT uaid,pid,account FROM usercode WHERE ptname='%s' AND account=%s AND accountserver='%s' AND vipid=1" % (users['ptname'], users['account'], users['accountserver'])
+                sql = "SELECT uid,uaid,pid,account FROM usercode WHERE ptname='%s' AND account=%s AND accountserver='%s' AND vipid=1" % (users['ptname'], users['account'], users['accountserver'])
                 # print(sql)
                 yield cursor.execute(sql)
                 datas = cursor.fetchone()
@@ -33,9 +33,8 @@ class UserModel():
                     account_arr = yield self.GetAcountPinfo(conn, users, datas['uaid'])
                     if account_arr != None:
                         # 查询策略的参数等
-
-                        M = MasterModel()
                         if users['Master_flag'] == "1":
+                            M = MasterModel()
                             Mater_parameter = yield M.getMaterInfo(datas['uaid'], users['pid'])
                             account_arr['max_num'] = Mater_parameter['mater_max_num']
                             account_arr['endtime'] = Mater_parameter['endtime']
@@ -145,7 +144,7 @@ class UserModel():
     def GetAcountPinfo(self, conn, users, uaid):
         # 查询账户与产品
         up_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        sql = "SELECT acount_pinfo.pid,acount_pinfo.apflag,acount_pinfo.qq,acount_pinfo.version,acount_pinfo.pflag FROM acount_pinfo WHERE pid=%s AND uaid=%s"
+        sql = "SELECT acount_pinfo.pid,acount_pinfo.apflag,acount_pinfo.qq,acount_pinfo.version,acount_pinfo.pflag, acount_pinfo.probation FROM acount_pinfo WHERE pid=%s AND uaid=%s"
         with conn.cursor() as cursor:
             yield cursor.execute(sql % (users['pid'], uaid))
             datas = cursor.fetchone()
@@ -172,6 +171,12 @@ class UserModel():
                 sql3 = "INSERT INTO account_product(pid,uaid,apflag,starttime,onlinetime,lasttime) VALUES(%s,%s,%s,'%s','%s','%s')"
                 try:
                     yield cursor.execute(sql3 % (users['pid'], uaid, 1, up_date, up_date, up_date))
+                    # yield conn.commit()
+                    if int(users['pid']) == 11:
+                        # 新增产品订单
+                        sql4 = ("INSERT INTO p_order(pid, piid, uid, uaid, otype, amount, amount_less, amount_cny, onum, otime, strattime, endtime, trade_status, potype, remarks, date_num, note) "
+                                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', DATE_ADD(NOW(),INTERVAL 7 DAY), %s, %s, '%s', %s, '%s')")
+                        yield cursor.execute(sql4 % (users['pid'], 6, 1, uaid, 1, 0, 0, 0, 1, up_date, up_date, 1, 1, 0, 7,'test'))
                     yield conn.commit()
                     yield cursor.execute(sql % (users['pid'], uaid))
                     datas2 = cursor.fetchone()
@@ -291,6 +296,66 @@ class UserModel():
             echotext2 = yield self.get1data(datas2)
             # logger.info("CheckAccount:" + echotext + echotext2)
             return echotext + echotext2
+        else:
+            # 账户未登陆或已经失效
+            return "-12,0,0,0,0,0,"
+
+    @gen.coroutine
+    def getProdctOrderInfo(self, uaid, pid):
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                sql = "SELECT product_info.piname,product.pname_cn,product.pname_en,p_order.oid,p_order.uaid," \
+                      "p_order.otype,p_order.amount,p_order.amount_less,p_order.amount_cny,p_order.onum,p_order.strattime, " \
+                      "p_order.trade_status,p_order.endtime,product_info.info10,product_info.info11,product_info.info12 " \
+                      "FROM p_order " \
+                      "INNER JOIN product_info ON p_order.piid = product_info.piid " \
+                      "INNER JOIN product ON product_info.pid = product.pid " \
+                      "WHERE p_order.uaid = %s AND product_info.pid = %s AND p_order.endtime > now() AND p_order.otype = 1"
+                # logger.debug(sql % (masterid, pid))
+                yield cursor.execute(sql, (uaid, pid))
+                datas = cursor.fetchall()
+                MaterInfo = {}
+                MaterInfo['endtime'] = None# 到期时间
+                if len(datas) > 0:
+                    # print(datas)
+                    for data in datas:
+                        if data['strattime'] <= datetime.datetime.strptime(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S'):
+                            if MaterInfo['endtime'] == None:
+                                MaterInfo['endtime'] = data['endtime']
+                            else:
+                                if data['endtime'] > MaterInfo['endtime']:
+                                    MaterInfo['endtime'] = data['endtime']
+
+        logger.debug("MaterInfo%s" % MaterInfo)
+        return MaterInfo
+
+
+    @gen.coroutine
+    def CheckAccountSb(self, users):
+        if self.R.RH.hexists(config.redis_acount_md5_dic, users['ukid']):
+            datas={}
+            uaid = self.R.RH.hget(config.redis_acount_md5_dic, users['ukid'])
+            # datas2 = yield self.updataAccount(users, uaid)
+            # pp = redis_ua_pid_endtime + str(uaid)
+            # print(R.RH.get(redis_ua_pid_endtime + str(uaid)))
+            # endtime = int(float(R.RH.get(config.redis_ua_pid_endtime + str(uaid))))
+
+            # follow_parameter = yield R.getMaterParameter(master_id, users['pid'])
+            follow_parameter = yield self.getProdctOrderInfo(uaid, users['pid'])
+            # 加入策略参数
+            datas['endtime'] = follow_parameter['endtime']
+
+            # datas['endtime'] = datetime.datetime.fromtimestamp(endtime)
+            datas['pid'] = users['pid']
+            datas['apflag'] = 1
+            datas['zd_opentime'] = ""
+            datas['zd_closetime'] = ""
+            datas['qq'] = self.R.RH.get(config.redis_qq_pid + str(users['pid']))
+            datas['version'] = self.R.RH.get(config.redis_version_pid + str(users['pid']))
+            echotext = yield self.getOdata(datas, users['account'], uaid, users['ukid'], users['get_class'])
+            # echotext2 = yield self.get1data(datas2)
+            # logger.info("CheckAccount:" + echotext + echotext2)
+            return echotext
         else:
             # 账户未登陆或已经失效
             return "-12,0,0,0,0,0,"

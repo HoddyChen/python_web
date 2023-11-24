@@ -816,7 +816,7 @@ class StrategyModel():
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
-                if page_main['time_type'].find("last") >= 0:
+                if the_stime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -880,11 +880,12 @@ class StrategyModel():
                     else:
                         the_stime = 0
                 sql = "FROM trader WHERE "
-                sql = sql + " uaid=%s " % page_main['uaid']
+                sql = sql + " uaid=%s AND trader.t_type<=1 " % page_main['uaid']
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
-                if page_main['time_type'].find("last") >= 0:
+                # if page_main['time_type'].find("last") >= 0:
+                if the_stime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -1044,11 +1045,11 @@ class StrategyModel():
                     else:
                         the_stime = 0
                 sql = "FROM trader WHERE "
-                sql = sql + " trader.etime > 0 AND uaid=%s " % page_main['uaid']
+                sql = sql + " trader.etime > 0 AND uaid=%s  AND trader.t_type <=1 " % page_main['uaid']
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
-                if page_main['time_type'].find("last") >= 0:
+                if the_stime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -1072,7 +1073,7 @@ class StrategyModel():
                 # 小时
                 g3 = "FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i')AS g_date"
                 sql = "FROM trader WHERE "
-                sql = sql + " (trader.etime > 0 ) AND uaid=%s " % page_main['uaid']#OR trader.t_type>=6
+                sql = sql + " (trader.etime > 0 ) AND uaid=%s AND trader.t_type <=1 " % page_main['uaid']#OR trader.t_type>=6
                 sql_end = "GROUP BY g_date ORDER BY etime DESC"
                 sql2 = "SELECT tid," + g2 + " " + sql + sql_end
                 # print(sql2)
@@ -1101,7 +1102,7 @@ class StrategyModel():
                 import time
                 starttime = time.time() - 7200
                 sql = "FROM trader WHERE "
-                sql = sql + " trader.t_type < 6 AND trader.etime = 0 AND trader.stime <= %s AND uaid=%s " % (starttime, page_main['uaid'])
+                sql = sql + " trader.t_type <=1 AND trader.etime = 0 AND trader.stime <= %s AND uaid=%s " % (starttime, page_main['uaid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
@@ -1133,7 +1134,7 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 the_stime = time.time()-7200
                 sql = "FROM trader WHERE "
-                sql = sql + "trader.t_type < 6 AND trader.etime = 0 AND uaid=%s " % page_main['uaid']
+                sql = sql + "trader.t_type <=1 AND trader.etime = 0 AND uaid=%s " % page_main['uaid']
 
                 sql = sql + " AND trader.stime <= %s " % the_stime
                 sql2 = "SELECT Count(*) AS t_count,Sum(trader.num) AS t_num,Sum(trader.profit) AS t_profit,Sum(trader.swap) AS t_swap," \
@@ -1160,24 +1161,35 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 the_stime = time.time()-7200
                 sql = "FROM trader WHERE "
-                sql = sql + "trader.t_type = 6 AND uaid=%s " % uaid
-                sql2 = "SELECT Sum(trader.profit) AS t_in_profit " + sql + " AND trader.t_type = 6"
+                sql = sql + " uaid=%s " % uaid
+                sql2 = "SELECT Sum(trader.profit) AS t_in_profit " + sql + " AND trader.t_type = 6 AND trader.profit >0"
                 # print(sql2)
                 yield cursor.execute(sql2)
                 datas = cursor.fetchone()
-                sql4 = "SELECT Sum(trader.profit) AS t_out_profit " + sql + " AND trader.t_type = 7"
-                # print(sql2)
-                yield cursor.execute(sql4)
+                sql3 = "SELECT Sum(trader.profit) AS t_in_profit " + sql + " AND trader.t_type = 6 AND trader.profit <0"
+                yield cursor.execute(sql3)
                 datas3 = cursor.fetchone()
-                sql3= "SELECT users_account.balance,users_account.credit,users_account.quity,users_account.profit,users_account.account,users_account.margin " \
+
+                sql4 = "SELECT Sum(trader.profit) AS t_out_profit " + sql + " AND trader.t_type = 7"
+                yield cursor.execute(sql4)
+                datas4 = cursor.fetchone()
+
+                sql5= "SELECT users_account.balance,users_account.credit,users_account.quity,users_account.profit,users_account.account,users_account.margin " \
                       "FROM users_account " \
                       "WHERE uaid=%s " % uaid
                 # print(datas)
                 # print(sql3)
-                yield cursor.execute(sql3)
-                datas2 = cursor.fetchone()
-                datas.update(datas2)
-                datas.update(datas3)
+                yield cursor.execute(sql5)
+                datas5 = cursor.fetchone()
+
+                if 't_in_profit' in datas3 and datas3['t_in_profit']:
+                    if 't_out_profit' in datas4 and datas4['t_out_profit']:
+                        datas4['t_out_profit'] = int(datas4['t_out_profit']) + int(datas3['t_in_profit']) # 999
+                        datas.update(datas4)
+                    else:
+                        datas4['t_out_profit'] = - datas3['t_in_profit']
+                        datas.update(datas4)
+                datas.update(datas5)
                 # print(datas)
                 return datas
 
@@ -1225,7 +1237,7 @@ class StrategyModel():
                 sql = sql + " uaid=%s " % page_main['uaid']
                 sql_end = "GROUP BY g_date"
                 sql3 = "SELECT Sum(trader.profit+trader.swap+trader.commission) AS allprofit,"
-                sql3 = sql3 + sql3_g + " " + sql + "AND trader.etime>0 " + sql_end
+                sql3 = sql3 + sql3_g + " " + sql + "AND trader.etime>0 AND trader.t_type <=1 " + sql_end
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
