@@ -31,7 +31,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
             page_main['urlkey'] = F.k.data
             page_main['prc_type'] = F.fx_type.data
             page_main['time_type'] = F.time_type.data
-
+            page_main['time_str'] = self.timeType(F.time_type.data)
             pp = yield M.checkMaterAndFollow(cookie_dist["current_strategy"], F.uaid.data)
             if pp:
                 page_main['uaid'] = F.uaid.data
@@ -177,6 +177,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
             # page_papa['page_num'] = self.get_argument('page_num', 10)
             page_papa['fx_type'] = F.fx_type.data
             page_papa['time_type'] = F.time_type.data
+            page_papa['time_str'] = self.timeType(F.time_type.data)
             if self.chick_seach(page_papa['search']):
                 if F.fx_type.data == "report":
                     # 总报告

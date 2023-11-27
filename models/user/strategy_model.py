@@ -512,9 +512,8 @@ class StrategyModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                if page_main == None:
-                    the_etime = 0
-                else:
+                the_etime = 0
+                if page_main != None:
                     from models.public.headers_model import Headers_Models
                     H = Headers_Models()
                     if page_main['time_type'] == "the_year":
@@ -550,7 +549,7 @@ class StrategyModel():
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND users_account.account like '" + search + "' "
-                if page_main['time_type'].find("last") >= 0:
+                if the_etime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -776,9 +775,8 @@ class StrategyModel():
     def getHistoryOrderList(self, page_main=None):
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
-                if page_main == None:
-                    the_etime = 0
-                else:
+                the_etime = 0
+                if page_main != None:
                     from models.public.headers_model import Headers_Models
                     H = Headers_Models()
                     if page_main['time_type'] == "the_year":
@@ -816,7 +814,7 @@ class StrategyModel():
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
-                if the_stime != 0:
+                if the_etime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -846,9 +844,8 @@ class StrategyModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                if page_main == None:
-                    the_etime = 0
-                else:
+                the_etime = 0
+                if page_main != None:
                     from models.public.headers_model import Headers_Models
                     H = Headers_Models()
                     if page_main['time_type'] == "the_year":
@@ -885,7 +882,7 @@ class StrategyModel():
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
                 # if page_main['time_type'].find("last") >= 0:
-                if the_stime != 0:
+                if the_etime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -893,7 +890,7 @@ class StrategyModel():
                       "Sum(trader.commission) AS t_comm,Max(trader.profit) AS t_maxprofit,Min(trader.profit) AS t_minprofit,AVG(trader.profit) AS t_avgprofit," \
                        " Max(trader.maxprofit) AS t_maxfloat,Min(trader.minprofit) AS t_minfloat " + sql
                 sql3 = sql2 + " AND trader.profit>=0"
-                print(sql3)
+                #print(sql3)
                 sql4 = sql2 + " AND trader.profit<0"
                 sql5 = sql2 + " AND trader.t_type=0 AND trader.profit>=0"
                 sql6 = sql2 + " AND trader.t_type=0 AND trader.profit<0"
@@ -971,7 +968,7 @@ class StrategyModel():
                 datas['t1_minfloat'] = datas8[0]['t_minfloat']
                 datas['t1_avgprofit0'] = datas7[0]['t_avgprofit']
                 datas['t1_avgprofit1'] = datas8[0]['t_avgprofit']
-                datas10 = yield self.getFunds(page_main['uaid'])
+                datas10 = yield self.getFunds(page_main['uaid'], the_stime, the_etime)
                 datas.update(datas10)
                 # print(datas)
                 return [datas]
@@ -1011,9 +1008,8 @@ class StrategyModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                if page_main == None:
-                    the_etime = 0
-                else:
+                the_etime = 0
+                if page_main != None:
                     from models.public.headers_model import Headers_Models
                     H = Headers_Models()
                     if page_main['time_type'] == "the_year":
@@ -1049,7 +1045,7 @@ class StrategyModel():
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
-                if the_stime != 0:
+                if the_etime != 0:
                     sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND trader.etime >= %s " % the_stime
@@ -1155,13 +1151,17 @@ class StrategyModel():
 
     # 得到账户资金的统计
     @gen.coroutine
-    def getFunds(self, uaid):
+    def getFunds(self, uaid, the_stime, the_etime):
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime = time.time()-7200
+                # the_stime = time.time()-7200
                 sql = "FROM trader WHERE "
                 sql = sql + " uaid=%s " % uaid
+                if the_etime != 0:
+                    sql = sql + " AND trader.stime >= %s AND trader.stime < %s " % (the_stime, the_etime)
+                else:
+                    sql = sql + " AND trader.stime >= %s " % the_stime
                 sql2 = "SELECT Sum(trader.profit) AS t_in_profit " + sql + " AND trader.t_type = 6 AND trader.profit >0"
                 # print(sql2)
                 yield cursor.execute(sql2)

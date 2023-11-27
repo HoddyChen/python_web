@@ -34,9 +34,9 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="header">
-                    <h2><strong>{{_(page_main['title_type'])}}</strong>  </h2>
+                    <h2>{{_(page_main.get('time_str'))}} - <strong>{{_(page_main['title_type'])}}</strong>  </h2>
                     <ul class="header-dropdown">
-                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-calendar-alt"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&uaid={{page_main.get('uaid')}}">{{_('全部')}}</a></li>
                                 <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_day&uaid={{page_main.get('uaid')}}">{{_('今日')}}</a></li>

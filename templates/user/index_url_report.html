@@ -21,10 +21,11 @@
 <script >
 // 返回
     var urlkey = $("#urlkey").val();
+    var time_type = $("#time_type").val();
     var uaid = $("#uaid").val();
     $.ajax({
         type: 'post',
-        url: '/h?fx_type=report&k=' + urlkey + '&uaid=' + uaid + '&nt=' + Date.parse(new Date()),
+        url: '/h?fx_type=report&k=' + urlkey + '&time_type=' + time_type + '&uaid=' + uaid + '&nt=' + Date.parse(new Date()),
         data: {},
         cache: false,
         dataType: "JSON",

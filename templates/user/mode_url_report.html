@@ -3,7 +3,26 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="header">
-                    <h2><strong>{{_("报告")}}</strong> {{_("历史（不包括今天）")}}</h2>
+                    <h2>{{_(page_main.get('time_str'))}} - <strong>{{_("报告")}}</strong> {{_("历史")}}</h2>
+                    <ul class="header-dropdown">
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-calendar-alt"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&uaid={{page_main.get('uaid')}}">{{_('全部')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_day&uaid={{page_main.get('uaid')}}">{{_('今日')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_day&uaid={{page_main.get('uaid')}}">{{_('近一日')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_week&uaid={{page_main.get('uaid')}}">{{_('本周')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_week&uaid={{page_main.get('uaid')}}">{{_('近一周')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_month&uaid={{page_main.get('uaid')}}">{{_('本月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=last_month&uaid={{page_main.get('uaid')}}">{{_('上个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_month&uaid={{page_main.get('uaid')}}">{{_('近一个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_month3&uaid={{page_main.get('uaid')}}">{{_('近三个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_month6&uaid={{page_main.get('uaid')}}">{{_('近六个月')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=the_year&uaid={{page_main.get('uaid')}}">{{_('今年')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=last_year&uaid={{page_main.get('uaid')}}">{{_('去年')}}</a></li>
+                                <li><a href="/h?fx_type={{page_main['prc_type']}}&k={{page_main['urlkey']}}&time_type=recent_year&uaid={{page_main.get('uaid')}}">{{_('近一年')}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 <div class="body">
                     <div class="row clearfix">
@@ -54,11 +73,11 @@
                             <span class="text-muted">{{_("交易")}}</span>
                         </div>
                         <div class="col-md col-6">
-                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h2_3">0</span></h4>
+                            <h4 class="margin-0"><span id="h2_3">0</span></h4>
                             <span class="text-muted">{{_("最大")}}{{_("盈利")}}</span>
                         </div>
                         <div class="col-md col-6">
-                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h2_4">0</span></h4>
+                            <h4 class="margin-0"><span id="h2_4">0</span></h4>
                             <span class="text-muted">{{_("最大")}}{{_("亏损")}}</span>
                         </div>
                     </div>
@@ -73,7 +92,7 @@
                 <div class="body">
                     <div class="row text-center">
                         <div class="col-md col-6">
-                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h3_0">0</span></h4>
+                            <h4 class="margin-0"><span id="h3_0">0</span></h4>
                             <span class="text-muted"> {{_("盈利")}}{{_("交易")}}</span>
                         </div>
                         <div class="col-md col-6">
@@ -89,7 +108,7 @@
                             <span class="text-muted">{{_("盈利")}}{{_("交易")}}{{_("占比")}}</span>
                         </div>
                         <div class="col-md col-6">
-                            <h4 class="margin-0"><span style="font-size: 0.5em;">$</span> <span id="h3_00">0</span></h4>
+                            <h4 class="margin-0"><span id="h3_00">0</span></h4>
                             <span class="text-muted">{{_("亏损")}}{{_("交易")}}</span>
                         </div>
                         <div class="col-md col-6">
@@ -230,5 +249,6 @@
         <input id="prc_type" name="prc_type" type="hidden" value="{{page_main['prc_type']}}">
         <input id="urlkey" name="urlkey" type="hidden" value="{{page_main['urlkey']}}">
         <input id="uaid" name="uaid" type="hidden" value="{{page_main.get('uaid')}}">
+        <input id="time_type" name="type" type="hidden" value="{{page_main['time_type']}}">
     </div>
 </div>

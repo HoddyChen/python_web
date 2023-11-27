@@ -12,13 +12,15 @@
                         <div class="user-info">
                             <div class="image"><a href="/user/info?fx_type=edit_logo"><img  style="height: 80px;" src="{{static_url('faceimg/profile_av.jpg' if (page_main.get('current_logo_url') == 'null' or page_main.get('current_logo_url') == None) else 'faceimg/' + page_main.get('current_logo_url'))}}" alt="User"></a></div>
                             <div class="detail">
-                                <h4>{{_("未命名" if page_main['current_ma_name'] == "null" else page_main['current_ma_name'])}}</h4>
+                                <h4><a href="/user/info?fx_type=edit_info">{{_("未命名" if page_main['current_ma_name'] == "null" else page_main['current_ma_name'])}}</a></h4>
                                 <small>{{_('策略账户')}} : {{page_main['current_account']}}</small>
                             </div>
                         </div>
                     </li>
                     <!--<li class="header">{{_('主控面板')}}</li>-->
                     <li class="active open"> <a href="index"><i class="zmdi zmdi-home"></i><span>{{_('首页')}}</span></a>
+                    </li>
+                    <li class="active open"> <a href="/h?uaid={{page_main.get('uaid')}}" target="_blank" ><i class="zmdi zmdi-globe-alt"></i><span>{{_('主账户')}}</span> </a>
                     </li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-globe-alt"></i><span>{{_('跟单账户')}}</span> </a>
                         <ul class="ml-menu">
