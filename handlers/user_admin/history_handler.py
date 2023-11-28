@@ -33,7 +33,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
             page_main['time_type'] = F.time_type.data
             page_main['time_str'] = self.timeType(F.time_type.data)
             pp = yield M.checkMaterAndFollow(cookie_dist["current_strategy"], F.uaid.data)
-            if pp:
+            if pp or cookie_dist["current_strategy"] == str(F.uaid.data):
                 page_main['uaid'] = F.uaid.data
                 s_data2 = yield S.getfollowidStrategy(cookie_dist["current_strategy"])
                 page_main.update(s_data2)
@@ -142,7 +142,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
             page_papa = {}
             S = StrategyModel()
             open_flag = yield M.checkMaterAndFollow(cookie_dist["current_strategy"], F.uaid.data)
-            if open_flag:
+            if open_flag or cookie_dist["current_strategy"] == str(F.uaid.data):
                 # 有策略登陆
                 open_flag = True
                 echo_dist['reponse_status'] = 5

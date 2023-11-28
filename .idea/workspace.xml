@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改小铃铛的登陆与到期时间读取">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改统计数据相关bug；&#10;主菜单增加主账号资料链接。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index_url_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_url_report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_left_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_history_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_history_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +355,7 @@
       <workItem from="1697607513689" duration="342000" />
       <workItem from="1699246727974" duration="7628000" />
       <workItem from="1700278259221" duration="35686000" />
-      <workItem from="1700821483582" duration="25961000" />
+      <workItem from="1700821483582" duration="30984000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -701,7 +697,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700835847793</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="修改统计数据相关bug；&#10;主菜单增加主账号资料链接。">
+      <option name="closed" value="true" />
+      <created>1701072668019</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1701072668019</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,7 +729,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="新增当前返点页面及功能" />
     <MESSAGE value="当前返点页面色彩改变" />
     <MESSAGE value="修复登陆时倒计时的BUG" />
     <MESSAGE value="修改返佣的几个页面" />
@@ -750,7 +753,8 @@
     <MESSAGE value="更新曲线图参数，修改EA错误响应时间为9" />
     <MESSAGE value="外汇改为交易" />
     <MESSAGE value="修改小铃铛的登陆与到期时间读取" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改小铃铛的登陆与到期时间读取" />
+    <MESSAGE value="修改统计数据相关bug；&#10;主菜单增加主账号资料链接。" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改统计数据相关bug；&#10;主菜单增加主账号资料链接。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -769,26 +773,6 @@
           <url>file://$PROJECT_DIR$/models/admin/strategy_model.py</url>
           <line>167</line>
           <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/user/user_model.py</url>
-          <line>314</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/user/user_model.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/user/user_model.py</url>
-          <line>334</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/handlers/user/account_handler.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
@@ -813,7 +797,7 @@
     <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_socket.coverage" NAME="start_socket 覆盖结果" MODIFIED="1695965346984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1701056776142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1701093136090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

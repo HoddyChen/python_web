@@ -20,7 +20,7 @@
                     <!--<li class="header">{{_('主控面板')}}</li>-->
                     <li class="active open"> <a href="index"><i class="zmdi zmdi-home"></i><span>{{_('首页')}}</span></a>
                     </li>
-                    <li class="active open"> <a href="/h?uaid={{page_main.get('uaid')}}" target="_blank" ><i class="zmdi zmdi-globe-alt"></i><span>{{_('主账户')}}</span> </a>
+                    <li> <a href="/h?uaid={{page_main['current_strategy']}}" target="_blank" ><i class="zmdi zmdi-pin-account"></i><span>{{_('主账户')}}</span> </a>
                     </li>
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-globe-alt"></i><span>{{_('跟单账户')}}</span> </a>
                         <ul class="ml-menu">
