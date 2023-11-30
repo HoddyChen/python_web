@@ -316,3 +316,19 @@ class MasterModel():
                 except Exception as err:
                     logger.error("[master_model:getVcmial:update or INSERT]: %s" % err)
         return None
+
+    # 获得策略方的在线时间
+    @gen.coroutine
+    def getMasterTime(self, uaid):
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                try:
+                    # 查询用户
+                    sql = "SELECT uaid, account, allname, onlinetime as last_time FROM users_account WHERE uaid=%s"
+                    yield cursor.execute(sql % (uaid))
+                    datas = cursor.fetchone()
+                    if datas != None:
+                        return datas
+                except Exception as err:
+                    logger.error("[master_model:getMasterTime]: %s" % err)
+        return None

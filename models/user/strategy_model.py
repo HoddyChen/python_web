@@ -4,11 +4,14 @@ from tornado import gen
 import logging
 import hashlib
 import datetime
-import config
-from handlers.myredis.redis_class import RedisClass
 import json
 import time
 import pandas
+
+import config
+from handlers.myredis.redis_class import RedisClass
+from models.user.master_model import MasterModel
+
 
 logger = logging.getLogger('Main')
 class StrategyModel():
@@ -208,11 +211,35 @@ class StrategyModel():
     @gen.coroutine
     def getStrategyLoging(self, uaid, page_main=None):
         copyStrategy_list = yield self.getCopyList(uaid, page_main)
+        M = MasterModel()
+        strategy = yield M.getMasterTime(uaid)
+        copy_list = []
+        now_time = int(time.time())
+        if strategy:
+            strategy['follow_flag'] = 9
+            strategy['followid'] = 0
+            strategy['f_flag'] = 0
+            copy_dist = {}
+            if strategy['last_time'] != None or strategy['last_time'] != "null":
+                try:
+                    if time.mktime(strategy['last_time'].timetuple()) + 1000 < now_time:
+                        # 超时
+                        copy_dist['time_out'] = 0
+                    else:
+                        copy_dist['time_out'] = 1
+                except:
+                    copy_dist['time_out'] = 0
+            else:
+                copy_dist['time_out'] = 0
+            copy_dist.update(strategy)
+            copy_list.append(copy_dist)
+
         if len(copyStrategy_list) <= 0:
-            return []
+            yy = []
+            yy['allnum'] = 1
+            copy_list.append(yy)
+            return copy_list
         else:
-            copy_list = []
-            now_time = int(time.time())
             for i in range(len(copyStrategy_list)-1):
                 copy_dist = {}
                 if copyStrategy_list[i]['last_time'] != None or copyStrategy_list[i]['last_time'] != "null":
@@ -228,6 +255,7 @@ class StrategyModel():
                     copy_dist['time_out'] = 0
                 copy_dist.update(copyStrategy_list[i])
                 copy_list.append(copy_dist)
+            copyStrategy_list[-1]['allnum'] = len(copy_list)
             copy_list.append(copyStrategy_list[-1])
             # print(copy_list)
             return copy_list
@@ -239,7 +267,6 @@ class StrategyModel():
         if len(copyStrategy_list) <= 0:
             return []
         else:
-            from handlers.myredis.redis_class import RedisClass
             R = RedisClass()
             now_time = int(time.time())
             copy_list = []
@@ -268,9 +295,9 @@ class StrategyModel():
     # 得到策略的跟单列表的在线状态统计
     @gen.coroutine
     def getStrategyLogingStatus(self, uaid):
-        from models.user.master_model import MasterModel
         M = MasterModel()
         copyStrategy_list = yield M.getMaterFollow(uaid)
+        strategy = yield M.getMasterTime(uaid)
         now_time = int(time.time())
         copy_dist = {}
         copy_dist['expected'] = 0
@@ -286,15 +313,21 @@ class StrategyModel():
                         copy_dist['actual'] = copy_dist['actual'] + 1
                 except:
                     pass
+        if strategy and (strategy['last_time'] != None or strategy['last_time'] != "null"):
+            copy_dist['expected'] = copy_dist['expected'] + 1
+            try:
+                if time.mktime(strategy['last_time'].timetuple()) + 1000 >= now_time:
+                    copy_dist['actual'] = copy_dist['actual'] + 1
+            except:
+                pass
+
         return copy_dist
 
     # 得到策略的跟单列表的在线状态统计
     @gen.coroutine
     def getStrategyLogingStatus_back(self, uaid):
-        from models.user.master_model import MasterModel
         M = MasterModel()
         copyStrategy_list = yield M.getMaterFollow(uaid)
-        from handlers.myredis.redis_class import RedisClass
         R = RedisClass()
         now_time = int(time.time())
         copy_dist = {}

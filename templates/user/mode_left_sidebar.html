@@ -13,7 +13,7 @@
                             <div class="image"><a href="/user/info?fx_type=edit_logo"><img  style="height: 80px;" src="{{static_url('faceimg/profile_av.jpg' if (page_main.get('current_logo_url') == 'null' or page_main.get('current_logo_url') == None) else 'faceimg/' + page_main.get('current_logo_url'))}}" alt="User"></a></div>
                             <div class="detail">
                                 <h4><a href="/user/info?fx_type=edit_info">{{_("未命名" if page_main['current_ma_name'] == "null" else page_main['current_ma_name'])}}</a></h4>
-                                <small>{{_('策略账户')}} : {{page_main['current_account']}}</small>
+                                <small>{{_('策略账户')}} : ******{{page_main['current_account'][-3:]}}</small>
                             </div>
                         </div>
                     </li>
@@ -53,9 +53,10 @@
                         <ul class="ml-menu">
                             <li><a href="/user/proxy?fx_type=open">{{_('瑞讯瑞士开户')}}</a></li>
                             <li><a href="/user/proxy_info?fx_type=edit_proxy">{{_('收款管理')}}</a></li>
-                            <li><a href="/user/proxy_info?fx_type=proxy_graup">{{_('返点报表')}}</a></li>
+                            <li><a href="/user/proxy_info?fx_type=list_proxy_accountclass">{{_('分组管理')}}</a></li>
                             <li><a href="/user/proxy_info?fx_type=list_proxy_account">{{_('账号管理')}}</a></li>
-                            <li><a href="/user/proxy?fx_type=list_proxy_order_count">{{_('返点统计')}}</a></li>
+                            <li><a href="/user/proxy_info?fx_type=proxy_graup">{{_('返点简报')}}</a></li>
+                            <li><a href="/user/proxy?fx_type=list_proxy_order_count">{{_('返点历史')}}</a></li>
                             <li><a href="/user/proxy?fx_type=list_settlement">{{_('结算报表')}}</a></li>
                         </ul>
                     </li>

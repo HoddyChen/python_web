@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-lg-12" style="margin-top: 30px;">
+            <div class="card">
+                <div class="header">
+                    <h2><strong>{{page_main['title_type']}}</strong><small>{{page_main['text1']}}</small>  </h2>
+                    <ul class="header-dropdown">
+                        <li class="remove">
+                            <button type="button" class="btn btn-raised btn-primary waves-effect btn-round" onclick="add_proxy_account();"><i class="zmdi zmdi-account-add" style="color: white;"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <table id="datatable01" class="table table-bordered table-striped table-hover dataTable" width="100%">
+                        <!--js-exportable-->
+                        <thead>
+                            <tr>
+                                {%for j in range(page_main['th_num'])%}
+                                <th></th>
+                                {%end for%}
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Exportable Table -->
+</div>

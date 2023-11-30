@@ -72,7 +72,11 @@
                     render: function (data, type, row) {
                         if (row.follow_flag == 1){
                             var e = '<i class="zmdi zmdi-cloud-done fx_color1"></i>';
-                        } else {
+                        }
+                        else if (row.follow_flag == 9) {
+                            var e = '<i class="zmdi zmdi-pin-account fx_color1"></i>';
+                        }
+                        else {
                             var e = '<i class="zmdi zmdi-cloud-off fx_color2"></i>';
                         }
                         return e;

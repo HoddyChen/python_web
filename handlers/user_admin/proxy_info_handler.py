@@ -56,7 +56,7 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     return
                 elif F.fx_type.data == "proxy_graup":
                     # 列表
-                    page_main['title_type'] = self.locale.translate("当前返点")
+                    page_main['title_type'] = self.locale.translate("返点简报")
                     # page_main['th_num'] = 4
                     # page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4账户后, 可通过右边的")
                     # page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返点状态")
@@ -68,6 +68,13 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'] = yield P.getProxySettlementAllCount(self.session['web_uid'])
                     # print(page_main['all_proxy_profit'], page_main['all_profit'], page_main['all_amount'])
                     yield self.render("user/index_proxy_group.html", page_main=page_main, session=self.session)
+                    return
+                elif F.fx_type.data == "list_proxy_accountclass":
+                    # 用户分组列表
+                    page_main['title_type'] = self.locale.translate("分组管理")
+                    page_main['text1'] = self.locale.translate("设置分组后，所有统计数据都可以根据分组计算结果")
+                    page_main['th_num'] = 4
+                    yield self.render("user/index_proxy_accountclass_list.html", page_main=page_main, session=self.session)
                     return
                 else:
                     page_main['title_type'] = self.locale.translate("瑞讯银行瑞士账户申请")
