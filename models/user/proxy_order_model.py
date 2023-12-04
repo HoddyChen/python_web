@@ -163,6 +163,54 @@ class ProxyOrderModel():
                     return -3
 
     @gen.coroutine
+    def CheckProxyAccountClass(self, web_uid, name):
+        # 查代理账号的分组存在与否
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                sql = "SELECT pug_id FROM proxy_user_class WHERE uid=%s and pug_name='%s'" % (web_uid, name)
+                # print(sql)
+                yield cursor.execute(sql)
+                datas = cursor.fetchall()
+                if len(datas) > 0:
+                    return True
+                else:
+                    return False
+
+    @gen.coroutine
+    def CheckProxyAccountClassId(self, web_uid, gid):
+        # 查代理账号的分组存在与否
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                sql = "SELECT pug_id FROM proxy_user_class WHERE uid=%s and pug_id='%s'" % (web_uid, gid)
+                # print(sql)
+                yield cursor.execute(sql)
+                datas = cursor.fetchall()
+                if len(datas) > 0:
+                    return True
+                else:
+                    return False
+
+
+    @gen.coroutine
+    def addProxyAccountClass(self, web_uid, name):
+        # 新增账号分组
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                class_flag = yield self.CheckProxyAccountClass(web_uid, name)
+                if not class_flag:
+                    sql = "INSERT INTO proxy_user_class(uid,pug_name,status) VALUES(%s,'%s',1)"
+                    try:# print(sql)
+                        yield cursor.execute(sql % (web_uid, name))
+                        yield conn.commit()
+                        return 5
+                    except Exception as err:
+                        yield conn.rollback()
+                        logging.error("[ProxyOrderModel:addProxyAccountClass:INSERT]: %s" % err)
+                        return -1
+                else:
+                    return -2
+
+    @gen.coroutine
     def AddOrderList(self, order_Tuple_add):
         # 增加订单
         with (yield pool.Connection()) as conn:
@@ -259,6 +307,23 @@ class ProxyOrderModel():
                     logging.error("[ProxyOrderModel:set_proxy_info:update]: %s" % err)
                     return False
 
+
+    @gen.coroutine
+    def set_proxy_account_class_name(self, web_uid, gid, name):
+        # 修改信息
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                sql = "update proxy_user_class set pug_name='%s' WHERE uid=%s and pug_id=%s"
+                try:
+                    yield cursor.execute(sql % (name, web_uid, gid))
+                    yield conn.commit()
+                    return True
+                except Exception as err:
+                    yield conn.rollback()
+                    logging.error("[ProxyOrderModel:set_proxy_account_class_name:update]: %s" % err)
+                    return False
+
+
     @gen.coroutine
     def UpOrderList(self, order_Tuple_edit):
         # 修改订单
@@ -329,19 +394,18 @@ class ProxyOrderModel():
                     sql = sql + " AND proxy_order.stime >= %s AND proxy_order.stime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND proxy_order.stime >= %s " % the_stime
-                sql2 = "SELECT proxy_account.uid " + sql + " "
-                # print(sql2)
-                yield cursor.execute(sql2)
-                datas2 = cursor.fetchall()
+
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT proxy_account.uid,proxy_account.account AS acco,proxy_order.proxy_profit,proxy_order.proxy_from_orderid,from_unixtime(proxy_order.stime) AS ordertime "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS proxy_account.uid,proxy_account.account AS acco,proxy_order.proxy_profit,proxy_order.proxy_from_orderid,from_unixtime(proxy_order.stime) AS ordertime "
                 sql3 = sql3 + sql + " ORDER BY proxy_order.stime DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
                 if len(datas) > 0:
-                    datas.append({"allnum": len(datas2)})
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
                     return datas
                 else:
                     return []
@@ -439,19 +503,18 @@ class ProxyOrderModel():
                     sql = sql + " AND proxy_order.stime >= %s AND proxy_order.stime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND proxy_order.stime >= %s " % the_stime
-                sql2 = "SELECT proxy_account.uid " + sql + " GROUP BY proxy_account.account "
-                # print(sql2)
-                yield cursor.execute(sql2)
-                datas2 = cursor.fetchall()
+
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT Count(*) AS t_count,proxy_account.uid,proxy_account.account AS acco,Sum(proxy_order.proxy_profit) AS sum_profit,proxy_order.flag,proxy_order.stime "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS Count(*) AS t_count,proxy_account.uid,proxy_account.account AS acco,Sum(proxy_order.proxy_profit) AS sum_profit,proxy_order.flag,proxy_order.stime "
                 sql3 = sql3 + sql + "GROUP BY proxy_account.account ORDER BY proxy_account.account DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
                 if len(datas) > 0:
-                    datas.append({"allnum": len(datas2)})
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
                     return datas
                 else:
                     return []
@@ -473,19 +536,18 @@ class ProxyOrderModel():
                     sql = sql + " AND proxy_order.stime >= %s AND proxy_order.stime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND proxy_order.stime >= %s " % the_stime
-                sql2 = "SELECT proxy_users.uid " + sql + " GROUP BY proxy_users.uid "
-                # print(sql2)
-                yield cursor.execute(sql2)
-                datas2 = cursor.fetchall()
+
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT Count(*) AS t_count,proxy_users.uid,proxy_users.uname,Sum(proxy_order.profit) AS to_profit,Sum(proxy_order.proxy_profit) AS sum_profit "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS Count(*) AS t_count,proxy_users.uid,proxy_users.uname,Sum(proxy_order.profit) AS to_profit,Sum(proxy_order.proxy_profit) AS sum_profit "
                 sql3 = sql3 + sql + "GROUP BY proxy_users.uid ORDER BY sum_profit DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
                 if len(datas) > 0:
-                    datas.append({"allnum": len(datas2)})
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
                     return datas
                 else:
                     return []
@@ -540,19 +602,18 @@ class ProxyOrderModel():
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND proxy_users.uname like '" + search + "' "
-                sql2 = "SELECT proxy_users.uid " + sql
-                # print(sql2)
-                yield cursor.execute(sql2)
-                datas2 = cursor.fetchall()
+
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT proxy_grade.grade_price,proxy_users.uid,proxy_users.uname,proxy_users.flag AS u_flag,proxy_users.iban "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS proxy_grade.grade_price,proxy_users.uid,proxy_users.uname,proxy_users.flag AS u_flag,proxy_users.iban "
                 sql3 = sql3 + sql + " ORDER BY proxy_users.proxy_user_id DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
                 if len(datas) > 0:
-                    datas.append({"allnum": len(datas2)})
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
                     return datas
                 else:
                     return []
@@ -579,23 +640,48 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                sql = "FROM proxy_account WHERE proxy_account.uid = %s " % uid
+                sql = "FROM proxy_account WHERE proxy_account.uid = %s" % (uid)
+                if page_main['gid'] != 0:
+                    sql = sql + " AND pug_id =%s" % (page_main['gid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND account like '" + search + "' "
-                sql2 = "SELECT uid " + sql
-                # print(sql2)
-                yield cursor.execute(sql2)
-                datas2 = cursor.fetchall()
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT uid,account AS acco,verify,soft_id "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS uid,account AS acco,verify,soft_id "
                 sql3 = sql3 + sql + " ORDER BY proxy_account_id DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
                 if len(datas) > 0:
-                    datas.append({"allnum": len(datas2)})
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
+                    return datas
+                else:
+                    return []
+
+    # 得到代理的分组列表
+    @gen.coroutine
+    def getProxyAccountListClass(self, uid, page_main=None):
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                # print(page_main.get('time_type'))
+                sql = "FROM proxy_user_class WHERE uid = %s " % uid
+                if page_main.get('search') != "0" and page_main.get('search') != "":
+                    search = "%" + page_main.get('search') + "%"
+                    sql = sql + " AND pug_name like '" + search + "' "
+                start = 0 if page_main.get('start') == None else page_main.get('start')
+                length = 10 if page_main.get('length') == None else page_main.get('length')
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS uid,pug_id AS gid,pug_name AS acco "
+                sql3 = sql3 + sql + " AND status=1" + " ORDER BY pug_id DESC limit %s, %s" % (int(start), int(length))
+                # print(sql3)
+                yield cursor.execute(sql3)
+                datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
+                if len(datas) > 0:
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
                     return datas
                 else:
                     return []
@@ -611,19 +697,18 @@ class ProxyOrderModel():
                     sql = sql + " AND stime >= %s AND stime < %s " % (the_stime, the_etime)
                 else:
                     sql = sql + " AND stime >= %s " % the_stime
-                sql2 = "SELECT uid " + sql + " "
-                # print(sql2)
-                yield cursor.execute(sql2)
-                datas2 = cursor.fetchall()
+
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT uid,from_unixtime(stime) AS ordertime,in_iban,amount,remarks "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS uid,from_unixtime(stime) AS ordertime,in_iban,amount,remarks "
                 sql3 = sql3 + sql + " ORDER BY stime DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
                 if len(datas) > 0:
-                    datas.append({"allnum": len(datas2)})
+                    datas.append({"allnum": datas2['FOUND_ROWS()']})
                     return datas
                 else:
                     return []

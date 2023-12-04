@@ -423,6 +423,15 @@ class ProxyInfoForm(Form):
         validators.optional(),
         validators.NumberRange(0, 99999999999, message=(u'页长只能是数字'))
     ], default=0)
+    user_class = StringField('user_class', [
+        validators.optional(),
+        validators.Length(min=2, max=20, message=(u'分组名称应为2-20个字符，请重新输入'))
+    ], default="")
+    gid = IntegerField('gid', [
+        validators.optional(),
+        # validators.Regexp('[a-zA-Z\d_]+$', message=(u'非法数据')),
+        validators.NumberRange(0, 999999999999, message=(u'只能是数字'))
+    ], default=0)
 
 
 class LangForm(Form):

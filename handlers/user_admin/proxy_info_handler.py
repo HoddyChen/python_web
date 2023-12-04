@@ -72,9 +72,10 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                 elif F.fx_type.data == "list_proxy_accountclass":
                     # 用户分组列表
                     page_main['title_type'] = self.locale.translate("分组管理")
-                    page_main['text1'] = self.locale.translate("设置分组后，所有统计数据都可以根据分组计算结果")
-                    page_main['th_num'] = 4
-                    yield self.render("user/index_proxy_accountclass_list.html", page_main=page_main, session=self.session)
+                    page_main['text1'] = self.locale.translate("设置分组后，返点历史数据可以根据分组计算结果")
+                    page_main['th_num'] = 2
+                    yield self.render("user/swissquote_index_proxy_accountclass_list.html", page_main=page_main,
+                                      session=self.session)
                     return
                 else:
                     page_main['title_type'] = self.locale.translate("瑞讯银行瑞士账户申请")
@@ -119,6 +120,20 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     else:
                         echo_dist['reponse_status'] = -1
                         echo_dist['echo'] = self.locale.translate("保存失败！")
+                elif F.fx_type.data == "edit_proxy_accountclass":
+                    # 修改分组名称
+                    flag = yield P.CheckProxyAccountClassId(self.session['web_uid'], F.gid.data)
+                    if flag:
+                        m_dist = yield P.set_proxy_account_class_name(self.session['web_uid'], F.gid.data, F.user_class.data)
+                        if m_dist == True:
+                            echo_dist['reponse_status'] = 5
+                            echo_dist['echo'] = self.locale.translate("保存成功！")
+                        else:
+                            echo_dist['reponse_status'] = -1
+                            echo_dist['echo'] = self.locale.translate("保存失败！")
+                    else:
+                        echo_dist['reponse_status'] = -2
+                        echo_dist['echo'] = self.locale.translate("分组不存在，保存失败！")
                 elif F.fx_type.data == "edit_verify":
                     # 修改
                     Ok_flag = yield P.editPAVerify(self.session['web_uid'], F.account.data, config.PROXY_PRICE)
@@ -146,17 +161,36 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     else:
                         echo_dist['reponse_status'] = -3
                         echo_dist['echo'] = self.locale.translate("新增失败，账户验证失败，请检查填写信息的正确性")
+                elif F.fx_type.data == "add_proxy_accountclass":
+                    # 新增账户分组
+                    Ok_flag = yield P.addProxyAccountClass(self.session['web_uid'], F.user_class.data)
+                    if Ok_flag == 5:
+                        echo_dist['reponse_status'] = 5
+                        echo_dist['echo'] = self.locale.translate("分组新增成功")
+                    elif Ok_flag == -2:
+                        echo_dist['reponse_status'] = -2
+                        echo_dist['echo'] = self.locale.translate("新增失败,分组名称已经存在")
+                    else:
+                        echo_dist['reponse_status'] = -1
+                        echo_dist['echo'] = self.locale.translate("分组新增失败")
                 elif F.fx_type.data == "list_proxy_account":
                     page_papa = {}
                     page_papa['start'] = F.start.data
                     page_papa['length'] = F.length.data
                     page_papa['search'] = self.get_argument('search[value]', '0')
                     echo_dist['data'] = yield P.getProxyAccountList(self.session['web_uid'], page_papa)
+                elif F.fx_type.data == "list_proxy_account_class":
+                    # 读取分组列表
+                    page_papa = {}
+                    page_papa['start'] = F.start.data
+                    page_papa['length'] = F.length.data
+                    page_papa['search'] = self.get_argument('search[value]', '0')
+                    echo_dist['data'] = yield P.getProxyAccountListClass(self.session['web_uid'], page_papa)
                 else:
                     echo_dist['echo'] = self.locale.translate("无数据")
                     echo_dist['reponse_status'] = 5
                 # print(echo_dist['data'])
-                if F.fx_type.data == "list_proxy_account":
+                if F.fx_type.data == "list_proxy_account" or F.fx_type.data == "list_proxy_account_class":
                     if len(echo_dist.get('data')) > 0:
                         if 'allnum' in echo_dist['data'][-1]:
                             allnum = echo_dist['data'].pop()

@@ -50,7 +50,7 @@
             bPaginate : true, //是否显示（应用）分页器
             bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
             ajax: {
-                'url': '/user/proxy_info?fx_type=list_proxy_account&nt='+ Date.parse(new Date()),
+                'url': '/user/proxy_info?fx_type=list_proxy_account_class&nt='+ Date.parse(new Date()),
                 // 'dataSrc': handle_data_src,
                 'type': 'POST',
                 'async': false,
@@ -63,35 +63,11 @@
                     class: 'text-center align-middle'
                 },
                 {
-                    title: "{{_('分组账号数量')}}",
-                    data: 'soft_id',
+                    title: "{{_('编辑')}}",
+                    data: 'gid',
                     class: 'text-center align-middle',
                     render: function (data, type, row) {
-                        return 'MT' + row.soft_id.toString();
-                    }
-                },
-                {
-                    title: "{{_('修改')}}",
-                    data: 'verify',
-                    class: 'text-center align-middle',
-                    render: function (data, type, row) {
-                        if(row.verify > 0) {
-                            return '<button class="btn btn-primary btn-icon btn-icon-mini btn-round" disabled><i class="zmdi zmdi-edit"></i></button>';
-                        }else {
-                            return '<button class="btn btn-slategray btn-icon btn-icon-mini btn-round" disabled><i class="zmdi zmdi-edit"></i></button>';
-                        }
-                    }
-                },
-                {
-                    title: "{{_('删除')}}",
-                    data: 'verify',
-                    class: 'text-center align-middle',
-                    render: function (data, type, row) {
-                        if(row.verify >= 2) {
-                            var e = '<button id="button'+ row.acco +'" class="btn btn-primary btn-icon btn-icon-mini btn-round" disabled><i id="i'+ row.acco +'" class="zmdi zmdi-delete"></i></button>';
-                        }else {
-                            var e = '<button id="button'+ row.acco +'" class="btn btn-slategray btn-icon btn-icon-mini btn-round" onclick="edit_verify(' + row.acco +');"><i id="i'+ row.acco +'" class="zmdi zmdi-delete"></i></button>';
-                        }
+                        var e = '<button id="button'+ row.gid +'" class="btn btn-primary btn-icon btn-icon-mini btn-round" onclick="edit_proxy_accountclass(' + row.gid +',\''+ row.acco +'\');"><i id="i'+ row.gid +'" class="zmdi zmdi-edit"></i></button>';
                         return e;
                     }
                 }
@@ -128,7 +104,7 @@
             html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
                 "    <div class=\"card\">\n" +
                 "        <div class=\"header\">\n" +
-                "            <h2><strong>{{_('新增账户')}}</strong> {{_('绑定')}}</h2>\n" +
+                "            <h2><strong>{{_('新增分组')}}</strong></h2>\n" +
                 "        </div>\n" +
                 "        <div class=\"body\">\n" +
                 "            <form class=\"form\" action=\"\" method=\"post\" name=\"proxy_form\">\n" +
@@ -136,7 +112,7 @@
                 "                    <div class=\"row clearfix\">\n" +
                 "                        <div class=\"col-lg-12 col-md-12\">\n" +
                 "                            <div class=\"form-group form-float\" style='text-align:left;'>\n" +
-                "                                {{_('设置分组后，所有统计数据都可以根据分组计算结果')}}<BR>\n" +
+                "                                {{_('设置分组后，返点历史数据都可以根据分组计算结果')}}<BR>\n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "                        \n" +
@@ -150,7 +126,7 @@
                 "                                <div class=\"p-2 bd-highlight\"></div>\n" +
                 "                            </div>\n" +
                 "                            <div class=\"form-group\">\n" +
-                "                                <input name=\"account\" type=\"text\" id=\"account\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('输入分组的名称')}}\">\n" +
+                "                                <input name=\"user_class\" type=\"text\" id=\"user_class\" class=\"form-control\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('输入分组的名称')}}\">\n" +
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "                    </div>\n" +
@@ -183,7 +159,7 @@
         // alert(arr['maxtime']);
         $.ajax({
             type: 'post',
-            url: '/user/proxy_info?fx_type=add_proxy_account&nt=' + Date.parse(new Date()),
+            url: '/user/proxy_info?fx_type=add_proxy_accountclass&nt=' + Date.parse(new Date()),
             data: $("form").serialize(),
             cache: false,
             dataType: "JSON",
@@ -209,23 +185,79 @@
         });
     }
 
-    //更改佣金状态
-    function edit_verify(acco) {
+    //修改分组名称
+    function edit_proxy_accountclass(gid, user_class) {
+        swal.fire({
+            html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
+                "    <div class=\"card\">\n" +
+                "        <div class=\"header\">\n" +
+                "            <h2><strong>{{_('编辑分组名称')}}</strong></h2>\n" +
+                "        </div>\n" +
+                "        <div class=\"body\">\n" +
+                "            <form class=\"form\" action=\"\" method=\"post\" name=\"proxy_form\">\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-12 col-md-12\">\n" +
+                "                            <div class=\"form-group form-float\" style='text-align:left;'>\n" +
+                "                               <BR>\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        \n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-12 col-md-12\">\n" +
+                "                            <div class=\"d-flex bd-highlight\">\n" +
+                "                                <div class=\"mr-auto p-2 bd-highlight\">{{_('分组名称')}}</div>\n" +
+                "                                <div class=\"p-2 bd-highlight\">{{_('由 2～20 个字符组成')}}</div>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"form-group\">\n" +
+                "                                <input name=\"user_class\" type=\"text\" id=\"user_class\" class=\"form-control\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('输入分组的名称')}}\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </form>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            confirmButtonText:"{{_('提交')}}",
+            cancelButtonText:"{{_('取消')}}",
+            allowEscapeKey:true,
+            allowOutsideClick: true,
+            onOpen: function() {
+                {#document.getElementById("user_class") = user_class;#}
+                $("#user_class").val(user_class);
+            },
+            preConfirm: function() {
+                return new Promise(function (resolve, reject) {
+                    edit_proxy_accountclass_form(gid);
+                });
+            }
+        }).then(function (re) {
+            // alert(re.reponse_status);
+            // swal.showLoading();
+        })
+    }
+
+    //更改分组名称状态
+    function edit_proxy_accountclass_form(gid) {
         // var arr = $("#parameter_form").serialize();
         // alert(arr['maxtime']);
         $.ajax({
             type: 'post',
-            url: '/user/proxy_info?fx_type=edit_verify&account=' + acco + '&nt=' + Date.parse(new Date()),
+            url: '/user/proxy_info?fx_type=edit_proxy_accountclass&gid=' + gid + '&nt=' + Date.parse(new Date()),
             data: $("form").serialize(),
             cache: false,
             dataType: "JSON",
             success: function (re) {
                 if (re.reponse_status == 5) {
-                    swal.fire(acco + "{{_('账号返点激活成功')}}");
-                    var button = $("#button" + acco.toString());
-                    button.removeClass("btn-slategray");
-                    button.addClass("btn-primary");
-                    document.getElementById("button" + acco.toString()).disabled = true;
+                    swal.fire("{{_('分组名称修改成功')}}");
+                    window.location.reload();
                     // resolve();
                 }else if (re.reponse_status < 0){
                     swal.fire(re.echo + "error:" + re.reponse_status.toString());
