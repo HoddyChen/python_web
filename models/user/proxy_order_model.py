@@ -456,6 +456,8 @@ class ProxyOrderModel():
                 the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
                 sql = "FROM proxy_account INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.uid = %s AND proxy_account.verify = 2  AND proxy_order.flag =1 " % uid
+                if page_main['gid'] != 1:
+                    sql = sql + " AND pug_id =%s" % (page_main['gid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND proxy_account.account like '" + search + "' "
@@ -508,9 +510,10 @@ class ProxyOrderModel():
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
                 the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
-
                 sql = "FROM proxy_account INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.uid = %s AND proxy_account.verify = 2 AND proxy_order.flag = 1 " % uid
+                if page_main['gid'] != 1:
+                    sql = sql + " AND pug_id =%s" % (page_main['gid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND proxy_account.account like '" + search + "' "

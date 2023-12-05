@@ -28,10 +28,11 @@ class SwissquoteProxyHandler(SessionHandler, BaseHandler):
             if F.validate():
                 # cookie_dist = self.getCookie()
                 # page_main.update(cookie_dist)
+                P = ProxyOrderModel()
                 page_main['prc_type'] = F.fx_type.data
                 page_main['time_type'] = F.time_type.data
                 page_main['account'] = F.account.data
-
+                page_main['gid'] = F.gid.data
                 if F.fx_type.data == "list_proxy_order":
                     # 列表
                     page_main['time_str'] = self.timeType(page_main['time_type'])
@@ -44,6 +45,8 @@ class SwissquoteProxyHandler(SessionHandler, BaseHandler):
                     page_main['time_str'] = self.timeType(page_main['time_type'])
                     page_main['title_type'] = self.locale.translate("佣金统计")
                     page_main['th_num'] = 3
+                    page_main['pa_class'], count_num = yield P.getProxyAccountListClassAll(
+                        self.session['swissquote_uid'])
                     yield self.render("user/swissquote_index_proxy_order_count_list.html", page_main=page_main, session=self.session)
                     return
                 elif F.fx_type.data == "list_settlement":
@@ -90,7 +93,7 @@ class SwissquoteProxyHandler(SessionHandler, BaseHandler):
                 # page_papa['page_num'] = self.get_argument('page_num', 10)
                 page_papa['fx_type'] = F.fx_type.data
                 page_papa['account'] = F.account.data
-
+                page_papa['gid'] = F.gid.data
                 page_papa['time_type'] = F.time_type.data
                 echo_dist['fx_type'] = F.fx_type.data
                 if F.fx_type.data == "list_proposal":

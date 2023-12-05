@@ -140,6 +140,7 @@
 
     // 跳转
     function onchange_url(gid){
+        document.getElementById("select_ap").disabled = true;
         var url = document.location.toString();
         var arrUrl = url.split("?");
         var para = arrUrl[0];

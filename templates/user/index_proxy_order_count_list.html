@@ -4,6 +4,7 @@
 {% include mode_css.html%}
 <!-- JQuery DataTable Css -->
 <link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}" />
 {% end %}
 
 {% block middle %}
@@ -31,6 +32,10 @@
         if(time_type == null){
             time_type = "0";
         }
+        var gid_url = $("#gid_url").val();
+        $("select[name='select_ap']").change(function(){
+             onchange_url(this.options[this.selectedIndex].value);
+        })
         var myTable = $('#datatable01').DataTable({
             order: [[ 2, "desc"]],
             bProcessing : true, //DataTables载入数据时，是否显示‘进度’提示
@@ -50,7 +55,7 @@
             bPaginate : true, //是否显示（应用）分页器
             bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
             ajax: {
-                'url': '/user/proxy?fx_type=list_proxy_order_count&time_type=' + time_type + '&nt='+ Date.parse(new Date()),
+                'url': '/user/proxy?fx_type=list_proxy_order_count&gid='+gid_url+'&time_type=' + time_type + '&nt='+ Date.parse(new Date()),
                 // 'dataSrc': handle_data_src,
                 'type': 'POST',
                 'async': false,
@@ -101,7 +106,7 @@
         $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
         $.ajax({
             type: 'post',
-            url: '/user/proxy?fx_type=list_proxy_count&time_type=' + time_type + '&nt='+ Date.parse(new Date()),
+            url: '/user/proxy?fx_type=list_proxy_count&gid='+gid_url+'&time_type=' + time_type + '&nt='+ Date.parse(new Date()),
             data: {},
             cache: false,
             dataType: "JSON",
@@ -118,6 +123,17 @@
                 }
         });
     });
+
+
+    // 跳转
+    function onchange_url(gid){
+        document.getElementById("select_ap").disabled = true;
+        var url = document.location.toString();
+        var arrUrl = url.split("?");
+        var para = arrUrl[0];
+        window.location.href=para+"?fx_type=list_proxy_order_count&gid="+gid+"&time_type=" + $("#time_type").val();
+    }
+
 
 //  显示js对象的所有属性名称和属性值
     function displayProp(obj){

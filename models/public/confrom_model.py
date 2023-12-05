@@ -379,6 +379,11 @@ class ProxyForm(Form):
         validators.optional(),
         validators.Length(min=0, max=200, message=(u'类型应为200个字符以内'))
     ])
+    gid = IntegerField('gid', [
+        validators.optional(),
+        # validators.Regexp('[a-zA-Z\d_]+$', message=(u'非法数据')),
+        validators.NumberRange(0, 999999999999, message=(u'只能是数字'))
+    ], default=1)
 
 class ProxyInfoForm(Form):
     fx_type = StringField('fx_type', [

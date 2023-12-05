@@ -34,21 +34,44 @@
                     <h2><strong>{{_(page_main.get('time_str'))}} {{_(page_main['title_type'])}}</strong>  </h2>
 
                     <ul class="header-dropdown">
-                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zzmdi-calendar-alt"></i> </a>
+                        <li class="remove">
+                            <div class="form-group form-float" style="width: 220px; right: 9px;">
+                                <select class="form-control show-tick" name="select_ap" id="select_ap">
+                                    {% if page_main['gid'] == 1 %}
+                                        <option value=1 selected> 全部 </option>
+                                    {% else %}
+                                        <option value=1> 全部 </option>
+                                    {% end if %}
+                                    {% if page_main['gid'] == 0 %}
+                                        <option value=0 selected>  未分组 </option>
+                                    {% else %}
+                                        <option value=0> 未分组 </option>
+                                    {% end if %}
+                                    {% for time_period in page_main['pa_class'] %}
+                                        {% if time_period['gid'] == page_main['gid'] %}
+                                            <option value="{{ time_period['gid'] }}" selected>  {{ time_period['acco'] }} </option>
+                                        {% else %}
+                                            <option value="{{ time_period['gid'] }}"> {{ time_period['acco'] }} </option>
+                                        {% end if %}
+                                    {% end for %}
+                                </select>
+                            </div>
+                        </li>
+                        <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-calendar-alt"></i> </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}">{{_('全部')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=the_day">{{_('今日')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=recent_day">{{_('近一日')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=the_week">{{_('本周')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=recent_week">{{_('近一周')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=the_month">{{_('本月')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=last_month">{{_('上个月')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=recent_month">{{_('近一个月')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=recent_month3">{{_('近三个月')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=recent_month6">{{_('近六个月')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=the_year">{{_('今年')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=last_year">{{_('去年')}}</a></li>
-                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&time_type=recent_year">{{_('近一年')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}">{{_('全部')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=the_day">{{_('今日')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=recent_day">{{_('近一日')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=the_week">{{_('本周')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=recent_week">{{_('近一周')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=the_month">{{_('本月')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=last_month">{{_('上个月')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=recent_month">{{_('近一个月')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=recent_month3">{{_('近三个月')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=recent_month6">{{_('近六个月')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=the_year">{{_('今年')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=last_year">{{_('去年')}}</a></li>
+                                <li><a href="/user/proxy?fx_type={{page_main['prc_type']}}&gid={{ page_main['gid'] }}&time_type=recent_year">{{_('近一年')}}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -72,5 +95,6 @@
         </div>
     </div>
     <input id="time_type" name="type" type="hidden" value="{{page_main['time_type']}}">
+    <input type="hidden" name="gid_url" id="gid_url" value="{{ page_main['gid'] }}">
     <!-- #END# Exportable Table -->
 </div>

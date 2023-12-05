@@ -111,7 +111,7 @@ function updata_count(){
         });
         setTimeout(function() {
             updata_count()
-        },5*60*1000);
+        },5*10*1000);
     }else {
         setTimeout(function() {
             updata_count()
@@ -146,7 +146,7 @@ function updata_strategy_symbol(){
         });
         setTimeout(function() {
             updata_strategy_symbol()
-        },2.1*60*1000);
+        },2.1*10*1000);
     }else {
         setTimeout(function() {
             updata_strategy_symbol()
@@ -207,7 +207,7 @@ function updata_strategy_net_ratio(){
         });
         setTimeout(function() {
             updata_strategy_net_ratio()
-        },3.5*60*1000);
+        },3.5*10*1000);
     }else {
         setTimeout(function() {
             updata_strategy_net_ratio()
@@ -261,7 +261,7 @@ function updata_strategy_loging(){
         });
         setTimeout(function() {
             updata_strategy_loging()
-        },7*60*1000);
+        },7*10*1000);
     }
     else {
         setTimeout(function() {
@@ -300,7 +300,7 @@ function updata_strategy_copy_status(){
         });
         setTimeout(function() {
             updata_strategy_copy_status()
-        },2*60*1000);
+        },2*10*1000);
     }
     else {
         setTimeout(function() {
