@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="在线状态中增加主策略账号的状态；&#10;修改主账号的显示为保密；">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="新增返点的分组管理">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/public/confrom_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/public/confrom_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user/proxy_order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/proxy_order_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_proxy_account_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/index_proxy_accountclass_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_proxy_accountclass_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_proxy_accountclass_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_proxy_accountclass_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_proxy_account_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index_proxy_account_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index_proxy_account_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/swissquote_index_proxy_accountclass_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/swissquote_index_proxy_accountclass_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -364,7 +366,7 @@
       <workItem from="1701183203320" duration="2534000" />
       <workItem from="1701236393411" duration="13006000" />
       <workItem from="1701446028421" duration="217000" />
-      <workItem from="1701562984943" duration="21582000" />
+      <workItem from="1701562984943" duration="52779000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -674,14 +676,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00048" summary="修改小铃铛的登陆与到期时间读取">
-      <option name="closed" value="true" />
-      <created>1700835847793</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1700835847793</updated>
-    </task>
     <task id="LOCAL-00049" summary="修改统计数据相关bug；&#10;主菜单增加主账号资料链接。">
       <option name="closed" value="true" />
       <created>1701072668019</created>
@@ -714,7 +708,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701364227823</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="新增返点的分组管理">
+      <option name="closed" value="true" />
+      <created>1701675844022</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1701675844023</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,7 +740,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改返佣登陆转页面url，修复新注册用户登陆失败的BUG" />
     <MESSAGE value="修复返佣中最新情况的显示BUG。删除左侧菜单中的问题提交。统一瑞讯开户的mode页" />
     <MESSAGE value="修改返佣资料后，所有表单控件变为不可用。" />
     <MESSAGE value="返佣机器人程序BUG修改，" />
@@ -763,7 +764,8 @@
     <MESSAGE value="修改统计数据相关bug；" />
     <MESSAGE value="修改统计数据为null时改为0；" />
     <MESSAGE value="在线状态中增加主策略账号的状态；&#10;修改主账号的显示为保密；" />
-    <option name="LAST_COMMIT_MESSAGE" value="在线状态中增加主策略账号的状态；&#10;修改主账号的显示为保密；" />
+    <MESSAGE value="新增返点的分组管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增返点的分组管理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -798,6 +800,26 @@
           <line>80</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_info_handler.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py</url>
+          <line>209</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/models/user/proxy_order_model.py</url>
+          <line>684</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/proxy_info_handler.py</url>
+          <line>206</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
           <line>36</line>
@@ -821,7 +843,7 @@
     <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_socket.coverage" NAME="start_socket 覆盖结果" MODIFIED="1695965346984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1701671656386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1701762086170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

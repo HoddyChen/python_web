@@ -323,6 +323,21 @@ class ProxyOrderModel():
                     logging.error("[ProxyOrderModel:set_proxy_account_class_name:update]: %s" % err)
                     return False
 
+    @gen.coroutine
+    def set_change_proxy_account_class(self, web_uid, gid, acco):
+        # 修改信息
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                sql = "update proxy_account set pug_id=%s WHERE uid=%s and account=%s"
+                try:
+                    yield cursor.execute(sql % (gid, web_uid, acco))
+                    yield conn.commit()
+                    return True
+                except Exception as err:
+                    yield conn.rollback()
+                    logging.error("[ProxyOrderModel:set_change_proxy_account_class:update]: %s" % err)
+                    return False
+
 
     @gen.coroutine
     def UpOrderList(self, order_Tuple_edit):
@@ -640,15 +655,15 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                sql = "FROM proxy_account WHERE proxy_account.uid = %s" % (uid)
-                if page_main['gid'] != 0:
+                sql = "FROM proxy_account_class WHERE uid = %s" % (uid)
+                if page_main['gid'] != 1:
                     sql = sql + " AND pug_id =%s" % (page_main['gid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND account like '" + search + "' "
                 start = 0 if page_main.get('start') == None else page_main.get('start')
                 length = 10 if page_main.get('length') == None else page_main.get('length')
-                sql3 = "SELECT SQL_CALC_FOUND_ROWS uid,account AS acco,verify,soft_id "
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS uid,account AS acco,verify,soft_id,pug_id as gid,pug_name as user_class "
                 sql3 = sql3 + sql + " ORDER BY proxy_account_id DESC limit %s, %s" % (int(start), int(length))
                 # print(sql3)
                 yield cursor.execute(sql3)
@@ -660,6 +675,24 @@ class ProxyOrderModel():
                     return datas
                 else:
                     return []
+
+    # 得到代理的分组全部列表
+    @gen.coroutine
+    def getProxyAccountListClassAll(self, uid):
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                # print(page_main.get('time_type'))
+                sql = "FROM proxy_user_class WHERE uid = %s " % uid
+                sql3 = "SELECT SQL_CALC_FOUND_ROWS uid,pug_id AS gid,pug_name AS acco " + sql + " AND status=1" + " ORDER BY pug_id DESC"
+                yield cursor.execute(sql3)
+                datas = cursor.fetchall()
+                yield cursor.execute("SELECT FOUND_ROWS()")
+                datas2 = cursor.fetchone()
+                if len(datas) > 0:
+                    # datas.append({"allnum": datas2['FOUND_ROWS()']})
+                    return datas, datas2['FOUND_ROWS()']
+                else:
+                    return [],0
 
     # 得到代理的分组列表
     @gen.coroutine

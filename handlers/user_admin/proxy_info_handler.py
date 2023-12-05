@@ -49,9 +49,12 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                 elif F.fx_type.data == "list_proxy_account":
                     # 列表
                     page_main['title_type'] = self.locale.translate("账户管理")
-                    page_main['th_num'] = 4
                     page_main['text1'] = self.locale.translate("通过本站开户专属链接开户成功、入金并开通MT4或MT5账户后, 可通过右边的")
                     page_main['text2'] = self.locale.translate("新增账户, 完成第一笔交易并平仓后, 可激活返点状态")
+                    page_main['th_num'] = 5
+                    page_main['gid'] = F.gid.data
+                    page_main['user_class'] = F.user_class.data
+                    page_main['pa_class'], count_num = yield P.getProxyAccountListClassAll(self.session['web_uid'])
                     yield self.render("user/index_proxy_account_list.html", page_main=page_main, session=self.session)
                     return
                 elif F.fx_type.data == "proxy_graup":
@@ -74,7 +77,7 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     page_main['title_type'] = self.locale.translate("分组管理")
                     page_main['text1'] = self.locale.translate("设置分组后，返点历史数据可以根据分组计算结果")
                     page_main['th_num'] = 2
-                    yield self.render("user/swissquote_index_proxy_accountclass_list.html", page_main=page_main,
+                    yield self.render("user/index_proxy_accountclass_list.html", page_main=page_main,
                                       session=self.session)
                     return
                 else:
@@ -134,6 +137,20 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     else:
                         echo_dist['reponse_status'] = -2
                         echo_dist['echo'] = self.locale.translate("分组不存在，保存失败！")
+                elif F.fx_type.data == "change_proxy_accountclass":
+                    # 变更分组
+                    flag = yield P.CheckProxyAccountClassId(self.session['web_uid'], F.gid.data)
+                    if flag:
+                        m_dist = yield P.set_change_proxy_account_class(self.session['web_uid'], F.gid.data, F.account.data)
+                        if m_dist == True:
+                            echo_dist['reponse_status'] = 5
+                            echo_dist['echo'] = self.locale.translate("保存成功！")
+                        else:
+                            echo_dist['reponse_status'] = -1
+                            echo_dist['echo'] = self.locale.translate("保存失败！")
+                    else:
+                        echo_dist['reponse_status'] = -2
+                        echo_dist['echo'] = self.locale.translate("分组不存在，保存失败！")
                 elif F.fx_type.data == "edit_verify":
                     # 修改
                     Ok_flag = yield P.editPAVerify(self.session['web_uid'], F.account.data, config.PROXY_PRICE)
@@ -177,6 +194,7 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     page_papa = {}
                     page_papa['start'] = F.start.data
                     page_papa['length'] = F.length.data
+                    page_papa['gid'] = F.gid.data
                     page_papa['search'] = self.get_argument('search[value]', '0')
                     echo_dist['data'] = yield P.getProxyAccountList(self.session['web_uid'], page_papa)
                 elif F.fx_type.data == "list_proxy_account_class":
@@ -186,6 +204,11 @@ class ProxyInfoHandler(SessionHandler, BaseHandler):
                     page_papa['length'] = F.length.data
                     page_papa['search'] = self.get_argument('search[value]', '0')
                     echo_dist['data'] = yield P.getProxyAccountListClass(self.session['web_uid'], page_papa)
+                elif F.fx_type.data == "get_proxy_accountclass":
+                    # 读取分组列表
+                    page_papa = {}
+                    echo_dist['data'], echo_dist["recordsTotal"] = yield P.getProxyAccountListClassAll(
+                        self.session['web_uid'])
                 else:
                     echo_dist['echo'] = self.locale.translate("无数据")
                     echo_dist['reponse_status'] = 5

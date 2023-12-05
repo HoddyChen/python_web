@@ -431,7 +431,7 @@ class ProxyInfoForm(Form):
         validators.optional(),
         # validators.Regexp('[a-zA-Z\d_]+$', message=(u'非法数据')),
         validators.NumberRange(0, 999999999999, message=(u'只能是数字'))
-    ], default=0)
+    ], default=1)
 
 
 class LangForm(Form):

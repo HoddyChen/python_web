@@ -7,6 +7,29 @@
                     <h2><strong>{{page_main['title_type']}}</strong><small>{{page_main['text1']}}<i class="zmdi zmdi-account-add"></i>{{page_main['text2']}}</small>  </h2>
                     <ul class="header-dropdown">
                         <li class="remove">
+                            <div class="form-group form-float" style="width: 220px; right: 9px;">
+                                <select class="form-control show-tick" name="select_ap" id="select_ap">
+                                    {% if page_main['gid'] == -1 %}
+                                        <option value=1 selected> 全部 </option>
+                                    {% else %}
+                                        <option value=1> 全部 </option>
+                                    {% end if %}
+                                    {% if page_main['gid'] == 0 %}
+                                        <option value=0 selected>  未分组 </option>
+                                    {% else %}
+                                        <option value=0> 未分组 </option>
+                                    {% end if %}
+                                    {% for time_period in page_main['pa_class'] %}
+                                        {% if time_period['gid'] == page_main['gid'] %}
+                                            <option value="{{ time_period['gid'] }}" selected>  {{ time_period['acco'] }} </option>
+                                        {% else %}
+                                            <option value="{{ time_period['gid'] }}"> {{ time_period['acco'] }} </option>
+                                        {% end if %}
+                                    {% end for %}
+                                </select>
+                            </div>
+                        </li>
+                        <li class="remove">
                             <button type="button" class="btn btn-raised btn-primary waves-effect btn-round" onclick="add_proxy_account();"><i class="zmdi zmdi-account-add" style="color: white;"></i></button>
                         </li>
                     </ul>
@@ -31,3 +54,5 @@
     </div>
     <!-- #END# Exportable Table -->
 </div>
+<input type="hidden" name="g_html" id="g_html" value="">
+<input type="hidden" name="gid_url" id="gid_url" value="{{ page_main['gid'] }}">

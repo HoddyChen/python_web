@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{ static_url('assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
 <link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
+<link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}" />
 
 {% end %}
 
@@ -29,8 +30,10 @@
 <script src="{{ static_url('assets/plugins/nouislider/nouislider.js')}}"></script>
 <script >
     $(document).ready(function () {
-        // var prc_type = $("#prc_type").val();
-
+        var gid_url = $("#gid_url").val();
+        $("select[name='select_ap']").change(function(){
+             onchange_url(this.options[this.selectedIndex].value);
+        })
         var myTable = $('#datatable01').DataTable({
             order: [[ 2, "desc"]],
             bProcessing : true, //DataTables载入数据时，是否显示‘进度’提示
@@ -50,7 +53,7 @@
             bPaginate : true, //是否显示（应用）分页器
             bInfo : true, //是否显示页脚信息，DataTables插件左下角显示记录数
             ajax: {
-                'url': '/user/proxy_info?fx_type=list_proxy_account&nt='+ Date.parse(new Date()),
+                'url': '/user/proxy_info?fx_type=list_proxy_account&gid='+gid_url+'&nt='+ Date.parse(new Date()),
                 // 'dataSrc': handle_data_src,
                 'type': 'POST',
                 'async': false,
@@ -94,6 +97,19 @@
                         }
                         return e;
                     }
+                },
+                {
+                    title: "{{_('分组名称')}}",
+                    data: 'gid',
+                    class: 'text-center align-middle',
+                    render: function (data, type, row) {
+                        if(row.gid == 0) {
+                            var e = '暂无分组 <button id="button_gid'+ row.acco +'" class="btn btn-primary btn-icon btn-icon-mini btn-round" onclick="edit_proxy_account_class(' + row.acco +', '+ row.gid +');"><i id="gid'+ row.acco +'" class="zmdi zmdi-edit"></i></button>';
+                        }else {
+                            var e = row.user_class + ' <button id="button_gid'+ row.acco +'" class="btn btn-primary btn-icon btn-icon-mini btn-round" onclick="edit_proxy_account_class(' + row.acco +', '+ row.gid +');"><i id="gid'+ row.acco +'" class="zmdi zmdi-edit"></i></button>';
+                        }
+                        return e;
+                    }
                 }
             ],
             language: { //自定义描述....
@@ -121,6 +137,18 @@
         $(".dataTables_filter input") .unbind() .bind('keyup change', function(e) { if (e.keyCode == 13 || this.value == "") { myTable .search(this.value) .draw(); } });
 
     });
+
+    // 跳转
+    function onchange_url(gid){
+        var url = document.location.toString();
+        var arrUrl = url.split("?");
+        var para = arrUrl[0];
+        if (gid==1){
+            window.location.href=para+"?fx_type=list_proxy_account";
+        } else {
+            window.location.href=para+"?fx_type=list_proxy_account&gid="+gid;
+        }
+    }
 
     //新增账号
     function add_proxy_account() {
@@ -266,5 +294,136 @@
         });
     }
 
+    //修改分组名称
+    function edit_proxy_account_class(acco, gid) {
+
+        swal.fire({
+            html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
+                "    <div class=\"card\">\n" +
+                "        <div class=\"header\">\n" +
+                "            <h2><strong>{{_('更改分组')}}</strong></h2>\n" +
+                "        </div>\n" +
+                "        <div class=\"body\">\n" +
+                "            <form class=\"form\" action=\"\" method=\"post\" name=\"form\">\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-12 col-md-12\">\n" +
+                "                            <div class=\"form-group form-float\" style='text-align:left;'>\n" +
+                "                               交易账号：<span id=\"account_form\"></span><BR>\n" +
+                "                            <input type=\"hidden\" name=\"account\" id=\"account\" value=\"\">\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "                        \n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                        <div class=\"col-lg-12 col-md-12\">\n" +
+                "                            <div id=\"select_html\" class=\"d-flex bd-highlight\">\n" +
+                "                            分组信息导入中......</div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </form>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            confirmButtonText:"{{_('提交')}}",
+            cancelButtonText:"{{_('取消')}}",
+            allowEscapeKey:true,
+            allowOutsideClick: true,
+            onOpen: function() {
+                document.getElementById("account_form").innerHTML=acco;
+                document.getElementById("account").value=acco;
+                get_proxy_accountclass(gid);
+            },
+            preConfirm: function() {
+                return new Promise(function (resolve, reject) {
+                    edit_proxy_account_class_form();
+                });
+            }
+        }).then(function (re) {
+            // alert(re.reponse_status);
+            // swal.showLoading();
+        })
+    }
+
+    //更改分组名称状态
+    function edit_proxy_account_class_form() {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/user/proxy_info?fx_type=change_proxy_accountclass&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    swal.fire("{{_('分组更改成功')}}");
+                    window.location.reload();
+                    // resolve();
+                }else if (re.reponse_status < 0){
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // login_time_out();
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
+
+
+    //更改分组名称状态
+    function get_proxy_accountclass(gid) {
+        // var arr = $("#parameter_form").serialize();
+        // alert(arr['maxtime']);
+        $.ajax({
+            type: 'post',
+            url: '/user/proxy_info?fx_type=get_proxy_accountclass&nt=' + Date.parse(new Date()),
+            data: $("form").serialize(),
+            cache: false,
+            dataType: "JSON",
+            success: function (re) {
+                if (re.reponse_status == 5) {
+                    var select_html = "<div class=\"form-group form-float\" style=\"width: 220px;\">" +
+                                "<select class=\"form-control show-tick\" name=\"gid\" id=\"time_period_list\">";
+                    if (gid==0){
+                        select_html = select_html + "<option value=0 selected> 未分组 </option>";
+                    }else {
+                        select_html = select_html + "<option value=0> 未分组 </option>";
+                    }
+                    for (var i=0;i<re.recordsTotal;i++){
+                        if (re.data[i].gid==gid){
+                            select_html = select_html + "<option value=" + re.data[i].gid + " selected>" + re.data[i].acco + "</option>";
+                        }else {
+                            select_html = select_html + "<option value=" + re.data[i].gid + ">" + re.data[i].acco + "</option>";
+                        }
+                    }
+                    select_html = select_html + "</select>" + "</div>";
+                    document.getElementById("select_html").innerHTML=select_html;
+                    // resolve();
+                } else {
+                    swal.fire(re.echo + "error:" + re.reponse_status.toString());
+                    // reject(re.echo);
+                }
+            },
+            error: function (re) {
+                // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                // reject("未知错误,授权失败,稍后请重试！");
+                swal.fire("{{_('未知错误,失败,稍后请重试')}}！");
+            }
+        });
+    }
 </script>
 {% end %}
