@@ -94,11 +94,13 @@ function updata_count(){
                     document.getElementById("h2_1").innerHTML = number_format(re.echo.out_balance, 2, ".", ",", "floor");
                     document.getElementById("h2_2").innerHTML = number_format(re.echo.out_quity, 2, ".", ",", "floor");
                     document.getElementById("h2_3").innerHTML = number_format(re.echo.out_profit, 2, ".", ",", "floor");
+                    document.getElementById("h2_31").innerHTML = number_format(re.echo.out_profit / re.echo.out_balance *100, 2, ".", ",", "floor");
                     document.getElementById("h2_4").innerHTML = number_format(re.echo.out_position_num, 2, ".", ",", "floor");
                     document.getElementById("h2_5").innerHTML = re.echo.out_position_order_num;
                     document.getElementById("h4_1").innerHTML = number_format(re.echo.out_today, 2, ".", ",", "floor");
                     document.getElementById("h4_2").innerHTML = number_format(re.echo.out_week, 2, ".", ",", "floor");
                     document.getElementById("h4_3").innerHTML = number_format(re.echo.out_month, 2, ".", ",", "floor");
+                    document.getElementById("h4_31").innerHTML = number_format(re.echo.out_month/re.echo.out_balance*100, 2, ".", ",", "floor");
                     document.getElementById("h4_4").innerHTML = number_format(re.echo.out_year, 2, ".", ",", "floor");
                     document.getElementById("h4_5").innerHTML = number_format(re.echo.out_all, 2, ".", ",", "floor");
                 }else if (re.reponse_status == -1){
