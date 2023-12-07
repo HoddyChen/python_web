@@ -1,6 +1,18 @@
+// 创建<audio>标签(参数:音频文件路径)
+// const audio = new Audio('/static/034writer.mp3');
+// const mp3 = new Audio('/static/apple.wav', muted="muted");
+// mp3.loop = false;
+// mp3.play();
+
+// <audio autoPlay="autoplay" src="http://127.0.0.1:8000/static/apple.wav"></audio>
+function audio_play(){
+    $('#audioDIV').html('<audio autoPlay="autoplay"><source src="/static/next.wav"'
+		+ ' type="audio/wav"/><source src="/static/next.wav" type="audio/mpeg"/></audio>');
+}
+
 function master_load() {
     //n
-    updata_count();
+        updata_count();
         updata_strategy_symbol();
         updata_strategy_copy_status();
         updata_strategy_loging();
@@ -103,6 +115,11 @@ function updata_count(){
                     document.getElementById("h4_31").innerHTML = number_format(re.echo.out_month/re.echo.out_balance*100, 2, ".", ",", "floor");
                     document.getElementById("h4_4").innerHTML = number_format(re.echo.out_year, 2, ".", ",", "floor");
                     document.getElementById("h4_5").innerHTML = number_format(re.echo.out_all, 2, ".", ",", "floor");
+                    if ($("#position_order_num").val() != re.echo.out_position_order_num){
+                        // alert($("#position_num").val());
+                        $("#position_order_num").val(re.echo.out_position_order_num);
+                        audio_play();
+                    }
                 }else if (re.reponse_status == -1){
                     login_time_out();
                 }
@@ -250,6 +267,9 @@ function updata_strategy_loging(){
                     // getMorrisBarChart("m_bar_chart", [{y: '在线数量', a:re.loging_data.actual, b:re.loging_data.expected}], ['a','b'], ['在线','授权']);
                     if (re.loging_data.actual != re.loging_data.expected){
                         set_warning2("#bar_chart_21", 1, "_red");
+                        audio_play();
+                    }else {
+                        set_warning2("#bar_chart_21", 0, "_red");
                     }
                 }else if (re.reponse_status == -1){
                     login_time_out();
@@ -289,6 +309,8 @@ function updata_strategy_copy_status(){
                     // getMorrisBarChart("m_bar_chart", [{y: '在线数量', a:re.loging_data.actual, b:re.loging_data.expected}], ['a','b'], ['在线','授权']);
                     if (re.position_count_data.expected != re.position_count_data.actual){
                         set_warning3("#bar_chart_11", 1, "_red");
+                    }else{
+                        set_warning3("#bar_chart_11", 0, "_red");
                     }
                 }else if (re.reponse_status == -1){
                     login_time_out();
@@ -385,7 +407,7 @@ function set_warning2(name, flag, warn_type) {
             },1000);
     }else {
         $(name).removeClass("warning_border_gold");
-        $(name).removeClass("warning_border_red");
+        $(name).removeClass("warning_border_red")
     }
 }
 

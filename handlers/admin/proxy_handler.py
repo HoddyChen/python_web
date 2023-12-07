@@ -106,6 +106,7 @@ class ProxyHandler(SessionHandler, BaseHandler):
                 page_papa['fx_type'] = F.fx_type.data
                 page_papa['account'] = F.account.data
                 page_papa['uid'] = F.uid.data
+                page_papa['gid'] = F.gid.data
 
                 page_papa['time_type'] = F.time_type.data
                 echo_dist['fx_type'] = F.fx_type.data
