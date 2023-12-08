@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="控制台增加盈亏的百分比">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="增加音乐提示，修复admin里的bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/proxy_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/js_master.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/js_master.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_js_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_js_main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +358,7 @@
       <workItem from="1701236393411" duration="13006000" />
       <workItem from="1701446028421" duration="217000" />
       <workItem from="1701562984943" duration="67068000" />
-      <workItem from="1701872462783" duration="16624000" />
+      <workItem from="1701872462783" duration="77223000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -673,14 +668,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00052" summary="在线状态中增加主策略账号的状态；&#10;修改主账号的显示为保密；">
-      <option name="closed" value="true" />
-      <created>1701364227823</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1701364227823</updated>
-    </task>
     <task id="LOCAL-00053" summary="新增返点的分组管理">
       <option name="closed" value="true" />
       <created>1701675844022</created>
@@ -713,7 +700,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701855976536</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="增加音乐提示，修复admin里的bug">
+      <option name="closed" value="true" />
+      <created>1702020857031</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1702020857031</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,7 +732,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="返佣的小数点精度修改为三位，" />
     <MESSAGE value="修复返佣统计时，翻页不更新未结算金额的BUG" />
     <MESSAGE value="修复登陆的人机验证前的提示。" />
     <MESSAGE value="增加瑞讯开户的点差与杠杆提示" />
@@ -762,7 +756,8 @@
     <MESSAGE value="返点的分组管理修复BUG；&#10;账户分组管理新增；" />
     <MESSAGE value="返点的分组管理修复BUG；&#10;返点历史分组统计新增；" />
     <MESSAGE value="控制台增加盈亏的百分比" />
-    <option name="LAST_COMMIT_MESSAGE" value="控制台增加盈亏的百分比" />
+    <MESSAGE value="增加音乐提示，修复admin里的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加音乐提示，修复admin里的bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

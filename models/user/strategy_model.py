@@ -222,7 +222,7 @@ class StrategyModel():
             copy_dist = {}
             if strategy['last_time'] != None or strategy['last_time'] != "null":
                 try:
-                    if time.mktime(strategy['last_time'].timetuple()) + 1000 < now_time:
+                    if time.mktime(strategy['last_time'].timetuple()) + 420 < now_time:
                         # 超时
                         copy_dist['time_out'] = 0
                     else:
@@ -244,7 +244,7 @@ class StrategyModel():
                 copy_dist = {}
                 if copyStrategy_list[i]['last_time'] != None or copyStrategy_list[i]['last_time'] != "null":
                     try:
-                        if time.mktime(copyStrategy_list[i]['last_time'].timetuple()) + 1000 < now_time:
+                        if time.mktime(copyStrategy_list[i]['last_time'].timetuple()) + 420 < now_time:
                             # 超时
                             copy_dist['time_out'] = 0
                         else:
@@ -309,14 +309,14 @@ class StrategyModel():
                 continue
             if copy['last_time'] != None or copy['last_time'] != "null":
                 try:
-                    if time.mktime(copy['last_time'].timetuple()) + 1000 >= now_time:
+                    if time.mktime(copy['last_time'].timetuple()) + 420 >= now_time:
                         copy_dist['actual'] = copy_dist['actual'] + 1
                 except:
                     pass
         if strategy and (strategy['last_time'] != None or strategy['last_time'] != "null"):
             copy_dist['expected'] = copy_dist['expected'] + 1
             try:
-                if time.mktime(strategy['last_time'].timetuple()) + 1000 >= now_time:
+                if time.mktime(strategy['last_time'].timetuple()) + 420 >= now_time:
                     copy_dist['actual'] = copy_dist['actual'] + 1
             except:
                 pass
