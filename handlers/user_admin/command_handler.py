@@ -38,6 +38,11 @@ class CommandHandler(SessionHandler, BaseHandler):
                     # yield C.setMarginCommcand(int(F.fx_id.data), int(cookie_dist["current_strategy"]), "MakeUpOrder")
                     yield C.setNewMarginCommcand(int(F.fx_id.data), int(cookie_dist["current_strategy"]), "MakeUpOrder")
                     echo_dist['echo'] = "OK"
+                if F.fx_type.data == "click_margin_price_priority":
+                    # 一键补仓
+                    # yield C.setMarginCommcand(int(F.fx_id.data), int(cookie_dist["current_strategy"]), "MakeUpOrder")
+                    yield C.setNewMarginCommcand(int(F.fx_id.data), int(cookie_dist["current_strategy"]), "MakeUpPriceOrder")
+                    echo_dist['echo'] = "OK"
                 else:
                     echo_dist['echo'] = ""
                     echo_dist['reponse_status'] = -1

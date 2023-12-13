@@ -223,6 +223,14 @@ class SocketClientModel(object):
                         msg_dist['fx_type'] = "ReturnStatus"
                         msg_dist['return'] = 5
                         yield self.send_message(msg_dist)
+                    elif self.msgDist['fx_type'] == "MakeUpPriceOrder":
+                        logger.debug("UpPriceOrder,set_Ok")
+                        yield self.client_send_message(self.msgDist)
+                        # yield self.R.set_EndTotalConsole(self.client_id)
+                        msg_dist = self.msgDist
+                        msg_dist['fx_type'] = "ReturnStatus"
+                        msg_dist['return'] = 5
+                        yield self.send_message(msg_dist)
                     elif self.msgDist['fx_type'] == "MakeOpenOrder":
                         logger.debug("OpenOrder,set_Ok")
                         yield self.client_send_message(self.msgDist)

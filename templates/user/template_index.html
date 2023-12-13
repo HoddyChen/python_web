@@ -36,6 +36,111 @@
 <!-- Jquery Core Js -->
     {% block js %}
     {% end %}
+<script src="{{ static_url('assets/plugins/sweetalert/sweetalert2.all.js')}}"></script>
+<script >
+    // 一键补仓
+    function click_margin(fx_id) {
+        var flag_str = "";
+        flag_str = "{{_('请确认')}}？";
+        if(fx_id == 0){
+            title_str = "{{_('全部账户一键补仓')}}";
+        }else {
+            title_str = "{{_('一键补仓')}}";
+        }
+        swal.fire({
+            title: title_str,
+            text: flag_str ,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            preConfirm: function() {
+                return new Promise(function(resolve, reject) {
+                    // alert("123");
+                    $.ajax({
+                        type: 'post',
+                        url: '/user/command?fx_type=click_margin&fx_id=' + fx_id,
+                        data: {},
+                        cache: false,
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if (re.reponse_status == 5) {
+                                swal.fire(title_str + "{{_('命令已执行')}}");
+                                setTimeout(function() {
+                                    window.location.reload();
+                                    scrollTo(0,0);
+                                },5000);
+                            }else if (re.reponse_status == -1){
+                                login_time_out();
+                            }else{
+                                swal.fire(re.echo);
+                            }
+                        },
+                        error:function(re) {
+                            // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                            swal.fire("{{_('未知错误,授权失败,稍后请重试')}}！");
+                        }
+                    });
+                    resolve();
+                });
+            },
+            allowOutsideClick: false
+        }).then(function (re) {
+            // alert(re.reponse_status);
+        })
+    }
 
+    // 价格优先一键补仓
+    function click_margin_price_priority(fx_id) {
+        var flag_str = "";
+        flag_str = "{{_('请确认')}}？";
+        if(fx_id == 0){
+            title_str = "{{_('价格优先 全部账户一键补仓')}}";
+        }else {
+            title_str = "{{_('价格优先 一键补仓')}}";
+        }
+        swal.fire({
+            title: title_str,
+            text: flag_str ,
+            type: "warning",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+            preConfirm: function() {
+                return new Promise(function(resolve, reject) {
+                    // alert("123");
+                    $.ajax({
+                        type: 'post',
+                        url: '/user/command?fx_type=click_margin_price_priority&fx_id=' + fx_id,
+                        data: {},
+                        cache: false,
+                        dataType: "JSON",
+                        success:  function(re) {
+                            if (re.reponse_status == 5) {
+                                swal.fire(title_str + "{{_('命令已执行')}}");
+                                setTimeout(function() {
+                                    window.location.reload();
+                                    scrollTo(0,0);
+                                },5000);
+                            }else if (re.reponse_status == -1){
+                                login_time_out();
+                            }else{
+                                swal.fire(re.echo);
+                            }
+                        },
+                        error:function(re) {
+                            // showNotification("bg-red","授权失败,获得数据异常,请重试","bottom","center",null,null);//错误警示
+                            swal.fire("{{_('未知错误,授权失败,稍后请重试')}}！");
+                        }
+                    });
+                    resolve();
+                });
+            },
+            allowOutsideClick: false
+        }).then(function (re) {
+            // alert(re.reponse_status);
+        })
+    }
+</script>
 </body>
 </html>

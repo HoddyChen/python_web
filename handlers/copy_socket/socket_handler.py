@@ -152,6 +152,14 @@ class Connection(object):
                 msgDist['key'] = DistMD5.encryptDist(msgDist)
                 logger.debug("MakeUpOrder:%s" % flag_num)
                 yield self.send_message(json.dumps(msgDist), msgDist.get('sendid'))
+            elif msgDist['fx_type'] == "MakeUpPriceOrder":
+                # 发送补仓命令
+                flag_num = yield self.TraversingConnection(msgDist.get('sendid'), msgDist.get('followid'))
+                msgDist['return'] = flag_num
+                msgDist['fx_type'] = "ReturnStatus"
+                msgDist['key'] = DistMD5.encryptDist(msgDist)
+                logger.debug("MakeUpPriceOrder:%s" % flag_num)
+                yield self.send_message(json.dumps(msgDist), msgDist.get('sendid'))
             elif msgDist['fx_type'] == "MakeOpenOrder":
                 # 发送开仓命令
                 flag_num = yield self.TraversingConnection(msgDist.get('sendid'), msgDist.get('followid'))
@@ -306,6 +314,8 @@ class Connection(object):
                     # 在有效期内
                     if self.msg_disc.get('fx_type') == "MakeUpOrder":#int(sendid) > 0 or
                         data2 = yield self.S.get_orders_sql_text(followid, 1)
+                    elif self.msg_disc.get('fx_type') == "MakeUpPriceOrder":
+                        data2 = yield self.S.get_orders_sql_text(followid, 2)
                     else:
                         data2 = yield self.S.get_orders_sql_text(followid, 0)
                     # logger.debug("send_B:%s" % data2)

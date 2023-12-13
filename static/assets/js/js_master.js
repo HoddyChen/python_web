@@ -207,9 +207,15 @@ function updata_strategy_net_ratio(){
                     if (ma_var > 80){
                         // document.getElementById("Warninglabel_3").style.cssText = "background: #fb483a";
                         set_warning("#Warninglabel_3", 1, "_red");
+                        audio_play();
                     }else if (ma_var > 50){
                         // document.getElementById("Warninglabel_3").style.cssText = "background: #ff9600";
                         set_warning("#Warninglabel_3", 1, "_gold");
+                        audio_play();
+                    }else if (ma_var > 30){
+                        // document.getElementById("Warninglabel_3").style.cssText = "background: #ff9600";
+                        set_warning("#Warninglabel_3", 1, "_gold");
+                        audio_play();
                     }else {
                         // document.getElementById("Warninglabel_3").style.cssText = "background: none";
                         set_warning("#Warninglabel_3",0);
