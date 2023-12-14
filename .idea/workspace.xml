@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="更改在线时间判断为7分钟">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="新增价格优先补单功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/copy_socket/socket_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/copy_socket/socket_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/user_admin/command_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/command_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start_client_command.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_client_command.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/js_master.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/js/js_master.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/index_position_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_position_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/template_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/template_index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,7 +362,8 @@
       <workItem from="1701446028421" duration="217000" />
       <workItem from="1701562984943" duration="67068000" />
       <workItem from="1701872462783" duration="78946000" />
-      <workItem from="1702445553881" duration="5240000" />
+      <workItem from="1702445553881" duration="6435000" />
+      <workItem from="1702533679703" duration="2126000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -676,14 +673,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00054" summary="返点的分组管理修复BUG；&#10;账户分组管理新增；">
-      <option name="closed" value="true" />
-      <created>1701762834261</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1701762834261</updated>
-    </task>
     <task id="LOCAL-00055" summary="返点的分组管理修复BUG；&#10;返点历史分组统计新增；">
       <option name="closed" value="true" />
       <created>1701778254151</created>
@@ -716,7 +705,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702023514270</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="新增价格优先补单功能">
+      <option name="closed" value="true" />
+      <created>1702452048384</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1702452048384</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -740,7 +737,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复登陆的人机验证前的提示。" />
     <MESSAGE value="增加瑞讯开户的点差与杠杆提示" />
     <MESSAGE value="返佣改返点" />
     <MESSAGE value="修改配置文件" />
@@ -765,7 +761,8 @@
     <MESSAGE value="控制台增加盈亏的百分比" />
     <MESSAGE value="增加音乐提示，修复admin里的bug" />
     <MESSAGE value="更改在线时间判断为7分钟" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改在线时间判断为7分钟" />
+    <MESSAGE value="新增价格优先补单功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增价格优先补单功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -795,6 +792,11 @@
           <line>35</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/handlers/user_admin/command_handler.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
           <line>36</line>
@@ -818,7 +820,7 @@
     <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_socket.coverage" NAME="start_socket 覆盖结果" MODIFIED="1695965346984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1702447887236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1702539968668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
