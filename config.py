@@ -55,6 +55,8 @@ PROXY_PRICE = 10
 IMGURL = "/static/faceimg"
 # 错误间隔时间
 ERROR_TIME = 9
+# 在线时间检测的间隔时间
+ERROR_TIME_ONLINE = 510
 SOCKET_PORT = 9000
 # 发送字符串结束
 StringEnd = "....."
