@@ -356,7 +356,7 @@ class StrategyModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 sql = "SELECT Count(*) AS count_order,follow.maxnum,follow.uaid FROM follow INNER JOIN trader ON " \
-                      "follow.uaid = trader.uaid WHERE follow.followid = %s AND follow.follow_flag = 1 AND trader.etime <= 0 AND trader.t_type<2 AND trader.followid > 0 " \
+                      "follow.uaid = trader.uaid WHERE follow.followid = %s AND follow.follow_flag = 1 AND trader.etime <= 0 AND trader.t_type<6 AND trader.followid > 0 " \
                       "GROUP BY follow.uaid"
                 yield cursor.execute(sql, (followid,))
                 datas = cursor.fetchall()
@@ -461,7 +461,7 @@ class StrategyModel():
                 # users['ptname']db.cursor(MySQLdb.cursors.DictCursor)
                 # print("search:",page_main.get('search'))
                 sql = "FROM follow LEFT JOIN trader ON follow.uaid = trader.uaid AND trader.etime <= 0 AND " \
-                      "trader.followid > 0 AND trader.t_type < 2 INNER JOIN users_account ON follow.uaid = users_account.uaid "
+                      "trader.followid > 0 AND trader.t_type < 6 INNER JOIN users_account ON follow.uaid = users_account.uaid "
                 if page_main == None or page_main.get('search') == "0" or page_main.get('search') == "":
                     sql = sql + "WHERE "
                 else:

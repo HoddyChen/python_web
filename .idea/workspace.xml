@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="价格优先补单功能,修复BUG">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改挂单跟单的功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/copy_socket/socker_order_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/copy_socket/socker_order_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/my_socket/order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/my_socket/order_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -364,7 +365,9 @@
       <workItem from="1702533679703" duration="3588000" />
       <workItem from="1702955645024" duration="5152000" />
       <workItem from="1703759533834" duration="5000" />
-      <workItem from="1704266449053" duration="342000" />
+      <workItem from="1704266449053" duration="498000" />
+      <workItem from="1704292339099" duration="743000" />
+      <workItem from="1704366347249" duration="4391000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -674,14 +677,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00056" summary="控制台增加盈亏的百分比">
-      <option name="closed" value="true" />
-      <created>1701855976536</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1701855976536</updated>
-    </task>
     <task id="LOCAL-00057" summary="增加音乐提示，修复admin里的bug">
       <option name="closed" value="true" />
       <created>1702020857031</created>
@@ -714,7 +709,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702540924417</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="修改#在线时间检测的间隔时间，增加ERROR_TIME_ONLINE的固定参数">
+      <option name="closed" value="true" />
+      <created>1704266939109</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1704266939110</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -738,8 +741,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="返佣改返点" />
-    <MESSAGE value="修改配置文件" />
     <MESSAGE value="修改ea下载地址" />
     <MESSAGE value="修改启动，初始配置redis" />
     <MESSAGE value="修改启动程序的IP。返点后台显示错误，" />
@@ -763,7 +764,9 @@
     <MESSAGE value="更改在线时间判断为7分钟" />
     <MESSAGE value="新增价格优先补单功能" />
     <MESSAGE value="价格优先补单功能,修复BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="价格优先补单功能,修复BUG" />
+    <MESSAGE value="修改#在线时间检测的间隔时间，增加ERROR_TIME_ONLINE的固定参数" />
+    <MESSAGE value="修改挂单跟单的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改挂单跟单的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

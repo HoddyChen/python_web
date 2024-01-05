@@ -1,13 +1,11 @@
 #coding=utf-8
-from libs.db.dbsession import pool
 from tornado import gen
 import logging
-import config
-import datetime
-import time
-import hashlib
+import re
 from handlers.myredis.redis_class import RedisClass
 import pymysql
+from libs.db.dbsession import pool
+from libs.db.mysqlopen import mysql_open
 
 logger = logging.getLogger('Socket')
 class OrderModel():
@@ -19,7 +17,7 @@ class OrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 try:
-                    sql = "SELECT uaid,etime,sl,tp,orderid,num FROM trader WHERE uaid=%s AND orderid in %s" % (uaid, OrderTicket)
+                    sql = "SELECT uaid,t_type,etime,sl,tp,orderid,num FROM trader WHERE uaid=%s AND orderid in %s" % (uaid, OrderTicket)
                     yield cursor.execute(sql)
                     datas = cursor.fetchall()
                     if datas != None:
@@ -148,10 +146,9 @@ class OrderModel():
     def get_PositionOrder(self, uaid):
         # 查持有订单
         try:
-            from libs.db.mysqlopen import mysql_open
             Mysql = mysql_open()
             cursor = Mysql.conn.cursor(cursor=pymysql.cursors.SSDictCursor)
-            sql = "SELECT tid,uaid,proname,num,t_type,stime,sprice,sl,tp,followid FROM trader WHERE uaid=%s AND etime<=0 AND t_type<2" % uaid
+            sql = "SELECT tid,uaid,proname,num,t_type,stime,sprice,sl,tp,followid FROM trader WHERE uaid=%s AND etime<=0 AND t_type<6" % uaid
             cursor.execute(sql)
             datas = []
             for h in cursor:
@@ -164,7 +161,6 @@ class OrderModel():
     @gen.coroutine
     def findFollowid(self, strComment, uaid):
         # 根据备注查找订单的跟单ID
-        import re
         par = "([0-9]+)"
         arr1 = re.compile(par).findall(strComment)
         with (yield pool.Connection()) as conn:

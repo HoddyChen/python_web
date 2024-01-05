@@ -30,13 +30,15 @@ class SockerOrderHandler():
                         #存在订单
                         if order['H5'] != str(Order_data['etime']):
                             edit_flag = 1
+                        if order['H6'] != str(Order_data['t_type']):
+                            edit_flag = 1
                         if order['H7'] != str(Order_data['num']):
                             edit_flag = 1
                         if order['H8'] != str(Order_data['sl']):
                             edit_flag = 1
                         if order['H9'] != str(Order_data['tp']):
                             edit_flag = 1
-                        if  edit_flag == 1:
+                        if edit_flag == 1:
                             # 修改订单，元组列表
                             tupleList2 = (order['H0'], float(order['H7']), int(order['H6']), int(order['H3']),
                                           float(order['H2']), int(order['H5']), float(order['H4']),
