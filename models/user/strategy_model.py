@@ -527,7 +527,7 @@ class StrategyModel():
                 #       "WHERE follow.followid = %s AND follow.uaid = %s AND product_info.pid = %s " \
                 #       "AND p_order.strattime < now() AND p_order.endtime > now() AND p_order.otype = 1 " \
                 #       "ORDER BY p_order.piid DESC LIMIT 1"
-                sql = "SELECT follow.maxloss,follow.maxtime,follow.maxnum,follow.fixed,follow.percent,follow.rate,follow.rate_max,follow.rate_min,follow.reflex,follow.allowed_sign,follow.tpsl_flag,follow.update_time,follow.parameter_time,product_info.info10,product_info.info11,product_info.info12,product_info.info13,users_account.minlot,users_account.maxlot " \
+                sql = "SELECT follow.maxloss,follow.maxtime,follow.maxnum,follow.fixed,follow.percent,follow.rate,follow.rate_max,follow.rate_min,follow.reflex,follow.allowed_sign,follow.tpsl_flag,follow.pending_flag,follow.update_time,follow.parameter_time,product_info.info10,product_info.info11,product_info.info12,product_info.info13,users_account.minlot,users_account.maxlot " \
                       "FROM follow " \
                       "INNER JOIN p_order ON follow.followid = p_order.uaid " \
                       "INNER JOIN product_info ON p_order.piid = product_info.piid " \

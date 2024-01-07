@@ -1,5 +1,7 @@
 #coding=utf-8
 import tornado
+import json
+import logging
 import config
 from tornado import gen
 from handlers.base.base_handler import BaseHandler
@@ -8,8 +10,8 @@ from models.public.confrom_model import AccountsForm
 from handlers.myredis.redis_class import RedisClass
 from models.user.master_model import MasterModel
 from models.user.strategy_model import StrategyModel
-import json
-import logging
+from models.user.order_model import OrderModel
+
 
 logger = logging.getLogger('Main')
 class StrategyHandler(SessionHandler, BaseHandler):
@@ -118,7 +120,6 @@ class StrategyHandler(SessionHandler, BaseHandler):
                     elif F.fx_type.data == "get_parameter":
                         S = StrategyModel()
                         row = yield S.getParameter(cookie_dist['current_strategy'], F.fx_id.data)
-                        from models.user.order_model import OrderModel
                         O = OrderModel()
                         echo_dist['pnum'] = yield O.get_PositionOrderNum2(cookie_dist['current_strategy'], F.fx_id.data)
                         logger.debug("get_parameter:%s" % row)

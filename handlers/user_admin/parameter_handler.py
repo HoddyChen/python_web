@@ -41,6 +41,7 @@ class ParameterHandler(SessionHandler, BaseHandler):
                 page_papa['rate_max'] = 0.5 if F.rate_max.data == None else F.rate_max.data
                 page_papa['rate'] = 0 if F.rate.data == None else F.rate.data
                 page_papa['tpsl_flag'] = 0 if F.tpsl_flag.data == None else F.tpsl_flag.data
+                page_papa['pending_flag'] = 0 if F.pending_flag.data == None else F.pending_flag.data
                 page_papa['allowed_sign'] = -1
                 page_papa['uid'] = self.session['web_uid']
                 page_papa['ip'] = self.get_user_ip()

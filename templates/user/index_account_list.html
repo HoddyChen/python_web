@@ -246,7 +246,7 @@
     function edit_parameter(account, fx_id) {
         swal.fire({
             html: "<div class=\"col-lg-12 col-md-12 col-sm-12\">\n" +
-                "    <div class=\"card\">\n" +
+                "    <div class=\"card\" style=\"margin-bottom: 0px;\">\n" +
                 "        <div class=\"header\">\n" +
                 "            <h2><strong>{{_('跟单参数')}}</strong> {{_('设置')}}(<span id=\"accout_id\"></span> )</h2>\n" +
                 "        </div>\n" +
@@ -287,12 +287,17 @@
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "                        <div class=\"col-lg-6 col-md-6\">\n" +
-                "                            <div class=\"d-flex checkbox\" style=\"padding: 40px 0px 0px;\">\n" +
-                "                                <input id=\"reflex\" type=\"checkbox\" name='reflex' class='fx_color1' value='1'>\n" +
-                "                                <label for=\"reflex\">{{_('反向跟单')}}</label>&nbsp;&nbsp;\n" +
-                "                                <input id=\"tpsl_flag\" type=\"checkbox\" name='tpsl_flag' class='fx_color1' value='1'>\n" +
-                "                                <label for=\"tpsl_flag\">{{_('止损止盈')}}</label>\n" +
-                "                            </div>\n" +
+                "                           <div class=\"d-flex bd-highlight\">\n" +
+                "                           <div class=\"mr-auto p-2 bd-highlight\">{{_('风控线')}}</div>\n" +
+                "                           <div class=\"p-2 bd-highlight\"><small>{{_('低于此金额邮件报警')}} </small></div>\n" +
+                "                           </div>\n" +
+                "                           <div class=\"form-group\">\n" +
+                "                               <input name=\"rate\" type=\"text\" id=\"Wind_control_line\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('填写风控金额，预警分为两个阶段')}}，\n" +
+                "A、{{_('净值进入于风控金额之上百分十区间时，预警一次')}},\n" +
+                "{{_('例：填写9000，则在低于10000时，第一次预警')}}；\n" +
+                "B、{{_('净值低于风控金额时，预警一次')}}；\n" +
+                "C、{{_('上述条件满足，则每日会预警一次，直到条件不满足')}}。\n\">\n" +
+                "                           </div>\n" +
                 "                        </div>\n" +
                 "                    </div>\n" +
                 "                </div>\n" +
@@ -337,16 +342,17 @@
                 "                    </div>\n" +
                 "                </div>\n" +
                 "                <div id=\"nouislider_range_example\"></div>\n" +
-                "                <div class=\"d-flex bd-highlight\" style=\"padding: 21px 0px 0px;\">\n" +
-                "                    <div class=\"mr-auto p-2 bd-highlight\">{{_('风控线')}}</div>\n" +
-                "                    <div class=\"p-2 bd-highlight\"><small>{{_('低于填写的金额,则邮件报警')}} </small></div>\n" +
-                "                </div>\n" +
                 "                <div class=\"form-group\">\n" +
-                "                    <input name=\"rate\" type=\"text\" id=\"Wind_control_line\" class=\"form-control fx_color1\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"{{_('填写风控金额，预警分为两个阶段')}}，\n" +
-                "A、{{_('净值进入于风控金额之上百分十区间时，预警一次')}},\n" +
-                "{{_('例：填写9000，则在低于10000时，第一次预警')}}；\n" +
-                "B、{{_('净值低于风控金额时，预警一次')}}；\n" +
-                "C、{{_('上述条件满足，则每日会预警一次，直到条件不满足')}}。\n\">\n" +
+                "                    <div class=\"row clearfix\">\n" +
+                "                            <div class=\"d-flex checkbox justify-content-center\" style=\"padding: 40px 0px 0px;width: 100%;\">\n" +
+                "                                <input id=\"reflex\" type=\"checkbox\" name='reflex' class='fx_color1' value='1'>\n" +
+                "                                <label for=\"reflex\" style=\"margin-right: 30px;\">{{_('反向跟单')}}</label>&nbsp;&nbsp;\n" +
+                "                                <input id=\"tpsl_flag\" type=\"checkbox\" name='tpsl_flag' class='fx_color1' value='1'>\n" +
+                "                                <label for=\"tpsl_flag\" style=\"margin-right: 30px;\">{{_('止损止盈')}}</label>\n" +
+                "                                <input id=\"pending_flag\" type=\"checkbox\" name='pending_flag' class='fx_color1' value='1'>\n" +
+                "                                <label for=\"pending_flag\" style=\"margin-right: 30px;\">{{_('挂单跟单')}}</label>\n" +
+                "                            </div>\n" +
+                "                    </div>\n" +
                 "                </div>\n" +
                 "            </form>\n" +
                 "        </div>\n" +
@@ -375,6 +381,7 @@
     }
 
     function get_parameter(fx_id) {
+        $("#maxtime").val("{{ _('载入中......') }}");
         $.ajax({
             type: 'get',
             url: '/user/strategy?fx_type=get_parameter&fx_id=' + fx_id,
@@ -425,7 +432,18 @@
                             this.checked = !this.checked;
                         };
                     }
-
+                    if(re.info11 == 1 || re.info11 == "1") {
+                        if (re.pending_flag == 1) {
+                            $("#pending_flag").attr("checked", "checked");
+                        } else {
+                            $("#pending_flag").removeAttr("checked");
+                        }
+                    }else {
+                        $("#pending_flag").removeAttr("checked");
+                        document.getElementById("pending_flag").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                    }
                     if (re.fixed == null && re.percent == null){
                        re.fixed = 0;
                        re.percent = 0;
@@ -479,6 +497,9 @@
                             this.checked = !this.checked;
                         };
                         document.getElementById("tpsl_flag").onclick = function(){
+                            this.checked = !this.checked;
+                        };
+                        document.getElementById("pending_flag").onclick = function(){
                             this.checked = !this.checked;
                         };
                         // showNotification("bg-blue","跟单用户未授权修改权限，处于只读状态。","bottom","center",null,null);//错误警示
