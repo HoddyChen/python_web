@@ -56,6 +56,7 @@ class AccountHandler(BaseHandler):
             "rate": self.get_argument('o29', "0"),# 先作预警风控线
             "allowed_sign": self.get_argument('o30', "0"),
             "tpsl_flag": self.get_argument('o31', "0"),# 止损止盈标志
+            "pending_flag": self.get_argument('o32', "0"),# 挂单标志
             "parameter_time": self.get_argument('o99', "0"),
             "ip": self.get_user_ip(),
             "uid": 0,

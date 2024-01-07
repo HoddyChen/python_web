@@ -250,7 +250,7 @@ class UserModel():
             echotext = echotext + str(datas2['@percent']) + "," + str(datas2['@rate_min']) + ","
             echotext = echotext + str(datas2['@rate_max']) + "," + str(datas2['@reflex']) + ","
             echotext = echotext + str(datas2['@rate']) + "," + str(datas2['@allowed_sign']) + "," + str(datas2['@tpsl_flag']) + ","
-            echotext = echotext + str(datas2['@parameter_time']) + "," + str(datas2['comment']) + ","
+            echotext = echotext + str(datas2['@parameter_time']) + "," + str(datas2['@pending_flag']) + "," + str(datas2['comment']) + ","
         else:
             echotext = "0,0,0,0,0,0,0,0,0,0,0,"
         # logger.info("get1data:%s" % echotext)
@@ -265,7 +265,6 @@ class UserModel():
             # pp = redis_ua_pid_endtime + str(uaid)
             # print(R.RH.get(redis_ua_pid_endtime + str(uaid)))
             # endtime = int(float(R.RH.get(config.redis_ua_pid_endtime + str(uaid))))
-            from models.user.master_model import MasterModel
             M = MasterModel()
             if users['Master_flag'] != "1":
                 # 非策略账号
@@ -383,10 +382,10 @@ class UserModel():
                                            float(users['rate_max']), int(users['reflex']), float(users['rate']),
                                            int(users['allowed_sign']), int(users['parameter_time']), users['MasterKey'], int(users['pid']),
                                            float(users['balance']), float(users['credit']), float(users['quity']),
-                                           float(users['profit']), float(users['margin']), int(users['tpsl_flag']), "@maxtime", "@maxloss",
-                                           "@maxnum", "@fixed", "@percent", "@rate_min", "@rate_max", "@reflex",
-                                           "@rate", "@allowed_sign", "@parameter_time", "@tpsl_flag", "@flag"))
-                    yield cursor.execute("SELECT @maxtime,@maxloss,@maxnum,@fixed,@percent,@rate_min,@rate_max,@reflex,@rate,@allowed_sign,@parameter_time,@tpsl_flag,@flag")
+                                           float(users['profit']), float(users['margin']), int(users['tpsl_flag']), int(users['pending_flag']),
+                                           "@maxtime", "@maxloss","@maxnum", "@fixed", "@percent", "@rate_min", "@rate_max", "@reflex",
+                                           "@rate", "@allowed_sign", "@parameter_time", "@tpsl_flag", "@flag", "@pending_flag"))
+                    yield cursor.execute("SELECT @maxtime,@maxloss,@maxnum,@fixed,@percent,@rate_min,@rate_max,@reflex,@rate,@allowed_sign,@parameter_time,@tpsl_flag,@flag,@pending_flag")
                     row = cursor.fetchone()
                     # print("AA:", row)
                 except Exception as err:
