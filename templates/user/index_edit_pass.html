@@ -14,8 +14,7 @@
 
 {% block js %}
 {% include mode_js.html%}
-<!--{% include mode_js3.html%}-->
-<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+
 <script src="{{ static_url('assets/js/pages/ui/dialogs.js')}}"></script>
 <script>
             // return e.preventDefault() // stops modal from being shown
@@ -32,19 +31,14 @@
                 dataType: "JSON",
                 success:  function(re) {
                     if (re.ok_status == 5) {
-                        swal("{{_('修改密码')}}", "{{_('密码修改成功')}}", "success");
+                        swal.fire("{{_('密码修改成功')}}");
                     }else if (re.ok_status < 5) {
-                        swal({
-                            title: "{{_('修改密码')}}",
-                            text: re.echo,
-                            type: "error",
-                            html: true
-                        })
+                        swal.fire("{{_('修改密码')}}:"+re.echo)
                     }else if (re.ok_status <= 0){
-                        swal("{{_('修改密码')}}", "{{_('发生非法操作，请重新登陆再试')}}", "error");
+                        swal.fire("{{_('发生非法操作，请重新登陆再试')}}");
                         window.location.href="/conadmin/logout"
                     }else{
-                        swal("{{_('修改密码')}}", "{{_('未知错误，请稍候再试')}}", "error");
+                        swal.fire("{{_('未知错误，请稍候再试')}}");
                     }
                 }
             });

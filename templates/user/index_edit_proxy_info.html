@@ -4,7 +4,6 @@
 {% include mode_css.html%}
 <!-- JQuery DataTable Css -->
 <link rel="stylesheet" href="{{ static_url('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}">
-<link rel="stylesheet" href="{{ static_url('assets/plugins/sweetalert/sweetalert2.min.css')}}">
 
 <!--<link rel="stylesheet" href="{{ static_url('assets/plugins/nouislider/nouislider.min.css')}}">-->
 {% end %}
@@ -17,8 +16,7 @@
 
 {% block js %}
 {% include mode_js.html%}
-<!--{% include mode_js3.html%}-->
-<script src="{{ static_url('assets/plugins/sweetalert/sweetalert.min.js')}}"></script> <!-- SweetAlert Plugin Js -->
+
 <script>
     function my_submit(){
         // args._xsrf = getCookie("_xsrf");
@@ -30,20 +28,15 @@
             dataType: "JSON",
             success:  function(re) {
                 if (re.reponse_status == 5) {
-                    swal("{{_('保存成功')}}", "{{_('修改成功')}}", "success");
+                    swal.fire("{{_('保存成功')}}");
                     //document.getElementById("button_enter_send").disabled = false;
                     document.getElementById("uname").disabled = true;
                     document.getElementById("iban").disabled = true;
                 }else if (re.reponse_status < 5) {
-                    swal({
-                        title: "{{_('修改资料')}}",
-                        text: re.echo,
-                        type: "error",
-                        html: true
-                    });
+                    swal.fire("{{_('修改资料')}}:"+re.echo);
                     document.getElementById("button_enter_send").disabled = false;
                 }else{
-                    swal("{{_('修改资料')}}", "{{_('未知错误，请稍候再试')}}", "error");
+                    swal.fire("{{_('未知错误，请稍候再试')}}");
                     document.getElementById("button_enter_send").disabled = false;
                 }
             }
