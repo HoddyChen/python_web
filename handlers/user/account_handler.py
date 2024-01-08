@@ -2,6 +2,7 @@
 #交易账户视图
 import tornado
 import hashlib
+import re
 import config
 from models.user.user_model import UserModel
 from tornado.ioloop import IOLoop
@@ -70,6 +71,7 @@ class AccountHandler(BaseHandler):
             users['moni'] == 1
         else:
             users['moni'] == 0
+        users['huibimodel'] = re.sub('["\'()*+-/:;<>?\\^{|}~\s]+', "$", users['huibimodel'])
         #
         md5_str = users['account'] + users['version']
         str_md5 = hashlib.md5(md5_str.encode(encoding='UTF-8')).hexdigest()

@@ -177,6 +177,11 @@ class ParameterForm(Form):
         validators.optional(),
         validators.NumberRange(0, 10, message=(u'超出数字范围'))
     ], default=0)
+    pending_flag = IntegerField('pending_flag', [
+        validators.optional(),
+        validators.NumberRange(0, 10, message=(u'超出数字范围'))
+    ], default=0)
+
 
 class AccountsForm(Form):
     fx_type = StringField('fx_type', [
