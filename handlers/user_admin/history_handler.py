@@ -101,6 +101,12 @@ class HistoryHandler(SessionHandler, BaseHandler):
                 # page_main['th_num'] = 13
                 yield self.render("user/index_url_profitability.html", page_main=page_main, session=self.session)
                 return
+            elif F.fx_type.data == "time_sharing":
+                # 分时统计
+                page_main['title_type'] = self.locale.translate("盈利能力-分时统计")
+                page_main['th_num'] = 8
+                yield self.render("user/index_url_time_sharing_list.html", page_main=page_main, session=self.session)
+                return
             elif F.fx_type.data == "list_order_count":
                 # 统计手数与单量
                 page_main['time_str'] = self.timeType(page_main['time_type'])
@@ -203,6 +209,9 @@ class HistoryHandler(SessionHandler, BaseHandler):
                 elif F.fx_type.data == "profitability":
                     # 盈利能力
                     echo_dist['data'] = yield S.getProfitability(page_papa)
+                elif F.fx_type.data == "time_sharing":
+                    # 盈利能力-分时统计
+                    echo_dist['data'] = yield S.getTimeSharing(page_papa)
                 elif F.fx_type.data == "exit_out":
                     # 退出
                     # self.clear_all_cookies()
@@ -267,5 +276,13 @@ class HistoryHandler(SessionHandler, BaseHandler):
             return self.locale.translate('去年')
         elif time_type == "recent_year":
             return self.locale.translate('近一年')
+        elif time_type == "year":
+            return self.locale.translate('按年')
+        elif time_type == "month":
+            return self.locale.translate('按年')
+        elif time_type == "week":
+            return self.locale.translate('按周')
+        elif time_type == "day":
+            return self.locale.translate('按天')
         else:
             return self.locale.translate('全部')

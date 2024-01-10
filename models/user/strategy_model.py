@@ -1169,12 +1169,12 @@ class StrategyModel():
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
                 # 周
-                g1 = "FROM_UNIXTIME(trader.etime,'%Y%u ')AS g_date"
+                g1 = "FROM_UNIXTIME(trader.etime,'%Y-%u') AS g_date"
                 # 日
-                g2 = "FROM_UNIXTIME(trader.etime,'%Y-%m-%d')AS g_date"
+                g2 = "FROM_UNIXTIME(trader.etime,'%Y-%m-%d') AS g_date"
                 # 小时
-                g3 = "FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i')AS g_date"
-                sql = "FROM trader WHERE "
+                g3 = "FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i') AS g_date"
+                sql = " FROM trader WHERE "
                 sql = sql + " (trader.etime > 0 ) AND uaid=%s AND trader.t_type <=1 " % page_main['uaid']#OR trader.t_type>=6
                 sql_end = "GROUP BY g_date ORDER BY etime DESC"
                 sql2 = "SELECT tid," + g2 + " " + sql + sql_end
@@ -1335,11 +1335,11 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 if page_main['time_type'] == "week":
                     # 周
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y%u ')AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%u')AS g_date"
                 else:
                     # 月
                     sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%m')AS g_date"
-                sql = "FROM trader WHERE "
+                sql = " FROM trader WHERE "
                 sql = sql + " uaid=%s " % page_main['uaid']
                 sql_end = "GROUP BY g_date"
                 sql3 = "SELECT Sum(trader.profit+trader.swap+trader.commission) AS allprofit,"
@@ -1348,3 +1348,46 @@ class StrategyModel():
                 yield cursor.execute(sql3)
                 datas = cursor.fetchall()
                 return datas
+
+    # 得到盈利能力-分时统计
+    @gen.coroutine
+    def getTimeSharing(self, page_main=None):
+        with (yield pool.Connection()) as conn:
+            with conn.cursor() as cursor:
+                # print(page_main.get('time_type'))
+                if page_main['time_type'] == "year":
+                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y') AS g_date"
+                elif page_main['time_type'] == "day":
+                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%m-%d') AS g_date"
+                elif page_main['time_type'] == "month":
+                    # 月
+                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%m') AS g_date"
+                else:
+                    # 周
+                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%u') AS g_date"
+                sql = " FROM trader WHERE "
+                sql = sql + " uaid=%s " % page_main['uaid']
+                sql_end = "GROUP BY g_date"
+
+                sql2 = "SELECT COUNT(*) as allnum FROM (SELECT " + sql3_g + sql + "AND trader.etime>0 AND trader.t_type <=1 " + sql_end + ") groups"
+                # print(sql2)
+                yield cursor.execute(sql2)
+                allnum = cursor.fetchone()
+                if allnum['allnum'] > 0:
+                    sql3 = "SELECT Sum(trader.profit+trader.swap+trader.commission) AS allprofit, Sum(trader.num) AS lots, COUNT(trader.tid) AS t_num, "
+                    sql3 = sql3 + "MIN(trader.num) AS min_lots, MAX(trader.num) AS max_lots, MAX(trader.profit+trader.swap+trader.commission) AS max_profit, "
+                    sql3 = sql3 + "MIN(trader.profit+trader.swap+trader.commission) AS min_profit, "
+                    start = 0 if page_main.get('start') == None else page_main.get('start')
+                    length = 20 if page_main.get('length') == None else page_main.get('length')
+                    sql3 = sql3 + sql3_g + " " + sql + "AND trader.etime>0 AND trader.t_type <=1 " + sql_end + " ORDER BY g_date DESC limit %s, %s" % (int(start), int(length))
+                    # print(sql3)
+                    yield cursor.execute(sql3)
+                    datas = cursor.fetchall()
+                    if len(datas) > 0:
+                        datas.append(allnum)
+                        # print(allnum)
+                        return datas
+                    else:
+                        return []
+                else:
+                    return []

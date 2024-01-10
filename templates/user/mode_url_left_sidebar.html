@@ -32,10 +32,9 @@
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-chart"></i><span>{{_('统计')}}</span> </a>
                         <ul class="ml-menu">
                             <li><a href="/h?k={{page_main.get('urlkey')}}&fx_type=funds_count&uaid={{page_main.get('uaid')}}">{{_('利润曲线')}}</a></li>
-                            <li><a href="/h?k={{page_main.get('urlkey')}}&fx_type=profitability&uaid={{page_main.get('uaid')}}">{{_('盈利能力')}}</a></li>
                             <li><a href="/h?k={{page_main.get('urlkey')}}&fx_type=symbol_distributed&uaid={{page_main.get('uaid')}}">{{_('品种分布')}}</a></li>
-                            <!--<li><a href="#">{{_('交易手数')}}</a></li>-->
-                            <!--<li><a href="#">{{_('资金统计')}}</a></li>-->
+                            <li><a href="/h?k={{page_main.get('urlkey')}}&fx_type=profitability&uaid={{page_main.get('uaid')}}">{{_('盈利能力')}}</a></li>
+                            <li><a href="/h?k={{page_main.get('urlkey')}}&fx_type=time_sharing&uaid={{page_main.get('uaid')}}&time_type=week">{{_('分时统计')}}</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:{{'set_lang(\''+ page_main.get('lang') + '\')'}};"><i class ="zmdi zmdi-view-subtitles"></i><span>{{_('English')}}</span></a></li>
