@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复弹出提示">
-      <change afterPath="$PROJECT_DIR$/templates/user/index_url_time_sharing_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/mode_url_time_sharing_list.html" afterDir="false" />
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="在对外展示中，新增分时统计">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/myredis/redis_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/myredis/redis_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/info_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_left_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_left_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/my_socket/my_socket_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/my_socket/my_socket_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/my_socket/order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/my_socket/order_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/apple.wav" beforeDir="false" afterPath="$PROJECT_DIR$/static/apple.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/assets/css/googleapis-fonts/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/googleapis-fonts/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/next.wav" beforeDir="false" afterPath="$PROJECT_DIR$/static/next.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/y2284.wav" beforeDir="false" afterPath="$PROJECT_DIR$/static/y2284.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_proxy_accountclass_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_proxy_accountclass_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_time_sharing_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_time_sharing_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,38 +64,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL 更新&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;SQL 更新&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/hoddychen/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web/templates/user&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.start_servser_http.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "database.data.extractors.current.export.id": "SQL 更新",
+    "database.data.extractors.current.id": "SQL 更新",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/hoddychen/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/user" />
@@ -97,6 +110,7 @@
   <component name="RunManager" selected="Python.start_servser_http">
     <configuration name="start_servser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -119,6 +133,7 @@
     </configuration>
     <configuration name="start_servser_email" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -141,6 +156,7 @@
     </configuration>
     <configuration name="start_servser_http" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -163,6 +179,7 @@
     </configuration>
     <configuration name="start_socket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -185,6 +202,7 @@
     </configuration>
     <configuration name="tedt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -214,6 +232,13 @@
         <item itemvalue="Python.start_servser_email" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -374,7 +399,19 @@
       <workItem from="1704548511619" duration="8420000" />
       <workItem from="1704682217787" duration="3989000" />
       <workItem from="1704703183886" duration="3588000" />
-      <workItem from="1704860313547" duration="11218000" />
+      <workItem from="1704860313547" duration="12029000" />
+      <workItem from="1704980563310" duration="62000" />
+      <workItem from="1705413430342" duration="1256000" />
+      <workItem from="1705462797447" duration="1223000" />
+      <workItem from="1705464186618" duration="203000" />
+      <workItem from="1705465868096" duration="134000" />
+      <workItem from="1705466361249" duration="66000" />
+      <workItem from="1705468168677" duration="1658000" />
+      <workItem from="1705727830249" duration="989000" />
+      <workItem from="1705746109275" duration="24000" />
+      <workItem from="1705819792637" duration="206000" />
+      <workItem from="1705820035178" duration="844000" />
+      <workItem from="1705820986434" duration="6380000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -684,14 +721,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00117" summary="增加文件">
-      <option name="closed" value="true" />
-      <created>1704512354793</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1704512354793</updated>
-    </task>
     <task id="LOCAL-00118" summary="增加挂单跟单参数">
       <option name="closed" value="true" />
       <created>1704587679866</created>
@@ -724,11 +753,30 @@
       <option name="project" value="LOCAL" />
       <updated>1704710709474</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="在对外展示中，新增分时统计">
+      <option name="closed" value="true" />
+      <created>1704873071178</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1704873071179</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -748,7 +796,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改跟单系统的定价" />
     <MESSAGE value="修改cookie时间为一周" />
     <MESSAGE value="更新验证瑞讯账户的EA" />
     <MESSAGE value="更新url账户信息的页面" />
@@ -773,7 +820,8 @@
     <MESSAGE value="增加挂单跟单参数" />
     <MESSAGE value="修复挂单功能的BUG；&#10;修复跟单ea登陆入口的品种样本特殊字符过滤。" />
     <MESSAGE value="修复弹出提示" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复弹出提示" />
+    <MESSAGE value="在对外展示中，新增分时统计" />
+    <option name="LAST_COMMIT_MESSAGE" value="在对外展示中，新增分时统计" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -813,6 +861,11 @@
           <line>378</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/start_servser_http.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
           <line>36</line>
@@ -832,12 +885,12 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_web$tedt.coverage" NAME="tedt 覆盖结果" MODIFIED="1700831896876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_socket.coverage" NAME="start_socket 覆盖结果" MODIFIED="1695965346984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
+    <SUITE FILE_PATH="coverage/python_web$tedt.coverage" NAME="tedt 覆盖结果" MODIFIED="1700831896876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1704871533307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1705825976325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -1,5 +1,11 @@
 #coding=utf-8
 import tornado
+import re
+import json
+import time
+import logging
+import hashlib
+import os
 import config
 from tornado import gen
 from handlers.base.base_handler import BaseHandler
@@ -9,9 +15,8 @@ from models.public.confrom_model import InfoForm
 from handlers.myredis.redis_class import RedisClass
 from models.user.user_model import UserModel
 from models.user.strategy_model import StrategyModel
-import json
-import time
-import logging
+from models.user.order_model import OrderModel
+from models.public.confrom_model import get_ErrorForm
 
 logger = logging.getLogger('Main')
 class InfoHandler(SessionHandler, BaseHandler):
@@ -38,7 +43,6 @@ class InfoHandler(SessionHandler, BaseHandler):
                     yield self.render('user/index_edit_info.html', page_main=page_main, session=self.session)
                     return
                 if F.fx_type.data == "edit_info_comment":
-                    from  models.user.order_model import OrderModel
                     O = OrderModel()
                     page_main['order_num'] = yield O.get_PositionOrderNum(cookie_dist["current_strategy"])
                     S = StrategyModel()
@@ -71,7 +75,6 @@ class InfoHandler(SessionHandler, BaseHandler):
                     return
             else:
                 # 表单错误
-                from models.public.confrom_model import get_ErrorForm
                 logger.error(get_ErrorForm(F))
                 self.render('user/500.html')
                 return
@@ -90,8 +93,7 @@ class InfoHandler(SessionHandler, BaseHandler):
             cookie_dist = self.getCookie(1)
             if F.validate():#and F.cla.data == "SendError"
                 echo_dist['reponse_status'] = 5
-                from models.user.strategy_model import StrategyModel
-                import re
+
                 S = StrategyModel()
                 if F.fx_type.data == "edit_info":
                     # 修改策略名称
@@ -139,7 +141,6 @@ class InfoHandler(SessionHandler, BaseHandler):
                             echo_dist['echo'] = self.locale.translate("发生意外错误！")
                 elif F.fx_type.data == "edit_url_pass":
                     # 修改URL
-                    import hashlib
                     md5_str = str(F.urlpass.data) + str(F.fx_id.data)
                     # print(md5_str)
                     urlkey = hashlib.md5(md5_str.encode(encoding='UTF-8')).hexdigest()[8:-8]
@@ -157,8 +158,6 @@ class InfoHandler(SessionHandler, BaseHandler):
                         echo_dist['echo'] = self.locale.translate("发生意外错误！")
                 elif F.fx_type.data == "edit_logo":
                     file_h = self.request.files['file']
-                    import os
-                    import hashlib
                     key_text = cookie_dist["current_strategy"] + str(self.session['web_uid'])
                     file_name = hashlib.md5(key_text.encode(encoding='UTF-8')).hexdigest()
                     filePath = os.path.join(os.getcwd(), "static", "faceimg")
@@ -202,7 +201,6 @@ class InfoHandler(SessionHandler, BaseHandler):
                     echo_dist['reponse_status'] = 1
             else:
                 # 表单错误
-                from models.public.confrom_model import get_ErrorForm
                 echo_dist['echo'] = get_ErrorForm(F)
                 echo_dist['reponse_status'] = 1
         # from models.public.headers_model import DateEncoder

@@ -15,12 +15,14 @@ class MySocketModel(RedisClass):
 
     def __init__(self):
         RedisClass.__init__(self)
+        # self.rd = rd
         self.msg_disc = {
             'uaid': 0
         }
 
     def __del__(self):
         RedisClass.__del__(self)
+        # pass
     # @gen.coroutine
     # def chick_SocketQueue(self):
     #     # 检查uaid是不是在队列 中

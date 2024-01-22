@@ -259,7 +259,7 @@ class UserModel():
     @gen.coroutine
     def CheckAccount(self, users):
         if self.R.RH.hexists(config.redis_acount_md5_dic, users['ukid']):
-            datas={}
+            datas = {}
             uaid = self.R.RH.hget(config.redis_acount_md5_dic, users['ukid'])
             datas2 = yield self.updataAccount(users, uaid)
             # pp = redis_ua_pid_endtime + str(uaid)

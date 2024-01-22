@@ -26,5 +26,7 @@ tormysql
 tornado
 urllib3
 Werkzeug
-WTForms
+wtforms==2.3.3
 wtforms-tornado
+email_validator
+pandas

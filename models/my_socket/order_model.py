@@ -2,7 +2,7 @@
 from tornado import gen
 import logging
 import re
-from handlers.myredis.redis_class import RedisClass
+# from handlers.myredis.redis_class import RedisClass
 import pymysql
 from libs.db.dbsession import pool
 from libs.db.mysqlopen import mysql_open

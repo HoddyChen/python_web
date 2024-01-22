@@ -3,8 +3,9 @@ import redis
 import config
 import hashlib
 from tornado import gen
-# import datetime
 import time
+import random
+
 
 class RedisClass:
     # redis 包
@@ -276,7 +277,6 @@ class RedisClass:
 
     @gen.coroutine
     def add_TotalConsole_list(self):
-        import random
         command_id = "comm_id" + str(time.time()) + str(random.randint(10000, 99999))
         self.RH.rpush(config.redis_total_console_list, command_id)
         return command_id
@@ -289,7 +289,6 @@ class RedisClass:
     @gen.coroutine
     def add_Console_list(self, total_dist):
         if total_dist:
-            import random
             for server_arr in config.server_list:
                 # print(str(server_arr['id']))
                 command_id = "con_id" + str(time.time()) + str(random.randint(10000, 99999))
