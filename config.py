@@ -44,6 +44,9 @@ REDIS_INFO = {
 }
 # 返回给EA的IP访问地址
 Server_IP = "64.31.63.252:9008"
+
+# EA magic前缀
+MAGIC = 9947
 # 时间加密因子
 TineMd5Info = 1561697191
 # 时间加密因子

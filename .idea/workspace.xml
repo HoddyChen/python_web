@@ -4,25 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="在对外展示中，新增分时统计">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/python_web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python_web.iml" afterDir="false" />
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="在对外展示中，新增分时统计，更新代理登陆的转向页">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/myredis/redis_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/myredis/redis_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/info_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/info_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/my_socket/my_socket_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/my_socket/my_socket_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/my_socket/order_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/my_socket/order_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/apple.wav" beforeDir="false" afterPath="$PROJECT_DIR$/static/apple.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/googleapis-fonts/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/googleapis-fonts/fonts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/next.wav" beforeDir="false" afterPath="$PROJECT_DIR$/static/next.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/y2284.wav" beforeDir="false" afterPath="$PROJECT_DIR$/static/y2284.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_proxy_accountclass_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_proxy_accountclass_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_swissquote_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_url_time_sharing_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_url_time_sharing_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +54,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
-    "Python.start_servser_http.executor": "Run",
+    "Python.start_servser_http.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -411,7 +397,8 @@
       <workItem from="1705746109275" duration="24000" />
       <workItem from="1705819792637" duration="206000" />
       <workItem from="1705820035178" duration="844000" />
-      <workItem from="1705820986434" duration="6380000" />
+      <workItem from="1705820986434" duration="7580000" />
+      <workItem from="1706087076789" duration="2381000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -721,14 +708,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00118" summary="增加挂单跟单参数">
-      <option name="closed" value="true" />
-      <created>1704587679866</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1704587679866</updated>
-    </task>
     <task id="LOCAL-00119" summary="增加挂单跟单参数">
       <option name="closed" value="true" />
       <created>1704613135579</created>
@@ -761,7 +740,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704873071179</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="在对外展示中，新增分时统计，更新代理登陆的转向页">
+      <option name="closed" value="true" />
+      <created>1705891570740</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1705891570741</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -796,7 +783,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改cookie时间为一周" />
     <MESSAGE value="更新验证瑞讯账户的EA" />
     <MESSAGE value="更新url账户信息的页面" />
     <MESSAGE value="更新曲线图参数，修改EA错误响应时间为9" />
@@ -821,7 +807,8 @@
     <MESSAGE value="修复挂单功能的BUG；&#10;修复跟单ea登陆入口的品种样本特殊字符过滤。" />
     <MESSAGE value="修复弹出提示" />
     <MESSAGE value="在对外展示中，新增分时统计" />
-    <option name="LAST_COMMIT_MESSAGE" value="在对外展示中，新增分时统计" />
+    <MESSAGE value="在对外展示中，新增分时统计，更新代理登陆的转向页" />
+    <option name="LAST_COMMIT_MESSAGE" value="在对外展示中，新增分时统计，更新代理登陆的转向页" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -835,16 +822,6 @@
           <url>file://$PROJECT_DIR$/models/admin/strategy_model.py</url>
           <line>195</line>
           <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/user/strategy_model.py</url>
-          <line>241</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/user/strategy_model.py</url>
-          <line>268</line>
-          <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/handlers/user_admin/swissquote_proxy_handler.py</url>
@@ -865,6 +842,11 @@
           <url>file://$PROJECT_DIR$/start_servser_http.py</url>
           <line>1</line>
           <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/models/user/strategy_model.py</url>
+          <line>477</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/templates/admin/index_strategy_list.html</url>
@@ -889,7 +871,7 @@
     <SUITE FILE_PATH="coverage/python_web$tedt.coverage" NAME="tedt 覆盖结果" MODIFIED="1700831896876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1705825976325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1706088807776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
