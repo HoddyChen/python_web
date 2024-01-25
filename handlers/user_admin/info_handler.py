@@ -150,7 +150,7 @@ class InfoHandler(SessionHandler, BaseHandler):
                             echo_dist['reponse_status'] = -1
                             echo_dist['echo'] = self.locale.translate("保存失败！")
                         else:
-                            echo_dist['urlkey'] = "http://www.6copy.com/h?k=" + m_dist['@out_url_key']
+                            echo_dist['urlkey'] = "https://www.6copy.com/h?k=" + m_dist['@out_url_key']
                             echo_dist['pu_status'] = m_dist['@out_mflag']
                             echo_dist['reponse_status'] = 5
                     else:
