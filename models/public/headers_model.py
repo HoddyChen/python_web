@@ -4,6 +4,7 @@ import config
 from tornado import gen
 from handlers.myredis.redis_class import RedisClass
 import json
+import time
 import datetime
 from libs.db.dbsession import pool
 from tornado import gen
@@ -131,8 +132,6 @@ class Headers_Models():
 
     @gen.coroutine
     def getMktime(self, type):
-        import time
-        import datetime
         # 获取当前年份
         year = datetime.date.today().year
         # 获取当前月份
@@ -164,6 +163,42 @@ class Headers_Models():
             lastYear = (datetime.date(year, month=1, day=1) - oneday)
             return int(time.mktime(datetime.date(lastYear.year, month=1, day=1).timetuple()))
 
+    @gen.coroutine
+    def getStime(self, time_type):
+        the_stime = 0
+        the_etime = 0
+        if time_type == "the_year":
+            the_stime = yield self.getMktime("theYear")
+        elif time_type == "the_month":
+            the_stime = yield self.getMktime("theMonth")
+        elif time_type == "the_week":
+            the_stime = yield self.getMktime("theWeek")
+        elif time_type == "last_week":
+            the_stime = yield self.getMktime("lastWeek")
+            the_etime = yield self.getMktime("lastWeekOne")
+        elif time_type == "the_day":
+            the_stime = yield self.getMktime("theDay")
+        elif time_type == "last_month":
+            the_stime = yield self.getMktime("lastMonthOne")
+            the_etime = yield self.getMktime("lastMonth")
+        elif time_type == "last_year":
+            the_stime = yield self.getMktime("lastYearOne")
+            the_etime = yield self.getMktime("lastYear")
+        elif time_type == "recent_day":
+            the_stime = int(time.time()) - 60 * 60 * 24
+        elif time_type == "recent_week":
+            the_stime = int(time.time()) - 60 * 60 * 24 * 7
+        elif time_type == "recent_month":
+            the_stime = int(time.time()) - 60 * 60 * 24 * 30
+        elif time_type == "recent_month3":
+            the_stime = int(time.time()) - 60 * 60 * 24 * 90
+        elif time_type == "recent_month6":
+            the_stime = int(time.time()) - 60 * 60 * 24 * 180
+        elif time_type == "recent_year":
+            the_stime = int(time.time()) - 60 * 60 * 24 * 365
+        else:
+            the_stime = 0
+        return the_stime, the_etime
 
     def getOrderNo(self):
         import time

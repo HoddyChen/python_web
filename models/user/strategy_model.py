@@ -11,7 +11,7 @@ import pandas
 import config
 from handlers.myredis.redis_class import RedisClass
 from models.user.master_model import MasterModel
-
+from models.public.headers_model import Headers_Models
 
 logger = logging.getLogger('Main')
 class StrategyModel():
@@ -81,7 +81,6 @@ class StrategyModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 try:
-                    from models.public.headers_model import Headers_Models
                     H = Headers_Models()
                     the_year = yield H.getMktime("theYear")
                     the_month = yield H.getMktime("theMonth")
@@ -550,36 +549,9 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 the_etime = 0
                 if page_main != None:
-                    from models.public.headers_model import Headers_Models
                     H = Headers_Models()
-                    if page_main['time_type'] == "the_year":
-                        the_stime = yield H.getMktime("theYear")
-                    elif page_main['time_type'] == "the_month":
-                        the_stime = yield H.getMktime("theMonth")
-                    elif page_main['time_type'] == "the_week":
-                        the_stime = yield H.getMktime("theWeek")
-                    elif page_main['time_type'] == "the_day":
-                        the_stime = yield H.getMktime("theDay")
-                    elif page_main['time_type'] == "last_month":
-                        the_stime = yield H.getMktime("lastMonthOne")
-                        the_etime = yield H.getMktime("lastMonth")
-                    elif page_main['time_type'] == "last_year":
-                        the_stime = yield H.getMktime("lastYearOne")
-                        the_etime = yield H.getMktime("lastYear")
-                    elif page_main['time_type'] == "recent_day":
-                        the_stime = int(time.time()) - 60 * 60 * 24
-                    elif page_main['time_type'] == "recent_week":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 7
-                    elif page_main['time_type'] == "recent_month":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 30
-                    elif page_main['time_type'] == "recent_month3":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 90
-                    elif page_main['time_type'] == "recent_month6":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 180
-                    elif page_main['time_type'] == "recent_year":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 365
-                    else:
-                        the_stime = 0
+                    the_stime, the_etime = yield H.getStime(page_main['time_type'])
+
                 sql = "FROM follow INNER JOIN trader ON follow.uaid = trader.uaid INNER JOIN users_account ON follow.uaid = users_account.uaid " \
                        "WHERE follow.followid = %s AND follow.follow_flag = 1 AND follow.f_flag = 1 " % followid
                 if page_main.get('search') != "0" and page_main.get('search') != "":
@@ -813,36 +785,8 @@ class StrategyModel():
             with conn.cursor() as cursor:
                 the_etime = 0
                 if page_main != None:
-                    from models.public.headers_model import Headers_Models
                     H = Headers_Models()
-                    if page_main['time_type'] == "the_year":
-                        the_stime = yield H.getMktime("theYear")
-                    elif page_main['time_type'] == "the_month":
-                        the_stime = yield H.getMktime("theMonth")
-                    elif page_main['time_type'] == "the_week":
-                        the_stime = yield H.getMktime("theWeek")
-                    elif page_main['time_type'] == "the_day":
-                        the_stime = yield H.getMktime("theDay")
-                    elif page_main['time_type'] == "last_month":
-                        the_stime = yield H.getMktime("lastMonthOne")
-                        the_etime = yield H.getMktime("lastMonth")
-                    elif page_main['time_type'] == "last_year":
-                        the_stime = yield H.getMktime("lastYearOne")
-                        the_etime = yield H.getMktime("lastYear")
-                    elif page_main['time_type'] == "recent_day":
-                        the_stime = int(time.time()) - 60 * 60 * 24
-                    elif page_main['time_type'] == "recent_week":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 7
-                    elif page_main['time_type'] == "recent_month":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 30
-                    elif page_main['time_type'] == "recent_month3":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 90
-                    elif page_main['time_type'] == "recent_month6":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 180
-                    elif page_main['time_type'] == "recent_year":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 365
-                    else:
-                        the_stime = 0
+                    the_stime, the_etime = yield H.getStime(page_main['time_type'])
                 # users['ptname']db.cursor(MySQLdb.cursors.DictCursor)
                 # print("search:", page_main.get('search'))
                 sql = "FROM trader WHERE "
@@ -882,36 +826,8 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 the_etime = 0
                 if page_main != None:
-                    from models.public.headers_model import Headers_Models
                     H = Headers_Models()
-                    if page_main['time_type'] == "the_year":
-                        the_stime = yield H.getMktime("theYear")
-                    elif page_main['time_type'] == "the_month":
-                        the_stime = yield H.getMktime("theMonth")
-                    elif page_main['time_type'] == "the_week":
-                        the_stime = yield H.getMktime("theWeek")
-                    elif page_main['time_type'] == "the_day":
-                        the_stime = yield H.getMktime("theDay")
-                    elif page_main['time_type'] == "last_month":
-                        the_stime = yield H.getMktime("lastMonthOne")
-                        the_etime = yield H.getMktime("lastMonth")
-                    elif page_main['time_type'] == "last_year":
-                        the_stime = yield H.getMktime("lastYearOne")
-                        the_etime = yield H.getMktime("lastYear")
-                    elif page_main['time_type'] == "recent_day":
-                        the_stime = int(time.time()) - 60 * 60 * 24
-                    elif page_main['time_type'] == "recent_week":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 7
-                    elif page_main['time_type'] == "recent_month":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 30
-                    elif page_main['time_type'] == "recent_month3":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 90
-                    elif page_main['time_type'] == "recent_month6":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 180
-                    elif page_main['time_type'] == "recent_year":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 365
-                    else:
-                        the_stime = 0
+                    the_stime, the_etime = yield H.getStime(page_main['time_type'])
                 sql = "FROM trader WHERE "
                 sql = sql + " uaid=%s AND trader.t_type<=1 " % page_main['uaid']
                 if page_main.get('search') != "0" and page_main.get('search') != "":
@@ -1119,36 +1035,8 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 the_etime = 0
                 if page_main != None:
-                    from models.public.headers_model import Headers_Models
                     H = Headers_Models()
-                    if page_main['time_type'] == "the_year":
-                        the_stime = yield H.getMktime("theYear")
-                    elif page_main['time_type'] == "the_month":
-                        the_stime = yield H.getMktime("theMonth")
-                    elif page_main['time_type'] == "the_week":
-                        the_stime = yield H.getMktime("theWeek")
-                    elif page_main['time_type'] == "the_day":
-                        the_stime = yield H.getMktime("theDay")
-                    elif page_main['time_type'] == "last_month":
-                        the_stime = yield H.getMktime("lastMonthOne")
-                        the_etime = yield H.getMktime("lastMonth")
-                    elif page_main['time_type'] == "last_year":
-                        the_stime = yield H.getMktime("lastYearOne")
-                        the_etime = yield H.getMktime("lastYear")
-                    elif page_main['time_type'] == "recent_day":
-                        the_stime = int(time.time()) - 60 * 60 * 24
-                    elif page_main['time_type'] == "recent_week":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 7
-                    elif page_main['time_type'] == "recent_month":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 30
-                    elif page_main['time_type'] == "recent_month3":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 90
-                    elif page_main['time_type'] == "recent_month6":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 180
-                    elif page_main['time_type'] == "recent_year":
-                        the_stime = int(time.time()) - 60 * 60 * 24 * 365
-                    else:
-                        the_stime = 0
+                    the_stime, the_etime = yield H.getStime(page_main['time_type'])
                 sql = "FROM trader WHERE "
                 sql = sql + " trader.etime > 0 AND uaid=%s  AND trader.t_type <=1 " % page_main['uaid']
                 if page_main.get('search') != "0" and page_main.get('search') != "":

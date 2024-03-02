@@ -182,10 +182,14 @@ class CopyHandler(SessionHandler, BaseHandler):
             return self.locale.translate('近一日')
         elif time_type == "the_week":
             return self.locale.translate('本周')
+        elif time_type == "last_week":
+            return self.locale.translate('上周')
         elif time_type == "recent_week":
             return self.locale.translate('近一周')
         elif time_type == "the_month":
             return self.locale.translate('本月')
+        elif time_type == "last_month":
+            return self.locale.translate('上月')
         elif time_type == "recent_month":
             return self.locale.translate('近一个月')
         elif time_type == "recent_month3":

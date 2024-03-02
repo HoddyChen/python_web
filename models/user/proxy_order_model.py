@@ -2,6 +2,7 @@
 from libs.db.dbsession import pool
 from tornado import gen
 import logging
+from models.public.headers_model import Headers_Models
 
 class ProxyOrderModel():
 
@@ -79,7 +80,8 @@ class ProxyOrderModel():
     # 修改佣金状态，接受返点
     @gen.coroutine
     def editPAVerify(self, uid, account, PROXY_PRICE):
-        the_stime, the_etime = yield self.getStime('the_week')
+        H = Headers_Models()
+        the_stime, the_etime = yield H.getStime('the_week')
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 try:
@@ -402,7 +404,8 @@ class ProxyOrderModel():
     def getProxyOrderList(self, uid, page_main=None):
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
                 sql = "FROM proxy_account INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.uid = %s AND proxy_account.verify = 2  AND proxy_order.flag =1 AND proxy_account.account = %s " % (uid, page_main.get('account'))
                 if page_main['time_type'].find("last") >= 0:
@@ -431,7 +434,8 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
                 sql = "FROM proxy_account INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.uid = %s AND proxy_account.verify = 2  AND proxy_order.flag =1 AND proxy_account.account = %s " % (uid, page_main.get('account'))
                 if page_main['time_type'].find("last") >= 0:
@@ -453,7 +457,8 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
                 sql = "FROM proxy_account INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.uid = %s AND proxy_account.verify = 2  AND proxy_order.flag =1 " % uid
                 if page_main['gid'] != 1:
@@ -480,7 +485,8 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
                 sql0 = "FROM proxy_users INNER JOIN proxy_account ON proxy_users.uid = proxy_account.uid INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.verify = 2 AND proxy_order.flag =1 "
                 sql = ""
@@ -509,7 +515,8 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
                 sql = "FROM proxy_account INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.uid = %s AND proxy_account.verify = 2 AND proxy_order.flag = 1 " % uid
                 if page_main['gid'] != 1:
@@ -543,7 +550,8 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
 
                 sql = "FROM proxy_users INNER JOIN proxy_account ON proxy_users.uid = proxy_account.uid INNER JOIN proxy_order ON proxy_account.account = proxy_order.account " \
                       "WHERE proxy_account.verify = 2 AND proxy_order.flag =1 "
@@ -570,45 +578,6 @@ class ProxyOrderModel():
                 else:
                     return []
 
-    @gen.coroutine
-    def getStime(self, time_type):
-        import time
-        from models.public.headers_model import Headers_Models
-        the_stime = 0
-        the_etime = 0
-        H = Headers_Models()
-        if time_type == "the_year":
-            the_stime = yield H.getMktime("theYear")
-        elif time_type == "the_month":
-            the_stime = yield H.getMktime("theMonth")
-        elif time_type == "the_week":
-            the_stime = yield H.getMktime("theWeek")
-        elif time_type == "last_week":
-            the_stime = yield H.getMktime("lastWeek")
-            the_etime = yield H.getMktime("lastWeekOne")
-        elif time_type == "the_day":
-            the_stime = yield H.getMktime("theDay")
-        elif time_type == "last_month":
-            the_stime = yield H.getMktime("lastMonthOne")
-            the_etime = yield H.getMktime("lastMonth")
-        elif time_type == "last_year":
-            the_stime = yield H.getMktime("lastYearOne")
-            the_etime = yield H.getMktime("lastYear")
-        elif time_type == "recent_day":
-            the_stime = int(time.time()) - 60 * 60 * 24
-        elif time_type == "recent_week":
-            the_stime = int(time.time()) - 60 * 60 * 24 * 7
-        elif time_type == "recent_month":
-            the_stime = int(time.time()) - 60 * 60 * 24 * 30
-        elif time_type == "recent_month3":
-            the_stime = int(time.time()) - 60 * 60 * 24 * 90
-        elif time_type == "recent_month6":
-            the_stime = int(time.time()) - 60 * 60 * 24 * 180
-        elif time_type == "recent_year":
-            the_stime = int(time.time()) - 60 * 60 * 24 * 365
-        else:
-            the_stime = 0
-        return the_stime, the_etime
 
     # 得到代理列表
     @gen.coroutine
@@ -727,7 +696,8 @@ class ProxyOrderModel():
     def getProxySettlementList(self, uid, page_main=None):
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
                 sql = "FROM proxy_settlement WHERE uid = %s " % (uid,)
                 if page_main['time_type'].find("last") >= 0:
                     sql = sql + " AND stime >= %s AND stime < %s " % (the_stime, the_etime)
@@ -755,7 +725,9 @@ class ProxyOrderModel():
         with (yield pool.Connection()) as conn:
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
-                the_stime, the_etime = yield self.getStime(page_main.get('time_type'))
+                H = Headers_Models()
+                the_stime, the_etime = yield H.getStime(page_main.get('time_type'))
+
                 sql = "FROM proxy_settlement WHERE uid = %s " % (uid,)
                 if page_main['time_type'].find("last") >= 0:
                     sql = sql + " AND stime >= %s AND stime < %s " % (the_stime, the_etime)
