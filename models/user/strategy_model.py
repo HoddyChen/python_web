@@ -1095,7 +1095,7 @@ class StrategyModel():
                 import time
                 starttime = time.time() - 7200
                 sql = "FROM trader WHERE "
-                sql = sql + " trader.t_type <=1 AND trader.etime = 0 AND trader.stime <= %s AND uaid=%s " % (starttime, page_main['uaid'])
+                sql = sql + " trader.t_type <=1 AND trader.etime = 0 AND trader.etime <= %s AND uaid=%s " % (starttime, page_main['uaid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
@@ -1106,7 +1106,7 @@ class StrategyModel():
                 if allnum['allnum'] > 0:
                     start = 0 if page_main.get('start') == None else page_main.get('start')
                     length = 10 if page_main.get('length') == None else page_main.get('length')
-                    sql3 = "SELECT trader.orderid,trader.proname,trader.num,trader.t_type,FROM_UNIXTIME(trader.stime,'%Y-%m-%d %H:%i:%s') AS from_stime,trader.sprice,trader.etime,trader.eprice,trader.sl,trader.tp,trader.commission,trader.swap,trader.profit,trader.maxprofit,trader.minprofit " + sql + " ORDER BY orderid DESC limit %s, %s" % (int(start), int(length))
+                    sql3 = "SELECT trader.orderid,trader.proname,trader.num,trader.t_type,FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i:%s') AS from_stime,trader.sprice,trader.etime,trader.eprice,trader.sl,trader.tp,trader.commission,trader.swap,trader.profit,trader.maxprofit,trader.minprofit " + sql + " ORDER BY orderid DESC limit %s, %s" % (int(start), int(length))
                     # print(sql3)
                     yield cursor.execute(sql3)
                     datas = cursor.fetchall()
@@ -1129,7 +1129,7 @@ class StrategyModel():
                 sql = "FROM trader WHERE "
                 sql = sql + "trader.t_type <=1 AND trader.etime = 0 AND uaid=%s " % page_main['uaid']
 
-                sql = sql + " AND trader.stime <= %s " % the_stime
+                sql = sql + " AND trader.etime <= %s " % the_stime
                 sql2 = "SELECT Count(*) AS t_count,Sum(trader.num) AS t_num,Sum(trader.profit) AS t_profit,Sum(trader.swap) AS t_swap," \
                       "Sum(trader.commission) AS t_comm " + sql
                 # print(sql2)
@@ -1156,9 +1156,9 @@ class StrategyModel():
                 sql = "FROM trader WHERE "
                 sql = sql + " uaid=%s " % uaid
                 if the_etime != 0:
-                    sql = sql + " AND trader.stime >= %s AND trader.stime < %s " % (the_stime, the_etime)
+                    sql = sql + " AND trader.etime >= %s AND trader.etime < %s " % (the_stime, the_etime)
                 else:
-                    sql = sql + " AND trader.stime >= %s " % the_stime
+                    sql = sql + " AND trader.etime >= %s " % the_stime
                 sql2 = "SELECT Sum(trader.profit) AS t_in_profit " + sql + " AND trader.t_type = 6 AND trader.profit >0"
                 # print(sql2)
                 yield cursor.execute(sql2)
@@ -1226,10 +1226,10 @@ class StrategyModel():
                 # print(page_main.get('time_type'))
                 if page_main['time_type'] == "week":
                     # 周
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%u')AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.etime,'%Y-%u')AS g_date"
                 else:
                     # 月
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%m')AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.etime,'%Y-%m')AS g_date"
                 sql = " FROM trader WHERE "
                 sql = sql + " uaid=%s " % page_main['uaid']
                 sql_end = "GROUP BY g_date"
@@ -1247,15 +1247,15 @@ class StrategyModel():
             with conn.cursor() as cursor:
                 # print(page_main.get('time_type'))
                 if page_main['time_type'] == "year":
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y') AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.etime,'%Y') AS g_date"
                 elif page_main['time_type'] == "day":
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%m-%d') AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.etime,'%Y-%m-%d') AS g_date"
                 elif page_main['time_type'] == "month":
                     # 月
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%m') AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.etime,'%Y-%m') AS g_date"
                 else:
                     # 周
-                    sql3_g = "FROM_UNIXTIME(trader.stime,'%Y-%u') AS g_date"
+                    sql3_g = "FROM_UNIXTIME(trader.etime,'%Y-%u') AS g_date"
                 sql = " FROM trader WHERE "
                 sql = sql + " uaid=%s " % page_main['uaid']
                 sql_end = "GROUP BY g_date"

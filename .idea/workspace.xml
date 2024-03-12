@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复统计周期的错误">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复瑞讯代理订单回传中的错误">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user/proxy_order_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user/proxy_order_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,7 +400,9 @@
       <workItem from="1706087076789" duration="3235000" />
       <workItem from="1706194974474" duration="757000" />
       <workItem from="1709386801007" duration="4682000" />
-      <workItem from="1710138130057" duration="1609000" />
+      <workItem from="1710138130057" duration="2670000" />
+      <workItem from="1710207217181" duration="9000" />
+      <workItem from="1710257736394" duration="1415000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -709,14 +712,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00122" summary="在对外展示中，新增分时统计">
-      <option name="closed" value="true" />
-      <created>1704873071178</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1704873071179</updated>
-    </task>
     <task id="LOCAL-00123" summary="在对外展示中，新增分时统计，更新代理登陆的转向页">
       <option name="closed" value="true" />
       <created>1705891570740</created>
@@ -749,7 +744,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709395679888</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="修复瑞讯代理订单回传中的错误">
+      <option name="closed" value="true" />
+      <created>1710153418982</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1710153418982</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -784,7 +787,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="外汇改为交易" />
     <MESSAGE value="修改小铃铛的登陆与到期时间读取" />
     <MESSAGE value="修改统计数据相关bug；&#10;主菜单增加主账号资料链接。" />
     <MESSAGE value="修改统计数据相关bug；" />
@@ -809,7 +811,8 @@
     <MESSAGE value="修改策略后台，在多策略时，对订单一致性只针对单策略的跟单订单" />
     <MESSAGE value="修复对外查看策略的链接为https" />
     <MESSAGE value="修复统计周期的错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复统计周期的错误" />
+    <MESSAGE value="修复瑞讯代理订单回传中的错误" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复瑞讯代理订单回传中的错误" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -862,7 +865,7 @@
     <SUITE FILE_PATH="coverage/python_web$tedt.coverage" NAME="tedt 覆盖结果" MODIFIED="1700831896876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1709387296022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1710257964690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$11.coverage" NAME="11 覆盖结果" MODIFIED="1685277065318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$log_count.coverage" NAME="log_count 覆盖结果" MODIFIED="1686650927380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
