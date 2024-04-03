@@ -37,7 +37,7 @@ class SendmailModel():
             smtpObj = smtplib.SMTP('smtp.office365.com', 587)
             # 65.49.208.148:587
             # smtpObj = smtplib.SMTP('65.49.208.148', 587)
-            # smtpObj.connect('smtp.office365.com', 587)  # 25 为 SMTP 端口号
+            #smtpObj.connect('smtp.office365.com', 587)  # 25 为 SMTP 端口号
             smtpObj.starttls()
             # smtpObj.set_debuglevel(1)# 调试时开启
             smtpObj.login(self.from_mail, self.mail_password)

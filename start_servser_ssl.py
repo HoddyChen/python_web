@@ -68,7 +68,7 @@ if __name__ == "__main__":
         },  xheaders=True)
         server.add_sockets(sockets)
     logInit(log_path)
-    start_fu()
+    # start_fu()
     print('start server...')
     # tornado.ioloop.IOLoop.current().start()
     tornado.ioloop.IOLoop.instance().start()

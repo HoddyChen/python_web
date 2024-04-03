@@ -12,8 +12,9 @@ import time
 from handlers.myredis.redis_class import RedisClass
 import json
 from models.public.headers_model import global_Models
+from start import start_fu
 
-client_id = 1
+client_id = 0
 log_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "log")
 logInit_socket_client(log_path)
 logger = logging.getLogger('Client')
@@ -297,6 +298,7 @@ class SocketClientModel(object):
         self.io_loop.stop()
 
 if __name__ == '__main__':
-
+    # 初始化数据
+    start_fu()
     while True:
         main()

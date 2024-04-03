@@ -11,6 +11,7 @@ from tornado.iostream import IOStream, SSLIOStream
 # from tornado.netutil import bind_sockets, add_accept_handler, ssl_wrap_socket
 # from tornado import process
 # from tornado.util import errno_from_exception
+
 def get_host_ip():
     """
     查询本机ip地址
@@ -26,10 +27,11 @@ def get_host_ip():
     return ip
 
 if __name__ == '__main__':
+
     import socket
     # ip = get_host_ip()
-    ip = "64.31.63.6"
-    # ip = "51.89.156.187"
+    ip = "192.168.50.210"
+    # ip = "109.104.153.251"
     iplist = ip.split(".")
     client_label = iplist[3]
     port = 9000

@@ -25,7 +25,7 @@ settings = dict(
 )
 #MQSQL数据库参数
 MYSQL_INFO = {
-    "host": "64.31.63.220",
+    "host": "109.104.153.166",
     "port": 33161,
     # "host": "192.168.68.22",# 深圳
     # "port": 3316,
@@ -35,7 +35,7 @@ MYSQL_INFO = {
 }
 #redis参数
 REDIS_INFO = {
-    "host": "64.31.63.220",
+    "host": "109.104.153.166",
     "port": 6379
     # "host": "127.0.0.1",# 内网
     # "port": 6379
@@ -43,7 +43,7 @@ REDIS_INFO = {
     # "port": 9389
 }
 # 返回给EA的IP访问地址
-Server_IP = "64.31.63.252:9008"
+Server_IP = "109.104.154.210:9008"
 
 # EA magic前缀
 MAGIC = 9947
@@ -107,14 +107,14 @@ socket_server_dist = "socket_server_dist"
 server_list = [
     {
     'id': 0,
-    'url': '64.31.63.6',#localhost
+    'url': '109.104.153.251',#localhost
     'port': 9000
 },
-    {
-    'id': 1,
-    'url': '51.89.156.187',
-    'port': 9000
-},
+#     {
+#     'id': 1,
+#     'url': '109.104.153.251',
+#     'port': 9000
+# },
 #     {
 #     'id': 2,
 #     'url': '127.0.0.1',

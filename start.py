@@ -36,7 +36,7 @@ def setRedisProduct(datas):
 def getMaster():
     mysql = mysql_open()
     cursor = mysql.conn.cursor(cursor=pymysql.cursors.DictCursor)
-    sql = "SELECT tid,key_ma,uaid,proname,num,t_type,stime,sprice,sl,tp FROM m_trader WHERE flag_ma=1 and eprice=0"
+    sql = "SELECT tid,key_ma,uaid,proname,num,t_type,stime,sprice,sl,tp,fx_comment FROM m_trader WHERE flag_ma=1 and eprice=0"
     cursor.execute(sql)
     datas = cursor.fetchall()
     cursor.close()
@@ -57,8 +57,10 @@ def updataRedisMasterAll():
     for order in order_arr:
         R.RH.sadd(config.redis_master_uaid_set, str(order['uaid']))
         R.RH.hset(config.redis_master_uaid_dic, order['key_ma'], str(order['uaid']))
-        R.RH.sadd(config.redis_order_set + str(order['uaid']), order['tid'])
-        R.RH.hmset(config.redis_order_dic + str(order['tid']), order)
+        # R.RH.hset(config.redis_master_uaid_dic, "comment_" + order['key_ma'], str(order['fx_comment']))
+        R.insert_master_Comment(order['key_ma'], order['fx_comment'])
+        # R.RH.sadd(config.redis_order_set + str(order['uaid']), order['tid'])
+        # R.RH.hmset(config.redis_order_dic + str(order['tid']), order)
         # text = text + "add Master:" + str(order['uaid']) + "\n"
         # logger.info("add Master:" + str(order['uaid']))
     return

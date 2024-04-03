@@ -7,7 +7,6 @@ from tornado.httpserver import HTTPServer
 import socket
 from handlers.main.main_urls import handlers
 from config import settings
-from start import start_fu
 from handlers.log.mylog import logInit
 from handlers.log.tornado_log import log_request
 from handlers.log.tornado_log import init_logging
@@ -62,7 +61,6 @@ if __name__ == "__main__":
         server = HTTPServer(app, xheaders=True)
         server.add_sockets(sockets)
     logInit(log_path)
-    start_fu()
     print('start server...',options.port)
     # tornado.ioloop.IOLoop.current().start()
     tornado.ioloop.IOLoop.instance().start()
