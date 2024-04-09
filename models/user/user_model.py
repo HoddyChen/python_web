@@ -144,7 +144,7 @@ class UserModel():
     def GetAcountPinfo(self, conn, users, uaid):
         # 查询账户与产品
         up_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        sql = "SELECT acount_pinfo.pid,acount_pinfo.apflag,acount_pinfo.qq,acount_pinfo.version,acount_pinfo.pflag, acount_pinfo.probation FROM acount_pinfo WHERE pid=%s AND uaid=%s"
+        sql = "SELECT pid, apflag, qq, version, pflag, probation FROM acount_pinfo WHERE pid=%s AND uaid=%s"
         with conn.cursor() as cursor:
             yield cursor.execute(sql % (users['pid'], uaid))
             datas = cursor.fetchone()
@@ -163,20 +163,19 @@ class UserModel():
                 # 预留远程参数设置
             else:
                 # 新增产品到交易账号上
-                # sql4 = "SELECT qq,version,probation FROM product WHERE pid=%s"
-                # yield cursor.execute(sql4 % users['pid'])
-                # datas2 = cursor.fetchone()
-                # endtime = (datetime.datetime.now() + datetime.timedelta(days=datas2['probation'])).strftime(
-                #     "%Y-%m-%d %H:%M:%S")
                 sql3 = "INSERT INTO account_product(pid,uaid,apflag,starttime,onlinetime,lasttime) VALUES(%s,%s,%s,'%s','%s','%s')"
                 try:
                     yield cursor.execute(sql3 % (users['pid'], uaid, 1, up_date, up_date, up_date))
                     # yield conn.commit()
-                    if int(users['pid']) == 11:
+                    if int(users['pid']) in config.PRODUCT_TUPLE:
+                        # 读取产品信息
+                        sql40 = "SELECT product_info.piid, product.probation, product.qq, product.version FROM product LEFT JOIN product_info ON product.pid = product_info.pid WHERE product.pid=%s"
+                        yield cursor.execute(sql40 % users['pid'])
+                        probation_data = cursor.fetchone()
                         # 新增产品订单
                         sql4 = ("INSERT INTO p_order(pid, piid, uid, uaid, otype, amount, amount_less, amount_cny, onum, otime, strattime, endtime, trade_status, potype, remarks, date_num, note) "
-                                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', DATE_ADD(NOW(),INTERVAL 7 DAY), %s, %s, '%s', %s, '%s')")
-                        yield cursor.execute(sql4 % (users['pid'], 6, 1, uaid, 1, 0, 0, 0, 1, up_date, up_date, 1, 1, 0, 7,'test'))
+                                "VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, '%s', '%s', DATE_ADD(NOW(),INTERVAL %s DAY), %s, %s, '%s', %s, '%s')")
+                        yield cursor.execute(sql4 % (users['pid'], probation_data['piid'], 1, uaid, 1, 0, 0, 0, 1, up_date, up_date, probation_data['probation'], 1, 1, 0, 7,'test'))
                     yield conn.commit()
                     yield cursor.execute(sql % (users['pid'], uaid))
                     datas2 = cursor.fetchone()
