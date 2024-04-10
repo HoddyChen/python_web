@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复整体">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改新增产品后的通用性，需要EA加载时间初始化到期时间的特定产品，需要加入到config的PRODUCT_TUPLE中">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_servser_http.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_servser_http.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +36,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HoddyChen"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HoddyChen&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HoddyChen/python_web.git",
-    "accountId": "a130d3fa-5cce-43d1-bd33-41cb9f973346"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HoddyChen/python_web.git&quot;,
+    &quot;accountId&quot;: &quot;a130d3fa-5cce-43d1-bd33-41cb9f973346&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -425,7 +422,8 @@
       <workItem from="1711629411401" duration="643000" />
       <workItem from="1711763943644" duration="23422000" />
       <workItem from="1712587751175" duration="3347000" />
-      <workItem from="1712671121184" duration="4020000" />
+      <workItem from="1712671121184" duration="5223000" />
+      <workItem from="1712759571133" duration="403000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -735,14 +733,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00125" summary="修复对外查看策略的链接为https">
-      <option name="closed" value="true" />
-      <created>1706195086510</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1706195086510</updated>
-    </task>
     <task id="LOCAL-00126" summary="修复统计周期的错误">
       <option name="closed" value="true" />
       <created>1709395679888</created>
@@ -775,7 +765,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712107889000</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="修改新增产品后的通用性，需要EA加载时间初始化到期时间的特定产品，需要加入到config的PRODUCT_TUPLE中">
+      <option name="closed" value="true" />
+      <created>1712679410409</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1712679410410</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -810,7 +808,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改统计数据相关bug；" />
     <MESSAGE value="修改统计数据为null时改为0；" />
     <MESSAGE value="在线状态中增加主策略账号的状态；&#10;修改主账号的显示为保密；" />
     <MESSAGE value="新增返点的分组管理" />
@@ -835,7 +832,8 @@
     <MESSAGE value="修复瑞讯代理订单回传中的错误" />
     <MESSAGE value="修复分时统计中，etime的错误" />
     <MESSAGE value="修复整体" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复整体" />
+    <MESSAGE value="修改新增产品后的通用性，需要EA加载时间初始化到期时间的特定产品，需要加入到config的PRODUCT_TUPLE中" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改新增产品后的通用性，需要EA加载时间初始化到期时间的特定产品，需要加入到config的PRODUCT_TUPLE中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

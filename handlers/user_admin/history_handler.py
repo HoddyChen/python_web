@@ -279,7 +279,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
         elif time_type == "year":
             return self.locale.translate('按年')
         elif time_type == "month":
-            return self.locale.translate('按年')
+            return self.locale.translate('按月')
         elif time_type == "week":
             return self.locale.translate('按周')
         elif time_type == "day":
