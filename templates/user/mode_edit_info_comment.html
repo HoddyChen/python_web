@@ -27,16 +27,11 @@
                                 <div class="mr-auto p-2 bd-highlight">{{_('跟单账号的订单备注')}}</div>
                                 <div class="form-group form-float">
                                     {% if page_main['fx_comment'] is None%}
-                                        <input type="text" class="form-control" placeholder="{{_('订单备注')}}" name="comment" required value=""
-                                               {{ 'disabled' if page_main['order_num'] > 0 else '' }}>
+                                        <input type="text" class="form-control" placeholder="{{_('订单备注')}}" name="comment" required value="">
                                     {% else %}
-                                        <input type="text" class="form-control" placeholder="{{_('订单备注')}}" name="comment" required value="{{page_main['fx_comment']}}"
-                                               {{ 'disabled' if page_main['order_num'] > 0 else '' }}>
+                                        <input type="text" class="form-control" placeholder="{{_('订单备注')}}" name="comment" required value="{{page_main['fx_comment']}}">
                                     {% end if %}
-                                    {% if page_main['order_num'] > 0 %}
                                     <BR>
-                                    <span style="color:red"><B> ! {{_('策略空仓时可进行修改')}}</B></span>
-                                    {% end if %}
                                     <BR>{{_('例子')}} <BR>yyyyy:::8888888 <BR>("yyyyy"{{_('为订单备注中可修改的部分')}})<BR>
                                     {{_('仅支持')}} a-z A-Z 0-9 _ {{_('这些字符')}}
                                 </div>
@@ -46,7 +41,7 @@
                             <div class="col-lg-5">
                                 <div class="form-group form-float">
                                     {% raw xsrf_form_html() %}
-                                    <button id="button_enter_send" class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit();" {{ 'disabled' if page_main['order_num'] > 0 else '' }}>{{_('保存更新')}}</button>
+                                    <button id="button_enter_send" class="btn btn-raised btn-primary btn-round waves-effect" type="button" onClick="my_submit();">{{_('保存更新')}}</button>
                                 </div>
                             </div>
                         </div>
