@@ -1,6 +1,6 @@
 # coding = utf-8
 import re
-
+import time
 import tornado
 import config
 from tornado import gen
@@ -10,6 +10,7 @@ from models.public.confrom_model import LoginForm
 from models.admin.admin_model import ManagerModel
 import json
 import logging
+
 
 logger = logging.getLogger('Main')
 class AdminHandler(SessionHandler, BaseHandler):
@@ -31,6 +32,7 @@ class AdminHandler(SessionHandler, BaseHandler):
         # page_main['User_Agent'] = User_Agent
         if self.session['ManagerUid'] == None:
             yield self.render("admin/login.html", page_main=page_main)
+            self.session['_xsrf'] = self.xsrf_token
             return
         else:
             # cookie_dist = self.getCookie()
@@ -66,26 +68,33 @@ class AdminHandler(SessionHandler, BaseHandler):
             #     self.finish()
             F = LoginForm(self.request.arguments)
             if F.validate():#and F.cla.data == "SendError"
-                M = ManagerModel()
-                ManagerArr = yield M.chickLoginPass(F.umail.data, F.password.data)
-                # 验证码检查
-                logger.debug("ManagerArr:%s" % ManagerArr)
-                if ManagerArr:
-                    self.session['ManagerUid'] = ManagerArr['uid']
-                    self.session['ManagerAid'] = ManagerArr['admin_id']
-                    self.session['ManagerFaceurl'] = ManagerArr['faceurl']
-                    self.session['ManagerUname'] = ManagerArr['uname']
-                    from models.public.headers_model import LogsModel
-                    LogsModel.addMysqlLog("Managerlogin", "loging", str(ManagerArr['uid']), self.get_user_ip())
-                    echo_dist['echo'] = "登陆成功"
-                    echo_dist['reponse_status'] = 5
-                else:
-                    echo_dist['echo'] = "登陆失败"
+                if tornado.escape.to_unicode(self.request.arguments['_xsrf'][0]) != self.session['_xsrf']:
+                    echo_dist['echo'] = "验证失败"
                     echo_dist['reponse_status'] = 1
+                else:
+                    M = ManagerModel()
+
+                    ManagerArr = yield M.chickLoginPass(F.umail.data, F.password.data)
+                    # 验证码检查
+                    logger.debug("ManagerArr:%s" % ManagerArr)
+                    if ManagerArr:
+                        self.session['ManagerUid'] = ManagerArr['uid']
+                        self.session['ManagerAid'] = ManagerArr['admin_id']
+                        self.session['ManagerFaceurl'] = ManagerArr['faceurl']
+                        self.session['ManagerUname'] = ManagerArr['uname']
+                        from models.public.headers_model import LogsModel
+                        LogsModel.addMysqlLog("Managerlogin", "loging", str(ManagerArr['uid']), self.get_user_ip())
+                        echo_dist['echo'] = "登陆成功"
+                        echo_dist['reponse_status'] = 5
+                    else:
+                        echo_dist['echo'] = "登陆失败"
+                        echo_dist['reponse_status'] = 1
+                self.session['_xsrf'] = ""
             else:
                 # 表单错误
                 from models.public.confrom_model import get_ErrorForm
                 echo_dist['echo'] = get_ErrorForm(F)
                 echo_dist['reponse_status'] = 1
+
         self.write(json.dumps(echo_dist))
         self.finish()

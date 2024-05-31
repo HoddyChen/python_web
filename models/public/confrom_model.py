@@ -65,6 +65,7 @@ class LoginForm(Form):
         validators.Length(min=1, max=20, message=(u'类型应为20个字符以内'))
     ])
 
+
 class StrategyForm(Form):
     fx_type = StringField('fx_type', [
         validators.Regexp('[a-zA-Z\d_]+$', message=(u'非法数据')),

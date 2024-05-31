@@ -45,6 +45,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
                     if cookie_pass == None:
                         page_main['urlkey'] = F.k.data
                         yield self.render("user/login_url.html", page_main=page_main, session=self.session)
+                        self.session['_xsrf'] = self.xsrf_token
                         return
                     else:
                         page_main['fx_pass'] = cookie_pass
@@ -60,6 +61,7 @@ class HistoryHandler(SessionHandler, BaseHandler):
                                 page_main['urlkey'] = F.k.data
                                 page_main['echo'] = self.locale.translate("授权取消")
                                 yield self.render("user/login_url.html", page_main=page_main, session=self.session)
+                                self.session['_xsrf'] = self.xsrf_token
                                 return
                             else:
                                 page_main.update(s_data2)
@@ -156,18 +158,23 @@ class HistoryHandler(SessionHandler, BaseHandler):
             else:
                 # 通过密码登陆查看
                 if F.fx_type.data == "login":
-                    s_data = yield S.chickUrlKey(F.k.data, F.fx_pass.data)
-                    # print(s_data)
-                    if s_data:
-                        import time
-                        self.set_secure_cookie("fx_url_" + F.k.data, F.fx_pass.data, expires=time.time()+172800)
-                        self.set_secure_cookie("fx_id_" + F.k.data, str(s_data['uaid']), expires=time.time()+172800)
-                        page_papa['fx_pass'] = F.fx_pass.data
-                        echo_dist['reponse_status'] = 5
-                    else:
-                        # self.redirect("/h?k="+F.k.data)
-                        echo_dist['echo'] = self.locale.translate("密码错误或不允许查看")
+                    if tornado.escape.to_unicode(self.request.arguments['_xsrf'][0]) != self.session['_xsrf']:
+                        echo_dist['echo'] = "验证失败"
                         echo_dist['reponse_status'] = 1
+                    else:
+                        s_data = yield S.chickUrlKey(F.k.data, F.fx_pass.data)
+                        # print(s_data)
+                        if s_data:
+                            import time
+                            self.set_secure_cookie("fx_url_" + F.k.data, F.fx_pass.data, expires=time.time()+172800)
+                            self.set_secure_cookie("fx_id_" + F.k.data, str(s_data['uaid']), expires=time.time()+172800)
+                            page_papa['fx_pass'] = F.fx_pass.data
+                            echo_dist['reponse_status'] = 5
+                        else:
+                            # self.redirect("/h?k="+F.k.data)
+                            echo_dist['echo'] = self.locale.translate("密码错误或不允许查看")
+                            echo_dist['reponse_status'] = 1
+
                 else:
                     fx_pass = None if self.get_secure_cookie('fx_url_' + F.k.data) == None else str(self.get_secure_cookie('fx_url_' + F.k.data), encoding="utf-8")
                     if fx_pass:
