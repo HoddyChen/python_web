@@ -1095,7 +1095,7 @@ class StrategyModel():
                 import time
                 starttime = time.time() - 7200
                 sql = "FROM trader WHERE "
-                sql = sql + " trader.t_type <=1 AND trader.etime = 0 AND trader.etime <= %s AND uaid=%s " % (starttime, page_main['uaid'])
+                sql = sql + " trader.t_type <=1 AND trader.etime = 0 AND trader.stime <= %s AND uaid=%s " % (starttime, page_main['uaid'])
                 if page_main.get('search') != "0" and page_main.get('search') != "":
                     search = "%" + page_main.get('search') + "%"
                     sql = sql + " AND trader.proname like '" + search + "' "
@@ -1106,7 +1106,7 @@ class StrategyModel():
                 if allnum['allnum'] > 0:
                     start = 0 if page_main.get('start') == None else page_main.get('start')
                     length = 10 if page_main.get('length') == None else page_main.get('length')
-                    sql3 = "SELECT trader.orderid,trader.proname,trader.num,trader.t_type,FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i:%s') AS from_stime,trader.sprice,trader.etime,trader.eprice,trader.sl,trader.tp,trader.commission,trader.swap,trader.profit,trader.maxprofit,trader.minprofit " + sql + " ORDER BY orderid DESC limit %s, %s" % (int(start), int(length))
+                    sql3 = "SELECT trader.orderid,trader.proname,trader.num,trader.t_type,FROM_UNIXTIME(trader.stime,'%Y-%m-%d %H:%i:%s') AS from_stime,trader.sprice,trader.etime,trader.eprice,trader.sl,trader.tp,trader.commission,trader.swap,trader.profit,trader.maxprofit,trader.minprofit " + sql + " ORDER BY orderid DESC limit %s, %s" % (int(start), int(length))
                     # print(sql3)
                     yield cursor.execute(sql3)
                     datas = cursor.fetchall()

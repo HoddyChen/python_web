@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修复BUG，按年改按月">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改策略备注时不判断是否有订单，因为ea判断策略订单时，与备注无关，是根据magicID">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/mode_edit_info_comment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/mode_edit_info_comment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/11.py" beforeDir="false" afterPath="$PROJECT_DIR$/11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index_position_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index_position_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -66,6 +68,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;Python.start_servser_http.executor&quot;: &quot;Debug&quot;,
     &quot;Python.start_socket (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test03.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -104,7 +107,7 @@
       <recent name="$PROJECT_DIR$/templates/admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.start_servser_http">
+  <component name="RunManager" selected="Python.test03">
     <configuration name="start_servser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
       <option name="ENV_FILES" value="" />
@@ -174,29 +177,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="start_socket" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="python_web" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/log" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/log/start_socket.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="tedt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python_web" />
       <option name="ENV_FILES" value="" />
@@ -220,21 +200,44 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test03" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python_web" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test03.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test03" />
         <item itemvalue="Python.start_servser_http" />
         <item itemvalue="Python.start_socket (1)" />
         <item itemvalue="Python.start_servser" />
         <item itemvalue="Python.tedt" />
-        <item itemvalue="Python.start_socket" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -424,7 +427,10 @@
       <workItem from="1712587751175" duration="3347000" />
       <workItem from="1712671121184" duration="5223000" />
       <workItem from="1712759571133" duration="1104000" />
-      <workItem from="1712845278836" duration="637000" />
+      <workItem from="1712845278836" duration="1342000" />
+      <workItem from="1713235078139" duration="34888000" />
+      <workItem from="1716566091240" duration="2565000" />
+      <workItem from="1717075355199" duration="1373000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -734,14 +740,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00127" summary="修复瑞讯代理订单回传中的错误">
-      <option name="closed" value="true" />
-      <created>1710153418982</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1710153418982</updated>
-    </task>
     <task id="LOCAL-00128" summary="修复分时统计中，etime的错误">
       <option name="closed" value="true" />
       <created>1710259208832</created>
@@ -774,7 +772,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712760019777</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="修改策略备注时不判断是否有订单，因为ea判断策略订单时，与备注无关，是根据magicID">
+      <option name="closed" value="true" />
+      <created>1712852068758</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1712852068758</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -809,7 +815,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="在线状态中增加主策略账号的状态；&#10;修改主账号的显示为保密；" />
     <MESSAGE value="新增返点的分组管理" />
     <MESSAGE value="返点的分组管理修复BUG；&#10;账户分组管理新增；" />
     <MESSAGE value="返点的分组管理修复BUG；&#10;返点历史分组统计新增；" />
@@ -834,7 +839,8 @@
     <MESSAGE value="修复整体" />
     <MESSAGE value="修改新增产品后的通用性，需要EA加载时间初始化到期时间的特定产品，需要加入到config的PRODUCT_TUPLE中" />
     <MESSAGE value="修复BUG，按年改按月" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复BUG，按年改按月" />
+    <MESSAGE value="修改策略备注时不判断是否有订单，因为ea判断策略订单时，与备注无关，是根据magicID" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改策略备注时不判断是否有订单，因为ea判断策略订单时，与备注无关，是根据magicID" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -899,6 +905,7 @@
     <SUITE FILE_PATH="coverage/python_web$tedt.coverage" NAME="tedt 覆盖结果" MODIFIED="1700831896876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser.coverage" NAME="start_servser 覆盖结果" MODIFIED="1701011931828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_socket.coverage" NAME="start_socket 覆盖结果" MODIFIED="1695965346984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
+    <SUITE FILE_PATH="coverage/python_web$test03.coverage" NAME="test03 覆盖结果" MODIFIED="1713237773167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_email.coverage" NAME="start_servser_email 覆盖结果" MODIFIED="1687230515361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_web$start_servser_http.coverage" NAME="start_servser_http 覆盖结果" MODIFIED="1712674333067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
