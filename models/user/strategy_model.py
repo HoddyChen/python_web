@@ -805,7 +805,7 @@ class StrategyModel():
                 if allnum['allnum'] > 0:
                     start = 0 if page_main.get('start') == None else page_main.get('start')
                     length = 10 if page_main.get('length') == None else page_main.get('length')
-                    sql3 = "SELECT trader.orderid,trader.proname,trader.num,trader.t_type,FROM_UNIXTIME(trader.stime,'%Y-%m-%d %H:%i:%s') AS from_stime,trader.sprice,FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i:%s') AS from_etime,trader.eprice,trader.sl,trader.tp,trader.commission,trader.swap,trader.profit " + sql + " ORDER BY orderid DESC limit %s, %s" % (int(start), int(length))
+                    sql3 = "SELECT trader.orderid,trader.proname,trader.num,trader.t_type,FROM_UNIXTIME(trader.stime,'%Y-%m-%d %H:%i:%s') AS from_stime,trader.sprice,FROM_UNIXTIME(trader.etime,'%Y-%m-%d %H:%i:%s') AS from_etime,trader.eprice,trader.sl,trader.tp,trader.commission,trader.swap,trader.profit " + sql + " ORDER BY trader.etime DESC limit %s, %s" % (int(start), int(length))
                     # print(sql3)
                     yield cursor.execute(sql3)
                     datas = cursor.fetchall()

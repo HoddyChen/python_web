@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改BUG，浮动盈亏标识，持仓的开仓时间显示">
+    <list default="true" id="252e1148-e31a-44ae-9e7a-b7e213554b52" name="默认变更列表" comment="修改BUG，增加_xsrf验证">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/11.py" beforeDir="false" afterPath="$PROJECT_DIR$/11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/admin/admin_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/admin_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/admin_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/history_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/user_admin/sendmail_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/user_admin/sendmail_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/web_log/web_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/web_log/web_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/public/confrom_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/public/confrom_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/mode_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/mode_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user/strategy_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user/strategy_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,42 +65,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.start_servser_http.executor": "Debug",
-    "Python.start_socket (1).executor": "Debug",
-    "Python.test03.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "database.data.extractors.current.export.id": "SQL 更新",
-    "database.data.extractors.current.id": "SQL 更新",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/hoddychen/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.start_servser_http.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.start_socket (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test03.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL 更新&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;SQL 更新&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hoddychen/Library/CloudStorage/OneDrive-‎/one/projects/python_program/2021/python_web&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/user" />
@@ -439,7 +434,9 @@
       <workItem from="1713235078139" duration="34888000" />
       <workItem from="1716566091240" duration="2565000" />
       <workItem from="1717075355199" duration="1445000" />
-      <workItem from="1717136626701" duration="15688000" />
+      <workItem from="1717136626701" duration="17493000" />
+      <workItem from="1718004345856" duration="672000" />
+      <workItem from="1718271706052" duration="1064000" />
     </task>
     <task id="LOCAL-00001" summary="更新依赖包文件">
       <created>1619962332748</created>
@@ -749,14 +746,6 @@
       <option name="project" value="LOCAL" />
       <updated>1695966470726</updated>
     </task>
-    <task id="LOCAL-00129" summary="修复整体">
-      <option name="closed" value="true" />
-      <created>1712107888999</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1712107889000</updated>
-    </task>
     <task id="LOCAL-00130" summary="修改新增产品后的通用性，需要EA加载时间初始化到期时间的特定产品，需要加入到config的PRODUCT_TUPLE中">
       <option name="closed" value="true" />
       <created>1712679410409</created>
@@ -789,7 +778,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717115017589</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="修改BUG，增加_xsrf验证">
+      <option name="closed" value="true" />
+      <created>1717160179025</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1717160179025</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -824,7 +821,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="返点的分组管理修复BUG；&#10;账户分组管理新增；" />
     <MESSAGE value="返点的分组管理修复BUG；&#10;返点历史分组统计新增；" />
     <MESSAGE value="控制台增加盈亏的百分比" />
     <MESSAGE value="增加音乐提示，修复admin里的bug" />
@@ -849,7 +845,8 @@
     <MESSAGE value="修复BUG，按年改按月" />
     <MESSAGE value="修改策略备注时不判断是否有订单，因为ea判断策略订单时，与备注无关，是根据magicID" />
     <MESSAGE value="修改BUG，浮动盈亏标识，持仓的开仓时间显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改BUG，浮动盈亏标识，持仓的开仓时间显示" />
+    <MESSAGE value="修改BUG，增加_xsrf验证" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改BUG，增加_xsrf验证" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
